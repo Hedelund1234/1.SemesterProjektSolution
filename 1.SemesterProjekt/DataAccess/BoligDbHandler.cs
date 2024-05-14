@@ -1,6 +1,9 @@
 ﻿using _1.SemesterProjekt.Models;
+using System;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace _1.SemesterProjekt.DataAccess
 {
@@ -89,15 +92,107 @@ namespace _1.SemesterProjekt.DataAccess
         }
         internal bool Create(Bolig bolig)
         {
-            return false;
+            string command = "INSERT INTO Bolig (Bolig_Id, Adresse, Postnummer, Type, Udbudspris, Størrelse, Bolig_Kunde_Id, Bolig_Ejendomsmægler_Id, Bolig_Afdelings_Navn, Salgsstatus, Bolig_Kunde_Id_Køber) VALUES (@bId, @adr, @postNr, @type, @uPris, @str, @bKid, @bEId, @bANavn, @SalgStatus, @bKundeIdKøb)";
+            SqlConnection conn = new SqlConnection(connStrings);
+            SqlCommand cmd = new SqlCommand(command, conn);
+            cmd.Parameters.AddWithValue("@bId", bolig.Bolig_Id);
+            cmd.Parameters.AddWithValue("@adr", bolig.Adresse);
+            cmd.Parameters.AddWithValue("@postNr", bolig.Postnummer);
+            cmd.Parameters.AddWithValue("@type", bolig.Type);
+            cmd.Parameters.AddWithValue("@uPris", bolig.Udbudspris);
+            cmd.Parameters.AddWithValue("@str", bolig.Størrelse);
+            cmd.Parameters.AddWithValue("@bKid", bolig.Bolig_Kunde_Id);
+            cmd.Parameters.AddWithValue("@bEId", bolig.Bolig_Ejendomsmægler_Id);
+            cmd.Parameters.AddWithValue("@bANavn", bolig.Bolig_Afdelings_Navn);
+            cmd.Parameters.AddWithValue("@SalgStatus", bolig.Salgsstatus);
+            cmd.Parameters.AddWithValue("@bKundeIdKøb", bolig.Bolig_Kunde_Id_Køber);
+
+            int rows = 0;
+            try
+            {
+                conn.Open();
+                rows = cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            if (rows == 0)
+            {
+                return false;
+            }
+            return true;
         }
         internal bool Update(Bolig bolig)
         {
-            return false;
+            string command = "UPDATE Bolig SET Adresse = @adr, Postnummer = @postNr, Type = @type, Udbudspris = @uPris, Størrelse = @str, Bolig_Kunde_Id = @bKid, Bolig_Ejendomsmægler_Id = @bEId, Bolig_Afdelings_Navn = @bANavn, Salgsstatus = @SalgStatus, Bolig_Kunde_Id_Køber = @bKundeIdKøb WHERE Bolig_Id = @bId)";
+            SqlConnection conn = new SqlConnection(connStrings);
+            SqlCommand cmd = new SqlCommand(command, conn);
+
+            cmd.Parameters.AddWithValue("@bId", bolig.Bolig_Id);
+            cmd.Parameters.AddWithValue("@adr", bolig.Adresse);
+            cmd.Parameters.AddWithValue("@postNr", bolig.Postnummer);
+            cmd.Parameters.AddWithValue("@type", bolig.Type);
+            cmd.Parameters.AddWithValue("@uPris", bolig.Udbudspris);
+            cmd.Parameters.AddWithValue("@str", bolig.Størrelse);
+            cmd.Parameters.AddWithValue("@bKid", bolig.Bolig_Kunde_Id);
+            cmd.Parameters.AddWithValue("@bEId", bolig.Bolig_Ejendomsmægler_Id);
+            cmd.Parameters.AddWithValue("@bANavn", bolig.Bolig_Afdelings_Navn);
+            cmd.Parameters.AddWithValue("@SalgStatus", bolig.Salgsstatus);
+            cmd.Parameters.AddWithValue("@bKundeIdKøb", bolig.Bolig_Kunde_Id_Køber);
+            int rows = 0;
+            try
+            {
+                conn.Open();
+                rows = cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            if (rows == 0)
+            {
+                return false;
+            }
+            return true;
         }
         internal bool Delete(int id)
         {
-            return false;
+            string command = "DELETE FROM Bolig WHERE Bolig_Id = @id";
+            SqlConnection conn = new SqlConnection(connStrings);
+            SqlCommand cmd = new SqlCommand(command, conn);
+
+            cmd.Parameters.AddWithValue("@id", id);
+            int rows = 0;
+            try
+            {
+                conn.Open();
+                rows = cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            if (rows == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }
