@@ -38,7 +38,8 @@ namespace _1.SemesterProjekt.DataAccess
                     string boligAfdelingsNavn = (string)reader["Bolig_Afdelings_Navn"];
                     string salgsstatus = (string)reader["Salgsstatus"];
                     int boligKundeIdKøber = (int)reader["Bolig_Kunde_Id_Køber"];
-                    bolig = new Bolig { Bolig_Id = boligId, Adresse = adresse, Postnummer = postnummer, Type = type, Udbudspris = udbudspris, Størrelse = størrelse, Bolig_Kunde_Id = boligKundeId, Bolig_Ejendomsmægler_Id = boligEjendomsmæglerId, Bolig_Afdelings_Navn = boligAfdelingsNavn, Salgsstatus = salgsstatus, Bolig_Kunde_Id_Køber = boligKundeIdKøber };
+                    int handelsDato = (int)reader["Handels_Dato"];
+                    bolig = new Bolig { Bolig_Id = boligId, Adresse = adresse, Postnummer = postnummer, Type = type, Udbudspris = udbudspris, Størrelse = størrelse, Bolig_Kunde_Id = boligKundeId, Bolig_Ejendomsmægler_Id = boligEjendomsmæglerId, Bolig_Afdelings_Navn = boligAfdelingsNavn, Salgsstatus = salgsstatus, Bolig_Kunde_Id_Køber = boligKundeIdKøber, Handels_Dato = handelsDato };
                 }
             }
             catch (Exception e)
@@ -76,7 +77,8 @@ namespace _1.SemesterProjekt.DataAccess
                     string boligAfdelingsNavn = (string)reader["Bolig_Afdelings_Navn"];
                     string salgsstatus = (string)reader["Salgsstatus"];
                     int boligKundeIdKøber = (int)reader["Bolig_Kunde_Id_Køber"];
-                    bolig = new Bolig { Bolig_Id = boligId, Adresse = adresse, Postnummer = postnummer, Type = type, Udbudspris = udbudspris, Størrelse = størrelse, Bolig_Kunde_Id = boligKundeId, Bolig_Ejendomsmægler_Id = boligEjendomsmæglerId, Bolig_Afdelings_Navn = boligAfdelingsNavn, Salgsstatus = salgsstatus, Bolig_Kunde_Id_Køber = boligKundeIdKøber};
+                    int handelsDato = (int)reader["Handels_Dato"];
+                    bolig = new Bolig { Bolig_Id = boligId, Adresse = adresse, Postnummer = postnummer, Type = type, Udbudspris = udbudspris, Størrelse = størrelse, Bolig_Kunde_Id = boligKundeId, Bolig_Ejendomsmægler_Id = boligEjendomsmæglerId, Bolig_Afdelings_Navn = boligAfdelingsNavn, Salgsstatus = salgsstatus, Bolig_Kunde_Id_Køber = boligKundeIdKøber, Handels_Dato = handelsDato };
                     bl.Add(bolig);
                 }
             }
@@ -92,7 +94,7 @@ namespace _1.SemesterProjekt.DataAccess
         }
         internal bool Create(Bolig bolig)
         {
-            string command = "INSERT INTO Bolig (Bolig_Id, Adresse, Postnummer, Type, Udbudspris, Størrelse, Bolig_Kunde_Id, Bolig_Ejendomsmægler_Id, Bolig_Afdelings_Navn, Salgsstatus, Bolig_Kunde_Id_Køber) VALUES (@bId, @adr, @postNr, @type, @uPris, @str, @bKid, @bEId, @bANavn, @SalgStatus, @bKundeIdKøb)";
+            string command = "INSERT INTO Bolig (Bolig_Id, Adresse, Postnummer, Type, Udbudspris, Størrelse, Bolig_Kunde_Id, Bolig_Ejendomsmægler_Id, Bolig_Afdelings_Navn, Salgsstatus, Bolig_Kunde_Id_Køber, Handels_Dato) VALUES (@bId, @adr, @postNr, @type, @uPris, @str, @bKid, @bEId, @bANavn, @SalgStatus, @bKundeIdKøb, @hDato)";
             SqlConnection conn = new SqlConnection(connStrings);
             SqlCommand cmd = new SqlCommand(command, conn);
             cmd.Parameters.AddWithValue("@bId", bolig.Bolig_Id);
@@ -106,6 +108,7 @@ namespace _1.SemesterProjekt.DataAccess
             cmd.Parameters.AddWithValue("@bANavn", bolig.Bolig_Afdelings_Navn);
             cmd.Parameters.AddWithValue("@SalgStatus", bolig.Salgsstatus);
             cmd.Parameters.AddWithValue("@bKundeIdKøb", bolig.Bolig_Kunde_Id_Køber);
+            cmd.Parameters.AddWithValue("@hDato", bolig.Handels_Dato);
 
             int rows = 0;
             try
@@ -129,7 +132,7 @@ namespace _1.SemesterProjekt.DataAccess
         }
         internal bool Update(Bolig bolig)
         {
-            string command = "UPDATE Bolig SET Adresse = @adr, Postnummer = @postNr, Type = @type, Udbudspris = @uPris, Størrelse = @str, Bolig_Kunde_Id = @bKid, Bolig_Ejendomsmægler_Id = @bEId, Bolig_Afdelings_Navn = @bANavn, Salgsstatus = @SalgStatus, Bolig_Kunde_Id_Køber = @bKundeIdKøb WHERE Bolig_Id = @bId)";
+            string command = "UPDATE Bolig SET Adresse = @adr, Postnummer = @postNr, Type = @type, Udbudspris = @uPris, Størrelse = @str, Bolig_Kunde_Id = @bKid, Bolig_Ejendomsmægler_Id = @bEId, Bolig_Afdelings_Navn = @bANavn, Salgsstatus = @SalgStatus, Bolig_Kunde_Id_Køber = @bKundeIdKøb, Handels_Dato = @hDato WHERE Bolig_Id = @bId)";
             SqlConnection conn = new SqlConnection(connStrings);
             SqlCommand cmd = new SqlCommand(command, conn);
 
@@ -144,6 +147,7 @@ namespace _1.SemesterProjekt.DataAccess
             cmd.Parameters.AddWithValue("@bANavn", bolig.Bolig_Afdelings_Navn);
             cmd.Parameters.AddWithValue("@SalgStatus", bolig.Salgsstatus);
             cmd.Parameters.AddWithValue("@bKundeIdKøb", bolig.Bolig_Kunde_Id_Køber);
+            cmd.Parameters.AddWithValue("@hDato", bolig.Handels_Dato);
             int rows = 0;
             try
             {
