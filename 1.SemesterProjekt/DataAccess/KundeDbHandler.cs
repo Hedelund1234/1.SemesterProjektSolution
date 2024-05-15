@@ -32,7 +32,7 @@ namespace _1.SemesterProjekt.DataAccess
                     kunde = new Kunde { Kunde_Id = kunde_id, Navn = navn, Email = email, Telefon_Nr = telefon_nr, Kunde_Type = kunde_type };
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
             }
@@ -66,7 +66,7 @@ namespace _1.SemesterProjekt.DataAccess
                     kl.Add(kunde);
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
             }
@@ -93,7 +93,7 @@ namespace _1.SemesterProjekt.DataAccess
                 conn.Open();
                 rows = cmd.ExecuteNonQuery();
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
             }
@@ -124,7 +124,7 @@ namespace _1.SemesterProjekt.DataAccess
                 conn.Open();
                 rows = cmd.ExecuteNonQuery();
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
             }

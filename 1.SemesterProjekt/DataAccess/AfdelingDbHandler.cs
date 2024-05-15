@@ -29,7 +29,7 @@ namespace _1.SemesterProjekt.DataAccess
                     afdeling = new Afdeling { Afdelings_Nr = afdelingsNr, Afdelings_Navn = afdelingsNavn };
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
             }
@@ -58,7 +58,7 @@ namespace _1.SemesterProjekt.DataAccess
                     afdeling = new Afdeling { Afdelings_Nr = afdelingsNr, Afdelings_Navn = afdelingsNavn }; al.Add(afdeling);
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
             }

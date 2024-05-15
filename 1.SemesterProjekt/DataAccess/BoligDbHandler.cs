@@ -42,7 +42,7 @@ namespace _1.SemesterProjekt.DataAccess
                     bolig = new Bolig { Bolig_Id = boligId, Adresse = adresse, Postnummer = postnummer, Type = type, Udbudspris = udbudspris, Størrelse = størrelse, Bolig_Kunde_Id = boligKundeId, Bolig_Ejendomsmægler_Id = boligEjendomsmæglerId, Bolig_Afdelings_Navn = boligAfdelingsNavn, Salgsstatus = salgsstatus, Bolig_Kunde_Id_Køber = boligKundeIdKøber, Handels_Dato = handelsDato };
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
             }
@@ -82,7 +82,7 @@ namespace _1.SemesterProjekt.DataAccess
                     bl.Add(bolig);
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
             }
@@ -116,7 +116,7 @@ namespace _1.SemesterProjekt.DataAccess
                 conn.Open();
                 rows = cmd.ExecuteNonQuery();
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
             }
@@ -154,7 +154,7 @@ namespace _1.SemesterProjekt.DataAccess
                 conn.Open();
                 rows = cmd.ExecuteNonQuery();
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
             }

@@ -32,7 +32,7 @@ namespace _1.SemesterProjekt.DataAccess
                     ejendomsmægler = new Ejendomsmægler { Id = _id, Navn = navn, Email = email, Telefon_Nr = telefonNr, Ejendomsmægler_Afdeling_Nr = ejendomsmæglerAfdelingNr };
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
             }
@@ -65,7 +65,7 @@ namespace _1.SemesterProjekt.DataAccess
                     el.Add(ejendomsmægler);
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
             }
