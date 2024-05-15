@@ -13,6 +13,6 @@
         public string Bolig_Afdelings_Navn { get; set; }
         public string Salgsstatus { get; set; }
         public int Bolig_Kunde_Id_Køber { get; set; }
-        public int Handels_Dato { get; set; }
+        public DateTime Handels_Dato { get; set; }
     }
 }

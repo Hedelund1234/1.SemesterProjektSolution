@@ -38,7 +38,7 @@ namespace _1.SemesterProjekt.DataAccess
                     string boligAfdelingsNavn = (string)reader["Bolig_Afdelings_Navn"];
                     string salgsstatus = (string)reader["Salgsstatus"];
                     int boligKundeIdKøber = (int)reader["Bolig_Kunde_Id_Køber"];
-                    int handelsDato = (int)reader["Handels_Dato"];
+                    DateTime handelsDato = (DateTime)reader["Handels_Dato"];
                     bolig = new Bolig { Bolig_Id = boligId, Adresse = adresse, Postnummer = postnummer, Type = type, Udbudspris = udbudspris, Størrelse = størrelse, Bolig_Kunde_Id = boligKundeId, Bolig_Ejendomsmægler_Id = boligEjendomsmæglerId, Bolig_Afdelings_Navn = boligAfdelingsNavn, Salgsstatus = salgsstatus, Bolig_Kunde_Id_Køber = boligKundeIdKøber, Handels_Dato = handelsDato };
                 }
             }
@@ -77,7 +77,7 @@ namespace _1.SemesterProjekt.DataAccess
                     string boligAfdelingsNavn = (string)reader["Bolig_Afdelings_Navn"];
                     string salgsstatus = (string)reader["Salgsstatus"];
                     int boligKundeIdKøber = (int)reader["Bolig_Kunde_Id_Køber"];
-                    int handelsDato = (int)reader["Handels_Dato"];
+                    DateTime handelsDato = (DateTime)reader["Handels_Dato"];
                     bolig = new Bolig { Bolig_Id = boligId, Adresse = adresse, Postnummer = postnummer, Type = type, Udbudspris = udbudspris, Størrelse = størrelse, Bolig_Kunde_Id = boligKundeId, Bolig_Ejendomsmægler_Id = boligEjendomsmæglerId, Bolig_Afdelings_Navn = boligAfdelingsNavn, Salgsstatus = salgsstatus, Bolig_Kunde_Id_Køber = boligKundeIdKøber, Handels_Dato = handelsDato };
                     bl.Add(bolig);
                 }
