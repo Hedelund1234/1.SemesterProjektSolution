@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button5 = new Button();
-            button4 = new Button();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
+            btnAfdeling = new Button();
+            btnEjendomsmægler = new Button();
+            btnKunde = new Button();
+            btnBolig = new Button();
             panel1 = new Panel();
+            btnLogo = new Button();
             comboBox2 = new ComboBox();
             label3 = new Label();
             textBox3 = new TextBox();
@@ -52,67 +52,60 @@
             comboBox1 = new ComboBox();
             label1 = new Label();
             button8 = new Button();
-            søg = new Button();
-            button6 = new Button();
-            button7 = new Button();
+            btnSøg = new Button();
+            btnOpret = new Button();
+            btnExit = new Button();
             panel2 = new Panel();
-            dataGridView1 = new DataGridView();
+            dgvBolig = new DataGridView();
+            button9 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)trackBar2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)trackBar1).BeginInit();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvBolig).BeginInit();
             SuspendLayout();
             // 
-            // button5
+            // btnAfdeling
             // 
-            button5.Location = new Point(1139, 83);
-            button5.Name = "button5";
-            button5.Size = new Size(160, 80);
-            button5.TabIndex = 1;
-            button5.Text = "Afdeling";
-            button5.UseVisualStyleBackColor = true;
+            btnAfdeling.Location = new Point(1139, 83);
+            btnAfdeling.Name = "btnAfdeling";
+            btnAfdeling.Size = new Size(160, 80);
+            btnAfdeling.TabIndex = 1;
+            btnAfdeling.Text = "Afdeling";
+            btnAfdeling.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnEjendomsmægler
             // 
-            button4.Location = new Point(899, 83);
-            button4.Name = "button4";
-            button4.Size = new Size(160, 80);
-            button4.TabIndex = 2;
-            button4.Text = "Ejendomsmægler";
-            button4.UseVisualStyleBackColor = true;
+            btnEjendomsmægler.Location = new Point(899, 83);
+            btnEjendomsmægler.Name = "btnEjendomsmægler";
+            btnEjendomsmægler.Size = new Size(160, 80);
+            btnEjendomsmægler.TabIndex = 2;
+            btnEjendomsmægler.Text = "Ejendomsmægler";
+            btnEjendomsmægler.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnKunde
             // 
-            button3.Location = new Point(660, 83);
-            button3.Name = "button3";
-            button3.Size = new Size(160, 80);
-            button3.TabIndex = 3;
-            button3.Text = "Kunde";
-            button3.UseVisualStyleBackColor = true;
+            btnKunde.Location = new Point(660, 83);
+            btnKunde.Name = "btnKunde";
+            btnKunde.Size = new Size(160, 80);
+            btnKunde.TabIndex = 3;
+            btnKunde.Text = "Kunde";
+            btnKunde.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnBolig
             // 
-            button2.BackColor = Color.FromArgb(224, 224, 224);
-            button2.Location = new Point(423, 83);
-            button2.Name = "button2";
-            button2.Size = new Size(160, 80);
-            button2.TabIndex = 4;
-            button2.Text = "Bolig";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(60, 72);
-            button1.Name = "button1";
-            button1.Size = new Size(182, 91);
-            button1.TabIndex = 5;
-            button1.Text = "LOGO";
-            button1.UseVisualStyleBackColor = true;
+            btnBolig.BackColor = Color.FromArgb(224, 224, 224);
+            btnBolig.Location = new Point(423, 83);
+            btnBolig.Name = "btnBolig";
+            btnBolig.Size = new Size(160, 80);
+            btnBolig.TabIndex = 4;
+            btnBolig.Text = "Bolig";
+            btnBolig.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
             panel1.BackColor = Color.Silver;
+            panel1.Controls.Add(btnLogo);
             panel1.Controls.Add(comboBox2);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(textBox3);
@@ -131,13 +124,26 @@
             panel1.Controls.Add(comboBox1);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(button8);
-            panel1.Controls.Add(søg);
-            panel1.Controls.Add(button6);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(btnSøg);
+            panel1.Controls.Add(btnOpret);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(331, 900);
             panel1.TabIndex = 6;
+            // 
+            // btnLogo
+            // 
+            btnLogo.BackColor = Color.Silver;
+            btnLogo.BackgroundImage = Properties.Resources.edcLogo3;
+            btnLogo.FlatAppearance.BorderColor = Color.Silver;
+            btnLogo.FlatAppearance.MouseDownBackColor = Color.Silver;
+            btnLogo.FlatAppearance.MouseOverBackColor = Color.Silver;
+            btnLogo.FlatStyle = FlatStyle.Flat;
+            btnLogo.Location = new Point(103, 54);
+            btnLogo.Name = "btnLogo";
+            btnLogo.Size = new Size(120, 120);
+            btnLogo.TabIndex = 13;
+            btnLogo.UseVisualStyleBackColor = false;
             // 
             // comboBox2
             // 
@@ -287,70 +293,80 @@
             // 
             button8.Location = new Point(56, 762);
             button8.Name = "button8";
-            button8.Size = new Size(221, 40);
+            button8.Size = new Size(221, 38);
             button8.TabIndex = 0;
             button8.Text = "Gem .CSV fil";
             button8.UseVisualStyleBackColor = true;
             // 
-            // søg
+            // btnSøg
             // 
-            søg.Location = new Point(56, 829);
-            søg.Name = "søg";
-            søg.Size = new Size(101, 38);
-            søg.TabIndex = 0;
-            søg.Text = "Søg";
-            søg.UseVisualStyleBackColor = true;
+            btnSøg.Location = new Point(56, 829);
+            btnSøg.Name = "btnSøg";
+            btnSøg.Size = new Size(101, 38);
+            btnSøg.TabIndex = 0;
+            btnSøg.Text = "Søg";
+            btnSøg.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnOpret
             // 
-            button6.Location = new Point(174, 829);
-            button6.Name = "button6";
-            button6.Size = new Size(103, 38);
-            button6.TabIndex = 0;
-            button6.Text = "Opret bolig";
-            button6.UseVisualStyleBackColor = true;
+            btnOpret.Location = new Point(174, 829);
+            btnOpret.Name = "btnOpret";
+            btnOpret.Size = new Size(103, 38);
+            btnOpret.TabIndex = 0;
+            btnOpret.Text = "Opret bolig";
+            btnOpret.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // btnExit
             // 
-            button7.BackColor = Color.Gray;
-            button7.FlatAppearance.BorderColor = Color.Gray;
-            button7.FlatStyle = FlatStyle.Flat;
-            button7.Location = new Point(1343, 4);
-            button7.Name = "button7";
-            button7.Size = new Size(48, 34);
-            button7.TabIndex = 3;
-            button7.Text = "X";
-            button7.UseVisualStyleBackColor = false;
+            btnExit.BackColor = Color.Gray;
+            btnExit.FlatAppearance.BorderColor = Color.Gray;
+            btnExit.FlatStyle = FlatStyle.Flat;
+            btnExit.Location = new Point(1343, 4);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(48, 34);
+            btnExit.TabIndex = 3;
+            btnExit.Text = "X";
+            btnExit.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
             panel2.BackColor = Color.Gray;
-            panel2.Controls.Add(button7);
+            panel2.Controls.Add(btnExit);
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
             panel2.Size = new Size(1400, 45);
             panel2.TabIndex = 7;
             // 
-            // dataGridView1
+            // dgvBolig
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(423, 205);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(876, 662);
-            dataGridView1.TabIndex = 8;
+            dgvBolig.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvBolig.Location = new Point(423, 205);
+            dgvBolig.Name = "dgvBolig";
+            dgvBolig.RowHeadersWidth = 62;
+            dgvBolig.Size = new Size(876, 662);
+            dgvBolig.TabIndex = 8;
+            // 
+            // button9
+            // 
+            button9.Location = new Point(423, 850);
+            button9.Name = "button9";
+            button9.Size = new Size(560, 174);
+            button9.TabIndex = 9;
+            button9.Text = "Hvad med antal værelser???";
+            button9.UseVisualStyleBackColor = true;
             // 
             // BoligForms
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1400, 900);
-            Controls.Add(dataGridView1);
+            Controls.Add(button9);
+            Controls.Add(dgvBolig);
             Controls.Add(panel2);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
+            Controls.Add(btnAfdeling);
+            Controls.Add(btnEjendomsmægler);
+            Controls.Add(btnKunde);
+            Controls.Add(btnBolig);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "BoligForms";
@@ -361,20 +377,19 @@
             ((System.ComponentModel.ISupportInitialize)trackBar2).EndInit();
             ((System.ComponentModel.ISupportInitialize)trackBar1).EndInit();
             panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvBolig).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Button button5;
-        private Button button4;
-        private Button button3;
-        private Button button2;
-        private Button button1;
+        private Button btnAfdeling;
+        private Button btnEjendomsmægler;
+        private Button btnKunde;
+        private Button btnBolig;
         private Panel panel1;
-        private Button søg;
-        private Button button6;
+        private Button btnSøg;
+        private Button btnOpret;
         private TextBox textBox1;
         private TrackBar trackBar1;
         private CheckBox checkBox1;
@@ -393,8 +408,10 @@
         private Label label8;
         private Label label7;
         private Button button8;
-        private Button button7;
+        private Button btnExit;
         private Panel panel2;
-        private DataGridView dataGridView1;
+        private DataGridView dgvBolig;
+        private Button btnLogo;
+        private Button button9;
     }
 }
