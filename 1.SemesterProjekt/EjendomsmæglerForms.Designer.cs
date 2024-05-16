@@ -32,6 +32,10 @@
             panel2 = new Panel();
             btnExit = new Button();
             panel1 = new Panel();
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
+            button4 = new Button();
             btnOpret = new Button();
             comboBox1 = new ComboBox();
             btnSøg = new Button();
@@ -45,10 +49,6 @@
             label2 = new Label();
             textBox1 = new TextBox();
             btnLogo = new Button();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
             dgvBolig = new DataGridView();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
@@ -88,13 +88,59 @@
             panel1.Size = new Size(330, 900);
             panel1.TabIndex = 18;
             // 
+            // button1
+            // 
+            button1.BackColor = Color.White;
+            button1.BackgroundImage = Properties.Resources.Bolig;
+            button1.BackgroundImageLayout = ImageLayout.None;
+            button1.Location = new Point(36, 205);
+            button1.Name = "button1";
+            button1.Size = new Size(242, 71);
+            button1.TabIndex = 30;
+            button1.Text = "Bolig      ";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(224, 224, 224);
+            button2.BackgroundImage = Properties.Resources.Ejendomsmægler;
+            button2.BackgroundImageLayout = ImageLayout.None;
+            button2.Location = new Point(36, 447);
+            button2.Name = "button2";
+            button2.Size = new Size(242, 71);
+            button2.TabIndex = 28;
+            button2.Text = "               Ejendomsmægler";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
+            button3.BackgroundImageLayout = ImageLayout.None;
+            button3.Location = new Point(36, 571);
+            button3.Name = "button3";
+            button3.Size = new Size(242, 71);
+            button3.TabIndex = 27;
+            button3.Text = "Afdeling";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            button4.BackgroundImage = Properties.Resources.Kunde;
+            button4.BackgroundImageLayout = ImageLayout.None;
+            button4.Location = new Point(36, 327);
+            button4.Name = "button4";
+            button4.Size = new Size(242, 71);
+            button4.TabIndex = 29;
+            button4.Text = "Kunde   ";
+            button4.UseVisualStyleBackColor = true;
+            // 
             // btnOpret
             // 
-            btnOpret.Location = new Point(500, 850);
+            btnOpret.Location = new Point(468, 850);
             btnOpret.Name = "btnOpret";
-            btnOpret.Size = new Size(103, 38);
+            btnOpret.Size = new Size(128, 38);
             btnOpret.TabIndex = 25;
-            btnOpret.Text = "Opret bolig";
+            btnOpret.Text = "Gå til opret";
             btnOpret.UseVisualStyleBackColor = true;
             // 
             // comboBox1
@@ -109,7 +155,7 @@
             // 
             btnSøg.Location = new Point(336, 850);
             btnSøg.Name = "btnSøg";
-            btnSøg.Size = new Size(101, 38);
+            btnSøg.Size = new Size(128, 38);
             btnSøg.TabIndex = 26;
             btnSøg.Text = "Søg";
             btnSøg.UseVisualStyleBackColor = true;
@@ -200,52 +246,6 @@
             btnLogo.Size = new Size(120, 120);
             btnLogo.TabIndex = 20;
             btnLogo.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.White;
-            button1.BackgroundImage = Properties.Resources.Bolig;
-            button1.BackgroundImageLayout = ImageLayout.None;
-            button1.Location = new Point(36, 205);
-            button1.Name = "button1";
-            button1.Size = new Size(242, 71);
-            button1.TabIndex = 30;
-            button1.Text = "Bolig      ";
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.FromArgb(224, 224, 224);
-            button2.BackgroundImage = Properties.Resources.Ejendomsmægler;
-            button2.BackgroundImageLayout = ImageLayout.None;
-            button2.Location = new Point(36, 447);
-            button2.Name = "button2";
-            button2.Size = new Size(242, 71);
-            button2.TabIndex = 28;
-            button2.Text = "               Ejendomsmægler";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
-            button3.BackgroundImageLayout = ImageLayout.None;
-            button3.Location = new Point(36, 571);
-            button3.Name = "button3";
-            button3.Size = new Size(242, 71);
-            button3.TabIndex = 27;
-            button3.Text = "Afdeling";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            button4.BackgroundImage = Properties.Resources.Kunde;
-            button4.BackgroundImageLayout = ImageLayout.None;
-            button4.Location = new Point(36, 327);
-            button4.Name = "button4";
-            button4.Size = new Size(242, 71);
-            button4.TabIndex = 29;
-            button4.Text = "Kunde   ";
-            button4.UseVisualStyleBackColor = true;
             // 
             // dgvBolig
             // 

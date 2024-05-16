@@ -33,10 +33,8 @@
             comboBox1 = new ComboBox();
             btnTilbage = new Button();
             label3 = new Label();
-            label1 = new Label();
             btnLogo = new Button();
             textBox2 = new TextBox();
-            textBox4 = new TextBox();
             textBox5 = new TextBox();
             label5 = new Label();
             textBox1 = new TextBox();
@@ -49,10 +47,9 @@
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
-            dgvBolig = new DataGridView();
+            label9 = new Label();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvBolig).BeginInit();
             SuspendLayout();
             // 
             // btnOpret
@@ -67,7 +64,7 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(336, 335);
+            comboBox1.Location = new Point(336, 599);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(267, 33);
             comboBox1.TabIndex = 52;
@@ -84,20 +81,11 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(336, 119);
+            label3.Location = new Point(336, 205);
             label3.Name = "label3";
             label3.Size = new Size(53, 25);
             label3.TabIndex = 51;
             label3.Text = "Navn";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(336, 55);
-            label1.Name = "label1";
-            label1.Size = new Size(171, 25);
-            label1.TabIndex = 42;
-            label1.Text = "Ejendomsmægler id";
             // 
             // btnLogo
             // 
@@ -115,21 +103,14 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(336, 273);
+            textBox2.Location = new Point(336, 475);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(267, 31);
             textBox2.TabIndex = 47;
             // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(336, 83);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(267, 31);
-            textBox4.TabIndex = 48;
-            // 
             // textBox5
             // 
-            textBox5.Location = new Point(336, 147);
+            textBox5.Location = new Point(336, 233);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(267, 31);
             textBox5.TabIndex = 49;
@@ -137,7 +118,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(336, 245);
+            label5.Location = new Point(336, 447);
             label5.Name = "label5";
             label5.Size = new Size(54, 25);
             label5.TabIndex = 41;
@@ -145,7 +126,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(336, 211);
+            textBox1.Location = new Point(336, 355);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(267, 31);
             textBox1.TabIndex = 50;
@@ -153,7 +134,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(336, 307);
+            label4.Location = new Point(336, 571);
             label4.Name = "label4";
             label4.Size = new Size(79, 25);
             label4.TabIndex = 44;
@@ -162,7 +143,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(336, 183);
+            label2.Location = new Point(336, 327);
             label2.Name = "label2";
             label2.Size = new Size(135, 25);
             label2.TabIndex = 43;
@@ -247,30 +228,29 @@
             button4.Text = "Kunde   ";
             button4.UseVisualStyleBackColor = true;
             // 
-            // dgvBolig
+            // label9
             // 
-            dgvBolig.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvBolig.Location = new Point(609, 79);
-            dgvBolig.Name = "dgvBolig";
-            dgvBolig.RowHeadersWidth = 62;
-            dgvBolig.Size = new Size(779, 809);
-            dgvBolig.TabIndex = 60;
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 18F);
+            label9.Location = new Point(749, 48);
+            label9.Name = "label9";
+            label9.Size = new Size(513, 48);
+            label9.TabIndex = 63;
+            label9.Text = "Oprettelse af ejendomsmægler";
             // 
             // OpretEjendomsmæglerForms
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1400, 900);
-            Controls.Add(dgvBolig);
+            Controls.Add(label9);
             Controls.Add(btnOpret);
             Controls.Add(comboBox1);
             Controls.Add(btnLogo);
             Controls.Add(btnTilbage);
             Controls.Add(label3);
-            Controls.Add(label1);
             Controls.Add(textBox2);
             Controls.Add(label4);
-            Controls.Add(textBox4);
             Controls.Add(panel2);
             Controls.Add(textBox5);
             Controls.Add(panel1);
@@ -283,7 +263,6 @@
             Text = "OpretEjendomsmæglerForms";
             panel2.ResumeLayout(false);
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvBolig).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -294,10 +273,8 @@
         private ComboBox comboBox1;
         private Button btnTilbage;
         private Label label3;
-        private Label label1;
         private Button btnLogo;
         private TextBox textBox2;
-        private TextBox textBox4;
         private TextBox textBox5;
         private Label label5;
         private TextBox textBox1;
@@ -310,6 +287,6 @@
         private Button button2;
         private Button button3;
         private Button button4;
-        private DataGridView dgvBolig;
+        private Label label9;
     }
 }

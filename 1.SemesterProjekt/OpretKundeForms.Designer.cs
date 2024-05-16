@@ -37,6 +37,10 @@
             textBox5 = new TextBox();
             label5 = new Label();
             panel1 = new Panel();
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
+            button4 = new Button();
             btnLogo = new Button();
             label1 = new Label();
             checkBox2 = new CheckBox();
@@ -44,20 +48,14 @@
             label4 = new Label();
             panel2 = new Panel();
             btnExit = new Button();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            dgvBolig = new DataGridView();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvBolig).BeginInit();
             SuspendLayout();
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(336, 112);
+            label3.Location = new Point(335, 327);
             label3.Name = "label3";
             label3.Size = new Size(54, 25);
             label3.TabIndex = 40;
@@ -83,21 +81,21 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(336, 202);
+            textBox2.Location = new Point(335, 475);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(267, 31);
             textBox2.TabIndex = 37;
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(336, 76);
+            textBox4.Location = new Point(336, 233);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(267, 31);
             textBox4.TabIndex = 37;
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(336, 140);
+            textBox5.Location = new Point(335, 355);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(267, 31);
             textBox5.TabIndex = 37;
@@ -105,7 +103,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(336, 174);
+            label5.Location = new Point(335, 447);
             label5.Name = "label5";
             label5.Size = new Size(135, 25);
             label5.TabIndex = 25;
@@ -123,79 +121,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(330, 900);
             panel1.TabIndex = 26;
-            // 
-            // btnLogo
-            // 
-            btnLogo.BackColor = Color.Silver;
-            btnLogo.BackgroundImage = Properties.Resources.edcLogo3;
-            btnLogo.FlatAppearance.BorderColor = Color.Silver;
-            btnLogo.FlatAppearance.MouseDownBackColor = Color.Silver;
-            btnLogo.FlatAppearance.MouseOverBackColor = Color.Silver;
-            btnLogo.FlatStyle = FlatStyle.Flat;
-            btnLogo.Location = new Point(36, 43);
-            btnLogo.Name = "btnLogo";
-            btnLogo.Size = new Size(120, 120);
-            btnLogo.TabIndex = 30;
-            btnLogo.UseVisualStyleBackColor = false;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(336, 48);
-            label1.Name = "label1";
-            label1.Size = new Size(53, 25);
-            label1.TabIndex = 25;
-            label1.Text = "Navn";
-            // 
-            // checkBox2
-            // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(426, 264);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(93, 29);
-            checkBox2.TabIndex = 33;
-            checkBox2.Text = "Sælger";
-            checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(340, 264);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(85, 29);
-            checkBox1.TabIndex = 34;
-            checkBox1.Text = "Køber";
-            checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(336, 236);
-            label4.Name = "label4";
-            label4.Size = new Size(102, 25);
-            label4.TabIndex = 29;
-            label4.Text = "Kunde type";
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.Silver;
-            panel2.Controls.Add(btnExit);
-            panel2.Location = new Point(0, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1400, 45);
-            panel2.TabIndex = 30;
-            // 
-            // btnExit
-            // 
-            btnExit.BackColor = Color.Silver;
-            btnExit.FlatAppearance.BorderColor = Color.Silver;
-            btnExit.FlatStyle = FlatStyle.Flat;
-            btnExit.Location = new Point(1344, 4);
-            btnExit.Name = "btnExit";
-            btnExit.Size = new Size(48, 34);
-            btnExit.TabIndex = 3;
-            btnExit.Text = "X";
-            btnExit.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
@@ -244,21 +169,84 @@
             button4.Text = "Kunde   ";
             button4.UseVisualStyleBackColor = false;
             // 
-            // dgvBolig
+            // btnLogo
             // 
-            dgvBolig.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvBolig.Location = new Point(609, 79);
-            dgvBolig.Name = "dgvBolig";
-            dgvBolig.RowHeadersWidth = 62;
-            dgvBolig.Size = new Size(779, 809);
-            dgvBolig.TabIndex = 61;
+            btnLogo.BackColor = Color.Silver;
+            btnLogo.BackgroundImage = Properties.Resources.edcLogo3;
+            btnLogo.FlatAppearance.BorderColor = Color.Silver;
+            btnLogo.FlatAppearance.MouseDownBackColor = Color.Silver;
+            btnLogo.FlatAppearance.MouseOverBackColor = Color.Silver;
+            btnLogo.FlatStyle = FlatStyle.Flat;
+            btnLogo.Location = new Point(36, 43);
+            btnLogo.Name = "btnLogo";
+            btnLogo.Size = new Size(120, 120);
+            btnLogo.TabIndex = 30;
+            btnLogo.UseVisualStyleBackColor = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(336, 205);
+            label1.Name = "label1";
+            label1.Size = new Size(53, 25);
+            label1.TabIndex = 25;
+            label1.Text = "Navn";
+            // 
+            // checkBox2
+            // 
+            checkBox2.AutoSize = true;
+            checkBox2.Location = new Point(425, 599);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(93, 29);
+            checkBox2.TabIndex = 33;
+            checkBox2.Text = "Sælger";
+            checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(339, 599);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(85, 29);
+            checkBox1.TabIndex = 34;
+            checkBox1.Text = "Køber";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(335, 571);
+            label4.Name = "label4";
+            label4.Size = new Size(102, 25);
+            label4.TabIndex = 29;
+            label4.Text = "Kunde type";
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.Silver;
+            panel2.Controls.Add(btnExit);
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1400, 45);
+            panel2.TabIndex = 30;
+            // 
+            // btnExit
+            // 
+            btnExit.BackColor = Color.Silver;
+            btnExit.FlatAppearance.BorderColor = Color.Silver;
+            btnExit.FlatStyle = FlatStyle.Flat;
+            btnExit.Location = new Point(1344, 4);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(48, 34);
+            btnExit.TabIndex = 3;
+            btnExit.Text = "X";
+            btnExit.UseVisualStyleBackColor = false;
             // 
             // OpretKundeForms
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1400, 900);
-            Controls.Add(dgvBolig);
             Controls.Add(panel2);
             Controls.Add(label3);
             Controls.Add(btnOpret);
@@ -278,7 +266,6 @@
             Text = "OpretKundeForms";
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvBolig).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -304,6 +291,5 @@
         private Button button2;
         private Button button3;
         private Button button4;
-        private DataGridView dgvBolig;
     }
 }
