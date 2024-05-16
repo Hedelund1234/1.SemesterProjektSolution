@@ -121,10 +121,25 @@
   <data name="edcLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edcLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="edcLogo3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edcLogo3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="edcLogo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edcLogo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="edcLogo3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\edcLogo3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="3643769-building-home-house-main-menu-start_113416" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3643769-building-home-house-main-menu-start_113416.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Kunde" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Kunde.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Afdeling" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Afdeling.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bolig" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bolig.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ejendomsmægler" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ejendomsmægler.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

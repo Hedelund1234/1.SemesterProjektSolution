@@ -28,21 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Forside));
             panel2 = new Panel();
             btnExit = new Button();
-            btnAfdeling = new Button();
-            btnEjendomsmægler = new Button();
-            btnKunde = new Button();
-            btnBolig = new Button();
             panel1 = new Panel();
             btnLogo = new Button();
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
+            button4 = new Button();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel2
             // 
-            panel2.BackColor = Color.Gray;
+            panel2.BackColor = Color.Silver;
             panel2.Controls.Add(btnExit);
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
@@ -51,8 +52,8 @@
             // 
             // btnExit
             // 
-            btnExit.BackColor = Color.Gray;
-            btnExit.FlatAppearance.BorderColor = Color.Gray;
+            btnExit.BackColor = Color.Silver;
+            btnExit.FlatAppearance.BorderColor = Color.Silver;
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.Location = new Point(1344, 4);
             btnExit.Name = "btnExit";
@@ -61,51 +62,17 @@
             btnExit.Text = "X";
             btnExit.UseVisualStyleBackColor = false;
             // 
-            // btnAfdeling
-            // 
-            btnAfdeling.BackColor = Color.White;
-            btnAfdeling.Location = new Point(1139, 83);
-            btnAfdeling.Name = "btnAfdeling";
-            btnAfdeling.Size = new Size(160, 80);
-            btnAfdeling.TabIndex = 14;
-            btnAfdeling.Text = "Afdeling";
-            btnAfdeling.UseVisualStyleBackColor = false;
-            // 
-            // btnEjendomsmægler
-            // 
-            btnEjendomsmægler.Location = new Point(899, 83);
-            btnEjendomsmægler.Name = "btnEjendomsmægler";
-            btnEjendomsmægler.Size = new Size(160, 80);
-            btnEjendomsmægler.TabIndex = 15;
-            btnEjendomsmægler.Text = "Ejendomsmægler";
-            btnEjendomsmægler.UseVisualStyleBackColor = true;
-            // 
-            // btnKunde
-            // 
-            btnKunde.Location = new Point(660, 83);
-            btnKunde.Name = "btnKunde";
-            btnKunde.Size = new Size(160, 80);
-            btnKunde.TabIndex = 16;
-            btnKunde.Text = "Kunde";
-            btnKunde.UseVisualStyleBackColor = true;
-            // 
-            // btnBolig
-            // 
-            btnBolig.BackColor = Color.White;
-            btnBolig.Location = new Point(423, 83);
-            btnBolig.Name = "btnBolig";
-            btnBolig.Size = new Size(160, 80);
-            btnBolig.TabIndex = 17;
-            btnBolig.Text = "Bolig";
-            btnBolig.UseVisualStyleBackColor = false;
-            // 
             // panel1
             // 
             panel1.BackColor = Color.Silver;
+            panel1.Controls.Add(button1);
+            panel1.Controls.Add(button2);
+            panel1.Controls.Add(button3);
+            panel1.Controls.Add(button4);
             panel1.Controls.Add(btnLogo);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(331, 900);
+            panel1.Size = new Size(330, 900);
             panel1.TabIndex = 18;
             // 
             // btnLogo
@@ -116,11 +83,57 @@
             btnLogo.FlatAppearance.MouseDownBackColor = Color.Silver;
             btnLogo.FlatAppearance.MouseOverBackColor = Color.Silver;
             btnLogo.FlatStyle = FlatStyle.Flat;
-            btnLogo.Location = new Point(103, 54);
+            btnLogo.Location = new Point(36, 43);
             btnLogo.Name = "btnLogo";
             btnLogo.Size = new Size(120, 120);
             btnLogo.TabIndex = 14;
             btnLogo.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.White;
+            button1.BackgroundImage = Properties.Resources.Bolig;
+            button1.BackgroundImageLayout = ImageLayout.None;
+            button1.Location = new Point(36, 205);
+            button1.Name = "button1";
+            button1.Size = new Size(242, 71);
+            button1.TabIndex = 18;
+            button1.Text = "Bolig      ";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.White;
+            button2.BackgroundImage = Properties.Resources.Ejendomsmægler;
+            button2.BackgroundImageLayout = ImageLayout.None;
+            button2.Location = new Point(36, 447);
+            button2.Name = "button2";
+            button2.Size = new Size(242, 71);
+            button2.TabIndex = 16;
+            button2.Text = "               Ejendomsmægler";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
+            button3.BackgroundImageLayout = ImageLayout.None;
+            button3.Location = new Point(36, 571);
+            button3.Name = "button3";
+            button3.Size = new Size(242, 71);
+            button3.TabIndex = 15;
+            button3.Text = "Afdeling";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            button4.BackgroundImage = Properties.Resources.Kunde;
+            button4.BackgroundImageLayout = ImageLayout.None;
+            button4.Location = new Point(36, 327);
+            button4.Name = "button4";
+            button4.Size = new Size(242, 71);
+            button4.TabIndex = 17;
+            button4.Text = "Kunde   ";
+            button4.UseVisualStyleBackColor = true;
             // 
             // Forside
             // 
@@ -128,10 +141,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1400, 900);
             Controls.Add(panel2);
-            Controls.Add(btnAfdeling);
-            Controls.Add(btnEjendomsmægler);
-            Controls.Add(btnKunde);
-            Controls.Add(btnBolig);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Forside";
@@ -146,11 +155,11 @@
 
         private Panel panel2;
         private Button btnExit;
-        private Button btnAfdeling;
-        private Button btnEjendomsmægler;
-        private Button btnKunde;
-        private Button btnBolig;
         private Panel panel1;
         private Button btnLogo;
+        private Button button1;
+        private Button button2;
+        private Button button3;
+        private Button button4;
     }
 }

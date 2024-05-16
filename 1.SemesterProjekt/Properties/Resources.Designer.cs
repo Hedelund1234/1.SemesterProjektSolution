@@ -63,6 +63,36 @@ namespace _1.SemesterProjekt.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3643769_building_home_house_main_menu_start_113416 {
+            get {
+                object obj = ResourceManager.GetObject("3643769-building-home-house-main-menu-start_113416", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Afdeling {
+            get {
+                object obj = ResourceManager.GetObject("Afdeling", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Bolig {
+            get {
+                object obj = ResourceManager.GetObject("Bolig", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap edcLogo {
             get {
                 object obj = ResourceManager.GetObject("edcLogo", resourceCulture);
@@ -86,6 +116,26 @@ namespace _1.SemesterProjekt.Properties {
         internal static System.Drawing.Bitmap edcLogo3 {
             get {
                 object obj = ResourceManager.GetObject("edcLogo3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ejendomsmægler {
+            get {
+                object obj = ResourceManager.GetObject("Ejendomsmægler", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Kunde {
+            get {
+                object obj = ResourceManager.GetObject("Kunde", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
