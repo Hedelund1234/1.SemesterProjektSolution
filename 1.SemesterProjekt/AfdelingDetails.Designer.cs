@@ -50,9 +50,9 @@
             panel2.BackColor = Color.Silver;
             panel2.Controls.Add(btnExit);
             panel2.Location = new Point(0, 0);
-            panel2.Margin = new Padding(2, 2, 2, 2);
+            panel2.Margin = new Padding(2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1120, 36);
+            panel2.Size = new Size(1400, 36);
             panel2.TabIndex = 21;
             // 
             // btnExit
@@ -60,8 +60,8 @@
             btnExit.BackColor = Color.Silver;
             btnExit.FlatAppearance.BorderColor = Color.Silver;
             btnExit.FlatStyle = FlatStyle.Flat;
-            btnExit.Location = new Point(1075, 3);
-            btnExit.Margin = new Padding(2, 2, 2, 2);
+            btnExit.Location = new Point(1360, 4);
+            btnExit.Margin = new Padding(2);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(38, 27);
             btnExit.TabIndex = 3;
@@ -78,9 +78,9 @@
             panel1.Controls.Add(button4);
             panel1.Controls.Add(btnLogo);
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(2, 2, 2, 2);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(264, 720);
+            panel1.Size = new Size(264, 900);
             panel1.TabIndex = 20;
             // 
             // button1
@@ -89,9 +89,9 @@
             button1.BackgroundImage = Properties.Resources.Bolig;
             button1.BackgroundImageLayout = ImageLayout.None;
             button1.Location = new Point(29, 164);
-            button1.Margin = new Padding(2, 2, 2, 2);
+            button1.Margin = new Padding(2);
             button1.Name = "button1";
-            button1.Size = new Size(194, 57);
+            button1.Size = new Size(194, 73);
             button1.TabIndex = 18;
             button1.Text = "Bolig      ";
             button1.UseVisualStyleBackColor = false;
@@ -103,9 +103,9 @@
             button2.BackgroundImage = Properties.Resources.Ejendomsmægler;
             button2.BackgroundImageLayout = ImageLayout.None;
             button2.Location = new Point(29, 358);
-            button2.Margin = new Padding(2, 2, 2, 2);
+            button2.Margin = new Padding(2);
             button2.Name = "button2";
-            button2.Size = new Size(194, 57);
+            button2.Size = new Size(194, 73);
             button2.TabIndex = 16;
             button2.Text = "               Ejendomsmægler";
             button2.UseVisualStyleBackColor = false;
@@ -117,9 +117,9 @@
             button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
             button3.BackgroundImageLayout = ImageLayout.None;
             button3.Location = new Point(29, 457);
-            button3.Margin = new Padding(2, 2, 2, 2);
+            button3.Margin = new Padding(2);
             button3.Name = "button3";
-            button3.Size = new Size(194, 57);
+            button3.Size = new Size(194, 73);
             button3.TabIndex = 15;
             button3.Text = "Afdeling";
             button3.UseVisualStyleBackColor = false;
@@ -129,9 +129,9 @@
             button4.BackgroundImage = Properties.Resources.Kunde;
             button4.BackgroundImageLayout = ImageLayout.None;
             button4.Location = new Point(29, 262);
-            button4.Margin = new Padding(2, 2, 2, 2);
+            button4.Margin = new Padding(2);
             button4.Name = "button4";
-            button4.Size = new Size(194, 57);
+            button4.Size = new Size(194, 73);
             button4.TabIndex = 17;
             button4.Text = "Kunde   ";
             button4.UseVisualStyleBackColor = true;
@@ -147,7 +147,7 @@
             btnLogo.FlatAppearance.MouseOverBackColor = Color.Silver;
             btnLogo.FlatStyle = FlatStyle.Flat;
             btnLogo.Location = new Point(29, 34);
-            btnLogo.Margin = new Padding(2, 2, 2, 2);
+            btnLogo.Margin = new Padding(2);
             btnLogo.Name = "btnLogo";
             btnLogo.Size = new Size(96, 96);
             btnLogo.TabIndex = 14;
@@ -158,16 +158,16 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(364, 79);
-            dataGridView1.Margin = new Padding(2, 2, 2, 2);
+            dataGridView1.Margin = new Padding(2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(746, 631);
+            dataGridView1.Size = new Size(1025, 810);
             dataGridView1.TabIndex = 22;
             // 
             // button5
             // 
-            button5.Location = new Point(270, 683);
-            button5.Margin = new Padding(2, 2, 2, 2);
+            button5.Location = new Point(268, 862);
+            button5.Margin = new Padding(2);
             button5.Name = "button5";
             button5.Size = new Size(90, 27);
             button5.TabIndex = 32;
@@ -179,7 +179,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F);
-            label1.Location = new Point(599, 38);
+            label1.Location = new Point(775, 38);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(249, 41);
@@ -190,14 +190,14 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1120, 720);
+            ClientSize = new Size(1400, 900);
             Controls.Add(label1);
             Controls.Add(button5);
             Controls.Add(dataGridView1);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "AfdelingDetails";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AfdelingDetails";

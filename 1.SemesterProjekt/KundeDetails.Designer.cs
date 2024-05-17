@@ -60,9 +60,9 @@
             panel2.BackColor = Color.Silver;
             panel2.Controls.Add(btnExit);
             panel2.Location = new Point(0, 0);
-            panel2.Margin = new Padding(2, 2, 2, 2);
+            panel2.Margin = new Padding(2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1120, 36);
+            panel2.Size = new Size(1400, 36);
             panel2.TabIndex = 21;
             // 
             // btnExit
@@ -70,8 +70,8 @@
             btnExit.BackColor = Color.Silver;
             btnExit.FlatAppearance.BorderColor = Color.Silver;
             btnExit.FlatStyle = FlatStyle.Flat;
-            btnExit.Location = new Point(1075, 3);
-            btnExit.Margin = new Padding(2, 2, 2, 2);
+            btnExit.Location = new Point(1360, 4);
+            btnExit.Margin = new Padding(2);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(38, 27);
             btnExit.TabIndex = 3;
@@ -88,9 +88,9 @@
             panel1.Controls.Add(button4);
             panel1.Controls.Add(btnLogo);
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(2, 2, 2, 2);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(264, 720);
+            panel1.Size = new Size(264, 900);
             panel1.TabIndex = 20;
             // 
             // button1
@@ -99,9 +99,9 @@
             button1.BackgroundImage = Properties.Resources.Bolig;
             button1.BackgroundImageLayout = ImageLayout.None;
             button1.Location = new Point(29, 164);
-            button1.Margin = new Padding(2, 2, 2, 2);
+            button1.Margin = new Padding(2);
             button1.Name = "button1";
-            button1.Size = new Size(194, 57);
+            button1.Size = new Size(194, 73);
             button1.TabIndex = 18;
             button1.Text = "Bolig      ";
             button1.UseVisualStyleBackColor = false;
@@ -113,9 +113,9 @@
             button2.BackgroundImage = Properties.Resources.Ejendomsmægler;
             button2.BackgroundImageLayout = ImageLayout.None;
             button2.Location = new Point(29, 358);
-            button2.Margin = new Padding(2, 2, 2, 2);
+            button2.Margin = new Padding(2);
             button2.Name = "button2";
-            button2.Size = new Size(194, 57);
+            button2.Size = new Size(194, 73);
             button2.TabIndex = 16;
             button2.Text = "               Ejendomsmægler";
             button2.UseVisualStyleBackColor = false;
@@ -126,9 +126,9 @@
             button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
             button3.BackgroundImageLayout = ImageLayout.None;
             button3.Location = new Point(29, 457);
-            button3.Margin = new Padding(2, 2, 2, 2);
+            button3.Margin = new Padding(2);
             button3.Name = "button3";
-            button3.Size = new Size(194, 57);
+            button3.Size = new Size(194, 73);
             button3.TabIndex = 15;
             button3.Text = "Afdeling";
             button3.UseVisualStyleBackColor = true;
@@ -140,9 +140,9 @@
             button4.BackgroundImage = Properties.Resources.Kunde;
             button4.BackgroundImageLayout = ImageLayout.None;
             button4.Location = new Point(29, 262);
-            button4.Margin = new Padding(2, 2, 2, 2);
+            button4.Margin = new Padding(2);
             button4.Name = "button4";
-            button4.Size = new Size(194, 57);
+            button4.Size = new Size(194, 73);
             button4.TabIndex = 17;
             button4.Text = "Kunde   ";
             button4.UseVisualStyleBackColor = false;
@@ -157,7 +157,7 @@
             btnLogo.FlatAppearance.MouseOverBackColor = Color.Silver;
             btnLogo.FlatStyle = FlatStyle.Flat;
             btnLogo.Location = new Point(29, 34);
-            btnLogo.Margin = new Padding(2, 2, 2, 2);
+            btnLogo.Margin = new Padding(2);
             btnLogo.Name = "btnLogo";
             btnLogo.Size = new Size(96, 96);
             btnLogo.TabIndex = 14;
@@ -177,9 +177,9 @@
             // 
             // btnSletKunde
             // 
-            btnSletKunde.Location = new Point(573, 854);
+            btnSletKunde.Location = new Point(484, 862);
             btnSletKunde.Name = "btnSletKunde";
-            btnSletKunde.Size = new Size(112, 34);
+            btnSletKunde.Size = new Size(102, 30);
             btnSletKunde.TabIndex = 29;
             btnSletKunde.Text = "Slet";
             btnSletKunde.UseVisualStyleBackColor = true;
@@ -187,10 +187,10 @@
             // 
             // button6
             // 
-            button6.Location = new Point(364, 683);
-            button6.Margin = new Padding(2, 2, 2, 2);
+            button6.Location = new Point(377, 862);
+            button6.Margin = new Padding(2);
             button6.Name = "button6";
-            button6.Size = new Size(90, 27);
+            button6.Size = new Size(102, 30);
             button6.TabIndex = 30;
             button6.Text = "Opdater";
             button6.UseVisualStyleBackColor = true;
@@ -198,10 +198,10 @@
             // 
             // button5
             // 
-            button5.Location = new Point(270, 683);
-            button5.Margin = new Padding(2, 2, 2, 2);
+            button5.Location = new Point(271, 862);
+            button5.Margin = new Padding(2);
             button5.Name = "button5";
-            button5.Size = new Size(90, 27);
+            button5.Size = new Size(102, 30);
             button5.TabIndex = 31;
             button5.Text = "Tilbage";
             button5.UseVisualStyleBackColor = true;
@@ -220,9 +220,9 @@
             // txtBoxKundeId
             // 
             txtBoxKundeId.Enabled = false;
-            txtBoxKundeId.Location = new Point(337, 205);
+            txtBoxKundeId.Location = new Point(271, 165);
             txtBoxKundeId.Name = "txtBoxKundeId";
-            txtBoxKundeId.Size = new Size(230, 31);
+            txtBoxKundeId.Size = new Size(230, 27);
             txtBoxKundeId.TabIndex = 33;
             // 
             // label3
@@ -237,9 +237,9 @@
             // 
             // txtBoxKundeNavn
             // 
-            txtBoxKundeNavn.Location = new Point(340, 304);
+            txtBoxKundeNavn.Location = new Point(271, 244);
             txtBoxKundeNavn.Name = "txtBoxKundeNavn";
-            txtBoxKundeNavn.Size = new Size(230, 31);
+            txtBoxKundeNavn.Size = new Size(230, 27);
             txtBoxKundeNavn.TabIndex = 33;
             // 
             // label4
@@ -254,9 +254,9 @@
             // 
             // txtBoxKundeEmail
             // 
-            txtBoxKundeEmail.Location = new Point(340, 412);
+            txtBoxKundeEmail.Location = new Point(270, 330);
             txtBoxKundeEmail.Name = "txtBoxKundeEmail";
-            txtBoxKundeEmail.Size = new Size(230, 31);
+            txtBoxKundeEmail.Size = new Size(230, 27);
             txtBoxKundeEmail.TabIndex = 33;
             // 
             // label5
@@ -271,9 +271,9 @@
             // 
             // txtBoxKundeTelefonnummer
             // 
-            txtBoxKundeTelefonnummer.Location = new Point(337, 508);
+            txtBoxKundeTelefonnummer.Location = new Point(271, 407);
             txtBoxKundeTelefonnummer.Name = "txtBoxKundeTelefonnummer";
-            txtBoxKundeTelefonnummer.Size = new Size(230, 31);
+            txtBoxKundeTelefonnummer.Size = new Size(230, 27);
             txtBoxKundeTelefonnummer.TabIndex = 33;
             // 
             // label6
@@ -291,10 +291,10 @@
             comboBoxKundeType.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxKundeType.FormattingEnabled = true;
             comboBoxKundeType.Items.AddRange(new object[] { "", "Køber", "Sælger" });
-            comboBoxKundeType.Location = new Point(336, 609);
+            comboBoxKundeType.Location = new Point(271, 488);
             comboBoxKundeType.MaxDropDownItems = 3;
             comboBoxKundeType.Name = "comboBoxKundeType";
-            comboBoxKundeType.Size = new Size(231, 33);
+            comboBoxKundeType.Size = new Size(231, 28);
             comboBoxKundeType.TabIndex = 35;
             // 
             // KundeDetails
@@ -319,7 +319,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "KundeDetails";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "KundeDetaljer";
