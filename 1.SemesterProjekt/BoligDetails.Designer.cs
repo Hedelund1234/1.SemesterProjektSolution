@@ -411,14 +411,6 @@
             // 
             // btnTilbage
             // 
-            button5.Location = new Point(338, 854);
-            button5.Margin = new Padding(2);
-            button5.Name = "button5";
-            button5.Size = new Size(112, 34);
-            button5.TabIndex = 28;
-            button5.Text = "Tilbage";
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
             // 
             // button6
             // 

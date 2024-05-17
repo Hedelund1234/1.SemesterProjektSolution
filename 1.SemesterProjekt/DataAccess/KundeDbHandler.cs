@@ -9,7 +9,8 @@ namespace _1.SemesterProjekt.DataAccess
         string connStrings;
         public KundeDbHandler()
         {
-            connStrings = ConfigurationManager.ConnectionStrings["default"].ToString();
+            Class1 class1 = new Class1();
+            connStrings = class1.GetConnectionString();
         }
         internal Kunde Get(int id)
         {
