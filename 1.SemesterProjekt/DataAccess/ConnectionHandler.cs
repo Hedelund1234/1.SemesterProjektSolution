@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace _1.SemesterProjekt.DataAccess
 {
-    internal class Class1
+    internal class ConnectionHandler
     {
         internal string GetConnectionString()
         {
-            return ConfigurationManager.ConnectionStrings["default"].ToString();
+            return ConfigurationManager.ConnectionStrings["Hjalte"].ToString();
         }
     }
 }

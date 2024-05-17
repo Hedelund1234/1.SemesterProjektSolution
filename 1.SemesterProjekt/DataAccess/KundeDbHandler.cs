@@ -9,8 +9,8 @@ namespace _1.SemesterProjekt.DataAccess
         string connStrings;
         public KundeDbHandler()
         {
-            Class1 class1 = new Class1();
-            connStrings = class1.GetConnectionString();
+            ConnectionHandler connectionHandler = new ConnectionHandler();
+            connStrings = connectionHandler.GetConnectionString();
         }
         internal Kunde Get(int id)
         {
