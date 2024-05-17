@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BoligForms));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnBolig = new Button();
             btnEjendomsmægler = new Button();
@@ -65,9 +65,9 @@
             dgvBolig = new DataGridView();
             panel3 = new Panel();
             lblMinpris = new Label();
+            lblMaxpris = new Label();
             panel4 = new Panel();
             lblMinM2 = new Label();
-            lblMaxpris = new Label();
             lblMaxM2 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -273,9 +273,9 @@
             label5.Location = new Point(52, 63);
             label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(62, 20);
+            label5.Size = new Size(65, 20);
             label5.TabIndex = 45;
-            label5.Text = "Min pris";
+            label5.Text = "Max pris";
             // 
             // label4
             // 
@@ -389,9 +389,9 @@
             label9.Location = new Point(53, 1);
             label9.Margin = new Padding(2, 0, 2, 0);
             label9.Name = "label9";
-            label9.Size = new Size(65, 20);
+            label9.Size = new Size(62, 20);
             label9.TabIndex = 45;
-            label9.Text = "Max pris";
+            label9.Text = "Min pris";
             // 
             // label6
             // 
@@ -441,14 +441,14 @@
             // dgvBolig
             // 
             dgvBolig.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Window;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            dgvBolig.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = SystemColors.Window;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dgvBolig.DefaultCellStyle = dataGridViewCellStyle5;
             dgvBolig.Location = new Point(484, 50);
             dgvBolig.Margin = new Padding(2);
             dgvBolig.Name = "dgvBolig";
@@ -475,12 +475,22 @@
             // lblMinpris
             // 
             lblMinpris.AutoSize = true;
-            lblMinpris.Location = new Point(148, 63);
+            lblMinpris.Location = new Point(142, 4);
             lblMinpris.Margin = new Padding(2, 0, 2, 0);
             lblMinpris.Name = "lblMinpris";
             lblMinpris.Size = new Size(58, 20);
             lblMinpris.TabIndex = 65;
             lblMinpris.Text = "label11";
+            // 
+            // lblMaxpris
+            // 
+            lblMaxpris.AutoSize = true;
+            lblMaxpris.Location = new Point(140, 63);
+            lblMaxpris.Margin = new Padding(2, 0, 2, 0);
+            lblMaxpris.Name = "lblMaxpris";
+            lblMaxpris.Size = new Size(58, 20);
+            lblMaxpris.TabIndex = 64;
+            lblMaxpris.Text = "label11";
             // 
             // panel4
             // 
@@ -500,27 +510,17 @@
             // lblMinM2
             // 
             lblMinM2.AutoSize = true;
-            lblMinM2.Location = new Point(148, 62);
+            lblMinM2.Location = new Point(148, 4);
             lblMinM2.Margin = new Padding(2, 0, 2, 0);
             lblMinM2.Name = "lblMinM2";
             lblMinM2.Size = new Size(58, 20);
             lblMinM2.TabIndex = 0;
             lblMinM2.Text = "label11";
             // 
-            // lblMaxpris
-            // 
-            lblMaxpris.AutoSize = true;
-            lblMaxpris.Location = new Point(150, 4);
-            lblMaxpris.Margin = new Padding(2, 0, 2, 0);
-            lblMaxpris.Name = "lblMaxpris";
-            lblMaxpris.Size = new Size(58, 20);
-            lblMaxpris.TabIndex = 64;
-            lblMaxpris.Text = "label11";
-            // 
             // lblMaxM2
             // 
             lblMaxM2.AutoSize = true;
-            lblMaxM2.Location = new Point(148, 4);
+            lblMaxM2.Location = new Point(148, 62);
             lblMaxM2.Margin = new Padding(2, 0, 2, 0);
             lblMaxM2.Name = "lblMaxM2";
             lblMaxM2.Size = new Size(58, 20);
