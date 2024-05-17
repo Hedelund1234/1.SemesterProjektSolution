@@ -92,7 +92,7 @@
             btnExit.TabIndex = 3;
             btnExit.Text = "X";
             btnExit.UseVisualStyleBackColor = false;
-            btnExit.Click += btnExit_Click;
+            
             // 
             // panel1
             // 
@@ -133,7 +133,7 @@
             button2.TabIndex = 16;
             button2.Text = "               Ejendomsmægler";
             button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            
             // 
             // button3
             // 
@@ -146,7 +146,7 @@
             button3.TabIndex = 15;
             button3.Text = "Afdeling";
             button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            
             // 
             // button4
             // 
@@ -159,7 +159,7 @@
             button4.TabIndex = 17;
             button4.Text = "Kunde   ";
             button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            
             // 
             // btnLogo
             // 
@@ -176,7 +176,7 @@
             btnLogo.Size = new Size(120, 120);
             btnLogo.TabIndex = 14;
             btnLogo.UseVisualStyleBackColor = false;
-            btnLogo.Click += btnLogo_Click;
+          
             // 
             // txtBoligId
             // 
@@ -411,7 +411,7 @@
             // 
             // btnTilbage
             // 
-<<<<<<< HEAD
+
             btnTilbage.Location = new Point(338, 854);
             btnTilbage.Margin = new Padding(2);
             btnTilbage.Name = "button5";
@@ -419,9 +419,9 @@
             btnTilbage.TabIndex = 28;
             btnTilbage.Text = "Tilbage";
             btnTilbage.UseVisualStyleBackColor = true;
-            btnTilbage.Click += btnTilbage_Click;
-=======
->>>>>>> ac630330b7f1c32ad8152d91a6e9f427108cc220
+          
+
+ 
             // 
             // button6
             // 
