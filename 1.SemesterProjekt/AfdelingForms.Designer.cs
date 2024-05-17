@@ -68,6 +68,7 @@
             btnExit.TabIndex = 3;
             btnExit.Text = "X";
             btnExit.UseVisualStyleBackColor = false;
+            btnExit.Click += btnExit_Click;
             // 
             // panel1
             // 
@@ -91,6 +92,7 @@
             btnLogo.Size = new Size(120, 120);
             btnLogo.TabIndex = 14;
             btnLogo.UseVisualStyleBackColor = false;
+            btnLogo.Click += btnLogo_Click;
             // 
             // btnSøg
             // 
@@ -146,6 +148,7 @@
             button1.TabIndex = 62;
             button1.Text = "Bolig      ";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -157,6 +160,7 @@
             button2.TabIndex = 60;
             button2.Text = "               Ejendomsmægler";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
@@ -181,6 +185,7 @@
             button4.TabIndex = 61;
             button4.Text = "Kunde   ";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // dgvBolig
             // 

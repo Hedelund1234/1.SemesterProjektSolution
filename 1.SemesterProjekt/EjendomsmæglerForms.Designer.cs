@@ -75,6 +75,7 @@
             btnExit.TabIndex = 3;
             btnExit.Text = "X";
             btnExit.UseVisualStyleBackColor = false;
+            btnExit.Click += btnExit_Click;
             // 
             // panel1
             // 
@@ -99,6 +100,7 @@
             button1.TabIndex = 30;
             button1.Text = "Bolig      ";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -122,6 +124,7 @@
             button3.TabIndex = 27;
             button3.Text = "Afdeling";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button4
             // 
@@ -133,6 +136,7 @@
             button4.TabIndex = 29;
             button4.Text = "Kunde   ";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // btnOpret
             // 
@@ -142,6 +146,7 @@
             btnOpret.TabIndex = 25;
             btnOpret.Text = "Gå til opret";
             btnOpret.UseVisualStyleBackColor = true;
+            btnOpret.Click += btnOpret_Click;
             // 
             // comboBox1
             // 
@@ -246,6 +251,7 @@
             btnLogo.Size = new Size(120, 120);
             btnLogo.TabIndex = 20;
             btnLogo.UseVisualStyleBackColor = false;
+            btnLogo.Click += btnLogo_Click;
             // 
             // dgvBolig
             // 
