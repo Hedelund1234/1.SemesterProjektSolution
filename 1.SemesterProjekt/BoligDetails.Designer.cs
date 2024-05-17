@@ -62,7 +62,7 @@
             label9 = new Label();
             label10 = new Label();
             label13 = new Label();
-            button5 = new Button();
+            btnTilbage = new Button();
             button6 = new Button();
             button7 = new Button();
             panel2.SuspendLayout();
@@ -405,16 +405,16 @@
             label13.TabIndex = 23;
             label13.Text = "Kunde oversigt";
             // 
-            // button5
+            // btnTilbage
             // 
-            button5.Location = new Point(270, 683);
-            button5.Margin = new Padding(2);
-            button5.Name = "button5";
-            button5.Size = new Size(90, 27);
-            button5.TabIndex = 28;
-            button5.Text = "Tilbage";
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
+            btnTilbage.Location = new Point(270, 683);
+            btnTilbage.Margin = new Padding(2);
+            btnTilbage.Name = "btnTilbage";
+            btnTilbage.Size = new Size(90, 27);
+            btnTilbage.TabIndex = 28;
+            btnTilbage.Text = "Tilbage";
+            btnTilbage.UseVisualStyleBackColor = true;
+            btnTilbage.Click += btnTilbage_Click;
             // 
             // button6
             // 
@@ -443,7 +443,7 @@
             ClientSize = new Size(1120, 720);
             Controls.Add(button7);
             Controls.Add(button6);
-            Controls.Add(button5);
+            Controls.Add(btnTilbage);
             Controls.Add(comboboxSalgsstatus);
             Controls.Add(dataGridView1);
             Controls.Add(kalenderHandelsDato);
@@ -518,7 +518,7 @@
         private Label label9;
         private Label label10;
         private Label label13;
-        private Button button5;
+        private Button btnTilbage;
         private Button button6;
         private Button button7;
     }
