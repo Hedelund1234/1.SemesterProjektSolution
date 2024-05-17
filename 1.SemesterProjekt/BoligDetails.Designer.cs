@@ -411,14 +411,14 @@
             // 
             // btnTilbage
             // 
-            button5.Location = new Point(338, 854);
-            button5.Margin = new Padding(2);
-            button5.Name = "button5";
-            button5.Size = new Size(112, 34);
-            button5.TabIndex = 28;
-            button5.Text = "Tilbage";
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
+            btnTilbage.Location = new Point(338, 854);
+            btnTilbage.Margin = new Padding(2);
+            btnTilbage.Name = "button5";
+            btnTilbage.Size = new Size(112, 34);
+            btnTilbage.TabIndex = 28;
+            btnTilbage.Text = "Tilbage";
+            btnTilbage.UseVisualStyleBackColor = true;
+            btnTilbage.Click += btnTilbage_Click;
             // 
             // button6
             // 
