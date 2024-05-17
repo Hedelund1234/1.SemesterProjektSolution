@@ -38,19 +38,19 @@
             button4 = new Button();
             btnLogo = new Button();
             label1 = new Label();
-            button7 = new Button();
+            btnSletKunde = new Button();
             button6 = new Button();
             button5 = new Button();
             label2 = new Label();
-            textBox1 = new TextBox();
+            txtBoxKundeId = new TextBox();
             label3 = new Label();
-            textBox2 = new TextBox();
+            txtBoxKundeNavn = new TextBox();
             label4 = new Label();
-            textBox3 = new TextBox();
+            txtBoxKundeEmail = new TextBox();
             label5 = new Label();
-            textBox4 = new TextBox();
+            txtBoxKundeTelefonnummer = new TextBox();
             label6 = new Label();
-            comboBox1 = new ComboBox();
+            comboBoxKundeType = new ComboBox();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -77,6 +77,7 @@
             btnExit.TabIndex = 3;
             btnExit.Text = "X";
             btnExit.UseVisualStyleBackColor = false;
+            btnExit.Click += btnExit_Click;
             // 
             // panel1
             // 
@@ -104,6 +105,7 @@
             button1.TabIndex = 18;
             button1.Text = "Bolig      ";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -117,6 +119,7 @@
             button2.TabIndex = 16;
             button2.Text = "               Ejendomsmægler";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
@@ -129,6 +132,7 @@
             button3.TabIndex = 15;
             button3.Text = "Afdeling";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button4
             // 
@@ -158,6 +162,7 @@
             btnLogo.Size = new Size(96, 96);
             btnLogo.TabIndex = 14;
             btnLogo.UseVisualStyleBackColor = false;
+            btnLogo.Click += btnLogo_Click;
             // 
             // label1
             // 
@@ -170,15 +175,15 @@
             label1.TabIndex = 22;
             label1.Text = "Kunde detaljer";
             // 
-            // button7
+            // btnSletKunde
             // 
-            button7.Location = new Point(458, 683);
-            button7.Margin = new Padding(2, 2, 2, 2);
-            button7.Name = "button7";
-            button7.Size = new Size(90, 27);
-            button7.TabIndex = 29;
-            button7.Text = "Slet";
-            button7.UseVisualStyleBackColor = true;
+            btnSletKunde.Location = new Point(573, 854);
+            btnSletKunde.Name = "btnSletKunde";
+            btnSletKunde.Size = new Size(112, 34);
+            btnSletKunde.TabIndex = 29;
+            btnSletKunde.Text = "Slet";
+            btnSletKunde.UseVisualStyleBackColor = true;
+            btnSletKunde.Click += btnSletKunde_Click;
             // 
             // button6
             // 
@@ -189,6 +194,7 @@
             button6.TabIndex = 30;
             button6.Text = "Opdater";
             button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // button5
             // 
@@ -199,6 +205,7 @@
             button5.TabIndex = 31;
             button5.Text = "Tilbage";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // label2
             // 
@@ -210,14 +217,13 @@
             label2.TabIndex = 32;
             label2.Text = "Kunde id";
             // 
-            // textBox1
+            // txtBoxKundeId
             // 
-            textBox1.Enabled = false;
-            textBox1.Location = new Point(270, 164);
-            textBox1.Margin = new Padding(2, 2, 2, 2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(185, 27);
-            textBox1.TabIndex = 33;
+            txtBoxKundeId.Enabled = false;
+            txtBoxKundeId.Location = new Point(337, 205);
+            txtBoxKundeId.Name = "txtBoxKundeId";
+            txtBoxKundeId.Size = new Size(230, 31);
+            txtBoxKundeId.TabIndex = 33;
             // 
             // label3
             // 
@@ -229,13 +235,12 @@
             label3.TabIndex = 32;
             label3.Text = "Navn";
             // 
-            // textBox2
+            // txtBoxKundeNavn
             // 
-            textBox2.Location = new Point(272, 243);
-            textBox2.Margin = new Padding(2, 2, 2, 2);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(185, 27);
-            textBox2.TabIndex = 33;
+            txtBoxKundeNavn.Location = new Point(340, 304);
+            txtBoxKundeNavn.Name = "txtBoxKundeNavn";
+            txtBoxKundeNavn.Size = new Size(230, 31);
+            txtBoxKundeNavn.TabIndex = 33;
             // 
             // label4
             // 
@@ -247,13 +252,12 @@
             label4.TabIndex = 32;
             label4.Text = "Email";
             // 
-            // textBox3
+            // txtBoxKundeEmail
             // 
-            textBox3.Location = new Point(272, 330);
-            textBox3.Margin = new Padding(2, 2, 2, 2);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(185, 27);
-            textBox3.TabIndex = 33;
+            txtBoxKundeEmail.Location = new Point(340, 412);
+            txtBoxKundeEmail.Name = "txtBoxKundeEmail";
+            txtBoxKundeEmail.Size = new Size(230, 31);
+            txtBoxKundeEmail.TabIndex = 33;
             // 
             // label5
             // 
@@ -265,13 +269,12 @@
             label5.TabIndex = 32;
             label5.Text = "Telefonnummer";
             // 
-            // textBox4
+            // txtBoxKundeTelefonnummer
             // 
-            textBox4.Location = new Point(270, 406);
-            textBox4.Margin = new Padding(2, 2, 2, 2);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(185, 27);
-            textBox4.TabIndex = 33;
+            txtBoxKundeTelefonnummer.Location = new Point(337, 508);
+            txtBoxKundeTelefonnummer.Name = "txtBoxKundeTelefonnummer";
+            txtBoxKundeTelefonnummer.Size = new Size(230, 31);
+            txtBoxKundeTelefonnummer.TabIndex = 33;
             // 
             // label6
             // 
@@ -283,31 +286,33 @@
             label6.TabIndex = 34;
             label6.Text = "Kunde type";
             // 
-            // comboBox1
+            // comboBoxKundeType
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(269, 487);
-            comboBox1.Margin = new Padding(2, 2, 2, 2);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(186, 28);
-            comboBox1.TabIndex = 35;
+            comboBoxKundeType.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxKundeType.FormattingEnabled = true;
+            comboBoxKundeType.Items.AddRange(new object[] { "", "Køber", "Sælger" });
+            comboBoxKundeType.Location = new Point(336, 609);
+            comboBoxKundeType.MaxDropDownItems = 3;
+            comboBoxKundeType.Name = "comboBoxKundeType";
+            comboBoxKundeType.Size = new Size(231, 33);
+            comboBoxKundeType.TabIndex = 35;
             // 
             // KundeDetails
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1120, 720);
-            Controls.Add(comboBox1);
+            ClientSize = new Size(1400, 900);
+            Controls.Add(comboBoxKundeType);
             Controls.Add(label6);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
+            Controls.Add(txtBoxKundeTelefonnummer);
+            Controls.Add(txtBoxKundeEmail);
+            Controls.Add(txtBoxKundeNavn);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(textBox1);
+            Controls.Add(txtBoxKundeId);
             Controls.Add(label2);
-            Controls.Add(button7);
+            Controls.Add(btnSletKunde);
             Controls.Add(button6);
             Controls.Add(button5);
             Controls.Add(label1);
@@ -335,18 +340,18 @@
         private Button button4;
         private Button btnLogo;
         private Label label1;
-        private Button button7;
+        private Button btnSletKunde;
         private Button button6;
         private Button button5;
         private Label label2;
-        private TextBox textBox1;
+        private TextBox txtBoxKundeId;
         private Label label3;
-        private TextBox textBox2;
+        private TextBox txtBoxKundeNavn;
         private Label label4;
-        private TextBox textBox3;
+        private TextBox txtBoxKundeEmail;
         private Label label5;
-        private TextBox textBox4;
+        private TextBox txtBoxKundeTelefonnummer;
         private Label label6;
-        private ComboBox comboBox1;
+        private ComboBox comboBoxKundeType;
     }
 }

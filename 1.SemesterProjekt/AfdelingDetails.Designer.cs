@@ -67,6 +67,7 @@
             btnExit.TabIndex = 3;
             btnExit.Text = "X";
             btnExit.UseVisualStyleBackColor = false;
+            btnExit.Click += btnExit_Click;
             // 
             // panel1
             // 
@@ -94,6 +95,7 @@
             button1.TabIndex = 18;
             button1.Text = "Bolig      ";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -107,9 +109,11 @@
             button2.TabIndex = 16;
             button2.Text = "               Ejendomsmægler";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
+            button3.BackColor = Color.FromArgb(224, 224, 224);
             button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
             button3.BackgroundImageLayout = ImageLayout.None;
             button3.Location = new Point(29, 457);
@@ -118,7 +122,7 @@
             button3.Size = new Size(194, 57);
             button3.TabIndex = 15;
             button3.Text = "Afdeling";
-            button3.UseVisualStyleBackColor = true;
+            button3.UseVisualStyleBackColor = false;
             // 
             // button4
             // 
@@ -131,6 +135,7 @@
             button4.TabIndex = 17;
             button4.Text = "Kunde   ";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // btnLogo
             // 
@@ -147,6 +152,7 @@
             btnLogo.Size = new Size(96, 96);
             btnLogo.TabIndex = 14;
             btnLogo.UseVisualStyleBackColor = false;
+            btnLogo.Click += btnLogo_Click;
             // 
             // dataGridView1
             // 
@@ -167,6 +173,7 @@
             button5.TabIndex = 32;
             button5.Text = "Tilbage";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // label1
             // 

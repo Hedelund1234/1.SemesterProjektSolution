@@ -9,7 +9,8 @@ namespace _1.SemesterProjekt.DataAccess
         string connStrings;
         public KundeDbHandler()
         {
-            connStrings = ConfigurationManager.ConnectionStrings["default"].ToString();
+            ConnectionHandler connectionHandler = new ConnectionHandler();
+            connStrings = connectionHandler.GetConnectionString();
         }
         internal Kunde Get(int id)
         {
@@ -41,6 +42,40 @@ namespace _1.SemesterProjekt.DataAccess
                 conn.Close();
             }
             return kunde;
+        }
+        internal List<Kunde> Get(string id, string _navn, string _email, string _telefon_nr, string _kunde_type)
+        {
+            List<Kunde> kl = new List<Kunde>();
+            Kunde kunde = new Kunde();
+            string command = "SELECT * FROM Kunde WHERE Kunde_Id LIKE '%" + id + "%' AND Navn LIKE '%" + _navn + "%' AND Email LIKE '%" + _email + "%' AND Telefon_Nr LIKE '%" + _telefon_nr + "%' AND Kunde_Type LIKE '%" + _kunde_type + "%'";
+            SqlConnection conn = new SqlConnection(connStrings);
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(command, conn);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    int kunde_id = (int)reader["Kunde_Id"];
+                    string navn = (string)reader["Navn"];
+                    string email = (string)reader["Email"];
+                    int telefon_nr = (int)reader["Telefon_Nr"];
+                    string kunde_type = (string)reader["Kunde_Type"];
+
+                    kunde = new Kunde { Kunde_Id = kunde_id, Navn = navn, Email = email, Telefon_Nr = telefon_nr, Kunde_Type = kunde_type };
+                    kl.Add(kunde);
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return kl;
         }
         internal List<Kunde> Get()
         {
@@ -78,7 +113,7 @@ namespace _1.SemesterProjekt.DataAccess
         }
         internal bool Create(Kunde kunde)
         {
-            string command = "INSERT INTO Kunde (Kunde_Id, Navn, Email, Telefon_Nr, Kunde_Type) VALUES (@kId, @navn, @email, @telfNr, @kType)";
+            string command = "INSERT INTO Kunde (Navn, Email, Telefon_Nr, Kunde_Type) VALUES (@navn, @email, @telfNr, @kType)";
             SqlConnection conn = new SqlConnection(connStrings);
             SqlCommand cmd = new SqlCommand(command, conn);
 
@@ -109,7 +144,7 @@ namespace _1.SemesterProjekt.DataAccess
         }
         internal bool Update(Kunde kunde)
         {
-            string command = "UPDATE Kunde SET Navn = @navn, Email = @email, Telefon_Nr = @telfNr, Kunde_Type = @kType WHERE Kunde_Id = @kId)";
+            string command = "UPDATE Kunde SET Navn = @navn, Email = @email, Telefon_Nr = @telfNr, Kunde_Type = @kType WHERE Kunde_Id = @kId";
             SqlConnection conn = new SqlConnection(connStrings);
             SqlCommand cmd = new SqlCommand(command, conn);
 

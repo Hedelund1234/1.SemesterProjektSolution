@@ -10,7 +10,8 @@ namespace _1.SemesterProjekt.DataAccess
         string connStrings;
         public EjendomsmæglerDbHandler()
         {
-            connStrings = ConfigurationManager.ConnectionStrings["default"].ToString();
+            ConnectionHandler connectionHandler = new ConnectionHandler();
+            connStrings = connectionHandler.GetConnectionString();
         }
         internal Ejendomsmægler Get(int id)
         {

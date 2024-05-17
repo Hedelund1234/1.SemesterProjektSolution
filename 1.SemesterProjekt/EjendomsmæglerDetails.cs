@@ -44,5 +44,38 @@ namespace _1.SemesterProjekt
 
 
         }
+
+        private void btnLogo_Click(object sender, EventArgs e)
+        {
+            Forside forside = new Forside();
+            forside.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            KundeForms kunde = new KundeForms();
+            kunde.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AfdelingForms afdeling = new AfdelingForms();
+            afdeling.Show();
+            this.Hide();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            OpretEjendomsmæglerForms opretEjendomsmægler = new OpretEjendomsmæglerForms();
+            opretEjendomsmægler.Show();
+            this.Hide();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

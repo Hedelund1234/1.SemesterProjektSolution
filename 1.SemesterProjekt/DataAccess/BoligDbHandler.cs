@@ -12,7 +12,8 @@ namespace _1.SemesterProjekt.DataAccess
         string connStrings;
         public BoligDbHandler()
         {
-            connStrings = ConfigurationManager.ConnectionStrings["default"].ToString();
+            ConnectionHandler connectionHandler = new ConnectionHandler();
+            connStrings = connectionHandler.GetConnectionString();
         }
         internal Bolig Get(int id)
         {

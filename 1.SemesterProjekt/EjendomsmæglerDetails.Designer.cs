@@ -75,6 +75,7 @@
             btnExit.TabIndex = 3;
             btnExit.Text = "X";
             btnExit.UseVisualStyleBackColor = false;
+            btnExit.Click += btnExit_Click;
             // 
             // panel1
             // 
@@ -102,6 +103,7 @@
             button1.TabIndex = 18;
             button1.Text = "Bolig      ";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -127,6 +129,7 @@
             button3.TabIndex = 15;
             button3.Text = "Afdeling";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button4
             // 
@@ -155,6 +158,7 @@
             btnLogo.Size = new Size(96, 96);
             btnLogo.TabIndex = 14;
             btnLogo.UseVisualStyleBackColor = false;
+            btnLogo.Click += btnLogo_Click;
             // 
             // button7
             // 
@@ -185,6 +189,7 @@
             button5.TabIndex = 31;
             button5.Text = "Tilbage";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // label2
             // 

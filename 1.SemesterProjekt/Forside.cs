@@ -18,5 +18,26 @@ namespace _1.SemesterProjekt
         {
             Application.Exit();
         }
+
+        private void btnKunde_Click(object sender, EventArgs e)
+        {
+            KundeForms kunde = new KundeForms();
+            kunde.Show();
+            this.Hide();
+        }
+
+        private void btnEjendomsmægler_Click(object sender, EventArgs e)
+        {
+            EjendomsmæglerForms ejendomsmægler = new EjendomsmæglerForms();
+            ejendomsmægler.Show();
+            this.Hide();
+        }
+
+        private void btnAfdeling_Click(object sender, EventArgs e)
+        {
+            AfdelingForms afdeling = new AfdelingForms();
+            afdeling.Show();
+            this.Hide();
+        }
     }
 }

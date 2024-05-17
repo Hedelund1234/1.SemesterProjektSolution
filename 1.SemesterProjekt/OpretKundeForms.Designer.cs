@@ -32,9 +32,9 @@
             label3 = new Label();
             btnOpret = new Button();
             btnTilbage = new Button();
-            textBox2 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
+            txtBoxTelefonnummerOpretKunde = new TextBox();
+            txtBoxNavnOpretKunde = new TextBox();
+            txtBoxEmailOpretKunde = new TextBox();
             label5 = new Label();
             panel1 = new Panel();
             button1 = new Button();
@@ -43,8 +43,8 @@
             button4 = new Button();
             btnLogo = new Button();
             label1 = new Label();
-            checkBox2 = new CheckBox();
-            checkBox1 = new CheckBox();
+            checkBoxSælgerOpretKunde = new CheckBox();
+            checkBoxKøberOpretKunde = new CheckBox();
             label4 = new Label();
             panel2 = new Panel();
             btnExit = new Button();
@@ -71,6 +71,7 @@
             btnOpret.TabIndex = 22;
             btnOpret.Text = "Opret bolig";
             btnOpret.UseVisualStyleBackColor = true;
+            btnOpret.Click += btnOpret_Click;
             // 
             // btnTilbage
             // 
@@ -81,30 +82,28 @@
             btnTilbage.TabIndex = 24;
             btnTilbage.Text = "Tilbage";
             btnTilbage.UseVisualStyleBackColor = true;
+            btnTilbage.Click += btnTilbage_Click;
             // 
-            // textBox2
+            // txtBoxTelefonnummerOpretKunde
             // 
-            textBox2.Location = new Point(268, 380);
-            textBox2.Margin = new Padding(2, 2, 2, 2);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(214, 27);
-            textBox2.TabIndex = 37;
+            txtBoxTelefonnummerOpretKunde.Location = new Point(335, 475);
+            txtBoxTelefonnummerOpretKunde.Name = "txtBoxTelefonnummerOpretKunde";
+            txtBoxTelefonnummerOpretKunde.Size = new Size(267, 31);
+            txtBoxTelefonnummerOpretKunde.TabIndex = 37;
             // 
-            // textBox4
+            // txtBoxNavnOpretKunde
             // 
-            textBox4.Location = new Point(269, 186);
-            textBox4.Margin = new Padding(2, 2, 2, 2);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(214, 27);
-            textBox4.TabIndex = 37;
+            txtBoxNavnOpretKunde.Location = new Point(336, 233);
+            txtBoxNavnOpretKunde.Name = "txtBoxNavnOpretKunde";
+            txtBoxNavnOpretKunde.Size = new Size(267, 31);
+            txtBoxNavnOpretKunde.TabIndex = 37;
             // 
-            // textBox5
+            // txtBoxEmailOpretKunde
             // 
-            textBox5.Location = new Point(268, 284);
-            textBox5.Margin = new Padding(2, 2, 2, 2);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(214, 27);
-            textBox5.TabIndex = 37;
+            txtBoxEmailOpretKunde.Location = new Point(335, 355);
+            txtBoxEmailOpretKunde.Name = "txtBoxEmailOpretKunde";
+            txtBoxEmailOpretKunde.Size = new Size(267, 31);
+            txtBoxEmailOpretKunde.TabIndex = 37;
             // 
             // label5
             // 
@@ -142,6 +141,7 @@
             button1.TabIndex = 42;
             button1.Text = "Bolig      ";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -155,6 +155,7 @@
             button2.TabIndex = 40;
             button2.Text = "               Ejendomsmægler";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
@@ -167,6 +168,7 @@
             button3.TabIndex = 39;
             button3.Text = "Afdeling";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button4
             // 
@@ -196,6 +198,7 @@
             btnLogo.Size = new Size(96, 96);
             btnLogo.TabIndex = 30;
             btnLogo.UseVisualStyleBackColor = false;
+            btnLogo.Click += btnLogo_Click;
             // 
             // label1
             // 
@@ -207,27 +210,27 @@
             label1.TabIndex = 25;
             label1.Text = "Navn";
             // 
-            // checkBox2
+            // checkBoxSælgerOpretKunde
             // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(340, 479);
-            checkBox2.Margin = new Padding(2, 2, 2, 2);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(77, 24);
-            checkBox2.TabIndex = 33;
-            checkBox2.Text = "Sælger";
-            checkBox2.UseVisualStyleBackColor = true;
+            checkBoxSælgerOpretKunde.AutoSize = true;
+            checkBoxSælgerOpretKunde.Location = new Point(425, 599);
+            checkBoxSælgerOpretKunde.Name = "checkBoxSælgerOpretKunde";
+            checkBoxSælgerOpretKunde.Size = new Size(93, 29);
+            checkBoxSælgerOpretKunde.TabIndex = 33;
+            checkBoxSælgerOpretKunde.Text = "Sælger";
+            checkBoxSælgerOpretKunde.UseVisualStyleBackColor = true;
+            checkBoxSælgerOpretKunde.CheckedChanged += checkBoxSælgerOpretKunde_CheckedChanged;
             // 
-            // checkBox1
+            // checkBoxKøberOpretKunde
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(271, 479);
-            checkBox1.Margin = new Padding(2, 2, 2, 2);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(71, 24);
-            checkBox1.TabIndex = 34;
-            checkBox1.Text = "Køber";
-            checkBox1.UseVisualStyleBackColor = true;
+            checkBoxKøberOpretKunde.AutoSize = true;
+            checkBoxKøberOpretKunde.Location = new Point(339, 599);
+            checkBoxKøberOpretKunde.Name = "checkBoxKøberOpretKunde";
+            checkBoxKøberOpretKunde.Size = new Size(85, 29);
+            checkBoxKøberOpretKunde.TabIndex = 34;
+            checkBoxKøberOpretKunde.Text = "Køber";
+            checkBoxKøberOpretKunde.UseVisualStyleBackColor = true;
+            checkBoxKøberOpretKunde.CheckedChanged += checkBoxKøberOpretKunde_CheckedChanged;
             // 
             // label4
             // 
@@ -261,6 +264,7 @@
             btnExit.TabIndex = 3;
             btnExit.Text = "X";
             btnExit.UseVisualStyleBackColor = false;
+            btnExit.Click += btnExit_Click;
             // 
             // OpretKundeForms
             // 
@@ -272,14 +276,14 @@
             Controls.Add(btnOpret);
             Controls.Add(btnTilbage);
             Controls.Add(panel1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox4);
-            Controls.Add(textBox5);
+            Controls.Add(txtBoxTelefonnummerOpretKunde);
+            Controls.Add(txtBoxNavnOpretKunde);
+            Controls.Add(txtBoxEmailOpretKunde);
             Controls.Add(label5);
             Controls.Add(label1);
             Controls.Add(label4);
-            Controls.Add(checkBox2);
-            Controls.Add(checkBox1);
+            Controls.Add(checkBoxSælgerOpretKunde);
+            Controls.Add(checkBoxKøberOpretKunde);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(2, 2, 2, 2);
             Name = "OpretKundeForms";
@@ -296,14 +300,14 @@
         private Label label3;
         private Button btnOpret;
         private Button btnTilbage;
-        private TextBox textBox2;
-        private TextBox textBox4;
-        private TextBox textBox5;
+        private TextBox txtBoxTelefonnummerOpretKunde;
+        private TextBox txtBoxNavnOpretKunde;
+        private TextBox txtBoxEmailOpretKunde;
         private Label label5;
         private Panel panel1;
         private Label label1;
-        private CheckBox checkBox2;
-        private CheckBox checkBox1;
+        private CheckBox checkBoxSælgerOpretKunde;
+        private CheckBox checkBoxKøberOpretKunde;
         private Label label4;
         private Panel panel2;
         private Button btnExit;

@@ -9,7 +9,8 @@ namespace _1.SemesterProjekt.DataAccess
         string connStrings;
         public AfdelingDbHandler()
         {
-            connStrings = ConfigurationManager.ConnectionStrings["default"].ToString();
+            ConnectionHandler connectionHandler = new ConnectionHandler();
+            connStrings = connectionHandler.GetConnectionString();
         }
         internal Afdeling Get(int id)
         {

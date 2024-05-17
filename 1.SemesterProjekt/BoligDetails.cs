@@ -32,14 +32,53 @@ namespace _1.SemesterProjekt
             txtBoligId.Text = bolig.Bolig_Id.ToString();
             txtAdresse.Text = bolig.Adresse;
             txtPostnummer.Text = bolig.Postnummer.ToString();
-
+            comboboxType.Text = bolig.Type;
+            txtPris.Text = bolig.Udbudspris.ToString();
+            txtStørrelse.Text = bolig.Størrelse.ToString();
+            txtSælgerId.Text = bolig.Bolig_Kunde_Id.ToString();
+            txtBoligEjendomsmæglerId.Text = bolig.Bolig_Ejendomsmægler_Id.ToString();
+            comboboxSalgsstatus.Text = bolig.Salgsstatus;
+            txtKøberId.Text = bolig.Bolig_Kunde_Id_Køber.ToString();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void btnTilbage_Click(object sender, EventArgs e)
         {
-            this.Close();
             BoligForms boligforms = new BoligForms();
             boligforms.Show();
+            this.Hide();
+        }
+
+        private void btnLogo_Click(object sender, EventArgs e)
+        {
+            Forside forside = new Forside();
+            forside.Show();
+            this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            KundeForms kunde = new KundeForms();
+            kunde.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            EjendomsmæglerForms ejendomsmægler = new EjendomsmæglerForms();
+            ejendomsmægler.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AfdelingForms afdeling = new AfdelingForms();
+            afdeling.Show();
+            this.Hide();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
