@@ -60,7 +60,7 @@
             panel2.Location = new Point(0, 0);
             panel2.Margin = new Padding(2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1120, 36);
+            panel2.Size = new Size(1400, 36);
             panel2.TabIndex = 21;
             // 
             // btnExit
@@ -68,7 +68,7 @@
             btnExit.BackColor = Color.Silver;
             btnExit.FlatAppearance.BorderColor = Color.Silver;
             btnExit.FlatStyle = FlatStyle.Flat;
-            btnExit.Location = new Point(1075, 3);
+            btnExit.Location = new Point(1360, 4);
             btnExit.Margin = new Padding(2);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(38, 27);
@@ -88,7 +88,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(264, 720);
+            panel1.Size = new Size(264, 900);
             panel1.TabIndex = 20;
             // 
             // button1
@@ -99,7 +99,7 @@
             button1.Location = new Point(29, 164);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
-            button1.Size = new Size(194, 57);
+            button1.Size = new Size(194, 73);
             button1.TabIndex = 18;
             button1.Text = "Bolig      ";
             button1.UseVisualStyleBackColor = false;
@@ -113,7 +113,7 @@
             button2.Location = new Point(29, 358);
             button2.Margin = new Padding(2);
             button2.Name = "button2";
-            button2.Size = new Size(194, 57);
+            button2.Size = new Size(194, 73);
             button2.TabIndex = 16;
             button2.Text = "               Ejendomsmægler";
             button2.UseVisualStyleBackColor = false;
@@ -125,7 +125,7 @@
             button3.Location = new Point(29, 457);
             button3.Margin = new Padding(2);
             button3.Name = "button3";
-            button3.Size = new Size(194, 57);
+            button3.Size = new Size(194, 73);
             button3.TabIndex = 15;
             button3.Text = "Afdeling";
             button3.UseVisualStyleBackColor = true;
@@ -138,7 +138,7 @@
             button4.Location = new Point(29, 262);
             button4.Margin = new Padding(2);
             button4.Name = "button4";
-            button4.Size = new Size(194, 57);
+            button4.Size = new Size(194, 73);
             button4.TabIndex = 17;
             button4.Text = "Kunde   ";
             button4.UseVisualStyleBackColor = true;
@@ -162,7 +162,7 @@
             // 
             // button7
             // 
-            button7.Location = new Point(458, 683);
+            button7.Location = new Point(459, 862);
             button7.Margin = new Padding(2);
             button7.Name = "button7";
             button7.Size = new Size(90, 27);
@@ -172,7 +172,7 @@
             // 
             // btnUpdate
             // 
-            btnUpdate.Location = new Point(364, 683);
+            btnUpdate.Location = new Point(365, 862);
             btnUpdate.Margin = new Padding(2);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(90, 27);
@@ -182,7 +182,7 @@
             // 
             // button5
             // 
-            button5.Location = new Point(270, 683);
+            button5.Location = new Point(271, 862);
             button5.Margin = new Padding(2);
             button5.Name = "button5";
             button5.Size = new Size(90, 27);
@@ -194,7 +194,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(270, 142);
+            label2.Location = new Point(269, 142);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(43, 20);
@@ -203,7 +203,7 @@
             // 
             // txtNavn
             // 
-            txtNavn.Location = new Point(270, 164);
+            txtNavn.Location = new Point(269, 164);
             txtNavn.Margin = new Padding(2);
             txtNavn.Name = "txtNavn";
             txtNavn.Size = new Size(185, 27);
@@ -212,7 +212,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(269, 239);
+            label3.Location = new Point(268, 239);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
             label3.Size = new Size(113, 20);
@@ -221,7 +221,7 @@
             // 
             // txtTelefonNr
             // 
-            txtTelefonNr.Location = new Point(269, 262);
+            txtTelefonNr.Location = new Point(268, 262);
             txtTelefonNr.Margin = new Padding(2);
             txtTelefonNr.Name = "txtTelefonNr";
             txtTelefonNr.Size = new Size(186, 27);
@@ -230,7 +230,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(270, 335);
+            label4.Location = new Point(271, 335);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
             label4.Size = new Size(46, 20);
@@ -239,7 +239,7 @@
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(270, 358);
+            txtEmail.Location = new Point(271, 358);
             txtEmail.Margin = new Padding(2);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(186, 27);
@@ -267,7 +267,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F);
-            label1.Location = new Point(599, 38);
+            label1.Location = new Point(650, 38);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(357, 41);
@@ -278,7 +278,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1120, 720);
+            ClientSize = new Size(1400, 900);
             Controls.Add(label1);
             Controls.Add(txtAfdeling);
             Controls.Add(label5);

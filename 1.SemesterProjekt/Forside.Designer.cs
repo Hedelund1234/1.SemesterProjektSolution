@@ -48,7 +48,7 @@
             panel2.Location = new Point(0, 0);
             panel2.Margin = new Padding(2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1400, 45);
+            panel2.Size = new Size(1400, 36);
             panel2.TabIndex = 19;
             // 
             // btnExit
@@ -56,10 +56,10 @@
             btnExit.BackColor = Color.Silver;
             btnExit.FlatAppearance.BorderColor = Color.Silver;
             btnExit.FlatStyle = FlatStyle.Flat;
-            btnExit.Location = new Point(1344, 4);
+            btnExit.Location = new Point(1360, 4);
             btnExit.Margin = new Padding(2);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(48, 34);
+            btnExit.Size = new Size(38, 27);
             btnExit.TabIndex = 3;
             btnExit.Text = "X";
             btnExit.UseVisualStyleBackColor = false;
@@ -76,7 +76,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(330, 900);
+            panel1.Size = new Size(264, 900);
             panel1.TabIndex = 18;
             // 
             // btnBolig
@@ -84,10 +84,10 @@
             btnBolig.BackColor = Color.White;
             btnBolig.BackgroundImage = Properties.Resources.Bolig;
             btnBolig.BackgroundImageLayout = ImageLayout.None;
-            btnBolig.Location = new Point(36, 205);
+            btnBolig.Location = new Point(29, 164);
             btnBolig.Margin = new Padding(2);
             btnBolig.Name = "btnBolig";
-            btnBolig.Size = new Size(242, 71);
+            btnBolig.Size = new Size(194, 73);
             btnBolig.TabIndex = 18;
             btnBolig.Text = "Bolig      ";
             btnBolig.UseVisualStyleBackColor = false;
@@ -98,10 +98,10 @@
             btnEjendomsmægler.BackColor = Color.White;
             btnEjendomsmægler.BackgroundImage = Properties.Resources.Ejendomsmægler;
             btnEjendomsmægler.BackgroundImageLayout = ImageLayout.None;
-            btnEjendomsmægler.Location = new Point(36, 448);
+            btnEjendomsmægler.Location = new Point(29, 358);
             btnEjendomsmægler.Margin = new Padding(2);
             btnEjendomsmægler.Name = "btnEjendomsmægler";
-            btnEjendomsmægler.Size = new Size(242, 71);
+            btnEjendomsmægler.Size = new Size(194, 73);
             btnEjendomsmægler.TabIndex = 16;
             btnEjendomsmægler.Text = "               Ejendomsmægler";
             btnEjendomsmægler.UseVisualStyleBackColor = false;
@@ -111,10 +111,10 @@
             // 
             btnAfdeling.BackgroundImage = (Image)resources.GetObject("btnAfdeling.BackgroundImage");
             btnAfdeling.BackgroundImageLayout = ImageLayout.None;
-            btnAfdeling.Location = new Point(36, 571);
+            btnAfdeling.Location = new Point(29, 457);
             btnAfdeling.Margin = new Padding(2);
             btnAfdeling.Name = "btnAfdeling";
-            btnAfdeling.Size = new Size(242, 71);
+            btnAfdeling.Size = new Size(194, 73);
             btnAfdeling.TabIndex = 15;
             btnAfdeling.Text = "Afdeling";
             btnAfdeling.UseVisualStyleBackColor = true;
@@ -124,10 +124,10 @@
             // 
             btnKunde.BackgroundImage = Properties.Resources.Kunde;
             btnKunde.BackgroundImageLayout = ImageLayout.None;
-            btnKunde.Location = new Point(36, 328);
+            btnKunde.Location = new Point(29, 262);
             btnKunde.Margin = new Padding(2);
             btnKunde.Name = "btnKunde";
-            btnKunde.Size = new Size(242, 71);
+            btnKunde.Size = new Size(194, 73);
             btnKunde.TabIndex = 17;
             btnKunde.Text = "Kunde   ";
             btnKunde.UseVisualStyleBackColor = true;
@@ -142,16 +142,16 @@
             btnLogo.FlatAppearance.MouseDownBackColor = Color.Silver;
             btnLogo.FlatAppearance.MouseOverBackColor = Color.Silver;
             btnLogo.FlatStyle = FlatStyle.Flat;
-            btnLogo.Location = new Point(36, 42);
+            btnLogo.Location = new Point(29, 34);
             btnLogo.Margin = new Padding(2);
             btnLogo.Name = "btnLogo";
-            btnLogo.Size = new Size(120, 120);
+            btnLogo.Size = new Size(96, 96);
             btnLogo.TabIndex = 14;
             btnLogo.UseVisualStyleBackColor = false;
             // 
             // Forside
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1400, 900);
             Controls.Add(panel2);

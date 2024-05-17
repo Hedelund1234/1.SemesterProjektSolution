@@ -54,7 +54,7 @@
             // 
             // btnOpret
             // 
-            btnOpret.Location = new Point(269, 626);
+            btnOpret.Location = new Point(271, 816);
             btnOpret.Margin = new Padding(2);
             btnOpret.Name = "btnOpret";
             btnOpret.Size = new Size(214, 30);
@@ -68,7 +68,7 @@
             ComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             ComboBox1.FormattingEnabled = true;
             ComboBox1.Items.AddRange(new object[] { "", "Nordjylland", "Midtjylland", "Syddanmark", "Sjælland", "Hovedstaden" });
-            ComboBox1.Location = new Point(269, 479);
+            ComboBox1.Location = new Point(269, 457);
             ComboBox1.Margin = new Padding(2);
             ComboBox1.Name = "ComboBox1";
             ComboBox1.Size = new Size(214, 28);
@@ -76,19 +76,18 @@
             // 
             // btnTilbage
             // 
-            btnTilbage.Location = new Point(269, 680);
+            btnTilbage.Location = new Point(271, 862);
             btnTilbage.Margin = new Padding(2);
             btnTilbage.Name = "btnTilbage";
-            btnTilbage.Size = new Size(81, 30);
+            btnTilbage.Size = new Size(102, 30);
             btnTilbage.TabIndex = 26;
             btnTilbage.Text = "Tilbage";
             btnTilbage.UseVisualStyleBackColor = true;
-            btnTilbage.Click += btnTilbage_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(269, 164);
+            label3.Location = new Point(269, 142);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
             label3.Size = new Size(43, 20);
@@ -110,11 +109,10 @@
             btnLogo.Size = new Size(96, 96);
             btnLogo.TabIndex = 28;
             btnLogo.UseVisualStyleBackColor = false;
-            btnLogo.Click += btnLogo_Click;
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(269, 380);
+            txtEmail.Location = new Point(271, 358);
             txtEmail.Margin = new Padding(2);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(214, 27);
@@ -122,7 +120,7 @@
             // 
             // txtNavn
             // 
-            txtNavn.Location = new Point(269, 186);
+            txtNavn.Location = new Point(269, 164);
             txtNavn.Margin = new Padding(2);
             txtNavn.Name = "txtNavn";
             txtNavn.Size = new Size(214, 27);
@@ -131,7 +129,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(269, 358);
+            label5.Location = new Point(271, 336);
             label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
             label5.Size = new Size(46, 20);
@@ -140,7 +138,7 @@
             // 
             // txtTelefonNr
             // 
-            txtTelefonNr.Location = new Point(269, 284);
+            txtTelefonNr.Location = new Point(268, 262);
             txtTelefonNr.Margin = new Padding(2);
             txtTelefonNr.Name = "txtTelefonNr";
             txtTelefonNr.Size = new Size(214, 27);
@@ -149,7 +147,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(269, 457);
+            label4.Location = new Point(269, 435);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
             label4.Size = new Size(66, 20);
@@ -159,7 +157,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(269, 262);
+            label2.Location = new Point(268, 240);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(113, 20);
@@ -171,14 +169,13 @@
             btnExit.BackColor = Color.Silver;
             btnExit.FlatAppearance.BorderColor = Color.Silver;
             btnExit.FlatStyle = FlatStyle.Flat;
-            btnExit.Location = new Point(1075, 3);
+            btnExit.Location = new Point(1360, 4);
             btnExit.Margin = new Padding(2);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(38, 27);
             btnExit.TabIndex = 3;
             btnExit.Text = "X";
             btnExit.UseVisualStyleBackColor = false;
-            btnExit.Click += btnExit_Click;
             // 
             // panel2
             // 
@@ -187,7 +184,7 @@
             panel2.Location = new Point(0, 0);
             panel2.Margin = new Padding(2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1120, 36);
+            panel2.Size = new Size(1400, 36);
             panel2.TabIndex = 27;
             // 
             // panel1
@@ -200,7 +197,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(264, 720);
+            panel1.Size = new Size(264, 900);
             panel1.TabIndex = 26;
             // 
             // button1
@@ -211,11 +208,10 @@
             button1.Location = new Point(29, 164);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
-            button1.Size = new Size(194, 57);
+            button1.Size = new Size(194, 73);
             button1.TabIndex = 38;
             button1.Text = "Bolig      ";
             button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -225,7 +221,7 @@
             button2.Location = new Point(29, 358);
             button2.Margin = new Padding(2);
             button2.Name = "button2";
-            button2.Size = new Size(194, 57);
+            button2.Size = new Size(194, 73);
             button2.TabIndex = 36;
             button2.Text = "               Ejendomsmægler";
             button2.UseVisualStyleBackColor = false;
@@ -237,11 +233,10 @@
             button3.Location = new Point(29, 457);
             button3.Margin = new Padding(2);
             button3.Name = "button3";
-            button3.Size = new Size(194, 57);
+            button3.Size = new Size(194, 73);
             button3.TabIndex = 35;
             button3.Text = "Afdeling";
             button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
             // 
             // button4
             // 
@@ -250,11 +245,10 @@
             button4.Location = new Point(29, 262);
             button4.Margin = new Padding(2);
             button4.Name = "button4";
-            button4.Size = new Size(194, 57);
+            button4.Size = new Size(194, 73);
             button4.TabIndex = 37;
             button4.Text = "Kunde   ";
             button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
             // 
             // label9
             // 
@@ -271,7 +265,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1120, 720);
+            ClientSize = new Size(1400, 900);
             Controls.Add(label9);
             Controls.Add(btnOpret);
             Controls.Add(ComboBox1);
