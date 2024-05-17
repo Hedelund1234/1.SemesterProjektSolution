@@ -1,6 +1,7 @@
 ﻿using _1.SemesterProjekt.Models;
 using System.Configuration;
 using System.Data.SqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace _1.SemesterProjekt.DataAccess
 {
@@ -77,15 +78,103 @@ namespace _1.SemesterProjekt.DataAccess
         }
         internal bool Create(Ejendomsmægler ejendomsmægler)
         {
-            return false;
+            string command = "insert Ejendomsmægler (Navn, Telefon_Nr, Email, Ejendomsmægler_Afdeling_Nr) Values (@navn, @tlf, @email, @afdNr)";
+
+            using SqlConnection conn = new SqlConnection(connStrings);
+            SqlCommand cmd = new SqlCommand(command, conn);
+
+            cmd.Parameters.AddWithValue("@navn", ejendomsmægler.Navn);
+            cmd.Parameters.AddWithValue("@tlf", ejendomsmægler.Telefon_Nr);
+            cmd.Parameters.AddWithValue("@email", ejendomsmægler.Email);
+            cmd.Parameters.AddWithValue("@afdNr", ejendomsmægler.Ejendomsmægler_Afdeling_Nr);
+            int rows = 0;
+            try
+            {
+                conn.Open();
+                rows = cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            if (rows == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
         internal bool Update(Ejendomsmægler ejendomsmægler)
         {
-            return false;
+             string command = "UPDATE Ejendomsmægler SET Navn= @navn, Telefon_Nr= @tlf, Email= @email, Ejendomsmægler_Afdeling_Nr= @afdNr WHERE Id = @Id";
+
+            using SqlConnection conn = new SqlConnection(connStrings);
+            SqlCommand cmd = new SqlCommand(command, conn);
+
+            cmd.Parameters.AddWithValue("@Id", ejendomsmægler.Id);
+            cmd.Parameters.AddWithValue("@navn", ejendomsmægler.Navn);
+            cmd.Parameters.AddWithValue("@tlf", ejendomsmægler.Telefon_Nr);
+            cmd.Parameters.AddWithValue("@email", ejendomsmægler.Email);
+            cmd.Parameters.AddWithValue("@afdNr", ejendomsmægler.Ejendomsmægler_Afdeling_Nr);
+            int rows = 0;
+            try
+            {
+                conn.Open();
+                rows = cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            if (rows == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
         internal bool Delete(int id)
         {
-            return false;
+             string command = "DELETE FROM Ejendomsmægler WHERE Id = @Id";
+
+            using SqlConnection conn = new SqlConnection(connStrings);
+            SqlCommand cmd = new SqlCommand(command, conn);
+
+            cmd.Parameters.AddWithValue("@Id", id);
+            int rows = 0;
+            try
+            {
+                conn.Open();
+                rows = cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            if (rows == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }
