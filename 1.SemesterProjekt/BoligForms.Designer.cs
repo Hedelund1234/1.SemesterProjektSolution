@@ -38,40 +38,46 @@
             btnLogo = new Button();
             btnExit = new Button();
             panel2 = new Panel();
-            comboBox2 = new ComboBox();
+            comboBoxType = new ComboBox();
             label3 = new Label();
             textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
-            trackBar1 = new TrackBar();
-            checkBox2 = new CheckBox();
-            checkBox1 = new CheckBox();
+            txtAdresse = new TextBox();
+            txtPostnummer = new TextBox();
+            tbMinPris = new TrackBar();
+            cbTilSalg = new CheckBox();
+            cbSolgt = new CheckBox();
             label5 = new Label();
             label4 = new Label();
             label8 = new Label();
             label7 = new Label();
             label2 = new Label();
-            comboBox1 = new ComboBox();
+            comboBoxAfdeling = new ComboBox();
             label1 = new Label();
             button8 = new Button();
             btnSøg = new Button();
             btnOpret = new Button();
-            trackBar4 = new TrackBar();
+            tbMaxPris = new TrackBar();
             label9 = new Label();
             label6 = new Label();
-            trackBar2 = new TrackBar();
+            tbMaxM2 = new TrackBar();
             label10 = new Label();
-            trackBar3 = new TrackBar();
+            tbMinM2 = new TrackBar();
             dgvBolig = new DataGridView();
             panel3 = new Panel();
+            lblMinpris = new Label();
             panel4 = new Panel();
+            lblMinM2 = new Label();
+            lblMaxpris = new Label();
+            lblMaxM2 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)trackBar1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)trackBar4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)trackBar2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)trackBar3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tbMinPris).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tbMaxPris).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tbMaxM2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tbMinM2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvBolig).BeginInit();
+            panel3.SuspendLayout();
+            panel4.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -181,15 +187,16 @@
             panel2.Size = new Size(1400, 45);
             panel2.TabIndex = 7;
             // 
-            // comboBox2
+            // comboBoxType
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Hus", "Rækkehus", "Lejlighed", "Andelsbolig" });
-            comboBox2.Location = new Point(336, 142);
-            comboBox2.Margin = new Padding(2);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(260, 33);
-            comboBox2.TabIndex = 56;
+            comboBoxType.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxType.FormattingEnabled = true;
+            comboBoxType.Items.AddRange(new object[] { "", "Hus", "Rækkehus", "Lejlighed", "Andelsbolig" });
+            comboBoxType.Location = new Point(269, 114);
+            comboBoxType.Margin = new Padding(2);
+            comboBoxType.Name = "comboBoxType";
+            comboBoxType.Size = new Size(209, 28);
+            comboBoxType.TabIndex = 56;
             // 
             // label3
             // 
@@ -210,54 +217,55 @@
             textBox3.Size = new Size(262, 31);
             textBox3.TabIndex = 54;
             // 
-            // textBox2
+            // txtAdresse
             // 
-            textBox2.Location = new Point(335, 698);
-            textBox2.Margin = new Padding(2);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(262, 31);
-            textBox2.TabIndex = 53;
+            txtAdresse.Location = new Point(268, 558);
+            txtAdresse.Margin = new Padding(2);
+            txtAdresse.Name = "txtAdresse";
+            txtAdresse.Size = new Size(210, 27);
+            txtAdresse.TabIndex = 53;
             // 
-            // textBox1
+            // txtPostnummer
             // 
-            textBox1.Location = new Point(336, 208);
-            textBox1.Margin = new Padding(2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(260, 31);
-            textBox1.TabIndex = 52;
+            txtPostnummer.Location = new Point(269, 166);
+            txtPostnummer.Margin = new Padding(2);
+            txtPostnummer.Name = "txtPostnummer";
+            txtPostnummer.Size = new Size(209, 27);
+            txtPostnummer.TabIndex = 52;
             // 
-            // trackBar1
+            // tbMinPris
             // 
-            trackBar1.LargeChange = 2;
-            trackBar1.Location = new Point(336, 329);
-            trackBar1.Margin = new Padding(2);
-            trackBar1.Maximum = 20;
-            trackBar1.Name = "trackBar1";
-            trackBar1.RightToLeft = RightToLeft.No;
-            trackBar1.Size = new Size(256, 69);
-            trackBar1.TabIndex = 50;
+            tbMinPris.LargeChange = 2;
+            tbMinPris.Location = new Point(269, 263);
+            tbMinPris.Margin = new Padding(2);
+            tbMinPris.Maximum = 20;
+            tbMinPris.Name = "tbMinPris";
+            tbMinPris.RightToLeft = RightToLeft.No;
+            tbMinPris.Size = new Size(205, 56);
+            tbMinPris.TabIndex = 50;
+            tbMinPris.MouseUp += tbMinPris_MouseUp;
             // 
-            // checkBox2
+            // cbTilSalg
             // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(426, 269);
-            checkBox2.Margin = new Padding(2);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(92, 29);
-            checkBox2.TabIndex = 48;
-            checkBox2.Text = "Til salg";
-            checkBox2.UseVisualStyleBackColor = true;
+            cbTilSalg.AutoSize = true;
+            cbTilSalg.Location = new Point(341, 215);
+            cbTilSalg.Margin = new Padding(2);
+            cbTilSalg.Name = "cbTilSalg";
+            cbTilSalg.Size = new Size(78, 24);
+            cbTilSalg.TabIndex = 48;
+            cbTilSalg.Text = "Til salg";
+            cbTilSalg.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // cbSolgt
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(340, 269);
-            checkBox1.Margin = new Padding(2);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(80, 29);
-            checkBox1.TabIndex = 49;
-            checkBox1.Text = "Solgt";
-            checkBox1.UseVisualStyleBackColor = true;
+            cbSolgt.AutoSize = true;
+            cbSolgt.Location = new Point(272, 215);
+            cbSolgt.Margin = new Padding(2);
+            cbSolgt.Name = "cbSolgt";
+            cbSolgt.Size = new Size(66, 24);
+            cbSolgt.TabIndex = 49;
+            cbSolgt.Text = "Solgt";
+            cbSolgt.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -309,14 +317,16 @@
             label2.TabIndex = 41;
             label2.Text = "Postnummer";
             // 
-            // comboBox1
+            // comboBoxAfdeling
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(336, 79);
-            comboBox1.Margin = new Padding(2);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(260, 33);
-            comboBox1.TabIndex = 47;
+            comboBoxAfdeling.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxAfdeling.FormattingEnabled = true;
+            comboBoxAfdeling.Items.AddRange(new object[] { "", "Nordjylland", "Midtjylland", "Syddanmark", "Sjælland", "Hovedstaden" });
+            comboBoxAfdeling.Location = new Point(269, 63);
+            comboBoxAfdeling.Margin = new Padding(2);
+            comboBoxAfdeling.Name = "comboBoxAfdeling";
+            comboBoxAfdeling.Size = new Size(209, 28);
+            comboBoxAfdeling.TabIndex = 47;
             // 
             // label1
             // 
@@ -347,6 +357,7 @@
             btnSøg.TabIndex = 39;
             btnSøg.Text = "Søg";
             btnSøg.UseVisualStyleBackColor = true;
+            btnSøg.Click += btnSøg_Click;
             // 
             // btnOpret
             // 
@@ -359,17 +370,18 @@
             btnOpret.UseVisualStyleBackColor = true;
             btnOpret.Click += btnOpret_Click;
             // 
-            // trackBar4
+            // tbMaxPris
             // 
-            trackBar4.LargeChange = 2;
-            trackBar4.Location = new Point(336, 392);
-            trackBar4.Margin = new Padding(2);
-            trackBar4.Maximum = 20;
-            trackBar4.Name = "trackBar4";
-            trackBar4.RightToLeft = RightToLeft.No;
-            trackBar4.Size = new Size(256, 69);
-            trackBar4.TabIndex = 50;
-            trackBar4.Value = 20;
+            tbMaxPris.LargeChange = 2;
+            tbMaxPris.Location = new Point(269, 314);
+            tbMaxPris.Margin = new Padding(2);
+            tbMaxPris.Maximum = 20;
+            tbMaxPris.Name = "tbMaxPris";
+            tbMaxPris.RightToLeft = RightToLeft.No;
+            tbMaxPris.Size = new Size(205, 56);
+            tbMaxPris.TabIndex = 50;
+            tbMaxPris.Value = 20;
+            tbMaxPris.MouseUp += tbMaxPris_MouseUp;
             // 
             // label9
             // 
@@ -391,17 +403,18 @@
             label6.TabIndex = 57;
             label6.Text = "Max kvadratmeter";
             // 
-            // trackBar2
+            // tbMaxM2
             // 
-            trackBar2.LargeChange = 2;
-            trackBar2.Location = new Point(335, 585);
-            trackBar2.Margin = new Padding(2);
-            trackBar2.Maximum = 20;
-            trackBar2.Name = "trackBar2";
-            trackBar2.RightToLeft = RightToLeft.No;
-            trackBar2.Size = new Size(256, 69);
-            trackBar2.TabIndex = 59;
-            trackBar2.Value = 20;
+            tbMaxM2.LargeChange = 2;
+            tbMaxM2.Location = new Point(268, 468);
+            tbMaxM2.Margin = new Padding(2);
+            tbMaxM2.Maximum = 20;
+            tbMaxM2.Name = "tbMaxM2";
+            tbMaxM2.RightToLeft = RightToLeft.No;
+            tbMaxM2.Size = new Size(205, 56);
+            tbMaxM2.TabIndex = 59;
+            tbMaxM2.Value = 20;
+            tbMaxM2.MouseUp += tbMaxM2_MouseUp;
             // 
             // label10
             // 
@@ -413,16 +426,17 @@
             label10.TabIndex = 58;
             label10.Text = "Min kvadratmeter";
             // 
-            // trackBar3
+            // tbMinM2
             // 
-            trackBar3.LargeChange = 2;
-            trackBar3.Location = new Point(335, 522);
-            trackBar3.Margin = new Padding(2);
-            trackBar3.Maximum = 20;
-            trackBar3.Name = "trackBar3";
-            trackBar3.RightToLeft = RightToLeft.No;
-            trackBar3.Size = new Size(256, 69);
-            trackBar3.TabIndex = 60;
+            tbMinM2.LargeChange = 2;
+            tbMinM2.Location = new Point(268, 418);
+            tbMinM2.Margin = new Padding(2);
+            tbMinM2.Maximum = 20;
+            tbMinM2.Name = "tbMinM2";
+            tbMinM2.RightToLeft = RightToLeft.No;
+            tbMinM2.Size = new Size(205, 56);
+            tbMinM2.TabIndex = 60;
+            tbMinM2.MouseUp += tbMinM2_MouseUp;
             // 
             // dgvBolig
             // 
@@ -446,53 +460,93 @@
             // panel3
             // 
             panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Location = new Point(335, 300);
+            panel3.Controls.Add(lblMinpris);
+            panel3.Location = new Point(268, 240);
             panel3.Margin = new Padding(2);
             panel3.Name = "panel3";
             panel3.Size = new Size(258, 164);
             panel3.TabIndex = 62;
             // 
+            // lblMinpris
+            // 
+            lblMinpris.AutoSize = true;
+            lblMinpris.Location = new Point(89, 1);
+            lblMinpris.Name = "lblMinpris";
+            lblMinpris.Size = new Size(58, 20);
+            lblMinpris.TabIndex = 65;
+            lblMinpris.Text = "label11";
+            // 
             // panel4
             // 
             panel4.BorderStyle = BorderStyle.FixedSingle;
-            panel4.Location = new Point(334, 492);
+            panel4.Controls.Add(lblMinM2);
+            panel4.Location = new Point(267, 394);
             panel4.Margin = new Padding(2);
             panel4.Name = "panel4";
             panel4.Size = new Size(258, 164);
             panel4.TabIndex = 63;
             // 
+            // lblMinM2
+            // 
+            lblMinM2.AutoSize = true;
+            lblMinM2.Location = new Point(135, 1);
+            lblMinM2.Name = "lblMinM2";
+            lblMinM2.Size = new Size(58, 20);
+            lblMinM2.TabIndex = 0;
+            lblMinM2.Text = "label11";
+            // 
+            // lblMaxpris
+            // 
+            lblMaxpris.AutoSize = true;
+            lblMaxpris.Location = new Point(358, 295);
+            lblMaxpris.Name = "lblMaxpris";
+            lblMaxpris.Size = new Size(58, 20);
+            lblMaxpris.TabIndex = 64;
+            lblMaxpris.Text = "label11";
+            // 
+            // lblMaxM2
+            // 
+            lblMaxM2.AutoSize = true;
+            lblMaxM2.Location = new Point(403, 451);
+            lblMaxM2.Name = "lblMaxM2";
+            lblMaxM2.Size = new Size(58, 20);
+            lblMaxM2.TabIndex = 65;
+            lblMaxM2.Text = "label12";
+            // 
             // BoligForms
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1400, 900);
+            ClientSize = new Size(1120, 720);
+            Controls.Add(lblMaxM2);
+            Controls.Add(lblMaxpris);
             Controls.Add(dgvBolig);
             Controls.Add(label6);
-            Controls.Add(trackBar2);
+            Controls.Add(tbMaxM2);
             Controls.Add(label10);
-            Controls.Add(trackBar3);
+            Controls.Add(tbMinM2);
             Controls.Add(label9);
-            Controls.Add(trackBar4);
-            Controls.Add(comboBox2);
+            Controls.Add(tbMaxPris);
+            Controls.Add(comboBoxType);
             Controls.Add(label3);
             Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(checkBox2);
-            Controls.Add(checkBox1);
+            Controls.Add(txtAdresse);
+            Controls.Add(txtPostnummer);
+            Controls.Add(cbTilSalg);
+            Controls.Add(cbSolgt);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(label2);
-            Controls.Add(comboBox1);
+            Controls.Add(comboBoxAfdeling);
             Controls.Add(label1);
             Controls.Add(button8);
             Controls.Add(btnSøg);
             Controls.Add(btnOpret);
             Controls.Add(panel1);
             Controls.Add(panel2);
-            Controls.Add(trackBar1);
+            Controls.Add(tbMinPris);
             Controls.Add(panel3);
             Controls.Add(panel4);
             FormBorderStyle = FormBorderStyle.None;
@@ -503,11 +557,15 @@
             Load += BoligForms_Load;
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)trackBar1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)trackBar4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)trackBar2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)trackBar3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tbMinPris).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tbMaxPris).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tbMaxM2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tbMinM2).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvBolig).EndInit();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -522,32 +580,36 @@
         private Button btnEjendomsmægler;
         private Button btnAfdeling;
         private Button btnKunde;
-        private ComboBox comboBox2;
+        private ComboBox comboBoxType;
         private Label label3;
         private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private TrackBar trackBar1;
-        private CheckBox checkBox2;
-        private CheckBox checkBox1;
+        private TextBox txtAdresse;
+        private TextBox txtPostnummer;
+        private TrackBar tbMinPris;
+        private CheckBox cbTilSalg;
+        private CheckBox cbSolgt;
         private Label label5;
         private Label label4;
         private Label label8;
         private Label label7;
         private Label label2;
-        private ComboBox comboBox1;
+        private ComboBox comboBoxAfdeling;
         private Label label1;
         private Button button8;
         private Button btnSøg;
         private Button btnOpret;
-        private TrackBar trackBar4;
+        private TrackBar tbMaxPris;
         private Label label9;
         private Label label6;
-        private TrackBar trackBar2;
+        private TrackBar tbMaxM2;
         private Label label10;
-        private TrackBar trackBar3;
+        private TrackBar tbMinM2;
         private DataGridView dgvBolig;
         private Panel panel3;
         private Panel panel4;
+        private Label lblMinpris;
+        private Label lblMaxpris;
+        private Label lblMinM2;
+        private Label lblMaxM2;
     }
 }

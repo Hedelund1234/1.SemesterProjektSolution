@@ -62,7 +62,7 @@
             label9 = new Label();
             label10 = new Label();
             label13 = new Label();
-            button5 = new Button();
+            btnTilbage = new Button();
             button6 = new Button();
             button7 = new Button();
             panel2.SuspendLayout();
@@ -409,7 +409,7 @@
             label13.TabIndex = 23;
             label13.Text = "Kunde oversigt";
             // 
-            // button5
+            // btnTilbage
             // 
             button5.Location = new Point(338, 854);
             button5.Margin = new Padding(2);
@@ -447,7 +447,7 @@
             ClientSize = new Size(1400, 900);
             Controls.Add(button7);
             Controls.Add(button6);
-            Controls.Add(button5);
+            Controls.Add(btnTilbage);
             Controls.Add(comboboxSalgsstatus);
             Controls.Add(dataGridView1);
             Controls.Add(kalenderHandelsDato);
@@ -522,7 +522,7 @@
         private Label label9;
         private Label label10;
         private Label label13;
-        private Button button5;
+        private Button btnTilbage;
         private Button button6;
         private Button button7;
     }
