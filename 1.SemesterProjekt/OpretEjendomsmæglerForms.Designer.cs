@@ -77,6 +77,7 @@
             btnTilbage.TabIndex = 26;
             btnTilbage.Text = "Tilbage";
             btnTilbage.UseVisualStyleBackColor = true;
+            btnTilbage.Click += btnTilbage_Click;
             // 
             // label3
             // 
@@ -100,6 +101,7 @@
             btnLogo.Size = new Size(120, 120);
             btnLogo.TabIndex = 28;
             btnLogo.UseVisualStyleBackColor = false;
+            btnLogo.Click += btnLogo_Click;
             // 
             // textBox2
             // 
@@ -160,6 +162,7 @@
             btnExit.TabIndex = 3;
             btnExit.Text = "X";
             btnExit.UseVisualStyleBackColor = false;
+            btnExit.Click += btnExit_Click;
             // 
             // panel2
             // 
@@ -193,6 +196,7 @@
             button1.TabIndex = 38;
             button1.Text = "Bolig      ";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -216,6 +220,7 @@
             button3.TabIndex = 35;
             button3.Text = "Afdeling";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button4
             // 
@@ -227,6 +232,7 @@
             button4.TabIndex = 37;
             button4.Text = "Kunde   ";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // label9
             // 

@@ -40,15 +40,15 @@
             btnExit = new Button();
             panel2 = new Panel();
             label4 = new Label();
-            checkBox1 = new CheckBox();
-            checkBox2 = new CheckBox();
+            cBoxKundeKøber = new CheckBox();
+            cBoxKundeSælger = new CheckBox();
             label2 = new Label();
             label1 = new Label();
-            textBox1 = new TextBox();
+            txtBoxKundeEmail = new TextBox();
             label5 = new Label();
-            textBox5 = new TextBox();
-            textBox4 = new TextBox();
-            textBox2 = new TextBox();
+            txtBoxKundeNavn = new TextBox();
+            txtBoxKundeId = new TextBox();
+            txtBoxKundeTelefonnummer = new TextBox();
             label3 = new Label();
             dgvBolig = new DataGridView();
             panel1.SuspendLayout();
@@ -69,6 +69,7 @@
             btnLogo.Size = new Size(120, 120);
             btnLogo.TabIndex = 20;
             btnLogo.UseVisualStyleBackColor = false;
+            btnLogo.Click += btnLogo_Click;
             // 
             // btnSøg
             // 
@@ -78,6 +79,7 @@
             btnSøg.TabIndex = 24;
             btnSøg.Text = "Søg";
             btnSøg.UseVisualStyleBackColor = true;
+            btnSøg.Click += btnSøg_Click;
             // 
             // btnOpret
             // 
@@ -87,6 +89,7 @@
             btnOpret.TabIndex = 22;
             btnOpret.Text = "Gå til opret";
             btnOpret.UseVisualStyleBackColor = true;
+            btnOpret.Click += btnOpret_Click;
             // 
             // panel1
             // 
@@ -111,6 +114,7 @@
             button1.TabIndex = 29;
             button1.Text = "Bolig      ";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -122,6 +126,7 @@
             button2.TabIndex = 27;
             button2.Text = "               Ejendomsmægler";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
@@ -133,6 +138,7 @@
             button3.TabIndex = 26;
             button3.Text = "Afdeling";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button4
             // 
@@ -157,6 +163,7 @@
             btnExit.TabIndex = 3;
             btnExit.Text = "X";
             btnExit.UseVisualStyleBackColor = false;
+            btnExit.Click += btnExit_Click;
             // 
             // panel2
             // 
@@ -176,25 +183,27 @@
             label4.TabIndex = 29;
             label4.Text = "Kunde type";
             // 
-            // checkBox1
+            // cBoxKundeKøber
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(340, 329);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(85, 29);
-            checkBox1.TabIndex = 34;
-            checkBox1.Text = "Køber";
-            checkBox1.UseVisualStyleBackColor = true;
+            cBoxKundeKøber.AutoSize = true;
+            cBoxKundeKøber.Location = new Point(340, 329);
+            cBoxKundeKøber.Name = "cBoxKundeKøber";
+            cBoxKundeKøber.Size = new Size(85, 29);
+            cBoxKundeKøber.TabIndex = 34;
+            cBoxKundeKøber.Text = "Køber";
+            cBoxKundeKøber.UseVisualStyleBackColor = true;
+            cBoxKundeKøber.CheckedChanged += cBoxKundeKøber_CheckedChanged;
             // 
-            // checkBox2
+            // cBoxKundeSælger
             // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(426, 329);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(93, 29);
-            checkBox2.TabIndex = 33;
-            checkBox2.Text = "Sælger";
-            checkBox2.UseVisualStyleBackColor = true;
+            cBoxKundeSælger.AutoSize = true;
+            cBoxKundeSælger.Location = new Point(426, 329);
+            cBoxKundeSælger.Name = "cBoxKundeSælger";
+            cBoxKundeSælger.Size = new Size(93, 29);
+            cBoxKundeSælger.TabIndex = 33;
+            cBoxKundeSælger.Text = "Sælger";
+            cBoxKundeSælger.UseVisualStyleBackColor = true;
+            cBoxKundeSælger.CheckedChanged += cBoxKundeSælger_CheckedChanged;
             // 
             // label2
             // 
@@ -214,12 +223,12 @@
             label1.TabIndex = 25;
             label1.Text = "Kunde id";
             // 
-            // textBox1
+            // txtBoxKundeEmail
             // 
-            textBox1.Location = new Point(336, 205);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(267, 31);
-            textBox1.TabIndex = 37;
+            txtBoxKundeEmail.Location = new Point(336, 205);
+            txtBoxKundeEmail.Name = "txtBoxKundeEmail";
+            txtBoxKundeEmail.Size = new Size(267, 31);
+            txtBoxKundeEmail.TabIndex = 37;
             // 
             // label5
             // 
@@ -230,26 +239,26 @@
             label5.TabIndex = 25;
             label5.Text = "Telefonnummer";
             // 
-            // textBox5
+            // txtBoxKundeNavn
             // 
-            textBox5.Location = new Point(336, 141);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(267, 31);
-            textBox5.TabIndex = 37;
+            txtBoxKundeNavn.Location = new Point(336, 141);
+            txtBoxKundeNavn.Name = "txtBoxKundeNavn";
+            txtBoxKundeNavn.Size = new Size(267, 31);
+            txtBoxKundeNavn.TabIndex = 37;
             // 
-            // textBox4
+            // txtBoxKundeId
             // 
-            textBox4.Location = new Point(336, 77);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(267, 31);
-            textBox4.TabIndex = 37;
+            txtBoxKundeId.Location = new Point(336, 77);
+            txtBoxKundeId.Name = "txtBoxKundeId";
+            txtBoxKundeId.Size = new Size(267, 31);
+            txtBoxKundeId.TabIndex = 37;
             // 
-            // textBox2
+            // txtBoxKundeTelefonnummer
             // 
-            textBox2.Location = new Point(336, 267);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(267, 31);
-            textBox2.TabIndex = 37;
+            txtBoxKundeTelefonnummer.Location = new Point(336, 267);
+            txtBoxKundeTelefonnummer.Name = "txtBoxKundeTelefonnummer";
+            txtBoxKundeTelefonnummer.Size = new Size(267, 31);
+            txtBoxKundeTelefonnummer.TabIndex = 37;
             // 
             // label3
             // 
@@ -268,6 +277,7 @@
             dgvBolig.RowHeadersWidth = 62;
             dgvBolig.Size = new Size(779, 809);
             dgvBolig.TabIndex = 58;
+            dgvBolig.CellDoubleClick += dgvBolig_CellDoubleClick;
             // 
             // KundeForms
             // 
@@ -281,20 +291,21 @@
             Controls.Add(btnOpret);
             Controls.Add(btnSøg);
             Controls.Add(panel1);
-            Controls.Add(textBox2);
+            Controls.Add(txtBoxKundeTelefonnummer);
             Controls.Add(label1);
-            Controls.Add(textBox4);
+            Controls.Add(txtBoxKundeId);
             Controls.Add(label4);
-            Controls.Add(textBox5);
-            Controls.Add(checkBox1);
+            Controls.Add(txtBoxKundeNavn);
+            Controls.Add(cBoxKundeKøber);
             Controls.Add(label5);
-            Controls.Add(checkBox2);
-            Controls.Add(textBox1);
+            Controls.Add(cBoxKundeSælger);
+            Controls.Add(txtBoxKundeEmail);
             Controls.Add(label2);
             FormBorderStyle = FormBorderStyle.None;
             Name = "KundeForms";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Kunde";
+            Load += KundeForms_Load;
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvBolig).EndInit();
@@ -314,15 +325,15 @@
         private Button button3;
         private Button button4;
         private Label label4;
-        private CheckBox checkBox1;
-        private CheckBox checkBox2;
+        private CheckBox cBoxKundeKøber;
+        private CheckBox cBoxKundeSælger;
         private Label label2;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox txtBoxKundeEmail;
         private Label label5;
-        private TextBox textBox5;
-        private TextBox textBox4;
-        private TextBox textBox2;
+        private TextBox txtBoxKundeNavn;
+        private TextBox txtBoxKundeId;
+        private TextBox txtBoxKundeTelefonnummer;
         private Label label3;
         private DataGridView dgvBolig;
     }

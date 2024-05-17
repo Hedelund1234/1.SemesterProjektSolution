@@ -91,7 +91,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(264, 720);
+            panel1.Size = new Size(330, 900);
             panel1.TabIndex = 6;
             // 
             // btnBolig
@@ -99,10 +99,10 @@
             btnBolig.BackColor = Color.FromArgb(224, 224, 224);
             btnBolig.BackgroundImage = Properties.Resources.Bolig;
             btnBolig.BackgroundImageLayout = ImageLayout.None;
-            btnBolig.Location = new Point(29, 164);
+            btnBolig.Location = new Point(36, 205);
             btnBolig.Margin = new Padding(2);
             btnBolig.Name = "btnBolig";
-            btnBolig.Size = new Size(194, 57);
+            btnBolig.Size = new Size(242, 71);
             btnBolig.TabIndex = 17;
             btnBolig.Text = "Bolig      ";
             btnBolig.UseVisualStyleBackColor = false;
@@ -111,37 +111,40 @@
             // 
             btnEjendomsmægler.BackgroundImage = Properties.Resources.Ejendomsmægler;
             btnEjendomsmægler.BackgroundImageLayout = ImageLayout.None;
-            btnEjendomsmægler.Location = new Point(29, 358);
+            btnEjendomsmægler.Location = new Point(36, 448);
             btnEjendomsmægler.Margin = new Padding(2);
             btnEjendomsmægler.Name = "btnEjendomsmægler";
-            btnEjendomsmægler.Size = new Size(194, 57);
+            btnEjendomsmægler.Size = new Size(242, 71);
             btnEjendomsmægler.TabIndex = 15;
             btnEjendomsmægler.Text = "               Ejendomsmægler";
             btnEjendomsmægler.UseVisualStyleBackColor = true;
+            btnEjendomsmægler.Click += btnEjendomsmægler_Click;
             // 
             // btnAfdeling
             // 
             btnAfdeling.BackgroundImage = (Image)resources.GetObject("btnAfdeling.BackgroundImage");
             btnAfdeling.BackgroundImageLayout = ImageLayout.None;
-            btnAfdeling.Location = new Point(29, 457);
+            btnAfdeling.Location = new Point(36, 571);
             btnAfdeling.Margin = new Padding(2);
             btnAfdeling.Name = "btnAfdeling";
-            btnAfdeling.Size = new Size(194, 57);
+            btnAfdeling.Size = new Size(242, 71);
             btnAfdeling.TabIndex = 14;
             btnAfdeling.Text = "Afdeling";
             btnAfdeling.UseVisualStyleBackColor = true;
+            btnAfdeling.Click += btnAfdeling_Click;
             // 
             // btnKunde
             // 
             btnKunde.BackgroundImage = Properties.Resources.Kunde;
             btnKunde.BackgroundImageLayout = ImageLayout.None;
-            btnKunde.Location = new Point(29, 262);
+            btnKunde.Location = new Point(36, 328);
             btnKunde.Margin = new Padding(2);
             btnKunde.Name = "btnKunde";
-            btnKunde.Size = new Size(194, 57);
+            btnKunde.Size = new Size(242, 71);
             btnKunde.TabIndex = 16;
             btnKunde.Text = "Kunde   ";
             btnKunde.UseVisualStyleBackColor = true;
+            btnKunde.Click += btnKunde_Click;
             // 
             // btnLogo
             // 
@@ -152,22 +155,23 @@
             btnLogo.FlatAppearance.MouseDownBackColor = Color.Silver;
             btnLogo.FlatAppearance.MouseOverBackColor = Color.Silver;
             btnLogo.FlatStyle = FlatStyle.Flat;
-            btnLogo.Location = new Point(29, 34);
+            btnLogo.Location = new Point(36, 42);
             btnLogo.Margin = new Padding(2);
             btnLogo.Name = "btnLogo";
-            btnLogo.Size = new Size(96, 96);
+            btnLogo.Size = new Size(120, 120);
             btnLogo.TabIndex = 13;
             btnLogo.UseVisualStyleBackColor = false;
+            btnLogo.Click += btnLogo_Click;
             // 
             // btnExit
             // 
             btnExit.BackColor = Color.Silver;
             btnExit.FlatAppearance.BorderColor = Color.Silver;
             btnExit.FlatStyle = FlatStyle.Flat;
-            btnExit.Location = new Point(1075, 3);
+            btnExit.Location = new Point(1344, 4);
             btnExit.Margin = new Padding(2);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(38, 27);
+            btnExit.Size = new Size(48, 34);
             btnExit.TabIndex = 3;
             btnExit.Text = "X";
             btnExit.UseVisualStyleBackColor = false;
@@ -180,7 +184,7 @@
             panel2.Location = new Point(0, 0);
             panel2.Margin = new Padding(2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1120, 36);
+            panel2.Size = new Size(1400, 45);
             panel2.TabIndex = 7;
             // 
             // comboBoxType
@@ -197,20 +201,20 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(269, 92);
+            label3.Location = new Point(336, 115);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(40, 20);
+            label3.Size = new Size(49, 25);
             label3.TabIndex = 55;
             label3.Text = "Type";
             // 
             // textBox3
             // 
             textBox3.Enabled = false;
-            textBox3.Location = new Point(268, 611);
+            textBox3.Location = new Point(335, 764);
             textBox3.Margin = new Padding(2);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(210, 27);
+            textBox3.Size = new Size(262, 31);
             textBox3.TabIndex = 54;
             // 
             // txtAdresse
@@ -266,50 +270,50 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(269, 241);
+            label5.Location = new Point(336, 301);
             label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(62, 20);
+            label5.Size = new Size(76, 25);
             label5.TabIndex = 45;
             label5.Text = "Min pris";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(269, 193);
+            label4.Location = new Point(336, 241);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(82, 20);
+            label4.Size = new Size(101, 25);
             label4.TabIndex = 44;
             label4.Text = "Salgsstatus";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(268, 589);
+            label8.Location = new Point(335, 736);
             label8.Margin = new Padding(2, 0, 2, 0);
             label8.Name = "label8";
-            label8.Size = new Size(126, 20);
+            label8.Size = new Size(151, 25);
             label8.TabIndex = 43;
             label8.Text = "Kvadratmeter pris";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(268, 535);
+            label7.Location = new Point(335, 669);
             label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
-            label7.Size = new Size(89, 20);
+            label7.Size = new Size(109, 25);
             label7.TabIndex = 42;
             label7.Text = "Søg adresse";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(269, 143);
+            label2.Location = new Point(336, 179);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(91, 20);
+            label2.Size = new Size(113, 25);
             label2.TabIndex = 41;
             label2.Text = "Postnummer";
             // 
@@ -327,29 +331,29 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(269, 41);
+            label1.Location = new Point(336, 51);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(66, 20);
+            label1.Size = new Size(79, 25);
             label1.TabIndex = 40;
             label1.Text = "Afdeling";
             // 
             // button8
             // 
-            button8.Location = new Point(268, 645);
+            button8.Location = new Point(335, 806);
             button8.Margin = new Padding(2);
             button8.Name = "button8";
-            button8.Size = new Size(209, 30);
+            button8.Size = new Size(261, 38);
             button8.TabIndex = 38;
             button8.Text = "Gem .CSV fil";
             button8.UseVisualStyleBackColor = true;
             // 
             // btnSøg
             // 
-            btnSøg.Location = new Point(268, 680);
+            btnSøg.Location = new Point(335, 850);
             btnSøg.Margin = new Padding(2);
             btnSøg.Name = "btnSøg";
-            btnSøg.Size = new Size(102, 30);
+            btnSøg.Size = new Size(128, 38);
             btnSøg.TabIndex = 39;
             btnSøg.Text = "Søg";
             btnSøg.UseVisualStyleBackColor = true;
@@ -357,10 +361,10 @@
             // 
             // btnOpret
             // 
-            btnOpret.Location = new Point(374, 680);
+            btnOpret.Location = new Point(468, 850);
             btnOpret.Margin = new Padding(2);
             btnOpret.Name = "btnOpret";
-            btnOpret.Size = new Size(102, 30);
+            btnOpret.Size = new Size(128, 38);
             btnOpret.TabIndex = 37;
             btnOpret.Text = "Gå til opret";
             btnOpret.UseVisualStyleBackColor = true;
@@ -382,20 +386,20 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(269, 294);
+            label9.Location = new Point(336, 368);
             label9.Margin = new Padding(2, 0, 2, 0);
             label9.Name = "label9";
-            label9.Size = new Size(65, 20);
+            label9.Size = new Size(79, 25);
             label9.TabIndex = 45;
             label9.Text = "Max pris";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(268, 450);
+            label6.Location = new Point(335, 562);
             label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new Size(129, 20);
+            label6.Size = new Size(155, 25);
             label6.TabIndex = 57;
             label6.Text = "Max kvadratmeter";
             // 
@@ -415,10 +419,10 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(268, 395);
+            label10.Location = new Point(335, 494);
             label10.Margin = new Padding(2, 0, 2, 0);
             label10.Name = "label10";
-            label10.Size = new Size(126, 20);
+            label10.Size = new Size(152, 25);
             label10.TabIndex = 58;
             label10.Text = "Min kvadratmeter";
             // 
@@ -445,11 +449,11 @@
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
             dgvBolig.DefaultCellStyle = dataGridViewCellStyle1;
-            dgvBolig.Location = new Point(487, 63);
+            dgvBolig.Location = new Point(609, 79);
             dgvBolig.Margin = new Padding(2);
             dgvBolig.Name = "dgvBolig";
             dgvBolig.RowHeadersWidth = 62;
-            dgvBolig.Size = new Size(623, 647);
+            dgvBolig.Size = new Size(779, 809);
             dgvBolig.TabIndex = 61;
             dgvBolig.CellDoubleClick += dgvBolig_CellDoubleClick;
             // 
@@ -460,7 +464,7 @@
             panel3.Location = new Point(268, 240);
             panel3.Margin = new Padding(2);
             panel3.Name = "panel3";
-            panel3.Size = new Size(207, 132);
+            panel3.Size = new Size(258, 164);
             panel3.TabIndex = 62;
             // 
             // lblMinpris
@@ -479,7 +483,7 @@
             panel4.Location = new Point(267, 394);
             panel4.Margin = new Padding(2);
             panel4.Name = "panel4";
-            panel4.Size = new Size(207, 132);
+            panel4.Size = new Size(258, 164);
             panel4.TabIndex = 63;
             // 
             // lblMinM2
@@ -511,7 +515,7 @@
             // 
             // BoligForms
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1120, 720);
             Controls.Add(lblMaxM2);
