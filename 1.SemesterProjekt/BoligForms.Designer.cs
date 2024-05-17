@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BoligForms));
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnBolig = new Button();
             btnEjendomsmægler = new Button();
@@ -441,14 +441,14 @@
             // dgvBolig
             // 
             dgvBolig.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgvBolig.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = SystemColors.Window;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dgvBolig.DefaultCellStyle = dataGridViewCellStyle5;
             dgvBolig.Location = new Point(484, 50);
             dgvBolig.Margin = new Padding(2);
             dgvBolig.Name = "dgvBolig";
@@ -475,7 +475,7 @@
             // lblMinpris
             // 
             lblMinpris.AutoSize = true;
-            lblMinpris.Location = new Point(148, 63);
+            lblMinpris.Location = new Point(142, 4);
             lblMinpris.Margin = new Padding(2, 0, 2, 0);
             lblMinpris.Name = "lblMinpris";
             lblMinpris.Size = new Size(58, 20);
@@ -485,7 +485,7 @@
             // lblMaxpris
             // 
             lblMaxpris.AutoSize = true;
-            lblMaxpris.Location = new Point(150, 4);
+            lblMaxpris.Location = new Point(140, 63);
             lblMaxpris.Margin = new Padding(2, 0, 2, 0);
             lblMaxpris.Name = "lblMaxpris";
             lblMaxpris.Size = new Size(58, 20);
@@ -510,7 +510,7 @@
             // lblMinM2
             // 
             lblMinM2.AutoSize = true;
-            lblMinM2.Location = new Point(148, 62);
+            lblMinM2.Location = new Point(148, 4);
             lblMinM2.Margin = new Padding(2, 0, 2, 0);
             lblMinM2.Name = "lblMinM2";
             lblMinM2.Size = new Size(58, 20);
@@ -520,7 +520,7 @@
             // lblMaxM2
             // 
             lblMaxM2.AutoSize = true;
-            lblMaxM2.Location = new Point(148, 4);
+            lblMaxM2.Location = new Point(148, 62);
             lblMaxM2.Margin = new Padding(2, 0, 2, 0);
             lblMaxM2.Name = "lblMaxM2";
             lblMaxM2.Size = new Size(58, 20);
