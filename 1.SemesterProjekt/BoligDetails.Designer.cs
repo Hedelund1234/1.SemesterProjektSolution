@@ -411,6 +411,17 @@
             // 
             // btnTilbage
             // 
+<<<<<<< HEAD
+            btnTilbage.Location = new Point(338, 854);
+            btnTilbage.Margin = new Padding(2);
+            btnTilbage.Name = "button5";
+            btnTilbage.Size = new Size(112, 34);
+            btnTilbage.TabIndex = 28;
+            btnTilbage.Text = "Tilbage";
+            btnTilbage.UseVisualStyleBackColor = true;
+            btnTilbage.Click += btnTilbage_Click;
+=======
+>>>>>>> ac630330b7f1c32ad8152d91a6e9f427108cc220
             // 
             // button6
             // 
