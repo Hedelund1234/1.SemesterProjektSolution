@@ -143,6 +143,7 @@ namespace _1.SemesterProjekt
                 MessageBox.Show("Ejendomsmægleren skal være oprettet som ejendomsmægler før du kan tilføjet personens id her!");
                 txtSælgerId.Text = bolig.Bolig_Ejendomsmægler_Id.ToString();
             }
+            //else if ()
 
             else if (MessageBox.Show($"Er du sikker på at du vil gemme ændringerne?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
@@ -172,13 +173,7 @@ namespace _1.SemesterProjekt
                     MessageBox.Show("Opdateringerne blev ikke gemt");
                 }
             }
-            }
-            }
-            }
-            }
-            }
-            }
-            }
+
         }
 
     }
