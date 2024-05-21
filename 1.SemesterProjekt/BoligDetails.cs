@@ -44,6 +44,7 @@ namespace _1.SemesterProjekt
             txtSælgerId.Text = bolig.Bolig_Kunde_Id.ToString();
             txtBoligEjendomsmæglerId.Text = bolig.Bolig_Ejendomsmægler_Id.ToString();
             comboboxSalgsstatus.Text = bolig.Salgsstatus;
+            comboBoxAfdelingBoligDetails.Text = bolig.Bolig_Afdelings_Navn;
             txtKøberId.Text = bolig.Bolig_Kunde_Id_Køber.ToString();
         }
 
@@ -167,9 +168,12 @@ namespace _1.SemesterProjekt
                 int størrelse = størrelseInt;
                 int bolig_Kunde_Id = bolig_Kunde_IdInt;
                 int bolig_Ejendomsmægler_Id = bolig_Ejendomsmægler_IdInt;
-                //string bolig_Afdelings_Navn = comboboxAfdelings_Navn.Text;
+                string bolig_Afdelings_Navn = comboBoxAfdelingBoligDetails.Text;
                 string salgsstatus = comboboxSalgsstatus.Text;
                 int bolig_Kunde_Id_Køber = bolig_Kunde_Id_KøberInt;
+                DateTime dato = IsCbHandelsDatoChanged();
+
+
 
 
                 Bolig opdateretBolig = new Bolig
@@ -182,10 +186,10 @@ namespace _1.SemesterProjekt
                     Størrelse = størrelse,
                     Bolig_Kunde_Id = bolig_Kunde_Id,
                     Bolig_Ejendomsmægler_Id = bolig_Ejendomsmægler_Id,
-                    //Bolig_Afdelings_Navn = bolig_Afdelings_Navn,
+                    Bolig_Afdelings_Navn = bolig_Afdelings_Navn,
                     Salgsstatus = salgsstatus,
                     Bolig_Kunde_Id_Køber = bolig_Kunde_Id_Køber,
-                    //Handels_Dato = ,
+                    Handels_Dato = dato,
                 };
 
                 bool opdateret = db.Update(opdateretBolig);
@@ -200,10 +204,40 @@ namespace _1.SemesterProjekt
             }
 
         }
+        internal DateTime IsCbHandelsDatoChanged()
+        {
+            DateTime dato;
+            if (cbHandelsdato.Checked)
+            {
+                return dato = dtpBoligDetails.Value;
+            }
+            else
+            {
+                return dato = (DateTime)bolig.Handels_Dato;
+            }
+        }
 
         private void dtpBoligDetails_ValueChanged(object sender, EventArgs e)
         {
-            DateTime datetime = dtpBoligDetails.Value;
+
+            DateTime dato = dtpBoligDetails.Value;
+
+
+        }
+
+        private void cbHandelsdato_CheckedChanged(object sender, EventArgs e)
+        {
+            DateTime dato;
+            if (cbHandelsdato.Checked)
+            {
+                dtpBoligDetails.Show();
+                dato = dtpBoligDetails.Value;
+            }
+            else
+            {
+                dtpBoligDetails.Hide();
+                dato = (DateTime)bolig.Handels_Dato;
+            }
         }
     }
 }

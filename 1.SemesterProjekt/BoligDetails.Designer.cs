@@ -67,7 +67,7 @@
             label14 = new Label();
             comboBoxAfdelingBoligDetails = new ComboBox();
             dtpBoligDetails = new DateTimePicker();
-            checkBox1 = new CheckBox();
+            cbHandelsdato = new CheckBox();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvKunder).BeginInit();
@@ -461,28 +461,31 @@
             // dtpBoligDetails
             // 
             dtpBoligDetails.Location = new Point(474, 368);
+            dtpBoligDetails.MaxDate = new DateTime(2100, 1, 31, 0, 0, 0, 0);
+            dtpBoligDetails.MinDate = new DateTime(1899, 1, 1, 0, 0, 0, 0);
             dtpBoligDetails.Name = "dtpBoligDetails";
             dtpBoligDetails.Size = new Size(199, 27);
             dtpBoligDetails.TabIndex = 29;
             dtpBoligDetails.Visible = false;
             dtpBoligDetails.ValueChanged += dtpBoligDetails_ValueChanged;
             // 
-            // checkBox1
+            // cbHandelsdato
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(474, 311);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(151, 24);
-            checkBox1.TabIndex = 30;
-            checkBox1.Text = "Tilføj handelsdato";
-            checkBox1.UseVisualStyleBackColor = true;
+            cbHandelsdato.AutoSize = true;
+            cbHandelsdato.Location = new Point(474, 311);
+            cbHandelsdato.Name = "cbHandelsdato";
+            cbHandelsdato.Size = new Size(151, 24);
+            cbHandelsdato.TabIndex = 30;
+            cbHandelsdato.Text = "Tilføj handelsdato";
+            cbHandelsdato.UseVisualStyleBackColor = true;
+            cbHandelsdato.CheckedChanged += cbHandelsdato_CheckedChanged;
             // 
             // BoligDetails
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1400, 900);
-            Controls.Add(checkBox1);
+            Controls.Add(cbHandelsdato);
             Controls.Add(dtpBoligDetails);
             Controls.Add(btnDelete);
             Controls.Add(btnUpdate);
@@ -568,6 +571,6 @@
         private Label label14;
         private ComboBox comboBoxAfdelingBoligDetails;
         private DateTimePicker dtpBoligDetails;
-        private CheckBox checkBox1;
+        private CheckBox cbHandelsdato;
     }
 }

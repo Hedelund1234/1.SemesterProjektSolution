@@ -212,7 +212,7 @@ namespace _1.SemesterProjekt.DataAccess
         }
         internal bool Update(Bolig bolig)
         {
-            string command = "UPDATE Bolig SET Adresse = @adr, Postnummer = @postNr, Type = @type, Udbudspris = @uPris, Størrelse = @str, Bolig_Kunde_Id = @bKid, Bolig_Ejendomsmægler_Id = @bEId, Bolig_Afdelings_Navn = @bANavn, Salgsstatus = @SalgStatus, Bolig_Kunde_Id_Køber = @bKundeIdKøb, Handels_Dato = @hDato WHERE Bolig_Id = @bId)";
+            string command = "UPDATE Bolig SET Adresse = @adr, Postnummer = @postNr, Type = @type, Udbudspris = @uPris, Størrelse = @str, Bolig_Kunde_Id = @bKid, Bolig_Ejendomsmægler_Id = @bEId, Bolig_Afdelings_Navn = @bANavn, Salgsstatus = @SalgStatus, Bolig_Kunde_Id_Køber = @bKundeIdKøb, Handels_Dato = @hDato WHERE Bolig_Id = @bId";
             SqlConnection conn = new SqlConnection(connStrings);
             SqlCommand cmd = new SqlCommand(command, conn);
 
@@ -226,8 +226,23 @@ namespace _1.SemesterProjekt.DataAccess
             cmd.Parameters.AddWithValue("@bEId", bolig.Bolig_Ejendomsmægler_Id);
             cmd.Parameters.AddWithValue("@bANavn", bolig.Bolig_Afdelings_Navn);
             cmd.Parameters.AddWithValue("@SalgStatus", bolig.Salgsstatus);
-            cmd.Parameters.AddWithValue("@bKundeIdKøb", bolig.Bolig_Kunde_Id_Køber);
-            cmd.Parameters.AddWithValue("@hDato", bolig.Handels_Dato);
+            if (bolig.Bolig_Kunde_Id_Køber == 0)
+            {
+                cmd.Parameters.AddWithValue("@bKundeIdKøb", DBNull.Value);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@bKundeIdKøb", bolig.Bolig_Kunde_Id_Køber);
+            }
+            if (bolig.Bolig_Kunde_Id_Køber == null)
+            {
+                cmd.Parameters.AddWithValue("@hDato", bolig.Bolig_Kunde_Id_Køber);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@hDato", DBNull.Value);
+            }
+            
             int rows = 0;
             try
             {
