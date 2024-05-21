@@ -67,6 +67,7 @@
             label14 = new Label();
             comboBoxAfdelingBoligDetails = new ComboBox();
             dtpBoligDetails = new DateTimePicker();
+            checkBox1 = new CheckBox();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvKunder).BeginInit();
@@ -344,7 +345,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(474, 312);
+            label12.Location = new Point(474, 345);
             label12.Margin = new Padding(2, 0, 2, 0);
             label12.Name = "label12";
             label12.Size = new Size(98, 20);
@@ -459,17 +460,29 @@
             // 
             // dtpBoligDetails
             // 
-            dtpBoligDetails.Location = new Point(474, 335);
+            dtpBoligDetails.Location = new Point(474, 368);
             dtpBoligDetails.Name = "dtpBoligDetails";
             dtpBoligDetails.Size = new Size(199, 27);
             dtpBoligDetails.TabIndex = 29;
+            dtpBoligDetails.Visible = false;
             dtpBoligDetails.ValueChanged += dtpBoligDetails_ValueChanged;
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(474, 311);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(151, 24);
+            checkBox1.TabIndex = 30;
+            checkBox1.Text = "Tilføj handelsdato";
+            checkBox1.UseVisualStyleBackColor = true;
             // 
             // BoligDetails
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1400, 900);
+            Controls.Add(checkBox1);
             Controls.Add(dtpBoligDetails);
             Controls.Add(btnDelete);
             Controls.Add(btnUpdate);
@@ -555,5 +568,6 @@
         private Label label14;
         private ComboBox comboBoxAfdelingBoligDetails;
         private DateTimePicker dtpBoligDetails;
+        private CheckBox checkBox1;
     }
 }
