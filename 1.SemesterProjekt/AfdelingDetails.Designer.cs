@@ -34,15 +34,21 @@
             panel1 = new Panel();
             button1 = new Button();
             button2 = new Button();
-            button3 = new Button();
+            AfdelingFormsDetails = new Button();
             button4 = new Button();
             btnLogo = new Button();
-            dataGridView1 = new DataGridView();
             button5 = new Button();
             label1 = new Label();
+            comboBoxAfdelingsDetailsSøg = new ComboBox();
+            label2 = new Label();
+            txtBoxAfdelingNrDetails = new TextBox();
+            txtBoxAfdelingsNavnDetails = new TextBox();
+            label3 = new Label();
+            label4 = new Label();
+            dgvAfdelingsDetails = new DataGridView();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvAfdelingsDetails).BeginInit();
             SuspendLayout();
             // 
             // panel2
@@ -74,7 +80,7 @@
             panel1.BackColor = Color.Silver;
             panel1.Controls.Add(button1);
             panel1.Controls.Add(button2);
-            panel1.Controls.Add(button3);
+            panel1.Controls.Add(AfdelingFormsDetails);
             panel1.Controls.Add(button4);
             panel1.Controls.Add(btnLogo);
             panel1.Location = new Point(0, 0);
@@ -111,18 +117,19 @@
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
-            // button3
+            // AfdelingFormsDetails
             // 
-            button3.BackColor = Color.FromArgb(224, 224, 224);
-            button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
-            button3.BackgroundImageLayout = ImageLayout.None;
-            button3.Location = new Point(29, 457);
-            button3.Margin = new Padding(2);
-            button3.Name = "button3";
-            button3.Size = new Size(194, 73);
-            button3.TabIndex = 15;
-            button3.Text = "Afdeling";
-            button3.UseVisualStyleBackColor = false;
+            AfdelingFormsDetails.BackColor = Color.FromArgb(224, 224, 224);
+            AfdelingFormsDetails.BackgroundImage = (Image)resources.GetObject("AfdelingFormsDetails.BackgroundImage");
+            AfdelingFormsDetails.BackgroundImageLayout = ImageLayout.None;
+            AfdelingFormsDetails.Location = new Point(29, 457);
+            AfdelingFormsDetails.Margin = new Padding(2);
+            AfdelingFormsDetails.Name = "AfdelingFormsDetails";
+            AfdelingFormsDetails.Size = new Size(194, 73);
+            AfdelingFormsDetails.TabIndex = 15;
+            AfdelingFormsDetails.Text = "Afdeling";
+            AfdelingFormsDetails.UseVisualStyleBackColor = false;
+            AfdelingFormsDetails.Click += AfdelingFormsDetails_Click;
             // 
             // button4
             // 
@@ -154,16 +161,6 @@
             btnLogo.UseVisualStyleBackColor = false;
             btnLogo.Click += btnLogo_Click;
             // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(364, 79);
-            dataGridView1.Margin = new Padding(2);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(1025, 810);
-            dataGridView1.TabIndex = 22;
-            // 
             // button5
             // 
             button5.Location = new Point(268, 862);
@@ -186,14 +183,94 @@
             label1.TabIndex = 35;
             label1.Text = "Afdelings detaljer";
             // 
+            // comboBoxAfdelingsDetailsSøg
+            // 
+            comboBoxAfdelingsDetailsSøg.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxAfdelingsDetailsSøg.FormattingEnabled = true;
+            comboBoxAfdelingsDetailsSøg.Items.AddRange(new object[] { "Bolig", "Ejendomsmægler" });
+            comboBoxAfdelingsDetailsSøg.Location = new Point(268, 164);
+            comboBoxAfdelingsDetailsSøg.Margin = new Padding(2);
+            comboBoxAfdelingsDetailsSøg.Name = "comboBoxAfdelingsDetailsSøg";
+            comboBoxAfdelingsDetailsSøg.Size = new Size(178, 28);
+            comboBoxAfdelingsDetailsSøg.TabIndex = 57;
+            comboBoxAfdelingsDetailsSøg.DropDownClosed += comboBoxAfdelingsDetailsSøg_DropDownClosed;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(268, 142);
+            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(35, 20);
+            label2.TabIndex = 58;
+            label2.Text = "Søg";
+            // 
+            // txtBoxAfdelingNrDetails
+            // 
+            txtBoxAfdelingNrDetails.Enabled = false;
+            txtBoxAfdelingNrDetails.Location = new Point(268, 262);
+            txtBoxAfdelingNrDetails.Margin = new Padding(2);
+            txtBoxAfdelingNrDetails.Name = "txtBoxAfdelingNrDetails";
+            txtBoxAfdelingNrDetails.Size = new Size(178, 27);
+            txtBoxAfdelingNrDetails.TabIndex = 59;
+            // 
+            // txtBoxAfdelingsNavnDetails
+            // 
+            txtBoxAfdelingsNavnDetails.Enabled = false;
+            txtBoxAfdelingsNavnDetails.Location = new Point(268, 358);
+            txtBoxAfdelingsNavnDetails.Margin = new Padding(2);
+            txtBoxAfdelingsNavnDetails.Name = "txtBoxAfdelingsNavnDetails";
+            txtBoxAfdelingsNavnDetails.Size = new Size(178, 27);
+            txtBoxAfdelingsNavnDetails.TabIndex = 59;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(268, 240);
+            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(131, 20);
+            label3.TabIndex = 58;
+            label3.Text = "Afdelings nummer";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(268, 336);
+            label4.Margin = new Padding(2, 0, 2, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(107, 20);
+            label4.TabIndex = 58;
+            label4.Text = "Afdelings navn";
+            // 
+            // dgvAfdelingsDetails
+            // 
+            dgvAfdelingsDetails.AllowUserToAddRows = false;
+            dgvAfdelingsDetails.AllowUserToDeleteRows = false;
+            dgvAfdelingsDetails.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            dgvAfdelingsDetails.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvAfdelingsDetails.Location = new Point(483, 79);
+            dgvAfdelingsDetails.Margin = new Padding(2);
+            dgvAfdelingsDetails.Name = "dgvAfdelingsDetails";
+            dgvAfdelingsDetails.ReadOnly = true;
+            dgvAfdelingsDetails.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
+            dgvAfdelingsDetails.Size = new Size(902, 810);
+            dgvAfdelingsDetails.TabIndex = 22;
+            // 
             // AfdelingDetails
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1400, 900);
+            Controls.Add(txtBoxAfdelingsNavnDetails);
+            Controls.Add(txtBoxAfdelingNrDetails);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(comboBoxAfdelingsDetailsSøg);
             Controls.Add(label1);
             Controls.Add(button5);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvAfdelingsDetails);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -201,9 +278,10 @@
             Name = "AfdelingDetails";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AfdelingDetails";
+            Load += AfdelingDetails_Load;
             panel2.ResumeLayout(false);
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvAfdelingsDetails).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -215,11 +293,17 @@
         private Panel panel1;
         private Button button1;
         private Button button2;
-        private Button button3;
+        private Button AfdelingFormsDetails;
         private Button button4;
         private Button btnLogo;
-        private DataGridView dataGridView1;
         private Button button5;
         private Label label1;
+        private ComboBox comboBoxAfdelingsDetailsSøg;
+        private Label label2;
+        private TextBox txtBoxAfdelingNrDetails;
+        private TextBox txtBoxAfdelingsNavnDetails;
+        private Label label3;
+        private Label label4;
+        private DataGridView dgvAfdelingsDetails;
     }
 }

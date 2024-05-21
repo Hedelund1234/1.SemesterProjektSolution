@@ -34,8 +34,8 @@
             panel1 = new Panel();
             btnLogo = new Button();
             btnSøg = new Button();
-            comboBox2 = new ComboBox();
-            comboBox1 = new ComboBox();
+            comboBoxAfdelingsNavn = new ComboBox();
+            comboBoxAfdelingsNr = new ComboBox();
             label3 = new Label();
             label1 = new Label();
             button1 = new Button();
@@ -108,24 +108,29 @@
             btnSøg.TabIndex = 27;
             btnSøg.Text = "Søg";
             btnSøg.UseVisualStyleBackColor = true;
+            btnSøg.Click += btnSøg_Click;
             // 
-            // comboBox2
+            // comboBoxAfdelingsNavn
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(268, 262);
-            comboBox2.Margin = new Padding(2);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(178, 28);
-            comboBox2.TabIndex = 56;
+            comboBoxAfdelingsNavn.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxAfdelingsNavn.FormattingEnabled = true;
+            comboBoxAfdelingsNavn.Items.AddRange(new object[] { "Nordjylland", "Midtjylland", "Syddanmark", "Sjælland", "Hovedstaden" });
+            comboBoxAfdelingsNavn.Location = new Point(268, 262);
+            comboBoxAfdelingsNavn.Margin = new Padding(2);
+            comboBoxAfdelingsNavn.Name = "comboBoxAfdelingsNavn";
+            comboBoxAfdelingsNavn.Size = new Size(178, 28);
+            comboBoxAfdelingsNavn.TabIndex = 56;
             // 
-            // comboBox1
+            // comboBoxAfdelingsNr
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(268, 164);
-            comboBox1.Margin = new Padding(2);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(178, 28);
-            comboBox1.TabIndex = 56;
+            comboBoxAfdelingsNr.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxAfdelingsNr.FormattingEnabled = true;
+            comboBoxAfdelingsNr.Items.AddRange(new object[] { "1", "2", "3", "4", "5" });
+            comboBoxAfdelingsNr.Location = new Point(268, 164);
+            comboBoxAfdelingsNr.Margin = new Padding(2);
+            comboBoxAfdelingsNr.Name = "comboBoxAfdelingsNr";
+            comboBoxAfdelingsNr.Size = new Size(178, 28);
+            comboBoxAfdelingsNr.TabIndex = 56;
             // 
             // label3
             // 
@@ -203,13 +208,15 @@
             // 
             // dgvBolig
             // 
+            dgvBolig.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvBolig.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvBolig.Location = new Point(487, 63);
+            dgvBolig.Location = new Point(483, 79);
             dgvBolig.Margin = new Padding(2);
             dgvBolig.Name = "dgvBolig";
             dgvBolig.RowHeadersWidth = 62;
-            dgvBolig.Size = new Size(902, 826);
+            dgvBolig.Size = new Size(902, 810);
             dgvBolig.TabIndex = 63;
+            dgvBolig.CellDoubleClick += dgvBolig_CellDoubleClick;
             // 
             // AfdelingForms
             // 
@@ -224,15 +231,16 @@
             Controls.Add(btnSøg);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Controls.Add(comboBox2);
+            Controls.Add(comboBoxAfdelingsNavn);
             Controls.Add(label1);
-            Controls.Add(comboBox1);
+            Controls.Add(comboBoxAfdelingsNr);
             Controls.Add(label3);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(2);
             Name = "AfdelingForms";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Afdeling";
+            Load += AfdelingForms_Load;
             panel2.ResumeLayout(false);
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvBolig).EndInit();
@@ -248,8 +256,8 @@
         private Button btnLogo;
         private Label label3;
         private Label label1;
-        private ComboBox comboBox2;
-        private ComboBox comboBox1;
+        private ComboBox comboBoxAfdelingsNavn;
+        private ComboBox comboBoxAfdelingsNr;
         private Button btnSøg;
         private Button button1;
         private Button button2;

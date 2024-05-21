@@ -1,20 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using _1.SemesterProjekt.DataAccess;
+using _1.SemesterProjekt.Models;
 
 namespace _1.SemesterProjekt
 {
     public partial class AfdelingDetails : Form
     {
-        public AfdelingDetails()
+        int nr;
+        Afdeling afdeling;
+        AfdelingDbHandler db;
+        List<Afdeling> al = new List<Afdeling>();
+        public AfdelingDetails(int nr)
         {
             InitializeComponent();
+            this.nr = nr;
+            SeedData();
+            txtBoxAfdelingNrDetails.Text = afdeling.Afdelings_Nr.ToString();
+            txtBoxAfdelingsNavnDetails.Text = afdeling.Afdelings_Navn;
+            }
+        void SeedData()
+        {
+            db = new AfdelingDbHandler();
+            afdeling = db.Get(nr);
         }
 
         private void btnLogo_Click(object sender, EventArgs e)
@@ -47,14 +53,40 @@ namespace _1.SemesterProjekt
 
         private void button5_Click(object sender, EventArgs e)
         {
-            OpretEjendomsmæglerForms ejendomsmæglerOpret = new OpretEjendomsmæglerForms();
-            ejendomsmæglerOpret.Show();
+            AfdelingForms afdelingForms = new AfdelingForms();
+            afdelingForms.Show();
             this.Hide();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void AfdelingDetails_Load(object sender, EventArgs e)
+        {
+            comboBoxAfdelingsDetailsSøg.Text = "Bolig";
+            dgvAfdelingsDetails.DataSource = db.GetJoinBolig(comboBoxAfdelingsDetailsSøg.Text, txtBoxAfdelingsNavnDetails.Text);
+        }
+
+        private void comboBoxAfdelingsDetailsSøg_DropDownClosed(object sender, EventArgs e)
+        {
+            string searchChoice = comboBoxAfdelingsDetailsSøg.Text;
+            if (searchChoice == "Bolig")
+            {
+                dgvAfdelingsDetails.DataSource = db.GetJoinBolig(searchChoice, txtBoxAfdelingsNavnDetails.Text);
+            }
+            else
+            {
+                dgvAfdelingsDetails.DataSource = db.GetJoinEjendomsmægler(searchChoice, Convert.ToInt32(txtBoxAfdelingNrDetails.Text));
+            }
+        }
+
+        private void AfdelingFormsDetails_Click(object sender, EventArgs e)
+        {
+            AfdelingForms afdeling = new AfdelingForms();
+            afdeling.Show();
+            this.Hide();
         }
     }
 }
