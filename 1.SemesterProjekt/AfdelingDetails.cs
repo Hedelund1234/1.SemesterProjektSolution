@@ -94,9 +94,8 @@ namespace _1.SemesterProjekt
         {
             List<Bolig> boligList = db.GetJoinBolig(comboBoxAfdelingsDetailsSøg.Text, txtBoxAfdelingsNavnDetails.Text);
             List<Ejendomsmægler> ejendomsmæglerList = db.GetJoinEjendomsmægler("Ejendomsmægler", Convert.ToInt32(txtBoxAfdelingNrDetails.Text));
-            int arraySize = boligList.Count;
-
-            bool success = db.SaveDataToCsv(boligList, ejendomsmæglerList, $"BoligerOmråde{txtBoxAfdelingsNavnDetails.Text}.csv", arraySize);
+            
+            bool success = db.SaveDataToCsv(boligList, ejendomsmæglerList, $"BoligerOmråde{txtBoxAfdelingsNavnDetails.Text}.csv", boligList.Count);
             if (success)
             {
                 MessageBox.Show(".csv fil gemt", ".csv gemt", MessageBoxButtons.OK, MessageBoxIcon.Information);

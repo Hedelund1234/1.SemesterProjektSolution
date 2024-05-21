@@ -86,7 +86,7 @@
             // 
             // btnOpret
             // 
-            btnOpret.Location = new Point(436, 862);
+            btnOpret.Location = new Point(380, 862);
             btnOpret.Margin = new Padding(2);
             btnOpret.Name = "btnOpret";
             btnOpret.Size = new Size(102, 30);
@@ -230,7 +230,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(271, 141);
+            label1.Location = new Point(268, 141);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(68, 20);
@@ -239,15 +239,15 @@
             // 
             // txtBoxKundeEmail
             // 
-            txtBoxKundeEmail.Location = new Point(271, 358);
+            txtBoxKundeEmail.Location = new Point(268, 358);
             txtBoxKundeEmail.Name = "txtBoxKundeEmail";
-            txtBoxKundeEmail.Size = new Size(267, 27);
+            txtBoxKundeEmail.Size = new Size(211, 27);
             txtBoxKundeEmail.TabIndex = 37;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(271, 437);
+            label5.Location = new Point(268, 434);
             label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
             label5.Size = new Size(113, 20);
@@ -256,29 +256,29 @@
             // 
             // txtBoxKundeNavn
             // 
-            txtBoxKundeNavn.Location = new Point(271, 262);
+            txtBoxKundeNavn.Location = new Point(268, 262);
             txtBoxKundeNavn.Name = "txtBoxKundeNavn";
-            txtBoxKundeNavn.Size = new Size(267, 27);
+            txtBoxKundeNavn.Size = new Size(211, 27);
             txtBoxKundeNavn.TabIndex = 37;
             // 
             // txtBoxKundeId
             // 
-            txtBoxKundeId.Location = new Point(271, 164);
+            txtBoxKundeId.Location = new Point(268, 164);
             txtBoxKundeId.Name = "txtBoxKundeId";
-            txtBoxKundeId.Size = new Size(267, 27);
+            txtBoxKundeId.Size = new Size(211, 27);
             txtBoxKundeId.TabIndex = 37;
             // 
             // txtBoxKundeTelefonnummer
             // 
-            txtBoxKundeTelefonnummer.Location = new Point(271, 457);
+            txtBoxKundeTelefonnummer.Location = new Point(268, 457);
             txtBoxKundeTelefonnummer.Name = "txtBoxKundeTelefonnummer";
-            txtBoxKundeTelefonnummer.Size = new Size(267, 27);
+            txtBoxKundeTelefonnummer.Size = new Size(211, 27);
             txtBoxKundeTelefonnummer.TabIndex = 37;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(271, 239);
+            label3.Location = new Point(268, 239);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
             label3.Size = new Size(43, 20);
@@ -289,11 +289,11 @@
             // 
             dgvBolig.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvBolig.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvBolig.Location = new Point(543, 73);
+            dgvBolig.Location = new Point(487, 79);
             dgvBolig.Margin = new Padding(2);
             dgvBolig.Name = "dgvBolig";
             dgvBolig.RowHeadersWidth = 62;
-            dgvBolig.Size = new Size(846, 816);
+            dgvBolig.Size = new Size(898, 810);
             dgvBolig.TabIndex = 58;
             dgvBolig.CellDoubleClick += dgvBolig_CellDoubleClick;
             // 
