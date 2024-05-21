@@ -4,6 +4,9 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
 using System.Text;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
+using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace _1.SemesterProjekt.DataAccess
 {
@@ -14,6 +17,62 @@ namespace _1.SemesterProjekt.DataAccess
         {
             ConnectionHandler connectionHandler = new ConnectionHandler();
             connStrings = connectionHandler.GetConnectionString();
+        }
+        internal List<Bolig> Get(string adresse, string postnummer, string type, string afdeling, string salgsstatus, string prismin, string prismax,
+                                  string m2min, string m2max)
+        {
+            List<Bolig> bl = new List<Bolig>();
+            Bolig bolig = new Bolig();
+            string command = "SELECT * FROM Bolig WHERE Adresse LIKE '%" + adresse + "%' AND Postnummer LIKE '%" + postnummer + "%' AND Type LIKE '%" + type + "%' AND Bolig_Afdelings_Navn LIKE '%" + afdeling + "%' AND Salgsstatus LIKE '%" + salgsstatus + "%' AND Udbudspris BETWEEN " + prismin + " AND " + prismax + " AND Størrelse BETWEEN " + m2min + " AND " + m2max + "";
+            SqlConnection conn = new SqlConnection(connStrings);
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(command, conn);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    int _boligId = (int)reader["Bolig_Id"];
+                    string _adresse = (string)reader["Adresse"];
+                    int _postnummer = (int)reader["Postnummer"];
+                    string _type = (string)reader["Type"];
+                    int _udbudspris = (int)reader["Udbudspris"];
+                    int _størrelse = (int)reader["Størrelse"];
+                    int _boligKundeId = (int)reader["Bolig_Kunde_Id"];
+                    int _boligEjendomsmæglerId = (int)reader["Bolig_Ejendomsmægler_Id"];
+                    string _boligAfdelingsNavn = (string)reader["Bolig_Afdelings_Navn"];
+                    string _salgsstatus = (string)reader["Salgsstatus"];
+                    int? _boligKundeIdKøber = reader["Bolig_Kunde_Id_Køber"] is DBNull ? (int?)null : (int)reader["Bolig_Kunde_Id_Køber"];
+                    DateTime? _handelsDato = reader["Handels_Dato"] is DBNull ? (DateTime?)null : (DateTime)reader["Handels_Dato"];
+
+                    bolig = new Bolig
+                    {
+                        Bolig_Id = _boligId,
+                        Adresse = _adresse,
+                        Postnummer = _postnummer,
+                        Type = _type,
+                        Udbudspris = _udbudspris,
+                        Størrelse = _størrelse,
+                        Bolig_Kunde_Id = _boligKundeId,
+                        Bolig_Ejendomsmægler_Id = _boligEjendomsmæglerId,
+                        Bolig_Afdelings_Navn = _boligAfdelingsNavn,
+                        Salgsstatus = _salgsstatus,
+                        Bolig_Kunde_Id_Køber = _boligKundeIdKøber ?? 0,
+                        Handels_Dato = _handelsDato ?? DateTime.MinValue
+                    };
+                    bl.Add(bolig);
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return bl;
         }
         internal Bolig Get(int id)
         {
@@ -38,9 +97,14 @@ namespace _1.SemesterProjekt.DataAccess
                     int boligEjendomsmæglerId = (int)reader["Bolig_Ejendomsmægler_Id"];
                     string boligAfdelingsNavn = (string)reader["Bolig_Afdelings_Navn"];
                     string salgsstatus = (string)reader["Salgsstatus"];
-                    int boligKundeIdKøber = (int)reader["Bolig_Kunde_Id_Køber"];
-                    DateTime handelsDato = (DateTime)reader["Handels_Dato"];
-                    bolig = new Bolig { Bolig_Id = boligId, Adresse = adresse, Postnummer = postnummer, Type = type, Udbudspris = udbudspris, Størrelse = størrelse, Bolig_Kunde_Id = boligKundeId, Bolig_Ejendomsmægler_Id = boligEjendomsmæglerId, Bolig_Afdelings_Navn = boligAfdelingsNavn, Salgsstatus = salgsstatus, Bolig_Kunde_Id_Køber = boligKundeIdKøber, Handels_Dato = handelsDato };
+                    int? boligKundeIdKøber = reader["Bolig_Kunde_Id_Køber"] is DBNull ? (int?)null : (int)reader["Bolig_Kunde_Id_Køber"];
+                    DateTime? handelsDato = reader["Handels_Dato"] is DBNull ? (DateTime?)null : (DateTime)reader["Handels_Dato"];
+
+                    bolig = new Bolig { Bolig_Id = boligId, Adresse = adresse, Postnummer = postnummer, Type = type,
+                        Udbudspris = udbudspris, Størrelse = størrelse, Bolig_Kunde_Id = boligKundeId,
+                        Bolig_Ejendomsmægler_Id = boligEjendomsmæglerId, Bolig_Afdelings_Navn = boligAfdelingsNavn,
+                        Salgsstatus = salgsstatus, Bolig_Kunde_Id_Køber = boligKundeIdKøber ?? 0, Handels_Dato = handelsDato ?? DateTime.MinValue };
+                    
                 }
             }
             catch (Exception)
@@ -77,9 +141,23 @@ namespace _1.SemesterProjekt.DataAccess
                     int boligEjendomsmæglerId = (int)reader["Bolig_Ejendomsmægler_Id"];
                     string boligAfdelingsNavn = (string)reader["Bolig_Afdelings_Navn"];
                     string salgsstatus = (string)reader["Salgsstatus"];
-                    int boligKundeIdKøber = (int)reader["Bolig_Kunde_Id_Køber"];
-                    DateTime handelsDato = (DateTime)reader["Handels_Dato"];
-                    bolig = new Bolig { Bolig_Id = boligId, Adresse = adresse, Postnummer = postnummer, Type = type, Udbudspris = udbudspris, Størrelse = størrelse, Bolig_Kunde_Id = boligKundeId, Bolig_Ejendomsmægler_Id = boligEjendomsmæglerId, Bolig_Afdelings_Navn = boligAfdelingsNavn, Salgsstatus = salgsstatus, Bolig_Kunde_Id_Køber = boligKundeIdKøber, Handels_Dato = handelsDato };
+                    int? boligKundeIdKøber = reader["Bolig_Kunde_Id_Køber"] is DBNull ? (int?)null : (int)reader["Bolig_Kunde_Id_Køber"];
+                    DateTime? handelsDato = reader["Handels_Dato"] is DBNull ? (DateTime?)null : (DateTime)reader["Handels_Dato"];
+                    bolig = new Bolig
+                    {
+                        Bolig_Id = boligId,
+                        Adresse = adresse,
+                        Postnummer = postnummer,
+                        Type = type,
+                        Udbudspris = udbudspris,
+                        Størrelse = størrelse,
+                        Bolig_Kunde_Id = boligKundeId,
+                        Bolig_Ejendomsmægler_Id = boligEjendomsmæglerId,
+                        Bolig_Afdelings_Navn = boligAfdelingsNavn,
+                        Salgsstatus = salgsstatus,
+                        Bolig_Kunde_Id_Køber = boligKundeIdKøber ?? 0,
+                        Handels_Dato = handelsDato ?? DateTime.MinValue
+                    };
                     bl.Add(bolig);
                 }
             }
@@ -87,6 +165,7 @@ namespace _1.SemesterProjekt.DataAccess
             {
 
             }
+            
             finally
             {
                 conn.Close();

@@ -8,6 +8,10 @@ namespace _1.SemesterProjekt
         BoligDbHandler db = new BoligDbHandler();
         List<Bolig> bl = new List<Bolig>();
         Bolig bolig = new Bolig();
+        int minpris;
+        int maxpris;
+        int minm2;
+        int maxm2;
 
         public BoligForms()
         {
@@ -16,10 +20,31 @@ namespace _1.SemesterProjekt
             SliderM2();
         }
 
+        void kvmPris(List<Bolig> bl)
+        {
+            int udbud;
+            int stør;
+            int _sum = 0;
+            int sum = 0;
+            int sumUd = 0;
+            if (bl != null)
+            {
+                for (int i = 0; i < bl.Count; i++)
+                {
+                    udbud = bl[i].Udbudspris;
+                    stør = bl[i].Størrelse;
+                    _sum = udbud / stør;
+                    sum =+ _sum;
+                }
+            }
+            sumUd = sum / bl.Count;
+            txtKvmPris.Text = sumUd.ToString();
+        }
+
         void SliderPris()
         {
-            int minpris = tbMinPris.Value * 250000;
-            int maxpris = tbMaxPris.Value * 250000;
+            minpris = tbMinPris.Value * 250000;
+            maxpris = tbMaxPris.Value * 250000;
             lblMinpris.Text = minpris.ToString();
             lblMaxpris.Text = maxpris.ToString();
             if (tbMaxPris.Value < tbMinPris.Value)
@@ -35,13 +60,13 @@ namespace _1.SemesterProjekt
         }
         void SliderM2()
         {
-            int minm2 = tbMinM2.Value * 15;
-            int maxm2 = tbMaxM2.Value * 15;
+            minm2 = tbMinM2.Value * 15;
+            maxm2 = tbMaxM2.Value * 15;
             lblMinM2.Text = minm2.ToString();
             lblMaxM2.Text = maxm2.ToString();
             if (tbMaxM2.Value < tbMinM2.Value)
             {
-                MessageBox.Show("Fejl (´Minimus M2 er større end maksimums M2");
+                MessageBox.Show("Fejl (Minimus M2 er større end maksimums M2)");
                 tbMinM2.Value = 0;
                 tbMaxM2.Value = 20;
                 minm2 = tbMinM2.Value * 15;
@@ -76,7 +101,7 @@ namespace _1.SemesterProjekt
             DataGridView dgv = sender as DataGridView;
 
             DataGridViewRow data = dgv.Rows[row];
-            int id = (int)data.Cells["id"].Value;
+            int id = (int)data.Cells["Bolig_Id"].Value;
             NavigateToDetails(id);
         }
         void NavigateToDetails(int id)
@@ -88,57 +113,76 @@ namespace _1.SemesterProjekt
 
         private void btnSøg_Click(object sender, EventArgs e)
         {
-            string afdeling;
-            string type;
-            int postnummer;
-            string salgsstatus;
-            int pris;
-            int m2;
-            string adresse;
-            bool postnummerbool = int.TryParse(txtPostnummer.Text, out int postnummerint);
-            if (comboBoxAfdeling.Text.Length == 0 && comboBoxType.Text.Length == 0 && txtPostnummer.Text.Length == 0 && cbSolgt.Checked.Equals(false) && cbTilSalg.Checked.Equals(false)
-                && tbMinPris.Value.Equals(0) && tbMaxPris.Value.Equals(20) && tbMinM2.Value.Equals(0) && tbMaxM2.Value.Equals(20) && txtAdresse.Text.Length == 0)
+            try
             {
-                bl = db.Get();
-                dgvBolig.DataSource = bl;
-                MessageBox.Show("ramt top");
-            }
-            else if (txtPostnummer.Text.Length > 0)
-            {
-                if (!postnummerbool || postnummerint < 999 || postnummerint > 10000)
+                string afdeling = "";
+                string type = "";
+                int postnummer;
+                string postnummerstring = "";
+                string salgsstatus = "";
+                string prismin = "";
+                string prismax = "";
+                string m2min = "";
+                string m2max = "";
+                string adresse = "";
+                bool postnummerbool = int.TryParse(txtPostnummer.Text, out int postnummerint);
+                if (txtPostnummer.Text.Length > 0)
                 {
-                    MessageBox.Show("Det intastede postnummer er ikke gyldigt!");
-                    txtPostnummer.Text = null;
+                    if (!postnummerbool || postnummerint < 999 || postnummerint > 10000)
+                    {
+                        MessageBox.Show("Det intastede postnummer er ikke gyldigt!");
+                        txtPostnummer.Text = null;
+                    }
+
                 }
-            }
-            else if (cbSolgt.Checked.Equals(true) && cbTilSalg.Checked.Equals(true))
-            {
-                MessageBox.Show("Fejl (Boligen kan ikke både være solgt og til salg)");
-            }
+                else if (cbSolgt.Checked.Equals(true) && cbTilSalg.Checked.Equals(true))
+                {
+                    MessageBox.Show("Fejl (Boligen kan ikke både være solgt og til salg)");
+                }
 
-            if (comboBoxAfdeling.Text.Length > 0)
-            {
-                afdeling = comboBoxAfdeling.Text;
-            }
-            if (comboBoxType.Text.Length > 0)
-            {
-                type = comboBoxType.Text;
-            }
-            if (txtPostnummer.Text.Length > 0)
-            {
-                postnummer = postnummerint;
-            }
-            if (cbSolgt.Checked.Equals(true))
-            {
-                salgsstatus = "Solgt";
-            }
-            if (cbTilSalg.Checked.Equals(true))
-            {
-                salgsstatus = "Til salg";
-            }
+                if (comboBoxAfdeling.Text.Length == 0 && comboBoxType.Text.Length == 0 && txtPostnummer.Text.Length == 0 && cbSolgt.Checked.Equals(false) && cbTilSalg.Checked.Equals(false)
+                    && tbMinPris.Value.Equals(0) && tbMaxPris.Value.Equals(20) && tbMinM2.Value.Equals(0) && tbMaxM2.Value.Equals(20) && txtAdresse.Text.Length == 0)
+                {
+                    bl = db.Get();
+                    dgvBolig.DataSource = bl;
+                }
+                else
+                {
+                    adresse = txtAdresse.Text;
+                    postnummerstring = postnummerint.ToString();
+                    type = comboBoxType.Text;
+                    afdeling = comboBoxAfdeling.Text;
+                    if (cbSolgt.Checked.Equals(true))
+                    {
+                        salgsstatus = "Solgt";
+                    }
+                    if (cbTilSalg.Checked.Equals(true))
+                    {
+                        salgsstatus = "Til salg";
+                    }
+                    prismin = minpris.ToString();
+                    prismax = maxpris.ToString();
+                    m2min = minm2.ToString();
+                    m2max = maxm2.ToString();
+                    
+
+                    bl = db.Get(adresse, postnummerstring, type, afdeling, salgsstatus, prismin, prismax, m2min, m2max);
+                    dgvBolig.DataSource = bl;
+                }
 
 
+                kvmPris(bl);
 
+            }
+            catch (Exception)
+            {
+                
+            }
+            if (bl.Count == 0)
+            {
+                MessageBox.Show("Der er ikke nogen boliger med disse kriterier");
+
+            }
         }
 
 
