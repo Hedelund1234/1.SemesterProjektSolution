@@ -92,7 +92,6 @@
             btnExit.TabIndex = 3;
             btnExit.Text = "X";
             btnExit.UseVisualStyleBackColor = false;
-            
             // 
             // panel1
             // 
@@ -133,7 +132,6 @@
             button2.TabIndex = 16;
             button2.Text = "               Ejendomsmægler";
             button2.UseVisualStyleBackColor = false;
-            
             // 
             // button3
             // 
@@ -146,7 +144,6 @@
             button3.TabIndex = 15;
             button3.Text = "Afdeling";
             button3.UseVisualStyleBackColor = true;
-            
             // 
             // button4
             // 
@@ -159,7 +156,6 @@
             button4.TabIndex = 17;
             button4.Text = "Kunde   ";
             button4.UseVisualStyleBackColor = true;
-            
             // 
             // btnLogo
             // 
@@ -176,7 +172,6 @@
             btnLogo.Size = new Size(96, 96);
             btnLogo.TabIndex = 14;
             btnLogo.UseVisualStyleBackColor = false;
-          
             // 
             // txtBoligId
             // 
@@ -355,7 +350,7 @@
             // kalenderHandelsDato
             // 
             kalenderHandelsDato.Location = new Point(474, 339);
-            kalenderHandelsDato.Margin = new Padding(7, 7, 7, 7);
+            kalenderHandelsDato.Margin = new Padding(7);
             kalenderHandelsDato.Name = "kalenderHandelsDato";
             kalenderHandelsDato.TabIndex = 25;
             // 
