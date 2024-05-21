@@ -21,6 +21,7 @@ namespace _1.SemesterProjekt
         Ejendomsmægler ejendomsmægler = new Ejendomsmægler();
         Bolig bolig = new Bolig();
         Kunde boligsælger = new Kunde();
+        Kunde boligkøber = new Kunde();
         Kunde kunde = new Kunde();
         List<Kunde> kl = new List<Kunde>();
         public BoligDetails(int id)
@@ -98,11 +99,13 @@ namespace _1.SemesterProjekt
             bool postnummerBool = int.TryParse(txtPostnummer.Text, out int postnummerInt);
             bool udbudsprisBool = int.TryParse(txtPris.Text, out int prisInt);
             bool størrelseBool = int.TryParse(txtStørrelse.Text, out int størrelseInt);
-            bool bolig_Kunde_Id = int.TryParse(txtSælgerId.Text, out int bolig_Kunde_IdInt);
-            bool bolig_Ejendomsmægler_Id = int.TryParse(txtBoligEjendomsmæglerId.Text, out int bolig_Ejendomsmægler_IdInt);
-            bool bolig_Kunde_Id_Køber = int.TryParse(txtKøberId.Text, out int bolig_Kunde_Id_KøberInt);
+            bool bolig_Kunde_IdBool = int.TryParse(txtSælgerId.Text, out int bolig_Kunde_IdInt);
+            bool bolig_Ejendomsmægler_IdBool = int.TryParse(txtBoligEjendomsmæglerId.Text, out int bolig_Ejendomsmægler_IdInt);
+            bool bolig_Kunde_Id_KøberBool = int.TryParse(txtKøberId.Text, out int bolig_Kunde_Id_KøberInt);
             boligsælger = kdb.Get(bolig_Kunde_IdInt);
             ejendomsmægler = edb.Get(bolig_Ejendomsmægler_IdInt);
+            boligkøber = kdb.Get(bolig_Kunde_Id_KøberInt);
+
             if (txtAdresse.Text.Length > 50)
             {
                 MessageBox.Show("Adressen kan maksimalt være 50 karaktere lang!");
@@ -123,7 +126,7 @@ namespace _1.SemesterProjekt
                 MessageBox.Show("Størrelsen kan maksimalt være 300 kvadratmeter!");
                 txtStørrelse.Text = bolig.Størrelse.ToString();
             }
-            else if (!bolig_Kunde_Id)
+            else if (!bolig_Kunde_IdBool)
             {
                 MessageBox.Show("Du må kun indtaste tal!");
                 txtSælgerId.Text = bolig.Bolig_Kunde_Id.ToString();
@@ -133,7 +136,7 @@ namespace _1.SemesterProjekt
                 MessageBox.Show("Sælgeren skal være oprettet som kunde før du kan tilføje personens id her!");
                 txtSælgerId.Text = bolig.Bolig_Kunde_Id.ToString();
             }
-            else if (!bolig_Ejendomsmægler_Id)
+            else if (!bolig_Ejendomsmægler_IdBool)
             {
                 MessageBox.Show("Du må kun indtaste tal!");
                 txtSælgerId.Text = bolig.Bolig_Ejendomsmægler_Id.ToString();
@@ -143,23 +146,45 @@ namespace _1.SemesterProjekt
                 MessageBox.Show("Ejendomsmægleren skal være oprettet som ejendomsmægler før du kan tilføjet personens id her!");
                 txtSælgerId.Text = bolig.Bolig_Ejendomsmægler_Id.ToString();
             }
-            //else if ()
+            else if (!bolig_Kunde_Id_KøberBool)
+            {
+                MessageBox.Show("Du må kun indtaste tal!");
+                txtKøberId.Text = bolig.Bolig_Kunde_Id_Køber.ToString();
+            }
+            else if (boligkøber.Kunde_Id == null)
+            {
+                MessageBox.Show("Køberen skal være oprettet som kunde før du kan tilføje personens id her!");
+                txtKøberId.Text = bolig.Bolig_Kunde_Id_Køber.ToString();
+            }
 
             else if (MessageBox.Show($"Er du sikker på at du vil gemme ændringerne?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
+                int boligid = bolig.Bolig_Id;
+                string adresse = txtAdresse.Text;
+                int postnummer = postnummerInt;
+                string type = comboboxType.Text;
+                int udbudspris = prisInt;
+                int størrelse = størrelseInt;
+                int bolig_Kunde_Id = bolig_Kunde_IdInt;
+                int bolig_Ejendomsmægler_Id = bolig_Ejendomsmægler_IdInt;
+                //string bolig_Afdelings_Navn = comboboxAfdelings_Navn.Text;
+                string salgsstatus = comboboxSalgsstatus.Text;
+                int bolig_Kunde_Id_Køber = bolig_Kunde_Id_KøberInt;
+
+
                 Bolig opdateretBolig = new Bolig
                 {
-                    //Bolig_Id = txtBoligId.Text,
-                    //Adresse = ,
-                    //Postnummer = ,
-                    //Type = comboboxType.Text,
-                    //Udbudspris = ,
-                    //Størrelse = ,
-                    //Bolig_Kunde_Id = ,
-                    //Bolig_Ejendomsmægler_Id = ,
-                    //Bolig_Afdelings_Navn = ,
-                    //Salgsstatus = comboboxSalgsstatus.Text,
-                    //Bolig_Kunde_Id_Køber = ,
+                    Bolig_Id = boligid,
+                    Adresse = adresse,
+                    Postnummer = postnummer,
+                    Type = type,
+                    Udbudspris = udbudspris,
+                    Størrelse = størrelse,
+                    Bolig_Kunde_Id = bolig_Kunde_Id,
+                    Bolig_Ejendomsmægler_Id = bolig_Ejendomsmægler_Id,
+                    //Bolig_Afdelings_Navn = bolig_Afdelings_Navn,
+                    Salgsstatus = salgsstatus,
+                    Bolig_Kunde_Id_Køber = bolig_Kunde_Id_Køber,
                     //Handels_Dato = ,
                 };
 
