@@ -247,9 +247,49 @@ namespace _1.SemesterProjekt
             {
                 MessageBox.Show("Noget gik galt. Boligen blev ikke slettet");
             }
-            
+
             BoligForms boligforms = new BoligForms();
             boligforms.Show();
+            this.Hide();
+        }
+
+        private void btnExit_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnBolig_Click(object sender, EventArgs e)
+        {
+            BoligForms boligforms = new BoligForms();
+            boligforms.Show();
+            this.Hide();
+        }
+
+        private void btnKunde_Click(object sender, EventArgs e)
+        {
+            KundeForms kundeforms = new KundeForms();
+            kundeforms.Show();
+            this.Hide();
+        }
+
+        private void btnEjendomsmægler_Click(object sender, EventArgs e)
+        {
+            EjendomsmæglerForms ejendomsmæglerForms = new EjendomsmæglerForms();
+            ejendomsmæglerForms.Show();
+            this.Hide();
+        }
+
+        private void btnAfdeling_Click(object sender, EventArgs e)
+        {
+            AfdelingForms afdelingForms = new AfdelingForms();
+            afdelingForms.Show();
+            this.Hide();
+        }
+
+        private void btnLogo_Click_1(object sender, EventArgs e)
+        {
+            Forside forside = new Forside();
+            forside.Show();
             this.Hide();
         }
     }
