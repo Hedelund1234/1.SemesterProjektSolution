@@ -37,9 +37,9 @@
             button3 = new Button();
             button4 = new Button();
             btnLogo = new Button();
-            button7 = new Button();
+            btnSlet = new Button();
             btnUpdate = new Button();
-            button5 = new Button();
+            btnTilbage = new Button();
             label2 = new Label();
             txtNavn = new TextBox();
             label3 = new Label();
@@ -117,9 +117,11 @@
             button2.TabIndex = 16;
             button2.Text = "               Ejendomsmægler";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
+            button3.BackColor = Color.White;
             button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
             button3.BackgroundImageLayout = ImageLayout.None;
             button3.Location = new Point(29, 457);
@@ -128,11 +130,12 @@
             button3.Size = new Size(194, 73);
             button3.TabIndex = 15;
             button3.Text = "Afdeling";
-            button3.UseVisualStyleBackColor = true;
+            button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
             // button4
             // 
+            button4.BackColor = Color.White;
             button4.BackgroundImage = Properties.Resources.Kunde;
             button4.BackgroundImageLayout = ImageLayout.None;
             button4.Location = new Point(29, 262);
@@ -141,7 +144,8 @@
             button4.Size = new Size(194, 73);
             button4.TabIndex = 17;
             button4.Text = "Kunde   ";
-            button4.UseVisualStyleBackColor = true;
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // btnLogo
             // 
@@ -160,15 +164,16 @@
             btnLogo.UseVisualStyleBackColor = false;
             btnLogo.Click += btnLogo_Click;
             // 
-            // button7
+            // btnSlet
             // 
-            button7.Location = new Point(459, 862);
-            button7.Margin = new Padding(2);
-            button7.Name = "button7";
-            button7.Size = new Size(90, 27);
-            button7.TabIndex = 29;
-            button7.Text = "Slet";
-            button7.UseVisualStyleBackColor = true;
+            btnSlet.Location = new Point(459, 862);
+            btnSlet.Margin = new Padding(2);
+            btnSlet.Name = "btnSlet";
+            btnSlet.Size = new Size(90, 27);
+            btnSlet.TabIndex = 29;
+            btnSlet.Text = "Slet";
+            btnSlet.UseVisualStyleBackColor = true;
+            btnSlet.Click += btnSlet_Click;
             // 
             // btnUpdate
             // 
@@ -179,17 +184,18 @@
             btnUpdate.TabIndex = 30;
             btnUpdate.Text = "Opdater";
             btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Click += btnUpdate_Click;
             // 
-            // button5
+            // btnTilbage
             // 
-            button5.Location = new Point(271, 862);
-            button5.Margin = new Padding(2);
-            button5.Name = "button5";
-            button5.Size = new Size(90, 27);
-            button5.TabIndex = 31;
-            button5.Text = "Tilbage";
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
+            btnTilbage.Location = new Point(271, 862);
+            btnTilbage.Margin = new Padding(2);
+            btnTilbage.Name = "btnTilbage";
+            btnTilbage.Size = new Size(90, 27);
+            btnTilbage.TabIndex = 31;
+            btnTilbage.Text = "Tilbage";
+            btnTilbage.UseVisualStyleBackColor = true;
+            btnTilbage.Click += button5_Click;
             // 
             // label2
             // 
@@ -288,9 +294,9 @@
             Controls.Add(label3);
             Controls.Add(txtNavn);
             Controls.Add(label2);
-            Controls.Add(button7);
+            Controls.Add(btnSlet);
             Controls.Add(btnUpdate);
-            Controls.Add(button5);
+            Controls.Add(btnTilbage);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -314,9 +320,9 @@
         private Button button3;
         private Button button4;
         private Button btnLogo;
-        private Button button7;
+        private Button btnSlet;
         private Button btnUpdate;
-        private Button button5;
+        private Button btnTilbage;
         private Label label2;
         private TextBox txtNavn;
         private Label label3;

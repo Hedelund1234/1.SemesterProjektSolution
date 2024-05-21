@@ -2,6 +2,7 @@
 using System.Configuration;
 using System.Data.SqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using _1.SemesterProjekt;
 
 namespace _1.SemesterProjekt.DataAccess
 {
@@ -12,6 +13,39 @@ namespace _1.SemesterProjekt.DataAccess
         {
             ConnectionHandler connectionHandler = new ConnectionHandler();
             connStrings = connectionHandler.GetConnectionString();
+        }
+        internal List<Ejendomsmægler> Get()
+        {
+            List<Ejendomsmægler> el = new List<Ejendomsmægler>();
+            Ejendomsmægler ejendomsmægler = new Ejendomsmægler();
+            string command = "SELECT * FROM Ejendomsmægler ";
+            SqlConnection conn = new SqlConnection(connStrings);
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(command, conn);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    int _id = (int)reader["Id"];
+                    string navn = (string)reader["Navn"];
+                    int telefonNr = (int)reader["Telefon_Nr"];
+                    string email = (string)reader["Email"];
+                    int ejendomsmæglerAfdelingNr = (int)reader["Ejendomsmægler_Afdeling_Nr"];
+                    ejendomsmægler = new Ejendomsmægler { Id = _id, Navn = navn, Email = email, Telefon_Nr = telefonNr, Ejendomsmægler_Afdeling_Nr = ejendomsmæglerAfdelingNr };
+                    el.Add(ejendomsmægler);
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return el;
         }
         internal Ejendomsmægler Get(int id)
         {
@@ -44,11 +78,11 @@ namespace _1.SemesterProjekt.DataAccess
             }
             return ejendomsmægler;
         }
-        internal List<Ejendomsmægler> Get()
+        internal List<Ejendomsmægler> Get(string id, string _navn, string _telefonnummer, string _email, string AfdelingId)
         {
             List<Ejendomsmægler> el = new List<Ejendomsmægler>();
             Ejendomsmægler ejendomsmægler = new Ejendomsmægler();
-            string command = "SELECT * FROM Ejendomsmægler";
+            string command = "SELECT * FROM Ejendomsmægler WHERE Id Like '%" + id + "%' AND Navn LIKE '%" + _navn + "%' AND Telefon_Nr LIKE '%" + _telefonnummer + "%' AND Email LIKE '%" + _email + "%' AND Ejendomsmægler_Afdeling_Nr LIKE '%" + AfdelingId + "%'";
             SqlConnection conn = new SqlConnection(connStrings);
             try
             {

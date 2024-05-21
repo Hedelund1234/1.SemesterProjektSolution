@@ -109,6 +109,7 @@
             // 
             // btnAfdeling
             // 
+            btnAfdeling.BackColor = Color.White;
             btnAfdeling.BackgroundImage = (Image)resources.GetObject("btnAfdeling.BackgroundImage");
             btnAfdeling.BackgroundImageLayout = ImageLayout.None;
             btnAfdeling.Location = new Point(29, 457);
@@ -117,11 +118,12 @@
             btnAfdeling.Size = new Size(194, 73);
             btnAfdeling.TabIndex = 15;
             btnAfdeling.Text = "Afdeling";
-            btnAfdeling.UseVisualStyleBackColor = true;
+            btnAfdeling.UseVisualStyleBackColor = false;
             btnAfdeling.Click += btnAfdeling_Click;
             // 
             // btnKunde
             // 
+            btnKunde.BackColor = Color.White;
             btnKunde.BackgroundImage = Properties.Resources.Kunde;
             btnKunde.BackgroundImageLayout = ImageLayout.None;
             btnKunde.Location = new Point(29, 262);
@@ -130,7 +132,7 @@
             btnKunde.Size = new Size(194, 73);
             btnKunde.TabIndex = 17;
             btnKunde.Text = "Kunde   ";
-            btnKunde.UseVisualStyleBackColor = true;
+            btnKunde.UseVisualStyleBackColor = false;
             btnKunde.Click += btnKunde_Click;
             // 
             // btnLogo
