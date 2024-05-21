@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OpretBoligForms));
             btnExit = new Button();
             panel2 = new Panel();
-            comboBox2 = new ComboBox();
+            comboBoxType = new ComboBox();
             label3 = new Label();
             panel1 = new Panel();
             button1 = new Button();
@@ -39,22 +39,22 @@
             button3 = new Button();
             button4 = new Button();
             btnLogo = new Button();
-            textBox4 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            txtPris = new TextBox();
+            txtM2 = new TextBox();
+            txtPostnummer = new TextBox();
             label4 = new Label();
             label6 = new Label();
             label5 = new Label();
-            comboBox1 = new ComboBox();
+            comboBoxAfdeling = new ComboBox();
             label1 = new Label();
             btnOpret = new Button();
             btnTilbage = new Button();
             dgvKunde = new DataGridView();
-            textBox5 = new TextBox();
+            txtSælgerId = new TextBox();
             label7 = new Label();
             label8 = new Label();
-            textBox6 = new TextBox();
-            textBox1 = new TextBox();
+            txtEjendomsmæglerId = new TextBox();
+            txtAdresse = new TextBox();
             label2 = new Label();
             label9 = new Label();
             label10 = new Label();
@@ -87,14 +87,16 @@
             panel2.Size = new Size(1400, 36);
             panel2.TabIndex = 14;
             // 
-            // comboBox2
+            // comboBoxType
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(268, 187);
-            comboBox2.Margin = new Padding(2);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(214, 28);
-            comboBox2.TabIndex = 12;
+            comboBoxType.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxType.FormattingEnabled = true;
+            comboBoxType.Items.AddRange(new object[] { "", "Hus", "Rækkehus", "Lejlighed", "Andelsbolig" });
+            comboBoxType.Location = new Point(268, 187);
+            comboBoxType.Margin = new Padding(2);
+            comboBoxType.Name = "comboBoxType";
+            comboBoxType.Size = new Size(214, 28);
+            comboBoxType.TabIndex = 12;
             // 
             // label3
             // 
@@ -190,29 +192,29 @@
             btnLogo.UseVisualStyleBackColor = false;
             btnLogo.Click += btnLogo_Click;
             // 
-            // textBox4
+            // txtPris
             // 
-            textBox4.Location = new Point(268, 532);
-            textBox4.Margin = new Padding(2);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(214, 27);
-            textBox4.TabIndex = 10;
+            txtPris.Location = new Point(268, 532);
+            txtPris.Margin = new Padding(2);
+            txtPris.Name = "txtPris";
+            txtPris.Size = new Size(214, 27);
+            txtPris.TabIndex = 10;
             // 
-            // textBox2
+            // txtM2
             // 
-            textBox2.Location = new Point(268, 442);
-            textBox2.Margin = new Padding(2);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(214, 27);
-            textBox2.TabIndex = 10;
+            txtM2.Location = new Point(268, 442);
+            txtM2.Margin = new Padding(2);
+            txtM2.Name = "txtM2";
+            txtM2.Size = new Size(214, 27);
+            txtM2.TabIndex = 10;
             // 
-            // textBox3
+            // txtPostnummer
             // 
-            textBox3.Location = new Point(268, 349);
-            textBox3.Margin = new Padding(2);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(214, 27);
-            textBox3.TabIndex = 10;
+            txtPostnummer.Location = new Point(268, 349);
+            txtPostnummer.Margin = new Padding(2);
+            txtPostnummer.Name = "txtPostnummer";
+            txtPostnummer.Size = new Size(214, 27);
+            txtPostnummer.TabIndex = 10;
             // 
             // label4
             // 
@@ -244,14 +246,16 @@
             label5.TabIndex = 6;
             label5.Text = "Postnummer";
             // 
-            // comboBox1
+            // comboBoxAfdeling
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(268, 112);
-            comboBox1.Margin = new Padding(2);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(214, 28);
-            comboBox1.TabIndex = 7;
+            comboBoxAfdeling.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxAfdeling.FormattingEnabled = true;
+            comboBoxAfdeling.Items.AddRange(new object[] { "", "Nordjylland", "Midtjylland", "Syddanmark", "Sjælland", "Hovedstaden" });
+            comboBoxAfdeling.Location = new Point(268, 112);
+            comboBoxAfdeling.Margin = new Padding(2);
+            comboBoxAfdeling.Name = "comboBoxAfdeling";
+            comboBoxAfdeling.Size = new Size(214, 28);
+            comboBoxAfdeling.TabIndex = 7;
             // 
             // label1
             // 
@@ -272,6 +276,7 @@
             btnOpret.TabIndex = 0;
             btnOpret.Text = "Opret bolig";
             btnOpret.UseVisualStyleBackColor = true;
+            btnOpret.Click += btnOpret_Click;
             // 
             // btnTilbage
             // 
@@ -294,13 +299,13 @@
             dgvKunde.Size = new Size(902, 777);
             dgvKunde.TabIndex = 59;
             // 
-            // textBox5
+            // txtSælgerId
             // 
-            textBox5.Location = new Point(268, 621);
-            textBox5.Margin = new Padding(2);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(214, 27);
-            textBox5.TabIndex = 61;
+            txtSælgerId.Location = new Point(268, 621);
+            txtSælgerId.Margin = new Padding(2);
+            txtSælgerId.Name = "txtSælgerId";
+            txtSælgerId.Size = new Size(214, 27);
+            txtSælgerId.TabIndex = 61;
             // 
             // label7
             // 
@@ -322,21 +327,21 @@
             label8.TabIndex = 60;
             label8.Text = "Ejendomsmægler id";
             // 
-            // textBox6
+            // txtEjendomsmæglerId
             // 
-            textBox6.Location = new Point(268, 710);
-            textBox6.Margin = new Padding(2);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(214, 27);
-            textBox6.TabIndex = 61;
+            txtEjendomsmæglerId.Location = new Point(268, 710);
+            txtEjendomsmæglerId.Margin = new Padding(2);
+            txtEjendomsmæglerId.Name = "txtEjendomsmæglerId";
+            txtEjendomsmæglerId.Size = new Size(214, 27);
+            txtEjendomsmæglerId.TabIndex = 61;
             // 
-            // textBox1
+            // txtAdresse
             // 
-            textBox1.Location = new Point(268, 266);
-            textBox1.Margin = new Padding(2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(214, 27);
-            textBox1.TabIndex = 10;
+            txtAdresse.Location = new Point(268, 266);
+            txtAdresse.Margin = new Padding(2);
+            txtAdresse.Name = "txtAdresse";
+            txtAdresse.Size = new Size(214, 27);
+            txtAdresse.TabIndex = 10;
             // 
             // label2
             // 
@@ -377,19 +382,19 @@
             ClientSize = new Size(1400, 900);
             Controls.Add(label10);
             Controls.Add(label9);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
+            Controls.Add(txtEjendomsmæglerId);
+            Controls.Add(txtSælgerId);
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(dgvKunde);
-            Controls.Add(comboBox2);
+            Controls.Add(comboBoxType);
             Controls.Add(label3);
             Controls.Add(panel2);
-            Controls.Add(textBox4);
-            Controls.Add(textBox2);
-            Controls.Add(textBox3);
+            Controls.Add(txtPris);
+            Controls.Add(txtM2);
+            Controls.Add(txtPostnummer);
             Controls.Add(panel1);
-            Controls.Add(textBox1);
+            Controls.Add(txtAdresse);
             Controls.Add(label4);
             Controls.Add(label6);
             Controls.Add(label1);
@@ -397,7 +402,7 @@
             Controls.Add(btnTilbage);
             Controls.Add(label2);
             Controls.Add(btnOpret);
-            Controls.Add(comboBox1);
+            Controls.Add(comboBoxAfdeling);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(2);
             Name = "OpretBoligForms";
@@ -414,30 +419,30 @@
         #endregion
         private Button btnExit;
         private Panel panel2;
-        private ComboBox comboBox2;
+        private ComboBox comboBoxType;
         private Label label3;
         private Panel panel1;
         private Label label6;
         private Label label5;
-        private ComboBox comboBox1;
+        private ComboBox comboBoxAfdeling;
         private Label label1;
         private Button btnTilbage;
         private Button btnLogo;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox txtM2;
+        private TextBox txtPostnummer;
         private Button btnOpret;
-        private TextBox textBox4;
+        private TextBox txtPris;
         private Label label4;
         private Button button1;
         private Button button2;
         private Button button3;
         private Button button4;
         private DataGridView dgvKunde;
-        private TextBox textBox5;
+        private TextBox txtSælgerId;
         private Label label7;
         private Label label8;
-        private TextBox textBox6;
-        private TextBox textBox1;
+        private TextBox txtEjendomsmæglerId;
+        private TextBox txtAdresse;
         private Label label2;
         private Label label9;
         private Label label10;

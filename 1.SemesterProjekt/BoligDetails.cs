@@ -107,7 +107,7 @@ namespace _1.SemesterProjekt
             ejendomsmægler = edb.Get(bolig_Ejendomsmægler_IdInt);
             boligkøber = kdb.Get(bolig_Kunde_Id_KøberInt);
 
-            if (txtAdresse.Text.Length > 50)
+            if (txtAdresse.Text.Length > 50) //Mangler fuldendt validering. Se -> OpretBoligForms.cs
             {
                 MessageBox.Show("Adressen kan maksimalt være 50 karaktere lang!");
                 txtAdresse.Text = bolig.Adresse;
@@ -132,7 +132,7 @@ namespace _1.SemesterProjekt
                 MessageBox.Show("Du må kun indtaste tal!");
                 txtSælgerId.Text = bolig.Bolig_Kunde_Id.ToString();
             }
-            else if (boligsælger.Kunde_Id == null)
+            else if (boligsælger.Kunde_Id == 0)
             {
                 MessageBox.Show("Sælgeren skal være oprettet som kunde før du kan tilføje personens id her!");
                 txtSælgerId.Text = bolig.Bolig_Kunde_Id.ToString();
@@ -142,22 +142,36 @@ namespace _1.SemesterProjekt
                 MessageBox.Show("Du må kun indtaste tal!");
                 txtSælgerId.Text = bolig.Bolig_Ejendomsmægler_Id.ToString();
             }
-            else if (ejendomsmægler.Id == null)
+            else if (ejendomsmægler.Id == 0)
             {
                 MessageBox.Show("Ejendomsmægleren skal være oprettet som ejendomsmægler før du kan tilføjet personens id her!");
-                txtSælgerId.Text = bolig.Bolig_Ejendomsmægler_Id.ToString();
+                txtBoligEjendomsmæglerId.Text = bolig.Bolig_Ejendomsmægler_Id.ToString();
             }
             else if (!bolig_Kunde_Id_KøberBool)
             {
                 MessageBox.Show("Du må kun indtaste tal!");
-                txtKøberId.Text = bolig.Bolig_Kunde_Id_Køber.ToString();
+                txtBoligEjendomsmæglerId.Text = bolig.Bolig_Kunde_Id_Køber.ToString();
             }
-            else if (boligkøber.Kunde_Id == null)
+            else if (boligkøber.Kunde_Id > 0 && boligkøber.Telefon_Nr !> 0) //Mangler korrekt validering ??!?!?!?!?!!!?!?!?!?
             {
-                MessageBox.Show("Køberen skal være oprettet som kunde før du kan tilføje personens id her!");
-                txtKøberId.Text = bolig.Bolig_Kunde_Id_Køber.ToString();
+                    MessageBox.Show("Køberen skal være oprettet som kunde før du kan tilføje personens id her!");
+                    txtKøberId.Text = bolig.Bolig_Kunde_Id_Køber.ToString();
             }
-
+            else if (comboBoxAfdelingBoligDetails.Text.Length == 0)
+            {
+                MessageBox.Show("Boligen skal være tilsluttet en afdeling!");
+                comboBoxAfdelingBoligDetails.Text = bolig.Bolig_Afdelings_Navn;
+            }
+            else if (comboboxType.Text.Length == 0)
+            {
+                MessageBox.Show("Boligen skal gives en type!");
+                comboboxType.Text = bolig.Type;
+            }
+            else if (comboboxSalgsstatus.Text.Length == 0)
+            {
+                MessageBox.Show("Boligen skal have en salgsstatus!");
+                comboboxSalgsstatus.Text = bolig.Salgsstatus;
+            }
             else if (MessageBox.Show($"Er du sikker på at du vil gemme ændringerne?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 int boligid = bolig.Bolig_Id;
@@ -214,7 +228,6 @@ namespace _1.SemesterProjekt
                 boligforms.Show();
                 this.Hide();
             }
-
         }
 
         private void cbHandelsdato_CheckedChanged(object sender, EventArgs e)
