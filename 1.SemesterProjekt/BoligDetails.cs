@@ -175,5 +175,10 @@ namespace _1.SemesterProjekt
             }
 
         }
+
+        private void dtpBoligDetails_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime datetime = dtpBoligDetails.Value;
+        }
     }
 }

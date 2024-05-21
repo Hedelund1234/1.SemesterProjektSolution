@@ -64,7 +64,9 @@
             btnTilbage = new Button();
             btnUpdate = new Button();
             btnDelete = new Button();
-            kalenderHandelsDato = new MonthCalendar();
+            label14 = new Label();
+            comboBoxAfdelingBoligDetails = new ComboBox();
+            dtpBoligDetails = new DateTimePicker();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvKunder).BeginInit();
@@ -323,7 +325,7 @@
             // 
             // txtKøberId
             // 
-            txtKøberId.Location = new Point(474, 217);
+            txtKøberId.Location = new Point(474, 267);
             txtKøberId.Margin = new Padding(2);
             txtKøberId.Name = "txtKøberId";
             txtKøberId.Size = new Size(199, 27);
@@ -332,7 +334,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(474, 194);
+            label11.Location = new Point(474, 244);
             label11.Margin = new Padding(2, 0, 2, 0);
             label11.Name = "label11";
             label11.Size = new Size(66, 20);
@@ -364,7 +366,7 @@
             comboboxSalgsstatus.DropDownStyle = ComboBoxStyle.DropDownList;
             comboboxSalgsstatus.FormattingEnabled = true;
             comboboxSalgsstatus.Items.AddRange(new object[] { "", "Solgt", "Til salg" });
-            comboboxSalgsstatus.Location = new Point(474, 164);
+            comboboxSalgsstatus.Location = new Point(474, 214);
             comboboxSalgsstatus.Margin = new Padding(2);
             comboboxSalgsstatus.Name = "comboboxSalgsstatus";
             comboboxSalgsstatus.Size = new Size(199, 28);
@@ -373,7 +375,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(474, 142);
+            label9.Location = new Point(474, 192);
             label9.Margin = new Padding(2, 0, 2, 0);
             label9.Name = "label9";
             label9.Size = new Size(82, 20);
@@ -434,21 +436,45 @@
             btnDelete.Text = "Slet";
             btnDelete.UseVisualStyleBackColor = true;
             // 
-            // kalenderHandelsDato
+            // label14
             // 
-            kalenderHandelsDato.Location = new Point(474, 337);
-            kalenderHandelsDato.Name = "kalenderHandelsDato";
-            kalenderHandelsDato.TabIndex = 29;
+            label14.AutoSize = true;
+            label14.Location = new Point(474, 142);
+            label14.Margin = new Padding(2, 0, 2, 0);
+            label14.Name = "label14";
+            label14.Size = new Size(66, 20);
+            label14.TabIndex = 23;
+            label14.Text = "Afdeling";
+            // 
+            // comboBoxAfdelingBoligDetails
+            // 
+            comboBoxAfdelingBoligDetails.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxAfdelingBoligDetails.FormattingEnabled = true;
+            comboBoxAfdelingBoligDetails.Items.AddRange(new object[] { "", "Nordjylland", "Midtjylland", "Syddanmark", "Sjælland", "Hovedstaden" });
+            comboBoxAfdelingBoligDetails.Location = new Point(474, 164);
+            comboBoxAfdelingBoligDetails.Margin = new Padding(2);
+            comboBoxAfdelingBoligDetails.Name = "comboBoxAfdelingBoligDetails";
+            comboBoxAfdelingBoligDetails.Size = new Size(199, 28);
+            comboBoxAfdelingBoligDetails.TabIndex = 27;
+            // 
+            // dtpBoligDetails
+            // 
+            dtpBoligDetails.Location = new Point(474, 335);
+            dtpBoligDetails.Name = "dtpBoligDetails";
+            dtpBoligDetails.Size = new Size(199, 27);
+            dtpBoligDetails.TabIndex = 29;
+            dtpBoligDetails.ValueChanged += dtpBoligDetails_ValueChanged;
             // 
             // BoligDetails
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1400, 900);
-            Controls.Add(kalenderHandelsDato);
+            Controls.Add(dtpBoligDetails);
             Controls.Add(btnDelete);
             Controls.Add(btnUpdate);
             Controls.Add(btnTilbage);
+            Controls.Add(comboBoxAfdelingBoligDetails);
             Controls.Add(comboboxSalgsstatus);
             Controls.Add(dgvKunder);
             Controls.Add(comboboxType);
@@ -465,6 +491,7 @@
             Controls.Add(label2);
             Controls.Add(txtStørrelse);
             Controls.Add(label13);
+            Controls.Add(label14);
             Controls.Add(label10);
             Controls.Add(label9);
             Controls.Add(label1);
@@ -525,6 +552,8 @@
         private Button btnTilbage;
         private Button btnUpdate;
         private Button btnDelete;
-        private MonthCalendar kalenderHandelsDato;
+        private Label label14;
+        private ComboBox comboBoxAfdelingBoligDetails;
+        private DateTimePicker dtpBoligDetails;
     }
 }
