@@ -44,7 +44,7 @@ namespace _1.SemesterProjekt.DataAccess
         {
             List<Afdeling> al = new List<Afdeling>();
             Afdeling afdeling = new Afdeling();
-            string command = "SELECT * FROM Afdeling";
+            string command = "SELECT * FROM Afdeling ORDER BY Afdelings_Nr";
             SqlConnection conn = new SqlConnection(connStrings);
             try
             {
@@ -96,9 +96,9 @@ namespace _1.SemesterProjekt.DataAccess
                     int boligEjendomsmæglerId = (int)reader["Bolig_Ejendomsmægler_Id"];
                     string boligAfdelingsNavn = (string)reader["Bolig_Afdelings_Navn"];
                     string salgsStatus = (string)reader["Salgsstatus"];
-                    //int boligKundeIdKøber = (int)reader["Bolig_Kunde_Id_Køber"];
-                    //DateTime handelsDato = (DateTime)reader["Handels_Dato"];
-                    bolig = new Bolig { Bolig_Id = boligId, Adresse = adresse, Postnummer = postnummer, Type = type, Udbudspris = pris, Størrelse = størrelse, Bolig_Kunde_Id = boligKundeId, Bolig_Ejendomsmægler_Id = boligEjendomsmæglerId, Bolig_Afdelings_Navn = boligAfdelingsNavn, Salgsstatus = salgsStatus/*, Bolig_Kunde_Id_Køber =boligKundeIdKøber, Handels_Dato = handelsDato*/ };
+                    int? boligKundeIdKøber = reader["Bolig_Kunde_Id_Køber"] is DBNull ? (int?)null : (int)reader["Bolig_Kunde_Id_Køber"];
+                    DateTime? handelsDato = reader["Handels_Dato"] is DBNull ? (DateTime?)null : (DateTime)reader["Handels_Dato"];
+                    bolig = new Bolig { Bolig_Id = boligId, Adresse = adresse, Postnummer = postnummer, Type = type, Udbudspris = pris, Størrelse = størrelse, Bolig_Kunde_Id = boligKundeId, Bolig_Ejendomsmægler_Id = boligEjendomsmæglerId, Bolig_Afdelings_Navn = boligAfdelingsNavn, Salgsstatus = salgsStatus, Bolig_Kunde_Id_Køber = boligKundeIdKøber ?? 0, Handels_Dato = handelsDato ?? DateTime.MinValue };
                     bl.Add(bolig);
                 }
             }
