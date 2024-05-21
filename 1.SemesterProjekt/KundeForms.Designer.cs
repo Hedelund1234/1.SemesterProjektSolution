@@ -287,6 +287,7 @@
             // 
             // dgvBolig
             // 
+            dgvBolig.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvBolig.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvBolig.Location = new Point(543, 73);
             dgvBolig.Margin = new Padding(2);

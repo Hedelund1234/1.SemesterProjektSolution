@@ -35,7 +35,7 @@
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
-            button4 = new Button();
+            btnKundeDetails = new Button();
             btnLogo = new Button();
             label1 = new Label();
             btnSletKunde = new Button();
@@ -85,7 +85,7 @@
             panel1.Controls.Add(button1);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(button3);
-            panel1.Controls.Add(button4);
+            panel1.Controls.Add(btnKundeDetails);
             panel1.Controls.Add(btnLogo);
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(2);
@@ -134,18 +134,19 @@
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
-            // button4
+            // btnKundeDetails
             // 
-            button4.BackColor = Color.FromArgb(224, 224, 224);
-            button4.BackgroundImage = Properties.Resources.Kunde;
-            button4.BackgroundImageLayout = ImageLayout.None;
-            button4.Location = new Point(29, 262);
-            button4.Margin = new Padding(2);
-            button4.Name = "button4";
-            button4.Size = new Size(194, 73);
-            button4.TabIndex = 17;
-            button4.Text = "Kunde   ";
-            button4.UseVisualStyleBackColor = false;
+            btnKundeDetails.BackColor = Color.FromArgb(224, 224, 224);
+            btnKundeDetails.BackgroundImage = Properties.Resources.Kunde;
+            btnKundeDetails.BackgroundImageLayout = ImageLayout.None;
+            btnKundeDetails.Location = new Point(29, 262);
+            btnKundeDetails.Margin = new Padding(2);
+            btnKundeDetails.Name = "btnKundeDetails";
+            btnKundeDetails.Size = new Size(194, 73);
+            btnKundeDetails.TabIndex = 17;
+            btnKundeDetails.Text = "Kunde   ";
+            btnKundeDetails.UseVisualStyleBackColor = false;
+            btnKundeDetails.Click += btnKundeDetails_Click;
             // 
             // btnLogo
             // 
@@ -168,7 +169,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F);
-            label1.Location = new Point(599, 38);
+            label1.Location = new Point(729, 38);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(210, 41);
@@ -337,7 +338,7 @@
         private Button button1;
         private Button button2;
         private Button button3;
-        private Button button4;
+        private Button btnKundeDetails;
         private Button btnLogo;
         private Label label1;
         private Button btnSletKunde;
