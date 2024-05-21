@@ -56,7 +56,6 @@
             txtKøberId = new TextBox();
             label11 = new Label();
             label12 = new Label();
-            kalenderHandelsDato = new MonthCalendar();
             dgvKunder = new DataGridView();
             comboboxSalgsstatus = new ComboBox();
             label9 = new Label();
@@ -65,6 +64,7 @@
             btnTilbage = new Button();
             btnUpdate = new Button();
             btnDelete = new Button();
+            kalenderHandelsDato = new MonthCalendar();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvKunder).BeginInit();
@@ -349,13 +349,6 @@
             label12.TabIndex = 23;
             label12.Text = "Handels dato";
             // 
-            // kalenderHandelsDato
-            // 
-            kalenderHandelsDato.Location = new Point(474, 339);
-            kalenderHandelsDato.Margin = new Padding(7);
-            kalenderHandelsDato.Name = "kalenderHandelsDato";
-            kalenderHandelsDato.TabIndex = 25;
-            // 
             // dgvKunder
             // 
             dgvKunder.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -441,17 +434,23 @@
             btnDelete.Text = "Slet";
             btnDelete.UseVisualStyleBackColor = true;
             // 
+            // kalenderHandelsDato
+            // 
+            kalenderHandelsDato.Location = new Point(474, 337);
+            kalenderHandelsDato.Name = "kalenderHandelsDato";
+            kalenderHandelsDato.TabIndex = 29;
+            // 
             // BoligDetails
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1400, 900);
+            Controls.Add(kalenderHandelsDato);
             Controls.Add(btnDelete);
             Controls.Add(btnUpdate);
             Controls.Add(btnTilbage);
             Controls.Add(comboboxSalgsstatus);
             Controls.Add(dgvKunder);
-            Controls.Add(kalenderHandelsDato);
             Controls.Add(comboboxType);
             Controls.Add(label4);
             Controls.Add(label8);
@@ -518,7 +517,6 @@
         private TextBox txtKøberId;
         private Label label11;
         private Label label12;
-        private MonthCalendar kalenderHandelsDato;
         private DataGridView dgvKunder;
         private ComboBox comboboxSalgsstatus;
         private Label label9;
@@ -527,5 +525,6 @@
         private Button btnTilbage;
         private Button btnUpdate;
         private Button btnDelete;
+        private MonthCalendar kalenderHandelsDato;
     }
 }
