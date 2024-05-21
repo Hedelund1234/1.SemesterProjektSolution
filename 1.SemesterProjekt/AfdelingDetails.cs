@@ -9,6 +9,7 @@ namespace _1.SemesterProjekt
         Afdeling afdeling;
         AfdelingDbHandler db;
         List<Afdeling> al = new List<Afdeling>();
+        EjendomsmæglerDbHandler ejendomsmæglerDb;
         public AfdelingDetails(int nr)
         {
             InitializeComponent();
@@ -16,7 +17,7 @@ namespace _1.SemesterProjekt
             SeedData();
             txtBoxAfdelingNrDetails.Text = afdeling.Afdelings_Nr.ToString();
             txtBoxAfdelingsNavnDetails.Text = afdeling.Afdelings_Navn;
-            }
+        }
         void SeedData()
         {
             db = new AfdelingDbHandler();
@@ -87,6 +88,23 @@ namespace _1.SemesterProjekt
             AfdelingForms afdeling = new AfdelingForms();
             afdeling.Show();
             this.Hide();
+        }
+
+        private void btnCsvUdprint_Click(object sender, EventArgs e)
+        {
+            List<Bolig> boligList = db.GetJoinBolig(comboBoxAfdelingsDetailsSøg.Text, txtBoxAfdelingsNavnDetails.Text);
+            List<Ejendomsmægler> ejendomsmæglerList = db.GetJoinEjendomsmægler("Ejendomsmægler", Convert.ToInt32(txtBoxAfdelingNrDetails.Text));
+            int arraySize = boligList.Count;
+
+            bool success = db.SaveDataToCsv(boligList, ejendomsmæglerList, $"BoligerOmråde{txtBoxAfdelingsNavnDetails.Text}.csv", arraySize);
+            if (success)
+            {
+                MessageBox.Show(".csv fil gemt", ".csv gemt", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show(".csv fil blev IKKE gemt", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -43,7 +43,6 @@
             button3 = new Button();
             button4 = new Button();
             dgvBolig = new DataGridView();
-            btnStatistik = new Button();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBolig).BeginInit();
@@ -119,7 +118,7 @@
             comboBoxAfdelingsNavn.Location = new Point(268, 262);
             comboBoxAfdelingsNavn.Margin = new Padding(2);
             comboBoxAfdelingsNavn.Name = "comboBoxAfdelingsNavn";
-            comboBoxAfdelingsNavn.Size = new Size(178, 28);
+            comboBoxAfdelingsNavn.Size = new Size(211, 28);
             comboBoxAfdelingsNavn.TabIndex = 56;
             // 
             // comboBoxAfdelingsNr
@@ -130,7 +129,7 @@
             comboBoxAfdelingsNr.Location = new Point(268, 164);
             comboBoxAfdelingsNr.Margin = new Padding(2);
             comboBoxAfdelingsNr.Name = "comboBoxAfdelingsNr";
-            comboBoxAfdelingsNr.Size = new Size(178, 28);
+            comboBoxAfdelingsNr.Size = new Size(211, 28);
             comboBoxAfdelingsNr.TabIndex = 56;
             // 
             // label3
@@ -222,17 +221,6 @@
             dgvBolig.TabIndex = 63;
             dgvBolig.CellDoubleClick += dgvBolig_CellDoubleClick;
             // 
-            // btnStatistik
-            // 
-            btnStatistik.Location = new Point(377, 859);
-            btnStatistik.Margin = new Padding(2);
-            btnStatistik.Name = "btnStatistik";
-            btnStatistik.Size = new Size(102, 30);
-            btnStatistik.TabIndex = 27;
-            btnStatistik.Text = "Statistik";
-            btnStatistik.UseVisualStyleBackColor = true;
-            btnStatistik.Click += btnSøg_Click;
-            // 
             // AfdelingForms
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -243,7 +231,6 @@
             Controls.Add(button3);
             Controls.Add(button4);
             Controls.Add(dgvBolig);
-            Controls.Add(btnStatistik);
             Controls.Add(btnSøg);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -280,6 +267,5 @@
         private Button button3;
         private Button button4;
         private DataGridView dgvBolig;
-        private Button btnStatistik;
     }
 }

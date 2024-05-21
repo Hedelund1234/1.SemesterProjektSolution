@@ -46,6 +46,7 @@
             label3 = new Label();
             label4 = new Label();
             dgvAfdelingsDetails = new DataGridView();
+            btnCsvUdprint = new Button();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvAfdelingsDetails).BeginInit();
@@ -166,7 +167,7 @@
             button5.Location = new Point(268, 862);
             button5.Margin = new Padding(2);
             button5.Name = "button5";
-            button5.Size = new Size(90, 27);
+            button5.Size = new Size(102, 30);
             button5.TabIndex = 32;
             button5.Text = "Tilbage";
             button5.UseVisualStyleBackColor = true;
@@ -191,7 +192,7 @@
             comboBoxAfdelingsDetailsSøg.Location = new Point(268, 164);
             comboBoxAfdelingsDetailsSøg.Margin = new Padding(2);
             comboBoxAfdelingsDetailsSøg.Name = "comboBoxAfdelingsDetailsSøg";
-            comboBoxAfdelingsDetailsSøg.Size = new Size(178, 28);
+            comboBoxAfdelingsDetailsSøg.Size = new Size(211, 28);
             comboBoxAfdelingsDetailsSøg.TabIndex = 57;
             comboBoxAfdelingsDetailsSøg.DropDownClosed += comboBoxAfdelingsDetailsSøg_DropDownClosed;
             // 
@@ -211,7 +212,7 @@
             txtBoxAfdelingNrDetails.Location = new Point(268, 262);
             txtBoxAfdelingNrDetails.Margin = new Padding(2);
             txtBoxAfdelingNrDetails.Name = "txtBoxAfdelingNrDetails";
-            txtBoxAfdelingNrDetails.Size = new Size(178, 27);
+            txtBoxAfdelingNrDetails.Size = new Size(211, 27);
             txtBoxAfdelingNrDetails.TabIndex = 59;
             // 
             // txtBoxAfdelingsNavnDetails
@@ -220,7 +221,7 @@
             txtBoxAfdelingsNavnDetails.Location = new Point(268, 358);
             txtBoxAfdelingsNavnDetails.Margin = new Padding(2);
             txtBoxAfdelingsNavnDetails.Name = "txtBoxAfdelingsNavnDetails";
-            txtBoxAfdelingsNavnDetails.Size = new Size(178, 27);
+            txtBoxAfdelingsNavnDetails.Size = new Size(211, 27);
             txtBoxAfdelingsNavnDetails.TabIndex = 59;
             // 
             // label3
@@ -257,11 +258,23 @@
             dgvAfdelingsDetails.Size = new Size(902, 810);
             dgvAfdelingsDetails.TabIndex = 22;
             // 
+            // btnCsvUdprint
+            // 
+            btnCsvUdprint.Location = new Point(268, 828);
+            btnCsvUdprint.Margin = new Padding(2);
+            btnCsvUdprint.Name = "btnCsvUdprint";
+            btnCsvUdprint.Size = new Size(211, 30);
+            btnCsvUdprint.TabIndex = 60;
+            btnCsvUdprint.Text = "Udprint .csv";
+            btnCsvUdprint.UseVisualStyleBackColor = true;
+            btnCsvUdprint.Click += btnCsvUdprint_Click;
+            // 
             // AfdelingDetails
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1400, 900);
+            Controls.Add(btnCsvUdprint);
             Controls.Add(txtBoxAfdelingsNavnDetails);
             Controls.Add(txtBoxAfdelingNrDetails);
             Controls.Add(label4);
@@ -305,5 +318,6 @@
         private Label label3;
         private Label label4;
         private DataGridView dgvAfdelingsDetails;
+        private Button btnCsvUdprint;
     }
 }
