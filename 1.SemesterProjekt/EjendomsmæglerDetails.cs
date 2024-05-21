@@ -155,8 +155,8 @@ namespace _1.SemesterProjekt
 
         private void button1_Click(object sender, EventArgs e)
         {
-            KundeForms kunde = new KundeForms();
-            kunde.Show();
+            BoligForms boligform = new BoligForms();
+            boligform.Show();
             this.Hide();
         }
 
