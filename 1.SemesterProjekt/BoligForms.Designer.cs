@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BoligForms));
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnBolig = new Button();
             btnEjendomsmægler = new Button();
@@ -40,7 +40,7 @@
             panel2 = new Panel();
             comboBoxType = new ComboBox();
             label3 = new Label();
-            textBox3 = new TextBox();
+            txtKvmPris = new TextBox();
             txtAdresse = new TextBox();
             txtPostnummer = new TextBox();
             tbMinPris = new TrackBar();
@@ -208,14 +208,14 @@
             label3.TabIndex = 55;
             label3.Text = "Type";
             // 
-            // textBox3
+            // txtKvmPris
             // 
-            textBox3.Enabled = false;
-            textBox3.Location = new Point(270, 632);
-            textBox3.Margin = new Padding(2);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(210, 27);
-            textBox3.TabIndex = 54;
+            txtKvmPris.Enabled = false;
+            txtKvmPris.Location = new Point(270, 632);
+            txtKvmPris.Margin = new Padding(2);
+            txtKvmPris.Name = "txtKvmPris";
+            txtKvmPris.Size = new Size(210, 27);
+            txtKvmPris.TabIndex = 54;
             // 
             // txtAdresse
             // 
@@ -441,14 +441,14 @@
             // dgvBolig
             // 
             dgvBolig.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = SystemColors.Window;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            dgvBolig.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvBolig.DefaultCellStyle = dataGridViewCellStyle2;
             dgvBolig.Location = new Point(484, 50);
             dgvBolig.Margin = new Padding(2);
             dgvBolig.Name = "dgvBolig";
@@ -535,7 +535,7 @@
             Controls.Add(dgvBolig);
             Controls.Add(comboBoxType);
             Controls.Add(label3);
-            Controls.Add(textBox3);
+            Controls.Add(txtKvmPris);
             Controls.Add(txtAdresse);
             Controls.Add(txtPostnummer);
             Controls.Add(cbTilSalg);
@@ -586,7 +586,7 @@
         private Button btnKunde;
         private ComboBox comboBoxType;
         private Label label3;
-        private TextBox textBox3;
+        private TextBox txtKvmPris;
         private TextBox txtAdresse;
         private TextBox txtPostnummer;
         private TrackBar tbMinPris;

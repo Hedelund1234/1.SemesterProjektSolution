@@ -57,17 +57,17 @@
             label11 = new Label();
             label12 = new Label();
             kalenderHandelsDato = new MonthCalendar();
-            dataGridView1 = new DataGridView();
+            dgvKunder = new DataGridView();
             comboboxSalgsstatus = new ComboBox();
             label9 = new Label();
             label10 = new Label();
             label13 = new Label();
             btnTilbage = new Button();
-            button6 = new Button();
-            button7 = new Button();
+            btnUpdate = new Button();
+            btnDelete = new Button();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvKunder).BeginInit();
             SuspendLayout();
             // 
             // panel2
@@ -245,7 +245,9 @@
             // 
             // comboboxType
             // 
+            comboboxType.DropDownStyle = ComboBoxStyle.DropDownList;
             comboboxType.FormattingEnabled = true;
+            comboboxType.Items.AddRange(new object[] { "", "Hus", "Rækkehus", "Lejlighed", "Andelsbolig" });
             comboboxType.Location = new Point(269, 317);
             comboboxType.Margin = new Padding(2);
             comboboxType.Name = "comboboxType";
@@ -355,23 +357,25 @@
             // kalenderHandelsDato
             // 
             kalenderHandelsDato.Location = new Point(474, 339);
-            kalenderHandelsDato.Margin = new Padding(7, 7, 7, 7);
+            kalenderHandelsDato.Margin = new Padding(7);
             kalenderHandelsDato.Name = "kalenderHandelsDato";
             kalenderHandelsDato.TabIndex = 25;
             // 
-            // dataGridView1
+            // dgvKunder
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(682, 164);
-            dataGridView1.Margin = new Padding(2);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(707, 725);
-            dataGridView1.TabIndex = 26;
+            dgvKunder.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvKunder.Location = new Point(682, 164);
+            dgvKunder.Margin = new Padding(2);
+            dgvKunder.Name = "dgvKunder";
+            dgvKunder.RowHeadersWidth = 62;
+            dgvKunder.Size = new Size(707, 725);
+            dgvKunder.TabIndex = 26;
             // 
             // comboboxSalgsstatus
             // 
+            comboboxSalgsstatus.DropDownStyle = ComboBoxStyle.DropDownList;
             comboboxSalgsstatus.FormattingEnabled = true;
+            comboboxSalgsstatus.Items.AddRange(new object[] { "", "Solgt", "Til salg" });
             comboboxSalgsstatus.Location = new Point(474, 164);
             comboboxSalgsstatus.Margin = new Padding(2);
             comboboxSalgsstatus.Name = "comboboxSalgsstatus";
@@ -421,36 +425,37 @@
             btnTilbage.UseVisualStyleBackColor = true;
             btnTilbage.Click += btnTilbage_Click;
             // 
-            // button6
+            // btnUpdate
             // 
-            button6.Location = new Point(364, 862);
-            button6.Margin = new Padding(2);
-            button6.Name = "button6";
-            button6.Size = new Size(90, 27);
-            button6.TabIndex = 28;
-            button6.Text = "Opdater";
-            button6.UseVisualStyleBackColor = true;
+            btnUpdate.Location = new Point(364, 862);
+            btnUpdate.Margin = new Padding(2);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(90, 27);
+            btnUpdate.TabIndex = 28;
+            btnUpdate.Text = "Opdater";
+            btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Click += btnUpdate_Click;
             // 
-            // button7
+            // btnDelete
             // 
-            button7.Location = new Point(458, 862);
-            button7.Margin = new Padding(2);
-            button7.Name = "button7";
-            button7.Size = new Size(90, 27);
-            button7.TabIndex = 28;
-            button7.Text = "Slet";
-            button7.UseVisualStyleBackColor = true;
+            btnDelete.Location = new Point(458, 862);
+            btnDelete.Margin = new Padding(2);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(90, 27);
+            btnDelete.TabIndex = 28;
+            btnDelete.Text = "Slet";
+            btnDelete.UseVisualStyleBackColor = true;
             // 
             // BoligDetails
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1400, 900);
-            Controls.Add(button7);
-            Controls.Add(button6);
+            Controls.Add(btnDelete);
+            Controls.Add(btnUpdate);
             Controls.Add(btnTilbage);
             Controls.Add(comboboxSalgsstatus);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvKunder);
             Controls.Add(kalenderHandelsDato);
             Controls.Add(comboboxType);
             Controls.Add(label4);
@@ -481,9 +486,10 @@
             Name = "BoligDetails";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "BoligDetails";
+            Load += BoligDetails_Load;
             panel2.ResumeLayout(false);
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvKunder).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -518,13 +524,13 @@
         private Label label11;
         private Label label12;
         private MonthCalendar kalenderHandelsDato;
-        private DataGridView dataGridView1;
+        private DataGridView dgvKunder;
         private ComboBox comboboxSalgsstatus;
         private Label label9;
         private Label label10;
         private Label label13;
         private Button btnTilbage;
-        private Button button6;
-        private Button button7;
+        private Button btnUpdate;
+        private Button btnDelete;
     }
 }
