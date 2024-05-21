@@ -34,7 +34,7 @@ namespace _1.SemesterProjekt
                     udbud = bl[i].Udbudspris;
                     stør = bl[i].Størrelse;
                     _sum = udbud / stør;
-                    sum =+ _sum;
+                    sum = sum + _sum;
                 }
             }
             sumUd = sum / bl.Count;
