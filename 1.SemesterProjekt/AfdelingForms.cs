@@ -1,4 +1,6 @@
-﻿using System;
+﻿using _1.SemesterProjekt.DataAccess;
+using _1.SemesterProjekt.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,8 @@ namespace _1.SemesterProjekt
 {
     public partial class AfdelingForms : Form
     {
+        AfdelingDbHandler db = new AfdelingDbHandler();
+        List<Afdeling> al = new List<Afdeling>();
         public AfdelingForms()
         {
             InitializeComponent();
@@ -48,6 +52,63 @@ namespace _1.SemesterProjekt
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnSøg_Click(object sender, EventArgs e)
+        {
+            string afdelingsNr = "";
+            string afdelingsNavn = "";
+            try
+            {
+                if (comboBoxAfdelingsNr.Text.Length != 0)
+                {
+                    afdelingsNr = comboBoxAfdelingsNr.Text;
+                }
+                if (comboBoxAfdelingsNavn.Text.Length != 0)
+                {
+                    afdelingsNavn = comboBoxAfdelingsNavn.Text;
+                }
+                al = db.Get(afdelingsNr, afdelingsNavn);
+            }
+            catch (Exception)
+            {
+
+            }
+            if (al.Count == 0)
+            {
+                MessageBox.Show("Afdeling blev ikke fundet", "Ikke fundet", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                al = db.Get();
+                dgvBolig.DataSource = al;
+            }
+            else
+            {
+                dgvBolig.DataSource = al;
+            }
+            comboBoxAfdelingsNr.Text = null;
+            comboBoxAfdelingsNavn.Text = null;
+        }
+
+        private void dgvBolig_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int row = e.RowIndex;
+
+            DataGridView dgv = sender as DataGridView;
+
+            DataGridViewRow data = dgv.Rows[row];
+            int nr = (int)data.Cells["Afdelings_Nr"].Value;
+            NavigateToDetails(nr);
+        }
+        void NavigateToDetails(int nr)
+        {
+            AfdelingDetails afdelingDetails = new AfdelingDetails(nr);
+            afdelingDetails.Show();
+            this.Hide();
+        }
+
+        private void AfdelingForms_Load(object sender, EventArgs e)
+        {
+            al = db.Get();
+            dgvBolig.DataSource = al;
         }
     }
 }

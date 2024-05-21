@@ -194,5 +194,12 @@ namespace _1.SemesterProjekt
                 MessageBox.Show("Kunde blev ikke slettet", "Annullerede", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnKundeDetails_Click(object sender, EventArgs e)
+        {
+            KundeForms kunde = new KundeForms();
+            kunde.Show();
+            this.Hide();
+        }
     }
 }
