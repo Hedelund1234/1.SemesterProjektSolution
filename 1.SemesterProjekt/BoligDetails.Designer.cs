@@ -436,6 +436,7 @@
             btnDelete.TabIndex = 28;
             btnDelete.Text = "Slet";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // label14
             // 
@@ -467,7 +468,6 @@
             dtpBoligDetails.Size = new Size(199, 27);
             dtpBoligDetails.TabIndex = 29;
             dtpBoligDetails.Visible = false;
-            dtpBoligDetails.ValueChanged += dtpBoligDetails_ValueChanged;
             // 
             // cbHandelsdato
             // 

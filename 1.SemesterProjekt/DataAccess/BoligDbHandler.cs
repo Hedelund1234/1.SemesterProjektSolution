@@ -234,13 +234,13 @@ namespace _1.SemesterProjekt.DataAccess
             {
                 cmd.Parameters.AddWithValue("@bKundeIdKøb", bolig.Bolig_Kunde_Id_Køber);
             }
-            if (bolig.Bolig_Kunde_Id_Køber == null)
+            if (bolig.Handels_Dato == DateTime.MinValue)
             {
-                cmd.Parameters.AddWithValue("@hDato", bolig.Bolig_Kunde_Id_Køber);
+                cmd.Parameters.AddWithValue("@hDato", DBNull.Value);
             }
             else
             {
-                cmd.Parameters.AddWithValue("@hDato", DBNull.Value);
+                cmd.Parameters.AddWithValue("@hDato", bolig.Handels_Dato);
             }
             
             int rows = 0;

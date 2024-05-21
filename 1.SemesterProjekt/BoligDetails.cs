@@ -171,7 +171,16 @@ namespace _1.SemesterProjekt
                 string bolig_Afdelings_Navn = comboBoxAfdelingBoligDetails.Text;
                 string salgsstatus = comboboxSalgsstatus.Text;
                 int bolig_Kunde_Id_Køber = bolig_Kunde_Id_KøberInt;
-                DateTime dato = IsCbHandelsDatoChanged();
+                DateTime dato;
+                if (cbHandelsdato.Checked)
+                {
+                    dato = dtpBoligDetails.Value;
+                }
+                else
+                {
+                    dato = DateTime.MinValue;
+                }
+
 
 
 
@@ -201,43 +210,47 @@ namespace _1.SemesterProjekt
                 {
                     MessageBox.Show("Opdateringerne blev ikke gemt");
                 }
+                BoligForms boligforms = new BoligForms();
+                boligforms.Show();
+                this.Hide();
             }
-
-        }
-        internal DateTime IsCbHandelsDatoChanged()
-        {
-            DateTime dato;
-            if (cbHandelsdato.Checked)
-            {
-                return dato = dtpBoligDetails.Value;
-            }
-            else
-            {
-                return dato = (DateTime)bolig.Handels_Dato;
-            }
-        }
-
-        private void dtpBoligDetails_ValueChanged(object sender, EventArgs e)
-        {
-
-            DateTime dato = dtpBoligDetails.Value;
-
 
         }
 
         private void cbHandelsdato_CheckedChanged(object sender, EventArgs e)
         {
-            DateTime dato;
             if (cbHandelsdato.Checked)
             {
                 dtpBoligDetails.Show();
-                dato = dtpBoligDetails.Value;
             }
             else
             {
                 dtpBoligDetails.Hide();
-                dato = (DateTime)bolig.Handels_Dato;
             }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show($"Er du sikker på at du vil slette Bolig ID: {bolig.Bolig_Id} Adresse: {bolig.Adresse}?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                bool slettet = db.Delete(bolig.Bolig_Id);
+                if (slettet)
+                {
+                    MessageBox.Show("Boligen blev slettet");
+                }
+                else
+                {
+                    MessageBox.Show("Boligen blev ikke slettet");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Noget gik galt. Boligen blev ikke slettet");
+            }
+            
+            BoligForms boligforms = new BoligForms();
+            boligforms.Show();
+            this.Hide();
         }
     }
 }
