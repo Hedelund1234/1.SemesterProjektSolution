@@ -67,7 +67,7 @@
             // 
             ComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             ComboBox1.FormattingEnabled = true;
-            ComboBox1.Items.AddRange(new object[] { "", "Nordjylland", "Midtjylland", "Syddanmark", "Sjælland", "Hovedstaden" });
+            ComboBox1.Items.AddRange(new object[] { "", "1", "2", "3", "4", "5" });
             ComboBox1.Location = new Point(269, 457);
             ComboBox1.Margin = new Padding(2);
             ComboBox1.Name = "ComboBox1";
@@ -83,6 +83,7 @@
             btnTilbage.TabIndex = 26;
             btnTilbage.Text = "Tilbage";
             btnTilbage.UseVisualStyleBackColor = true;
+            btnTilbage.Click += btnTilbage_Click;
             // 
             // label3
             // 
@@ -109,6 +110,7 @@
             btnLogo.Size = new Size(96, 96);
             btnLogo.TabIndex = 28;
             btnLogo.UseVisualStyleBackColor = false;
+            btnLogo.Click += btnLogo_Click;
             // 
             // txtEmail
             // 
@@ -176,6 +178,7 @@
             btnExit.TabIndex = 3;
             btnExit.Text = "X";
             btnExit.UseVisualStyleBackColor = false;
+            btnExit.Click += btnExit_Click;
             // 
             // panel2
             // 
@@ -212,6 +215,7 @@
             button1.TabIndex = 38;
             button1.Text = "Bolig      ";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -228,6 +232,7 @@
             // 
             // button3
             // 
+            button3.BackColor = Color.White;
             button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
             button3.BackgroundImageLayout = ImageLayout.None;
             button3.Location = new Point(29, 457);
@@ -236,10 +241,12 @@
             button3.Size = new Size(194, 73);
             button3.TabIndex = 35;
             button3.Text = "Afdeling";
-            button3.UseVisualStyleBackColor = true;
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button4
             // 
+            button4.BackColor = Color.White;
             button4.BackgroundImage = Properties.Resources.Kunde;
             button4.BackgroundImageLayout = ImageLayout.None;
             button4.Location = new Point(29, 262);
@@ -248,7 +255,8 @@
             button4.Size = new Size(194, 73);
             button4.TabIndex = 37;
             button4.Text = "Kunde   ";
-            button4.UseVisualStyleBackColor = true;
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // label9
             // 

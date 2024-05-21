@@ -37,22 +37,22 @@
             button3 = new Button();
             button4 = new Button();
             btnOpret = new Button();
-            comboBox1 = new ComboBox();
+            comboBoxAfdeling = new ComboBox();
             btnSøg = new Button();
             label3 = new Label();
             label1 = new Label();
-            textBox2 = new TextBox();
+            txtEmail = new TextBox();
             label4 = new Label();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
+            txtEjendomsmæglerId = new TextBox();
+            txtNavn = new TextBox();
             label5 = new Label();
             label2 = new Label();
-            textBox1 = new TextBox();
+            txtTelefonnummer = new TextBox();
             btnLogo = new Button();
-            dgvBolig = new DataGridView();
+            dgvEjendomsmægler = new DataGridView();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvBolig).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvEjendomsmægler).BeginInit();
             SuspendLayout();
             // 
             // panel2
@@ -121,6 +121,7 @@
             // 
             // button3
             // 
+            button3.BackColor = Color.White;
             button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
             button3.BackgroundImageLayout = ImageLayout.None;
             button3.Location = new Point(29, 457);
@@ -129,11 +130,12 @@
             button3.Size = new Size(194, 73);
             button3.TabIndex = 27;
             button3.Text = "Afdeling";
-            button3.UseVisualStyleBackColor = true;
+            button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
             // button4
             // 
+            button4.BackColor = Color.White;
             button4.BackgroundImage = Properties.Resources.Kunde;
             button4.BackgroundImageLayout = ImageLayout.None;
             button4.Location = new Point(29, 262);
@@ -142,7 +144,7 @@
             button4.Size = new Size(194, 73);
             button4.TabIndex = 29;
             button4.Text = "Kunde   ";
-            button4.UseVisualStyleBackColor = true;
+            button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
             // 
             // btnOpret
@@ -156,14 +158,16 @@
             btnOpret.UseVisualStyleBackColor = true;
             btnOpret.Click += btnOpret_Click;
             // 
-            // comboBox1
+            // comboBoxAfdeling
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(268, 554);
-            comboBox1.Margin = new Padding(2);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(214, 28);
-            comboBox1.TabIndex = 52;
+            comboBoxAfdeling.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxAfdeling.FormattingEnabled = true;
+            comboBoxAfdeling.Items.AddRange(new object[] { "", "1", "2", "3", "4", "5" });
+            comboBoxAfdeling.Location = new Point(268, 554);
+            comboBoxAfdeling.Margin = new Padding(2);
+            comboBoxAfdeling.Name = "comboBoxAfdeling";
+            comboBoxAfdeling.Size = new Size(214, 28);
+            comboBoxAfdeling.TabIndex = 52;
             // 
             // btnSøg
             // 
@@ -174,6 +178,7 @@
             btnSøg.TabIndex = 26;
             btnSøg.Text = "Søg";
             btnSøg.UseVisualStyleBackColor = true;
+            btnSøg.Click += btnSøg_Click;
             // 
             // label3
             // 
@@ -195,13 +200,13 @@
             label1.TabIndex = 42;
             label1.Text = "Ejendomsmægler id";
             // 
-            // textBox2
+            // txtEmail
             // 
-            textBox2.Location = new Point(269, 457);
-            textBox2.Margin = new Padding(2);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(214, 27);
-            textBox2.TabIndex = 47;
+            txtEmail.Location = new Point(269, 457);
+            txtEmail.Margin = new Padding(2);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(214, 27);
+            txtEmail.TabIndex = 47;
             // 
             // label4
             // 
@@ -213,21 +218,21 @@
             label4.TabIndex = 44;
             label4.Text = "Afdeling";
             // 
-            // textBox4
+            // txtEjendomsmæglerId
             // 
-            textBox4.Location = new Point(268, 164);
-            textBox4.Margin = new Padding(2);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(214, 27);
-            textBox4.TabIndex = 48;
+            txtEjendomsmæglerId.Location = new Point(268, 164);
+            txtEjendomsmæglerId.Margin = new Padding(2);
+            txtEjendomsmæglerId.Name = "txtEjendomsmæglerId";
+            txtEjendomsmæglerId.Size = new Size(214, 27);
+            txtEjendomsmæglerId.TabIndex = 48;
             // 
-            // textBox5
+            // txtNavn
             // 
-            textBox5.Location = new Point(269, 262);
-            textBox5.Margin = new Padding(2);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(214, 27);
-            textBox5.TabIndex = 49;
+            txtNavn.Location = new Point(269, 262);
+            txtNavn.Margin = new Padding(2);
+            txtNavn.Name = "txtNavn";
+            txtNavn.Size = new Size(214, 27);
+            txtNavn.TabIndex = 49;
             // 
             // label5
             // 
@@ -249,13 +254,13 @@
             label2.TabIndex = 43;
             label2.Text = "Telefonnummer";
             // 
-            // textBox1
+            // txtTelefonnummer
             // 
-            textBox1.Location = new Point(268, 358);
-            textBox1.Margin = new Padding(2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(214, 27);
-            textBox1.TabIndex = 50;
+            txtTelefonnummer.Location = new Point(268, 358);
+            txtTelefonnummer.Margin = new Padding(2);
+            txtTelefonnummer.Name = "txtTelefonnummer";
+            txtTelefonnummer.Size = new Size(214, 27);
+            txtTelefonnummer.TabIndex = 50;
             // 
             // btnLogo
             // 
@@ -274,36 +279,38 @@
             btnLogo.UseVisualStyleBackColor = false;
             btnLogo.Click += btnLogo_Click;
             // 
-            // dgvBolig
+            // dgvEjendomsmægler
             // 
-            dgvBolig.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvBolig.Location = new Point(487, 63);
-            dgvBolig.Margin = new Padding(2);
-            dgvBolig.Name = "dgvBolig";
-            dgvBolig.RowHeadersWidth = 62;
-            dgvBolig.Size = new Size(902, 826);
-            dgvBolig.TabIndex = 58;
+            dgvEjendomsmægler.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvEjendomsmægler.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvEjendomsmægler.Location = new Point(487, 63);
+            dgvEjendomsmægler.Margin = new Padding(2);
+            dgvEjendomsmægler.Name = "dgvEjendomsmægler";
+            dgvEjendomsmægler.RowHeadersWidth = 62;
+            dgvEjendomsmægler.Size = new Size(902, 826);
+            dgvEjendomsmægler.TabIndex = 58;
+            dgvEjendomsmægler.CellDoubleClick += dgvEjendomsmægler_CellDoubleClick;
             // 
             // EjendomsmæglerForms
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1400, 900);
-            Controls.Add(dgvBolig);
-            Controls.Add(comboBox1);
+            Controls.Add(dgvEjendomsmægler);
+            Controls.Add(comboBoxAfdeling);
             Controls.Add(btnLogo);
             Controls.Add(panel2);
             Controls.Add(btnOpret);
             Controls.Add(btnSøg);
             Controls.Add(label3);
             Controls.Add(label1);
-            Controls.Add(textBox2);
+            Controls.Add(txtEmail);
             Controls.Add(label4);
-            Controls.Add(textBox4);
-            Controls.Add(textBox5);
+            Controls.Add(txtEjendomsmæglerId);
+            Controls.Add(txtNavn);
             Controls.Add(panel1);
             Controls.Add(label5);
-            Controls.Add(textBox1);
+            Controls.Add(txtTelefonnummer);
             Controls.Add(label2);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(2);
@@ -312,7 +319,7 @@
             Text = "Ejendomsmægler";
             panel2.ResumeLayout(false);
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvBolig).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvEjendomsmægler).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -325,20 +332,20 @@
         private Button btnLogo;
         private Label label3;
         private Label label1;
-        private TextBox textBox2;
+        private TextBox txtEmail;
         private Label label4;
-        private TextBox textBox4;
-        private TextBox textBox5;
+        private TextBox txtEjendomsmæglerId;
+        private TextBox txtNavn;
         private Label label5;
         private Label label2;
-        private TextBox textBox1;
-        private ComboBox comboBox1;
+        private TextBox txtTelefonnummer;
+        private ComboBox comboBoxAfdeling;
         private Button btnOpret;
         private Button btnSøg;
         private Button button1;
         private Button button2;
         private Button button3;
         private Button button4;
-        private DataGridView dgvBolig;
+        private DataGridView dgvEjendomsmægler;
     }
 }
