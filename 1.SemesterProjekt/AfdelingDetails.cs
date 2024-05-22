@@ -10,6 +10,7 @@ namespace _1.SemesterProjekt
         AfdelingDbHandler db;
         List<Afdeling> al = new List<Afdeling>();
         EjendomsmæglerDbHandler ejendomsmæglerDb;
+        Export csv = new Export();
         bool afdelingNrDescAsc = false;
         bool afdelingNavnDescAsc = false;
         public AfdelingDetails(int nr)
@@ -97,7 +98,7 @@ namespace _1.SemesterProjekt
             List<Bolig> boligList = db.GetJoinBolig("Bolig", txtBoxAfdelingsNavnDetails.Text);
             List<Ejendomsmægler> ejendomsmæglerList = db.GetJoinEjendomsmægler("Ejendomsmægler", Convert.ToInt32(txtBoxAfdelingNrDetails.Text));
 
-            bool success = db.SaveDataToCsv(boligList, ejendomsmæglerList, $"BoligerOmråde{txtBoxAfdelingsNavnDetails.Text}.csv", boligList.Count);
+            bool success = csv.SaveDataToCsv(boligList, ejendomsmæglerList, $"BoligerOmråde{txtBoxAfdelingsNavnDetails.Text}.csv", boligList.Count);
             if (success)
             {
                 MessageBox.Show(".csv fil gemt", ".csv gemt", MessageBoxButtons.OK, MessageBoxIcon.Information);
