@@ -94,7 +94,7 @@ namespace _1.SemesterProjekt
         {
             List<Bolig> boligList = db.GetJoinBolig(comboBoxAfdelingsDetailsSøg.Text, txtBoxAfdelingsNavnDetails.Text);
             List<Ejendomsmægler> ejendomsmæglerList = db.GetJoinEjendomsmægler("Ejendomsmægler", Convert.ToInt32(txtBoxAfdelingNrDetails.Text));
-            
+
             bool success = db.SaveDataToCsv(boligList, ejendomsmæglerList, $"BoligerOmråde{txtBoxAfdelingsNavnDetails.Text}.csv", boligList.Count);
             if (success)
             {
@@ -104,6 +104,42 @@ namespace _1.SemesterProjekt
             {
                 MessageBox.Show(".csv fil blev IKKE gemt", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void dgvAfdelingsDetails_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (comboBoxAfdelingsDetailsSøg.Text == "Bolig")
+            {
+                int row = e.RowIndex;
+
+                DataGridView dgv = sender as DataGridView;
+
+                DataGridViewRow data = dgv.Rows[row];
+                int id = (int)data.Cells["Bolig_Id"].Value;
+                NavigateToDetailsBolig(id);
+            }
+            else if (comboBoxAfdelingsDetailsSøg.Text == "Ejendomsmægler")
+            {
+                int row = e.RowIndex;
+
+                DataGridView dgv = sender as DataGridView;
+
+                DataGridViewRow data = dgv.Rows[row];
+                int id = (int)data.Cells["Id"].Value;
+                NavigateToDetailsEjendomsmægler(id);
+            }
+        }
+        void NavigateToDetailsBolig(int id)
+        {
+            BoligDetails bolig = new BoligDetails(id);
+            bolig.Show();
+            this.Hide();
+        }
+        void NavigateToDetailsEjendomsmægler(int id)
+        {
+            EjendomsmæglerDetails ejendomsmæglerDetails = new EjendomsmæglerDetails(id);
+            ejendomsmæglerDetails.Show();
+            this.Hide();
         }
     }
 }

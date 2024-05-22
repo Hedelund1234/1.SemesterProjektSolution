@@ -110,5 +110,73 @@ namespace _1.SemesterProjekt
             al = db.Get();
             dgvBolig.DataSource = al;
         }
+
+        private void comboBoxAfdelingsNr_DropDownClosed(object sender, EventArgs e)
+        {
+            string afdelingsNr = "";
+            string afdelingsNavn = "";
+            try
+            {
+                if (comboBoxAfdelingsNr.Text.Length != 0)
+                {
+                    afdelingsNr = comboBoxAfdelingsNr.Text;
+                }
+                if (comboBoxAfdelingsNavn.Text.Length != 0)
+                {
+                    afdelingsNavn = comboBoxAfdelingsNavn.Text;
+                }
+                al = db.Get(afdelingsNr, afdelingsNavn);
+            }
+            catch (Exception)
+            {
+
+            }
+            if (al.Count == 0)
+            {
+                MessageBox.Show("Afdeling blev ikke fundet", "Ikke fundet", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                al = db.Get();
+                dgvBolig.DataSource = al;
+            }
+            else
+            {
+                dgvBolig.DataSource = al;
+            }
+            comboBoxAfdelingsNr.Text = null;
+            comboBoxAfdelingsNavn.Text = null;
+        }
+
+        private void comboBoxAfdelingsNavn_DropDownClosed(object sender, EventArgs e)
+        {
+            string afdelingsNr = "";
+            string afdelingsNavn = "";
+            try
+            {
+                if (comboBoxAfdelingsNr.Text.Length != 0)
+                {
+                    afdelingsNr = comboBoxAfdelingsNr.Text;
+                }
+                if (comboBoxAfdelingsNavn.Text.Length != 0)
+                {
+                    afdelingsNavn = comboBoxAfdelingsNavn.Text;
+                }
+                al = db.Get(afdelingsNr, afdelingsNavn);
+            }
+            catch (Exception)
+            {
+
+            }
+            if (al.Count == 0)
+            {
+                MessageBox.Show("Afdeling blev ikke fundet", "Ikke fundet", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                al = db.Get();
+                dgvBolig.DataSource = al;
+            }
+            else
+            {
+                dgvBolig.DataSource = al;
+            }
+            comboBoxAfdelingsNr.Text = null;
+            comboBoxAfdelingsNavn.Text = null;
+        }
     }
 }

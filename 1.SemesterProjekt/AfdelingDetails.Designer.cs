@@ -257,6 +257,7 @@
             dgvAfdelingsDetails.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
             dgvAfdelingsDetails.Size = new Size(898, 810);
             dgvAfdelingsDetails.TabIndex = 22;
+            dgvAfdelingsDetails.CellDoubleClick += dgvAfdelingsDetails_CellDoubleClick;
             // 
             // btnCsvUdprint
             // 

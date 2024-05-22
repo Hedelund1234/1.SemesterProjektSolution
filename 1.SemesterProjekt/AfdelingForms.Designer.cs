@@ -120,6 +120,7 @@
             comboBoxAfdelingsNavn.Name = "comboBoxAfdelingsNavn";
             comboBoxAfdelingsNavn.Size = new Size(211, 28);
             comboBoxAfdelingsNavn.TabIndex = 56;
+            comboBoxAfdelingsNavn.DropDownClosed += comboBoxAfdelingsNavn_DropDownClosed;
             // 
             // comboBoxAfdelingsNr
             // 
@@ -131,6 +132,7 @@
             comboBoxAfdelingsNr.Name = "comboBoxAfdelingsNr";
             comboBoxAfdelingsNr.Size = new Size(211, 28);
             comboBoxAfdelingsNr.TabIndex = 56;
+            comboBoxAfdelingsNr.DropDownClosed += comboBoxAfdelingsNr_DropDownClosed;
             // 
             // label3
             // 
