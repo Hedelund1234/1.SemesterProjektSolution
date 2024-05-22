@@ -174,10 +174,9 @@ namespace _1.SemesterProjekt.DataAccess
         }
         internal bool Create(Bolig bolig)
         {
-            string command = "INSERT INTO Bolig (Bolig_Id, Adresse, Postnummer, Type, Udbudspris, Størrelse, Bolig_Kunde_Id, Bolig_Ejendomsmægler_Id, Bolig_Afdelings_Navn, Salgsstatus, Bolig_Kunde_Id_Køber, Handels_Dato) VALUES (@bId, @adr, @postNr, @type, @uPris, @str, @bKid, @bEId, @bANavn, @SalgStatus, @bKundeIdKøb, @hDato)";
+            string command = "INSERT INTO Bolig (Adresse, Postnummer, Type, Udbudspris, Størrelse, Bolig_Kunde_Id, Bolig_Ejendomsmægler_Id, Bolig_Afdelings_Navn, Salgsstatus, Bolig_Kunde_Id_Køber, Handels_Dato) VALUES (@adr, @postNr, @type, @uPris, @str, @bKid, @bEId, @bANavn, @SalgStatus, @bKundeIdKøb, @hDato)";
             SqlConnection conn = new SqlConnection(connStrings);
             SqlCommand cmd = new SqlCommand(command, conn);
-            cmd.Parameters.AddWithValue("@bId", bolig.Bolig_Id);
             cmd.Parameters.AddWithValue("@adr", bolig.Adresse);
             cmd.Parameters.AddWithValue("@postNr", bolig.Postnummer);
             cmd.Parameters.AddWithValue("@type", bolig.Type);
@@ -187,8 +186,9 @@ namespace _1.SemesterProjekt.DataAccess
             cmd.Parameters.AddWithValue("@bEId", bolig.Bolig_Ejendomsmægler_Id);
             cmd.Parameters.AddWithValue("@bANavn", bolig.Bolig_Afdelings_Navn);
             cmd.Parameters.AddWithValue("@SalgStatus", bolig.Salgsstatus);
-            cmd.Parameters.AddWithValue("@bKundeIdKøb", bolig.Bolig_Kunde_Id_Køber);
-            cmd.Parameters.AddWithValue("@hDato", bolig.Handels_Dato);
+            cmd.Parameters.AddWithValue("@bKundeIdKøb", DBNull.Value);
+            cmd.Parameters.AddWithValue("@hDato", DBNull.Value);
+
 
             int rows = 0;
             try
