@@ -218,5 +218,12 @@ namespace _1.SemesterProjekt
                 this.Hide();
             }
         }
+
+        private void btnBolig_Click(object sender, EventArgs e)
+        {
+            BoligForms boligforms = new BoligForms();
+            boligforms.Show();
+            this.Hide();
+        }
     }
 }

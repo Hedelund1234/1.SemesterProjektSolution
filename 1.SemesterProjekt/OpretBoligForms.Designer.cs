@@ -34,7 +34,7 @@
             comboBoxType = new ComboBox();
             label3 = new Label();
             panel1 = new Panel();
-            button1 = new Button();
+            btnBolig = new Button();
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
@@ -111,7 +111,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Silver;
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(btnBolig);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button4);
@@ -122,18 +122,19 @@
             panel1.Size = new Size(264, 900);
             panel1.TabIndex = 13;
             // 
-            // button1
+            // btnBolig
             // 
-            button1.BackColor = Color.FromArgb(224, 224, 224);
-            button1.BackgroundImage = Properties.Resources.Bolig;
-            button1.BackgroundImageLayout = ImageLayout.None;
-            button1.Location = new Point(29, 164);
-            button1.Margin = new Padding(2);
-            button1.Name = "button1";
-            button1.Size = new Size(194, 73);
-            button1.TabIndex = 34;
-            button1.Text = "Bolig      ";
-            button1.UseVisualStyleBackColor = false;
+            btnBolig.BackColor = Color.FromArgb(224, 224, 224);
+            btnBolig.BackgroundImage = Properties.Resources.Bolig;
+            btnBolig.BackgroundImageLayout = ImageLayout.None;
+            btnBolig.Location = new Point(29, 164);
+            btnBolig.Margin = new Padding(2);
+            btnBolig.Name = "btnBolig";
+            btnBolig.Size = new Size(194, 73);
+            btnBolig.TabIndex = 34;
+            btnBolig.Text = "Bolig      ";
+            btnBolig.UseVisualStyleBackColor = false;
+            btnBolig.Click += btnBolig_Click;
             // 
             // button2
             // 
@@ -433,7 +434,7 @@
         private Button btnOpret;
         private TextBox txtPris;
         private Label label4;
-        private Button button1;
+        private Button btnBolig;
         private Button button2;
         private Button button3;
         private Button button4;

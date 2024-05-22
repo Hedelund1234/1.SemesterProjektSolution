@@ -189,30 +189,6 @@ namespace _1.SemesterProjekt
             }
         }
 
-
-
-
-
-        private void tbMinPris_MouseUp(object sender, MouseEventArgs e)
-        {
-            SliderPris();
-        }
-
-        private void tbMaxPris_MouseUp(object sender, MouseEventArgs e)
-        {
-            SliderPris();
-        }
-
-        private void tbMinM2_MouseUp(object sender, MouseEventArgs e)
-        {
-            SliderM2();
-        }
-
-        private void tbMaxM2_MouseUp(object sender, MouseEventArgs e)
-        {
-            SliderM2();
-        }
-
         private void btnLogo_Click(object sender, EventArgs e)
         {
             Forside forside = new Forside();
@@ -291,6 +267,26 @@ namespace _1.SemesterProjekt
             {
                 MessageBox.Show("FEJL! .CSV filen blev ikke gemt!");
             }
+        }
+
+        private void tbMinPris_MouseMove(object sender, MouseEventArgs e)
+        {
+            SliderPris();
+        }
+
+        private void tbMaxPris_MouseMove(object sender, MouseEventArgs e)
+        {
+            SliderPris();
+        }
+
+        private void tbMinM2_MouseMove(object sender, MouseEventArgs e)
+        {
+            SliderM2();
+        }
+
+        private void tbMaxM2_MouseMove(object sender, MouseEventArgs e)
+        {
+            SliderM2();
         }
     }
 }
