@@ -180,6 +180,7 @@ namespace _1.SemesterProjekt.DataAccess
         }
         internal bool SaveDataToCsv(List<Bolig> boligList, List<Ejendomsmægler> ejendomsmæglerList, string filename, int arraySize)
         {
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
             string[] csvArray = new string[arraySize + 3];
             csvArray[0] = "Bolig_Id;Adresse;Postnummer;Type;Udbudspris;Størrelse;Bolig_Kunde_Id;Bolig_Ejendomsmægler_Id;Bolig_Afdelings_Navn;Salgsstatus;Bolig_Kunde_Id_Køber;Handels_Dato";
             csvArray[arraySize + 1] = "Id;Navn;Telefon_Nr;Email;Ejendomsmægler_Afdeling_Nr";
@@ -191,7 +192,7 @@ namespace _1.SemesterProjekt.DataAccess
             bool isSuccess = false;
             try
             {
-                File.WriteAllLines(Path.Combine("C:\\Users\\hjalt\\OneDrive\\Skrivebord\\", filename), csvArray);
+                File.WriteAllLines(Path.Combine(path, filename), csvArray);
                 
                 isSuccess = true;
             }
