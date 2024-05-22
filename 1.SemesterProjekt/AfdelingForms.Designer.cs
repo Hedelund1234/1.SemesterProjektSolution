@@ -222,6 +222,7 @@
             dgvBolig.Size = new Size(902, 810);
             dgvBolig.TabIndex = 63;
             dgvBolig.CellDoubleClick += dgvBolig_CellDoubleClick;
+            dgvBolig.ColumnHeaderMouseClick += dgvBolig_ColumnHeaderMouseClick;
             // 
             // AfdelingForms
             // 

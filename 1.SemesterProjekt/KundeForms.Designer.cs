@@ -296,6 +296,7 @@
             dgvBolig.Size = new Size(898, 810);
             dgvBolig.TabIndex = 58;
             dgvBolig.CellDoubleClick += dgvBolig_CellDoubleClick;
+            dgvBolig.ColumnHeaderMouseClick += dgvBolig_ColumnHeaderMouseClick;
             // 
             // KundeForms
             // 

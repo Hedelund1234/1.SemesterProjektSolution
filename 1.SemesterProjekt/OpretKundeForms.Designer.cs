@@ -182,6 +182,7 @@
             button4.TabIndex = 41;
             button4.Text = "Kunde   ";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // btnLogo
             // 

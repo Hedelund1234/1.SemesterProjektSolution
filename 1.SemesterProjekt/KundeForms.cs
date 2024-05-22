@@ -17,6 +17,8 @@ namespace _1.SemesterProjekt
     {
         KundeDbHandler db = new KundeDbHandler();
         List<Kunde> kl = new List<Kunde>();
+        bool afdelingNrDescAsc = false;
+        bool afdelingNavnDescAsc = false;
         public KundeForms()
         {
             InitializeComponent();
@@ -158,6 +160,77 @@ namespace _1.SemesterProjekt
         private void cBoxKundeKøber_CheckedChanged(object sender, EventArgs e)
         {
             cBoxKundeSælger.CheckState = CheckState.Unchecked;
+        }
+
+        private void dgvBolig_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            List<Kunde> kundeListe = dgvBolig.DataSource as List<Kunde>;
+
+            if (e.ColumnIndex == 0)
+            {
+                if (afdelingNrDescAsc == false)
+                {
+                    dgvBolig.DataSource = kundeListe.OrderByDescending(b => b.Kunde_Id).ToList();
+                    afdelingNrDescAsc = true;
+                }
+                else
+                {
+                    dgvBolig.DataSource = kundeListe.OrderBy(b => b.Kunde_Id).ToList();
+                    afdelingNrDescAsc = false;
+                }
+            }
+            else if (e.ColumnIndex == 1)
+            {
+                if (afdelingNavnDescAsc == false)
+                {
+                    dgvBolig.DataSource = kundeListe.OrderByDescending(b => b.Navn).ToList();
+                    afdelingNavnDescAsc = true;
+                }
+                else
+                {
+                    dgvBolig.DataSource = kundeListe.OrderBy(b => b.Navn).ToList();
+                    afdelingNavnDescAsc = false;
+                }
+            }
+            else if (e.ColumnIndex == 2)
+            {
+                if (afdelingNavnDescAsc == false)
+                {
+                    dgvBolig.DataSource = kundeListe.OrderByDescending(b => b.Email).ToList();
+                    afdelingNavnDescAsc = true;
+                }
+                else
+                {
+                    dgvBolig.DataSource = kundeListe.OrderBy(b => b.Email).ToList();
+                    afdelingNavnDescAsc = false;
+                }
+            }
+            else if (e.ColumnIndex == 3)
+            {
+                if (afdelingNavnDescAsc == false)
+                {
+                    dgvBolig.DataSource = kundeListe.OrderByDescending(b => b.Telefon_Nr).ToList();
+                    afdelingNavnDescAsc = true;
+                }
+                else
+                {
+                    dgvBolig.DataSource = kundeListe.OrderBy(b => b.Telefon_Nr).ToList();
+                    afdelingNavnDescAsc = false;
+                }
+            }
+            else if (e.ColumnIndex == 4)
+            {
+                if (afdelingNavnDescAsc == false)
+                {
+                    dgvBolig.DataSource = kundeListe.OrderByDescending(b => b.Kunde_Type).ToList();
+                    afdelingNavnDescAsc = true;
+                }
+                else
+                {
+                    dgvBolig.DataSource = kundeListe.OrderBy(b => b.Kunde_Type).ToList();
+                    afdelingNavnDescAsc = false;
+                }
+            }
         }
     }
 }

@@ -16,6 +16,8 @@ namespace _1.SemesterProjekt
     {
         AfdelingDbHandler db = new AfdelingDbHandler();
         List<Afdeling> al = new List<Afdeling>();
+        bool afdelingNrDescAsc = false;
+        bool afdelingNavnDescAsc = false;
         public AfdelingForms()
         {
             InitializeComponent();
@@ -178,5 +180,37 @@ namespace _1.SemesterProjekt
             comboBoxAfdelingsNr.Text = null;
             comboBoxAfdelingsNavn.Text = null;
         }
+
+        private void dgvBolig_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            List<Afdeling> afdelingListe = dgvBolig.DataSource as List<Afdeling>;
+            if (e.ColumnIndex == 0)
+            {
+                if (afdelingNrDescAsc == false)
+                {
+                    dgvBolig.DataSource = afdelingListe.OrderByDescending(b => b.Afdelings_Nr).ToList();
+                    afdelingNrDescAsc = true;
+                }
+                else
+                {
+                    dgvBolig.DataSource = afdelingListe.OrderBy(b => b.Afdelings_Nr).ToList();
+                    afdelingNrDescAsc = false;
+                }
+            }
+            else if (e.ColumnIndex == 1)
+            {
+                if (afdelingNavnDescAsc == false)
+                {
+                    dgvBolig.DataSource = afdelingListe.OrderByDescending(b => b.Afdelings_Navn).ToList();
+                    afdelingNavnDescAsc = true;
+                }
+                else
+                {
+                    dgvBolig.DataSource = afdelingListe.OrderBy(b => b.Afdelings_Navn).ToList();
+                    afdelingNavnDescAsc = false;
+                }
+            }
+        }
     }
 }
+

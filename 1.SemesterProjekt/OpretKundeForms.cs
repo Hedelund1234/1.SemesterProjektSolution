@@ -166,5 +166,12 @@ namespace _1.SemesterProjekt
         {
             checkBoxKøberOpretKunde.CheckState = CheckState.Unchecked;
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            KundeForms kunde = new KundeForms();
+            kunde.Show();
+            this.Hide();
+        }
     }
 }
