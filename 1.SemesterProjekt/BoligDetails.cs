@@ -46,6 +46,11 @@ namespace _1.SemesterProjekt
             comboboxSalgsstatus.Text = bolig.Salgsstatus;
             comboBoxAfdelingBoligDetails.Text = bolig.Bolig_Afdelings_Navn;
             txtKøberId.Text = bolig.Bolig_Kunde_Id_Køber.ToString();
+            if (bolig.Salgsstatus == "Solgt")
+            {
+                cbHandelsdato.Checked = true;
+                dtpBoligDetails.Value = bolig.Handels_Dato.Value;
+            }
         }
 
         private void btnTilbage_Click(object sender, EventArgs e)
@@ -105,7 +110,7 @@ namespace _1.SemesterProjekt
             bool bolig_Kunde_Id_KøberBool = int.TryParse(txtKøberId.Text, out int bolig_Kunde_Id_KøberInt);
             boligsælger = kdb.Get(bolig_Kunde_IdInt);
             ejendomsmægler = edb.Get(bolig_Ejendomsmægler_IdInt);
-            boligkøber = kdb.Get(bolig_Kunde_Id_KøberInt);
+            bool boligKøberValid = BoligKøberValidator(bolig_Kunde_Id_KøberInt);
 
             if (txtAdresse.Text.Length > 50) //Mangler fuldendt validering. Se -> OpretBoligForms.cs
             {
@@ -117,12 +122,12 @@ namespace _1.SemesterProjekt
                 MessageBox.Show("Postnummer skal være 4 cifret tal");
                 txtPostnummer.Text = bolig.Postnummer.ToString();
             }
-            else if (!udbudsprisBool || prisInt > 5000001)
+            else if (!udbudsprisBool || prisInt > 5000001 || prisInt < 0)
             {
                 MessageBox.Show("Prisen kan maksimalt være 5000000kr.");
                 txtPris.Text = bolig.Udbudspris.ToString();
             }
-            else if (!størrelseBool || størrelseInt > 301)
+            else if (!størrelseBool || størrelseInt > 300 || størrelseInt < 0)
             {
                 MessageBox.Show("Størrelsen kan maksimalt være 300 kvadratmeter!");
                 txtStørrelse.Text = bolig.Størrelse.ToString();
@@ -152,10 +157,10 @@ namespace _1.SemesterProjekt
                 MessageBox.Show("Du må kun indtaste tal!");
                 txtBoligEjendomsmæglerId.Text = bolig.Bolig_Kunde_Id_Køber.ToString();
             }
-            else if (boligkøber.Kunde_Id > 0 && boligkøber.Kunde_Id < 1)/*lambda max value) *///Mangler korrekt validering ??!?!?!?!?!!!?!?!?!?
+            else if (!boligKøberValid)
             {
-                    MessageBox.Show("Køberen skal være oprettet som kunde før du kan tilføje personens id her!");
-                    txtKøberId.Text = bolig.Bolig_Kunde_Id_Køber.ToString();
+                MessageBox.Show("Køberen skal være oprettet som kunde før du kan tilføje personens id her!");
+                txtKøberId.Text = bolig.Bolig_Kunde_Id_Køber.ToString();
             }
             else if (comboBoxAfdelingBoligDetails.Text.Length == 0)
             {
@@ -227,6 +232,7 @@ namespace _1.SemesterProjekt
                 BoligForms boligforms = new BoligForms();
                 boligforms.Show();
                 this.Hide();
+            
             }
         }
 
@@ -304,6 +310,25 @@ namespace _1.SemesterProjekt
             Forside forside = new Forside();
             forside.Show();
             this.Hide();
+        }
+        bool BoligKøberValidator(int id)
+        {
+            Kunde kunde = new Kunde();
+            kunde = kdb.Get(id);
+
+            if (id == 0)
+            {
+                return true;
+            }
+            else if (kunde.Kunde_Id == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
         }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using _1.SemesterProjekt.DataAccess;
 using _1.SemesterProjekt.Models;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace _1.SemesterProjekt
 {
@@ -8,10 +10,12 @@ namespace _1.SemesterProjekt
         BoligDbHandler db = new BoligDbHandler();
         List<Bolig> bl = new List<Bolig>();
         Bolig bolig = new Bolig();
+        Export export = new Export();
         int minpris;
         int maxpris;
         int minm2;
         int maxm2;
+        bool sort = false;
 
         public BoligForms()
         {
@@ -164,7 +168,7 @@ namespace _1.SemesterProjekt
                     prismax = maxpris.ToString();
                     m2min = minm2.ToString();
                     m2max = maxm2.ToString();
-                    
+
 
                     bl = db.Get(adresse, postnummerstring, type, afdeling, salgsstatus, prismin, prismax, m2min, m2max);
                     dgvBolig.DataSource = bl;
@@ -176,7 +180,7 @@ namespace _1.SemesterProjekt
             }
             catch (Exception)
             {
-                
+
             }
             if (bl.Count == 0)
             {
@@ -235,6 +239,58 @@ namespace _1.SemesterProjekt
             AfdelingForms afdeling = new AfdelingForms();
             afdeling.Show();
             this.Hide();
+        }
+
+        private void dgvBolig_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            List<Bolig> boligliste = dgvBolig.DataSource as List<Bolig>;
+
+            if (e.ColumnIndex == 4)
+            {
+                if (sort)
+                {
+                    dgvBolig.DataSource = boligliste.OrderBy(b => b.Udbudspris).ToList();
+                    sort = false;
+                }
+                else
+                {
+                    dgvBolig.DataSource = boligliste.OrderByDescending(b => b.Udbudspris).ToList();
+                    sort = true;
+                }
+            }
+            else if (e.ColumnIndex == 5)
+            {
+                if (sort)
+                {
+                    dgvBolig.DataSource = boligliste.OrderBy(b => b.Størrelse).ToList();
+                    sort = false;
+                }
+                else
+                {
+                    dgvBolig.DataSource = boligliste.OrderByDescending(b => b.Størrelse).ToList();
+                    sort = true;
+                }
+            }
+
+
+        }
+
+        private void btnCSV_Click(object sender, EventArgs e)
+        {
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+            List<Bolig> boligliste = dgvBolig.DataSource as List<Bolig>;
+            string navn = $"Hus M2Pris {txtKvmPris.Text.ToString()} udtræk.CSV";
+
+            bool success = export.ExportToCsv(boligliste, path, navn);
+
+            if (success)
+            {
+                MessageBox.Show(".CSV filen blev gemt på dit skrivebord!");
+            }
+            else
+            {
+                MessageBox.Show("FEJL! .CSV filen blev ikke gemt!");
+            }
         }
     }
 }
