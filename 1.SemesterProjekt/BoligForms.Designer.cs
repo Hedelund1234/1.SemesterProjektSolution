@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BoligForms));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnBolig = new Button();
             btnEjendomsmægler = new Button();
@@ -53,7 +53,7 @@
             label2 = new Label();
             comboBoxAfdeling = new ComboBox();
             label1 = new Label();
-            button8 = new Button();
+            btnCSV = new Button();
             btnSøg = new Button();
             btnOpret = new Button();
             tbMaxPris = new TrackBar();
@@ -338,15 +338,16 @@
             label1.TabIndex = 40;
             label1.Text = "Afdeling";
             // 
-            // button8
+            // btnCSV
             // 
-            button8.Location = new Point(270, 824);
-            button8.Margin = new Padding(2);
-            button8.Name = "button8";
-            button8.Size = new Size(209, 30);
-            button8.TabIndex = 38;
-            button8.Text = "Gem .CSV fil";
-            button8.UseVisualStyleBackColor = true;
+            btnCSV.Location = new Point(270, 824);
+            btnCSV.Margin = new Padding(2);
+            btnCSV.Name = "btnCSV";
+            btnCSV.Size = new Size(209, 30);
+            btnCSV.TabIndex = 38;
+            btnCSV.Text = "Gem .CSV fil";
+            btnCSV.UseVisualStyleBackColor = true;
+            btnCSV.Click += btnCSV_Click;
             // 
             // btnSøg
             // 
@@ -441,14 +442,14 @@
             // dgvBolig
             // 
             dgvBolig.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Window;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            dgvBolig.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvBolig.DefaultCellStyle = dataGridViewCellStyle3;
             dgvBolig.Location = new Point(484, 50);
             dgvBolig.Margin = new Padding(2);
             dgvBolig.Name = "dgvBolig";
@@ -456,6 +457,7 @@
             dgvBolig.Size = new Size(905, 839);
             dgvBolig.TabIndex = 61;
             dgvBolig.CellDoubleClick += dgvBolig_CellDoubleClick;
+            dgvBolig.ColumnHeaderMouseClick += dgvBolig_ColumnHeaderMouseClick;
             // 
             // panel3
             // 
@@ -546,7 +548,7 @@
             Controls.Add(label2);
             Controls.Add(comboBoxAfdeling);
             Controls.Add(label1);
-            Controls.Add(button8);
+            Controls.Add(btnCSV);
             Controls.Add(btnSøg);
             Controls.Add(btnOpret);
             Controls.Add(panel1);
@@ -599,7 +601,7 @@
         private Label label2;
         private ComboBox comboBoxAfdeling;
         private Label label1;
-        private Button button8;
+        private Button btnCSV;
         private Button btnSøg;
         private Button btnOpret;
         private TrackBar tbMaxPris;
