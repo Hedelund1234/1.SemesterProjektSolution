@@ -28,17 +28,17 @@ namespace _1.SemesterProjekt
             bool telefonnummerSuccess = int.TryParse(txtTelefonNr.Text, out int telefonnummerInt);
             bool Ejendomsmægler_Afdeling_NrSucces = false;
             bool emailSuccessBool = false;
-            
+
             if (txtNavn.Text.Length != 0)
             {
-                if(txtNavn.Text.Length > 50) 
+                if (txtNavn.Text.Length > 50)
                 {
                     MessageBox.Show("Navn skal være i mellem 1 og 50 bogstaver", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtNavn.Text = null;
                 }
                 else
                 {
-                 navnSuccessBool = true;
+                    navnSuccessBool = true;
                 }
             }
             if (txtTelefonNr.Text.Length != 0)
@@ -100,13 +100,13 @@ namespace _1.SemesterProjekt
                 MessageBox.Show("Vælg afdeling", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
-            { 
-                Ejendomsmægler_Afdeling_NrSucces = false; 
+            {
+                Ejendomsmægler_Afdeling_NrSucces = false;
             }
             if (navnSuccessBool && emailSuccessBool && telefonnummerSuccessBool && Ejendomsmægler_Afdeling_NrSucces)
             {
                 bool b = db.Create(new Ejendomsmægler { Navn = txtNavn.Text, Telefon_Nr = Convert.ToInt32(txtTelefonNr.Text), Email = txtEmail.Text, Ejendomsmægler_Afdeling_Nr = Convert.ToInt32(ComboBox1.Text) });
-                
+
                 if (b)
                 {
                     MessageBox.Show("Ny Ejendomsmægler oprettet", "Ejendomsmægler oprettet", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -163,6 +163,13 @@ namespace _1.SemesterProjekt
         {
             KundeForms kunde = new KundeForms();
             kunde.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            EjendomsmæglerForms ejendomsmægler = new EjendomsmæglerForms();
+            ejendomsmægler.Show();
             this.Hide();
         }
     }

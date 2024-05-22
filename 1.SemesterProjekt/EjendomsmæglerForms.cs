@@ -15,7 +15,6 @@ namespace _1.SemesterProjekt
 {
     public partial class EjendomsmæglerForms : Form
     {
-        //EjendomsmæglerDbHandler db = new EjendomsmæglerDbHandler();
         List<Ejendomsmægler> el = new List<Ejendomsmægler>();
         EjendomsmæglerDbHandler db;
 
