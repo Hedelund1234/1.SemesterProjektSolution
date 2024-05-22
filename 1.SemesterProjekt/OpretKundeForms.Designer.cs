@@ -69,7 +69,7 @@
             btnOpret.Name = "btnOpret";
             btnOpret.Size = new Size(214, 30);
             btnOpret.TabIndex = 22;
-            btnOpret.Text = "Opret bolig";
+            btnOpret.Text = "Opret Kunde";
             btnOpret.UseVisualStyleBackColor = true;
             btnOpret.Click += btnOpret_Click;
             // 

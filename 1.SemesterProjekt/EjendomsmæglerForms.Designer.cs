@@ -290,6 +290,7 @@
             dgvEjendomsmægler.Size = new Size(902, 826);
             dgvEjendomsmægler.TabIndex = 58;
             dgvEjendomsmægler.CellDoubleClick += dgvEjendomsmægler_CellDoubleClick;
+            dgvEjendomsmægler.ColumnHeaderMouseClick += dgvEjendomsmægler_ColumnHeaderMouseClick;
             // 
             // EjendomsmæglerForms
             // 

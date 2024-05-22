@@ -17,6 +17,8 @@ namespace _1.SemesterProjekt
     {
         List<Ejendomsmægler> el = new List<Ejendomsmægler>();
         EjendomsmæglerDbHandler db;
+        bool ejendomsmæglerIdDescAsc = false;
+        bool ejendomsmæglerNavnDescAsc = false;
 
         public EjendomsmæglerForms()
         {
@@ -24,7 +26,7 @@ namespace _1.SemesterProjekt
             db = new EjendomsmæglerDbHandler();
             dgvEjendomsmægler.DataSource = db.Get();
         }
-        
+
 
         private void btnLogo_Click(object sender, EventArgs e)
         {
@@ -145,6 +147,78 @@ namespace _1.SemesterProjekt
             EjendomsmæglerDetails ejendomsmæglerDetails = new EjendomsmæglerDetails(id);
             ejendomsmæglerDetails.Show();
             this.Hide();
+        }
+
+        private void dgvEjendomsmægler_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            List<Ejendomsmægler> ejendomsmæglersListe = dgvEjendomsmægler.DataSource as List<Ejendomsmægler>;
+
+            if (e.ColumnIndex == 0) 
+            {
+                if (ejendomsmæglerIdDescAsc == false)
+                {
+                    dgvEjendomsmægler.DataSource = ejendomsmæglersListe.OrderByDescending(x => x.Id).ToList();
+                    ejendomsmæglerIdDescAsc = true;
+                }
+                else 
+                {
+                    dgvEjendomsmægler.DataSource = ejendomsmæglersListe.OrderBy(x => x.Id).ToList();
+                    ejendomsmæglerIdDescAsc = false;
+                }
+            }
+            else if (e.ColumnIndex == 1)
+            {
+                if (ejendomsmæglerNavnDescAsc == false)
+                {
+                    dgvEjendomsmægler.DataSource = ejendomsmæglersListe.OrderByDescending(x =>x.Navn).ToList(); 
+                    ejendomsmæglerNavnDescAsc = true;
+                }
+                else 
+                { 
+                    dgvEjendomsmægler.DataSource = ejendomsmæglersListe.OrderBy(x =>x.Navn).ToList(); 
+                    ejendomsmæglerNavnDescAsc=false;
+                }
+            }
+            else if (e.ColumnIndex == 2)
+            {
+                if (ejendomsmæglerIdDescAsc == false) 
+                {
+                    dgvEjendomsmægler.DataSource = ejendomsmæglersListe.OrderByDescending(x =>x.Telefon_Nr).ToList();
+                    ejendomsmæglerIdDescAsc = true;
+                }
+                else 
+                {
+                    dgvEjendomsmægler.DataSource = ejendomsmæglersListe.OrderBy(x =>  x.Telefon_Nr).ToList();
+                    ejendomsmæglerIdDescAsc = false;
+                }
+
+            }
+            else if (e.ColumnIndex == 3)
+            {
+                if (ejendomsmæglerNavnDescAsc == false) 
+                {
+                    dgvEjendomsmægler.DataSource = ejendomsmæglersListe.OrderByDescending(x => x.Email).ToList();
+                    ejendomsmæglerNavnDescAsc = true;
+                }
+                else 
+                {
+                    dgvEjendomsmægler.DataSource = ejendomsmæglersListe.OrderBy(x =>x.Email).ToList();
+                    ejendomsmæglerNavnDescAsc = false;
+                }
+            }
+            else if (e.ColumnIndex == 4) 
+            {
+                if(ejendomsmæglerIdDescAsc == false) 
+                {
+                    dgvEjendomsmægler.DataSource = ejendomsmæglersListe.OrderByDescending(x => x.Ejendomsmægler_Afdeling_Nr).ToList();
+                    ejendomsmæglerIdDescAsc=true;
+                }
+                else
+                {
+                    dgvEjendomsmægler.DataSource = ejendomsmæglersListe.OrderBy(x => x.Ejendomsmægler_Afdeling_Nr).ToList();
+                    ejendomsmæglerIdDescAsc = false;
+                }
+            }
         }
     }
 }
