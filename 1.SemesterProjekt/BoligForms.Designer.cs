@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BoligForms));
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnBolig = new Button();
             btnEjendomsmægler = new Button();
@@ -243,7 +243,7 @@
             tbMinPris.RightToLeft = RightToLeft.No;
             tbMinPris.Size = new Size(164, 56);
             tbMinPris.TabIndex = 50;
-            tbMinPris.MouseUp += tbMinPris_MouseUp;
+            tbMinPris.MouseMove += tbMinPris_MouseMove;
             // 
             // cbTilSalg
             // 
@@ -382,7 +382,7 @@
             tbMaxPris.Size = new Size(164, 56);
             tbMaxPris.TabIndex = 50;
             tbMaxPris.Value = 20;
-            tbMaxPris.MouseUp += tbMaxPris_MouseUp;
+            tbMaxPris.MouseMove += tbMaxPris_MouseMove;
             // 
             // label9
             // 
@@ -415,7 +415,7 @@
             tbMaxM2.Size = new Size(164, 56);
             tbMaxM2.TabIndex = 59;
             tbMaxM2.Value = 20;
-            tbMaxM2.MouseUp += tbMaxM2_MouseUp;
+            tbMaxM2.MouseMove += tbMaxM2_MouseMove;
             // 
             // label10
             // 
@@ -437,19 +437,19 @@
             tbMinM2.RightToLeft = RightToLeft.No;
             tbMinM2.Size = new Size(164, 56);
             tbMinM2.TabIndex = 60;
-            tbMinM2.MouseUp += tbMinM2_MouseUp;
+            tbMinM2.MouseMove += tbMinM2_MouseMove;
             // 
             // dgvBolig
             // 
             dgvBolig.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Window;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgvBolig.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvBolig.DefaultCellStyle = dataGridViewCellStyle2;
             dgvBolig.Location = new Point(484, 50);
             dgvBolig.Margin = new Padding(2);
             dgvBolig.Name = "dgvBolig";
