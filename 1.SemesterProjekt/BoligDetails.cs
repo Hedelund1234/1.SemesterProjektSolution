@@ -152,7 +152,7 @@ namespace _1.SemesterProjekt
                 MessageBox.Show("Du må kun indtaste tal!");
                 txtBoligEjendomsmæglerId.Text = bolig.Bolig_Kunde_Id_Køber.ToString();
             }
-            else if (boligkøber.Kunde_Id > 0 && boligkøber.Telefon_Nr !> 0) //Mangler korrekt validering ??!?!?!?!?!!!?!?!?!?
+            else if (boligkøber.Kunde_Id > 0 && boligkøber.Kunde_Id < 1)/*lambda max value) *///Mangler korrekt validering ??!?!?!?!?!!!?!?!?!?
             {
                     MessageBox.Show("Køberen skal være oprettet som kunde før du kan tilføje personens id her!");
                     txtKøberId.Text = bolig.Bolig_Kunde_Id_Køber.ToString();

@@ -16,6 +16,7 @@ namespace _1.SemesterProjekt
 {
     public partial class EjendomsmæglerDetails : Form
     {
+        Ejendomsmægler ejendomsmægler = new Ejendomsmægler();
         EjendomsmæglerDbHandler db;
         int id;
         public EjendomsmæglerDetails(int id)
@@ -28,7 +29,7 @@ namespace _1.SemesterProjekt
         }
         void SeedData()
         {
-            Ejendomsmægler ejendomsmægler = new Ejendomsmægler();
+            
             db = new EjendomsmæglerDbHandler();
             ejendomsmægler = db.Get(id);
 
@@ -39,11 +40,6 @@ namespace _1.SemesterProjekt
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            SaveEjendomsmæglerData();
-        }
-
-        void SaveEjendomsmæglerData()
         {
             bool navnSuccessBool = false;
             bool telefonnummerSuccessBool = false;
@@ -56,7 +52,7 @@ namespace _1.SemesterProjekt
                 if (txtNavn.Text.Length > 50)
                 {
                     MessageBox.Show("Navn skal være i mellem 1 og 50 bogstaver", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    txtNavn.Text = null;
+                    txtNavn.Text = ejendomsmægler.Navn;
                 }
                 else
                 {
@@ -70,10 +66,12 @@ namespace _1.SemesterProjekt
                     if (!telefonnummerSuccess)
                     {
                         MessageBox.Show("Telefonnummer skal være tal", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtTelefonNr.Text = ejendomsmægler.Telefon_Nr.ToString();
                     }
                     else if (txtTelefonNr.Text.Length != 8)
                     {
                         MessageBox.Show("Telefonnummer skal indeholde 8 tal", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtTelefonNr.Text = ejendomsmægler.Telefon_Nr.ToString();
                     }
                 }
                 else { telefonnummerSuccessBool = true; }
@@ -85,34 +83,42 @@ namespace _1.SemesterProjekt
                     if (!txtEmail.Text.Contains('@'))
                     {
                         MessageBox.Show("Skal indeholde @", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtEmail.Text = ejendomsmægler.Email;
                     }
                     else if (txtEmail.Text.Split('@').Length > 2)
                     {
                         MessageBox.Show("Kun 1 @", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtEmail.Text = ejendomsmægler.Email;
                     }
                     else if (txtEmail.Text.Split('@')[0].Length < 2)
                     {
                         MessageBox.Show("2 karakterer FØR @", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtEmail.Text = ejendomsmægler.Email;
                     }
                     else if (txtEmail.Text.Split('@')[1].Length < 2)
                     {
                         MessageBox.Show("2 karakterer EFTER @", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtEmail.Text = ejendomsmægler.Email;
                     }
                     else if (!txtEmail.Text.Split('@')[1].Contains('.'))
                     {
                         MessageBox.Show("Skal indeholde .", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtEmail.Text = ejendomsmægler.Email;
                     }
                     else if (txtEmail.Text.Split('.')[1].Length < 2)
                     {
                         MessageBox.Show("2 karakterer efter .", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtEmail.Text = ejendomsmægler.Email;
                     }
                     else if (txtEmail.Text.Split('@', '.').Length != 3 || txtEmail.Text.Split('@', '.')[1].Length < 2)
                     {
                         MessageBox.Show("2 karakterer efterfulgt af @ efter fulgt af 2 karakterer efterfulgt af . efterfulgt af 2 karakterer", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtEmail.Text = ejendomsmægler.Email;
                     }
                     else if (txtEmail.Text.Length > 50)
                     {
                         MessageBox.Show("Email må max indeholde 50 karakterer", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtEmail.Text = ejendomsmægler.Email;
                     }
                 }
                 else { emailSuccessBool = true; }
@@ -120,6 +126,7 @@ namespace _1.SemesterProjekt
             if (txtAfdeling.Text.Length == 0)
             {
                 MessageBox.Show("Vælg afdeling", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtAfdeling.Text = ejendomsmægler.Ejendomsmægler_Afdeling_Nr.ToString();
             }
             else
             {
