@@ -11,6 +11,8 @@ namespace _1.SemesterProjekt
         List<Bolig> bl = new List<Bolig>();
         Bolig bolig = new Bolig();
         Export export = new Export();
+        KundeDbHandler kdb = new KundeDbHandler();
+        Kunde kunde = new Kunde();
         int minpris;
         int maxpris;
         int minm2;
