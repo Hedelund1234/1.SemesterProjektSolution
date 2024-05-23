@@ -360,10 +360,12 @@
             // 
             // dgvKunder
             // 
+            dgvKunder.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvKunder.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvKunder.Location = new Point(682, 164);
             dgvKunder.Margin = new Padding(2);
             dgvKunder.Name = "dgvKunder";
+            dgvKunder.ReadOnly = true;
             dgvKunder.RowHeadersWidth = 62;
             dgvKunder.Size = new Size(707, 725);
             dgvKunder.TabIndex = 26;

@@ -179,7 +179,7 @@ namespace _1.SemesterProjekt
                 comboBoxType.Text = "";
             }
 
-            else if (MessageBox.Show($"Er du sikker på at du vil gemme ændringerne?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            else if (MessageBox.Show($"Er du sikker på at du vil oprette bolig?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 string adresse = txtAdresse.Text;
                 int postnummer = postnummerInt;

@@ -102,7 +102,6 @@ namespace _1.SemesterProjekt
                 }
                 if (txtEjendomsmæglerId.Text.Length == 0 && txtNavn.Text.Length == 0 && txtTelefonnummer.Text.Length == 0 && txtEmail.Text.Length == 0 && comboBoxAfdeling.Text.Length == 0)
                 {
-                    MessageBox.Show("Ejendomsmægler blev ikke fundet", "Ikke fundet", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     el = db.Get();
                     dgvEjendomsmægler.DataSource = el;
                 }
@@ -129,6 +128,7 @@ namespace _1.SemesterProjekt
             txtEjendomsmæglerId.Text = null;
             txtNavn.Text = null;
             txtTelefonnummer.Text = null;
+            txtEmail.Text = null;
             comboBoxAfdeling.Text = null;
         }
 
@@ -153,14 +153,14 @@ namespace _1.SemesterProjekt
         {
             List<Ejendomsmægler> ejendomsmæglersListe = dgvEjendomsmægler.DataSource as List<Ejendomsmægler>;
 
-            if (e.ColumnIndex == 0) 
+            if (e.ColumnIndex == 0)
             {
                 if (ejendomsmæglerIdDescAsc == false)
                 {
                     dgvEjendomsmægler.DataSource = ejendomsmæglersListe.OrderByDescending(x => x.Id).ToList();
                     ejendomsmæglerIdDescAsc = true;
                 }
-                else 
+                else
                 {
                     dgvEjendomsmægler.DataSource = ejendomsmæglersListe.OrderBy(x => x.Id).ToList();
                     ejendomsmæglerIdDescAsc = false;
@@ -170,48 +170,48 @@ namespace _1.SemesterProjekt
             {
                 if (ejendomsmæglerNavnDescAsc == false)
                 {
-                    dgvEjendomsmægler.DataSource = ejendomsmæglersListe.OrderByDescending(x =>x.Navn).ToList(); 
+                    dgvEjendomsmægler.DataSource = ejendomsmæglersListe.OrderByDescending(x => x.Navn).ToList();
                     ejendomsmæglerNavnDescAsc = true;
                 }
-                else 
-                { 
-                    dgvEjendomsmægler.DataSource = ejendomsmæglersListe.OrderBy(x =>x.Navn).ToList(); 
-                    ejendomsmæglerNavnDescAsc=false;
+                else
+                {
+                    dgvEjendomsmægler.DataSource = ejendomsmæglersListe.OrderBy(x => x.Navn).ToList();
+                    ejendomsmæglerNavnDescAsc = false;
                 }
             }
             else if (e.ColumnIndex == 2)
             {
-                if (ejendomsmæglerIdDescAsc == false) 
+                if (ejendomsmæglerIdDescAsc == false)
                 {
-                    dgvEjendomsmægler.DataSource = ejendomsmæglersListe.OrderByDescending(x =>x.Telefon_Nr).ToList();
+                    dgvEjendomsmægler.DataSource = ejendomsmæglersListe.OrderByDescending(x => x.Telefon_Nr).ToList();
                     ejendomsmæglerIdDescAsc = true;
                 }
-                else 
+                else
                 {
-                    dgvEjendomsmægler.DataSource = ejendomsmæglersListe.OrderBy(x =>  x.Telefon_Nr).ToList();
+                    dgvEjendomsmægler.DataSource = ejendomsmæglersListe.OrderBy(x => x.Telefon_Nr).ToList();
                     ejendomsmæglerIdDescAsc = false;
                 }
 
             }
             else if (e.ColumnIndex == 3)
             {
-                if (ejendomsmæglerNavnDescAsc == false) 
+                if (ejendomsmæglerNavnDescAsc == false)
                 {
                     dgvEjendomsmægler.DataSource = ejendomsmæglersListe.OrderByDescending(x => x.Email).ToList();
                     ejendomsmæglerNavnDescAsc = true;
                 }
-                else 
+                else
                 {
-                    dgvEjendomsmægler.DataSource = ejendomsmæglersListe.OrderBy(x =>x.Email).ToList();
+                    dgvEjendomsmægler.DataSource = ejendomsmæglersListe.OrderBy(x => x.Email).ToList();
                     ejendomsmæglerNavnDescAsc = false;
                 }
             }
-            else if (e.ColumnIndex == 4) 
+            else if (e.ColumnIndex == 4)
             {
-                if(ejendomsmæglerIdDescAsc == false) 
+                if (ejendomsmæglerIdDescAsc == false)
                 {
                     dgvEjendomsmægler.DataSource = ejendomsmæglersListe.OrderByDescending(x => x.Ejendomsmægler_Afdeling_Nr).ToList();
-                    ejendomsmæglerIdDescAsc=true;
+                    ejendomsmæglerIdDescAsc = true;
                 }
                 else
                 {
@@ -219,6 +219,11 @@ namespace _1.SemesterProjekt
                     ejendomsmæglerIdDescAsc = false;
                 }
             }
+        }
+
+        private void EjendomsmæglerForms_Load(object sender, EventArgs e)
+        {
+            dgvEjendomsmægler.DataSource = db.Get();
         }
     }
 }

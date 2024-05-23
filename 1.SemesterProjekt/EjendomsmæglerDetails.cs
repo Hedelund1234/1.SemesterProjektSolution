@@ -36,7 +36,7 @@ namespace _1.SemesterProjekt
             txtNavn.Text = ejendomsmægler.Navn;
             txtTelefonNr.Text = ejendomsmægler.Telefon_Nr.ToString();
             txtEmail.Text = ejendomsmægler.Email;
-            txtAfdeling.Text = ejendomsmægler.Ejendomsmægler_Afdeling_Nr.ToString();
+            ComboBoxAfdeling.Text = ejendomsmægler.Ejendomsmægler_Afdeling_Nr.ToString();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -123,18 +123,18 @@ namespace _1.SemesterProjekt
                 }
                 else { emailSuccessBool = true; }
             }
-            if (txtAfdeling.Text.Length == 0)
+            if (ComboBoxAfdeling.Text.Length == 0)
             {
                 MessageBox.Show("Vælg afdeling", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtAfdeling.Text = ejendomsmægler.Ejendomsmægler_Afdeling_Nr.ToString();
+                ComboBoxAfdeling.Text = "";
             }
             else
             {
-                Ejendomsmægler_Afdeling_NrSucces = false;
+                Ejendomsmægler_Afdeling_NrSucces = true;
             }
             if (navnSuccessBool && emailSuccessBool && telefonnummerSuccessBool && Ejendomsmægler_Afdeling_NrSucces)
             {
-                bool b = db.Update(new Ejendomsmægler { Navn = txtNavn.Text, Telefon_Nr = Convert.ToInt32(txtTelefonNr.Text), Email = txtEmail.Text, Ejendomsmægler_Afdeling_Nr = Convert.ToInt32(txtAfdeling.Text) });
+                bool b = db.Update(new Ejendomsmægler { Id = id, Navn = txtNavn.Text, Telefon_Nr = Convert.ToInt32(txtTelefonNr.Text), Email = txtEmail.Text, Ejendomsmægler_Afdeling_Nr = Convert.ToInt32(ComboBoxAfdeling.Text) });
 
 
                 if (b)
@@ -143,7 +143,7 @@ namespace _1.SemesterProjekt
                     txtNavn.Text = null;
                     txtTelefonNr.Text = null;
                     txtEmail.Text = null;
-                    txtAfdeling.Text = null;
+                    ComboBoxAfdeling.Text = null;
                 }
                 else
                 {
@@ -188,9 +188,12 @@ namespace _1.SemesterProjekt
 
         private void btnSlet_Click(object sender, EventArgs e)
         {
+            EjendomsmæglerForms ejendomsmæglerForms = new EjendomsmæglerForms();
             int id = this.id;
             db.Delete(id);
             MessageBox.Show($"Ejendomsmægler med Id: {id} blev slettet", "Slettet", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ejendomsmæglerForms.Show();
+            this.Hide();
         }
 
         private void button4_Click(object sender, EventArgs e)

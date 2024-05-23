@@ -47,8 +47,8 @@
             label4 = new Label();
             txtEmail = new TextBox();
             label5 = new Label();
-            txtAfdeling = new TextBox();
             label1 = new Label();
+            ComboBoxAfdeling = new ComboBox();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -261,14 +261,6 @@
             label5.TabIndex = 32;
             label5.Text = "Afdelings nummer";
             // 
-            // txtAfdeling
-            // 
-            txtAfdeling.Location = new Point(270, 457);
-            txtAfdeling.Margin = new Padding(2);
-            txtAfdeling.Name = "txtAfdeling";
-            txtAfdeling.Size = new Size(186, 27);
-            txtAfdeling.TabIndex = 33;
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -280,13 +272,24 @@
             label1.TabIndex = 34;
             label1.Text = "Ejendomsmægler detaljer";
             // 
+            // ComboBoxAfdeling
+            // 
+            ComboBoxAfdeling.DropDownStyle = ComboBoxStyle.DropDownList;
+            ComboBoxAfdeling.FormattingEnabled = true;
+            ComboBoxAfdeling.Items.AddRange(new object[] { "", "1", "2", "3", "4", "5" });
+            ComboBoxAfdeling.Location = new Point(270, 457);
+            ComboBoxAfdeling.Margin = new Padding(2);
+            ComboBoxAfdeling.Name = "ComboBoxAfdeling";
+            ComboBoxAfdeling.Size = new Size(187, 28);
+            ComboBoxAfdeling.TabIndex = 53;
+            // 
             // EjendomsmæglerDetails
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1400, 900);
+            Controls.Add(ComboBoxAfdeling);
             Controls.Add(label1);
-            Controls.Add(txtAfdeling);
             Controls.Add(label5);
             Controls.Add(txtEmail);
             Controls.Add(label4);
@@ -330,7 +333,7 @@
         private Label label4;
         private TextBox txtEmail;
         private Label label5;
-        private TextBox txtAfdeling;
         private Label label1;
+        private ComboBox ComboBoxAfdeling;
     }
 }

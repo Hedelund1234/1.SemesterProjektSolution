@@ -218,6 +218,7 @@
             dgvBolig.Location = new Point(483, 79);
             dgvBolig.Margin = new Padding(2);
             dgvBolig.Name = "dgvBolig";
+            dgvBolig.ReadOnly = true;
             dgvBolig.RowHeadersWidth = 62;
             dgvBolig.Size = new Size(902, 810);
             dgvBolig.TabIndex = 63;

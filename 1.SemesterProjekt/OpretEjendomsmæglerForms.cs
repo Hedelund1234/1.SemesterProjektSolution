@@ -101,7 +101,7 @@ namespace _1.SemesterProjekt
             }
             else
             {
-                Ejendomsmægler_Afdeling_NrSucces = false;
+                Ejendomsmægler_Afdeling_NrSucces = true;
             }
             if (navnSuccessBool && emailSuccessBool && telefonnummerSuccessBool && Ejendomsmægler_Afdeling_NrSucces)
             {

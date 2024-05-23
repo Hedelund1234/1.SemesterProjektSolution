@@ -286,6 +286,7 @@
             dgvEjendomsmægler.Location = new Point(487, 63);
             dgvEjendomsmægler.Margin = new Padding(2);
             dgvEjendomsmægler.Name = "dgvEjendomsmægler";
+            dgvEjendomsmægler.ReadOnly = true;
             dgvEjendomsmægler.RowHeadersWidth = 62;
             dgvEjendomsmægler.Size = new Size(902, 826);
             dgvEjendomsmægler.TabIndex = 58;
@@ -318,6 +319,7 @@
             Name = "EjendomsmæglerForms";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Ejendomsmægler";
+            Load += EjendomsmæglerForms_Load;
             panel2.ResumeLayout(false);
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvEjendomsmægler).EndInit();

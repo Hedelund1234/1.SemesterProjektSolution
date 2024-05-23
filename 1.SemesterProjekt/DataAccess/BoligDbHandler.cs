@@ -21,9 +21,13 @@ namespace _1.SemesterProjekt.DataAccess
         internal List<Bolig> Get(string adresse, string postnummer, string type, string afdeling, string salgsstatus, string prismin, string prismax,
                                   string m2min, string m2max)
         {
+            if (postnummer == "0")
+            {
+                postnummer = DBNull.Value.ToString();
+            }
             List<Bolig> bl = new List<Bolig>();
             Bolig bolig = new Bolig();
-            string command = "SELECT * FROM Bolig WHERE Adresse LIKE '%" + adresse + "%' AND Postnummer LIKE '%" + postnummer + "%' AND Type = '" + type + "' AND Bolig_Afdelings_Navn LIKE '%" + afdeling + "%' AND Salgsstatus LIKE '%" + salgsstatus + "%' AND Udbudspris BETWEEN " + prismin + " AND " + prismax + " AND Størrelse BETWEEN " + m2min + " AND " + m2max + "";
+            string command = "SELECT * FROM Bolig WHERE Adresse LIKE '%" + adresse + "%' AND Postnummer LIKE '%" + postnummer + "%' AND Type LIKE '" + type + "%' AND Bolig_Afdelings_Navn LIKE '%" + afdeling + "%' AND Salgsstatus LIKE '%" + salgsstatus + "%' AND Udbudspris BETWEEN " + prismin + " AND " + prismax + " AND Størrelse BETWEEN " + m2min + " AND " + m2max + "";
             SqlConnection conn = new SqlConnection(connStrings);
             try
             {

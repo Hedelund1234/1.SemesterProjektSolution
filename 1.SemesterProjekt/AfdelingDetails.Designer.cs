@@ -248,7 +248,7 @@
             // 
             dgvAfdelingsDetails.AllowUserToAddRows = false;
             dgvAfdelingsDetails.AllowUserToDeleteRows = false;
-            dgvAfdelingsDetails.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvAfdelingsDetails.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvAfdelingsDetails.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvAfdelingsDetails.Location = new Point(487, 79);
             dgvAfdelingsDetails.Margin = new Padding(2);

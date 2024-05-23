@@ -141,11 +141,6 @@ namespace _1.SemesterProjekt
                     }
 
                 }
-                else if (cbSolgt.Checked.Equals(true) && cbTilSalg.Checked.Equals(true))
-                {
-                    MessageBox.Show("Boligen kan ikke både være solgt og til salg", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
                 if (comboBoxAfdeling.Text.Length == 0 && comboBoxType.Text.Length == 0 && txtPostnummer.Text.Length == 0 && cbSolgt.Checked.Equals(false) && cbTilSalg.Checked.Equals(false)
                     && tbMinPris.Value.Equals(0) && tbMaxPris.Value.Equals(20) && tbMinM2.Value.Equals(0) && tbMaxM2.Value.Equals(20) && txtAdresse.Text.Length == 0)
                 {
@@ -289,6 +284,16 @@ namespace _1.SemesterProjekt
         private void tbMaxM2_MouseMove(object sender, MouseEventArgs e)
         {
             SliderM2();
+        }
+
+        private void cbTilSalg_CheckedChanged(object sender, EventArgs e)
+        {
+            cbSolgt.CheckState = CheckState.Unchecked;
+        }
+
+        private void cbSolgt_CheckedChanged(object sender, EventArgs e)
+        {
+            cbTilSalg.CheckState = CheckState.Unchecked;
         }
     }
 }
