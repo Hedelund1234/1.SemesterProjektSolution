@@ -1,6 +1,7 @@
 ﻿using _1.SemesterProjekt.Models;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace _1.SemesterProjekt.DataAccess
 {
@@ -74,7 +75,7 @@ namespace _1.SemesterProjekt.DataAccess
         {
             List<Bolig> bl = new List<Bolig>();
             Bolig bolig = new Bolig();
-            
+
             string command = "SELECT * FROM Afdeling, " + join + " WHERE Bolig_Afdelings_Navn = Afdelings_Navn AND Afdelings_Navn = '" + navn + "' ";
 
             SqlConnection conn = new SqlConnection(connStrings);
@@ -177,6 +178,48 @@ namespace _1.SemesterProjekt.DataAccess
                 conn.Close();
             }
             return al;
+        }
+        internal List<BoligJoinKunde> GetJoinAfdeling(string navn)
+        {
+            List<BoligJoinKunde> bl = new List<BoligJoinKunde>();
+            BoligJoinKunde bolig = new BoligJoinKunde();
+
+            string command = "SELECT Bolig_Id, Adresse, Postnummer, Type, Udbudspris as 'Pris', Størrelse, Bolig_Ejendomsmægler_Id as 'Tilknyttet ejendomsmægler', Bolig_Afdelings_Navn as 'Afdeling', Kunde_Id, Navn, Email, Telefon_Nr FROM Bolig, Kunde WHERE Kunde_Id = Bolig_Kunde_Id AND Bolig_Afdelings_Navn = '" + navn + "' ";
+
+            SqlConnection conn = new SqlConnection(connStrings);
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(command, conn);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    int boligId = (int)reader["Bolig_Id"];
+                    string adresse = (string)reader["Adresse"];
+                    int postnummer = (int)reader["Postnummer"];
+                    string type = (string)reader["Type"];
+                    int udbudsPris = (int)reader["Pris"];
+                    int størrelse = (int)reader["Størrelse"];
+                    int ejendomsmæglerId = (int)reader["Tilknyttet ejendomsmægler"];
+                    string afdelingsNavn = (string)reader["Afdeling"];
+                    int kundeId = (int)reader["Kunde_Id"];
+                    string _navn = (string)reader["Navn"];
+                    string email = (string)reader["Email"];
+                    int telefonnummer = (int)reader["Telefon_Nr"];
+                    bolig = new BoligJoinKunde { Bolig_Id = boligId, Adresse = adresse, Postnummer = postnummer, Type = type, Udbudspris = udbudsPris, Størrelse = størrelse, Bolig_Ejendomsmægler_Id = ejendomsmæglerId, Bolig_Afdelings_Navn = afdelingsNavn, Kunde_Id = kundeId, Navn = _navn, Email = email, Telefon_Nr = telefonnummer };
+                    bl.Add(bolig);
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return bl;
         }
     }
 }

@@ -106,7 +106,7 @@
             btnSøg.Name = "btnSøg";
             btnSøg.Size = new Size(102, 30);
             btnSøg.TabIndex = 27;
-            btnSøg.Text = "Søg";
+            btnSøg.Text = "Vis alle afdelinger";
             btnSøg.UseVisualStyleBackColor = true;
             btnSøg.Click += btnSøg_Click;
             // 

@@ -95,10 +95,12 @@ namespace _1.SemesterProjekt
 
         private void btnCsvUdprint_Click(object sender, EventArgs e)
         {
-            List<Bolig> boligList = db.GetJoinBolig("Bolig", txtBoxAfdelingsNavnDetails.Text);
-            List<Ejendomsmægler> ejendomsmæglerList = db.GetJoinEjendomsmægler("Ejendomsmægler", Convert.ToInt32(txtBoxAfdelingNrDetails.Text));
+            List<BoligJoinKunde> boligJoinKundeList = new List<BoligJoinKunde>();
 
-            bool success = csv.SaveDataToCsv(boligList, ejendomsmæglerList, $"BoligerOmråde{txtBoxAfdelingsNavnDetails.Text}.csv", boligList.Count);
+
+            boligJoinKundeList = db.GetJoinAfdeling(txtBoxAfdelingsNavnDetails.Text);
+            
+            bool success = csv.SaveDataToCsv(boligJoinKundeList, $"Boliger {txtBoxAfdelingsNavnDetails.Text}.csv", boligJoinKundeList.Count);
             if (success)
             {
                 MessageBox.Show(".csv fil gemt", ".csv gemt", MessageBoxButtons.OK, MessageBoxIcon.Information);

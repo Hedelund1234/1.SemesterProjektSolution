@@ -49,22 +49,19 @@ namespace _1.SemesterProjekt.DataAccess
             }
             return false;
         }
-        internal bool SaveDataToCsv(List<Bolig> boligList, List<Ejendomsmægler> ejendomsmæglerList, string filename, int arraySize)
+        internal bool SaveDataToCsv(List<BoligJoinKunde> boligJoinKunde, string filename, int arraySize)
         {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
-            string[] csvArray = new string[arraySize + 3];
-            csvArray[0] = "Bolig_Id;Adresse;Postnummer;Type;Udbudspris;Størrelse;Bolig_Kunde_Id;Bolig_Ejendomsmægler_Id;Bolig_Afdelings_Navn;Salgsstatus;Bolig_Kunde_Id_Køber;Handels_Dato";
-            csvArray[arraySize + 1] = "Id;Navn;Telefon_Nr;Email;Ejendomsmægler_Afdeling_Nr";
-            for (int i = 0; i < boligList.Count; i++)
+            string[] csvArray = new string[arraySize + 1];
+            csvArray[0] = "Bolig_Id;Adresse;Postnummer;Type;Pris;Størrelse;Tilknyttet ejendomsmægler;Afdeling;Kunde_Id;Navn;Email;Telefon:Nr";
+            for (int i = 0; i < boligJoinKunde.Count; i++)
             {
-                csvArray[i + 1] = $"{boligList[i].Bolig_Id};{boligList[i].Adresse};{boligList[i].Postnummer};{boligList[i].Type};{boligList[i].Udbudspris};{boligList[i].Størrelse};{boligList[i].Bolig_Kunde_Id};{boligList[i].Bolig_Ejendomsmægler_Id};{boligList[i].Bolig_Afdelings_Navn};{boligList[i].Salgsstatus};{boligList[i].Bolig_Kunde_Id_Køber};{boligList[i].Handels_Dato}";
+                csvArray[i + 1] = $"{boligJoinKunde[i].Bolig_Id};{boligJoinKunde[i].Adresse};{boligJoinKunde[i].Postnummer};{boligJoinKunde[i].Type};{boligJoinKunde[i].Udbudspris};{boligJoinKunde[i].Størrelse};{boligJoinKunde[i].Bolig_Ejendomsmægler_Id};{boligJoinKunde[i].Bolig_Afdelings_Navn};{boligJoinKunde[i].Kunde_Id};{boligJoinKunde[i].Navn};{boligJoinKunde[i].Email};{boligJoinKunde[i].Telefon_Nr}";
             }
-            csvArray[arraySize + 2] = $"{ejendomsmæglerList[0].Id};{ejendomsmæglerList[0].Navn};{ejendomsmæglerList[0].Telefon_Nr};{ejendomsmæglerList[0].Email};{ejendomsmæglerList[0].Ejendomsmægler_Afdeling_Nr}";
             bool isSuccess = false;
             try
             {
                 File.WriteAllLines(Path.Combine(path, filename), csvArray);
-
                 isSuccess = true;
             }
             catch (Exception)

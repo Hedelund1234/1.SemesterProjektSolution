@@ -168,7 +168,11 @@ namespace _1.SemesterProjekt
             }
             catch (Exception)
             {
-
+                MessageBox.Show("Kunde blev IKKE opdateret", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtBoxKundeNavn.Text = null;
+                txtBoxKundeEmail.Text = null;
+                txtBoxKundeTelefonnummer.Text = null;
+                comboBoxKundeType.SelectedIndex = 0;
             }
         }
 
