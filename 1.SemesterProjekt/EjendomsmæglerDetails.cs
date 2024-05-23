@@ -139,7 +139,7 @@ namespace _1.SemesterProjekt
 
                 if (b)
                 {
-                    MessageBox.Show("Ny Ejendomsmægler opdateret", "Ejendomsmægler opdateret", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Ejendomsmægler opdateret", "Ejendomsmægler opdateret", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtNavn.Text = null;
                     txtTelefonNr.Text = null;
                     txtEmail.Text = null;
