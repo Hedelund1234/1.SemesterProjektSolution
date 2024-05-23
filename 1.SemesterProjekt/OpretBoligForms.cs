@@ -85,101 +85,101 @@ namespace _1.SemesterProjekt
 
             if (txtAdresse.Text.Length == 0)
             {
-                MessageBox.Show("Adressen skal udfyldes!");
+                MessageBox.Show("Adressen skal udfyldes!", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtAdresse.Text = "";
             }
             else if (txtAdresse.Text.Length > 50)
             {
-                MessageBox.Show("Adressen må maksimalt være 50 karaktere lang!");
+                MessageBox.Show("Adressen må maksimalt være 50 karaktere lang!", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtAdresse.Text = "";
             }
             else if (txtPostnummer.Text.Length == 0)
             {
-                MessageBox.Show("Postnummer skal udfyldes!");
+                MessageBox.Show("Postnummer skal udfyldes!", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtPostnummer.Text = "";
             }
             else if (!postnummerBool)
             {
-                MessageBox.Show("Postnummer må kun indeholde tal!");
+                MessageBox.Show("Postnummer må kun indeholde tal!", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtPostnummer.Text = "";
             }
             else if (postnummerInt < 999 || postnummerInt > 10000)
             {
-                MessageBox.Show("Postnummer skal være 4 cifret tal");
+                MessageBox.Show("Postnummer skal være 4 cifret tal", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtPostnummer.Text = "";
             }
             else if (txtM2.Text.Length == 0)
             {
-                MessageBox.Show("Størrelse på boligen skal udfyldes!");
+                MessageBox.Show("Størrelse på boligen skal udfyldes!", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtM2.Text = "";
             }
             else if (!størrelseBool)
             {
-                MessageBox.Show("Størrelse må kun være tal!");
+                MessageBox.Show("Størrelse må kun være tal!", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtM2.Text = "";
             }
             else if (størrelseInt > 301 || størrelseInt < 0)
             {
-                MessageBox.Show("Størrelsen kan maksimalt være 300 kvadratmeter!");
+                MessageBox.Show("Størrelsen kan maksimalt være 300 kvadratmeter!", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtM2.Text = "";
             }
             else if (txtPris.Text.Length == 0)
             {
-                MessageBox.Show("Prisen på huset skal udfyldes!");
+                MessageBox.Show("Prisen på huset skal udfyldes!", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtPris.Text = "";
             }
             else if (!udbudsprisBool)
             {
-                MessageBox.Show("Pris skal være tal!");
+                MessageBox.Show("Pris skal være tal!", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtPris.Text = "";
             }
             else if (!udbudsprisBool || prisInt > 5000001 || prisInt <= 0)
             {
-                MessageBox.Show("Prisen skal være imellem 0-5000000");
+                MessageBox.Show("Prisen skal være imellem 0-5000000", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtPris.Text = "";
             }
             else if (txtSælgerId.Text.Length == 0)
             {
-                MessageBox.Show("Sælgers Id skal udfyldes!");
+                MessageBox.Show("Sælgers Id skal udfyldes!", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtSælgerId.Text = "";
             }
             else if (!bolig_Kunde_IdBool)
             {
-                MessageBox.Show("Du må kun indtaste tal!");
+                MessageBox.Show("Du må kun indtaste tal!", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtSælgerId.Text = "";
             }
             else if (boligsælger.Kunde_Id == 0)
             {
-                MessageBox.Show("Sælgeren skal være oprettet som kunde før du kan tilføje personens id her!");
+                MessageBox.Show("Sælgeren skal være oprettet som kunde før du kan tilføje personens id her!", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtSælgerId.Text = "";
             }
             else if (txtEjendomsmæglerId.Text.Length == 0)
             {
-                MessageBox.Show("Ejendomsmælger Id skal udfyldes!");
+                MessageBox.Show("Ejendomsmælger Id skal udfyldes!", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtEjendomsmæglerId.Text = "";
             }
             else if (!bolig_Ejendomsmægler_IdBool)
             {
-                MessageBox.Show("Du må kun indtaste tal!");
+                MessageBox.Show("Du må kun indtaste tal!", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtEjendomsmæglerId.Text = "";
             }
             else if (ejendomsmægler.Id == 0)
             {
-                MessageBox.Show("Ejendomsmægleren skal være oprettet som ejendomsmægler før du kan tilføjet personens id her!");
+                MessageBox.Show("Ejendomsmægleren skal være oprettet som ejendomsmægler før du kan tilføjet personens id her!", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtEjendomsmæglerId.Text = "";
             }
             else if (comboBoxAfdeling.Text.Length == 0)
             {
-                MessageBox.Show("Boligen skal være tilsluttet en afdeling!");
+                MessageBox.Show("Boligen skal være tilsluttet en afdeling!", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 comboBoxAfdeling.Text = "";
             }
             else if (comboBoxType.Text.Length == 0)
             {
-                MessageBox.Show("Boligen skal gives en type!");
+                MessageBox.Show("Boligen skal gives en type!", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 comboBoxType.Text = "";
             }
 
-            else if (MessageBox.Show($"Er du sikker på at du vil gemme ændringerne?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            else if (MessageBox.Show($"Er du sikker på at du vil gemme ændringerne?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 string adresse = txtAdresse.Text;
                 int postnummer = postnummerInt;
@@ -207,11 +207,11 @@ namespace _1.SemesterProjekt
                 bool opdateret = db.Create(opdateretBolig);
                 if (opdateret)
                 {
-                    MessageBox.Show("Boligen blev oprettet");
+                    MessageBox.Show("Boligen blev oprettet", "Bolig oprettet", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Boligen blev ikke oprettet!");
+                    MessageBox.Show("Boligen blev ikke oprettet!", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 BoligForms boligforms = new BoligForms();
                 boligforms.Show();

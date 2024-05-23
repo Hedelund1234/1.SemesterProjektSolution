@@ -55,7 +55,7 @@ namespace _1.SemesterProjekt
             lblMaxpris.Text = maxpris.ToString();
             if (tbMaxPris.Value < tbMinPris.Value)
             {
-                MessageBox.Show("Fejl (Minimumspris er større end maksimumspris)");
+                MessageBox.Show("Minimumspris er større end maksimumspris", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 tbMinPris.Value = 0;
                 tbMaxPris.Value = 20;
                 minpris = tbMinPris.Value * 250000;
@@ -72,7 +72,7 @@ namespace _1.SemesterProjekt
             lblMaxM2.Text = maxm2.ToString();
             if (tbMaxM2.Value < tbMinM2.Value)
             {
-                MessageBox.Show("Fejl (Minimus M2 er større end maksimums M2)");
+                MessageBox.Show("Minimus M2 er større end maksimums M2", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 tbMinM2.Value = 0;
                 tbMaxM2.Value = 20;
                 minm2 = tbMinM2.Value * 15;
@@ -136,14 +136,14 @@ namespace _1.SemesterProjekt
                 {
                     if (!postnummerbool || postnummerint < 999 || postnummerint > 10000)
                     {
-                        MessageBox.Show("Det intastede postnummer er ikke gyldigt!");
+                        MessageBox.Show("Det intastede postnummer er ikke gyldigt!", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtPostnummer.Text = null;
                     }
 
                 }
                 else if (cbSolgt.Checked.Equals(true) && cbTilSalg.Checked.Equals(true))
                 {
-                    MessageBox.Show("Fejl (Boligen kan ikke både være solgt og til salg)");
+                    MessageBox.Show("Boligen kan ikke både være solgt og til salg", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 if (comboBoxAfdeling.Text.Length == 0 && comboBoxType.Text.Length == 0 && txtPostnummer.Text.Length == 0 && cbSolgt.Checked.Equals(false) && cbTilSalg.Checked.Equals(false)
@@ -186,7 +186,7 @@ namespace _1.SemesterProjekt
             }
             if (bl.Count == 0)
             {
-                MessageBox.Show("Der er ikke nogen boliger med disse kriterier");
+                MessageBox.Show("Der er ikke nogen boliger med disse kriterier", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }
@@ -263,11 +263,11 @@ namespace _1.SemesterProjekt
 
             if (success)
             {
-                MessageBox.Show(".CSV filen blev gemt på dit skrivebord!");
+                MessageBox.Show(".CSV filen blev gemt på dit skrivebord!", ".csv fil gemt", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("FEJL! .CSV filen blev ikke gemt!");
+                MessageBox.Show(".CSV filen blev ikke gemt!", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

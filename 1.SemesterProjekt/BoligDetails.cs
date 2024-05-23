@@ -114,70 +114,70 @@ namespace _1.SemesterProjekt
 
             if (txtAdresse.Text.Length > 50) //Mangler fuldendt validering. Se -> OpretBoligForms.cs
             {
-                MessageBox.Show("Adressen kan maksimalt være 50 karaktere lang!");
+                MessageBox.Show("Adressen kan maksimalt være 50 karaktere lang!", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtAdresse.Text = bolig.Adresse;
             }
             else if (!postnummerBool || postnummerInt < 999 || postnummerInt > 10000)
             {
-                MessageBox.Show("Postnummer skal være 4 cifret tal");
+                MessageBox.Show("Postnummer skal være 4 cifret tal", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtPostnummer.Text = bolig.Postnummer.ToString();
             }
             else if (!udbudsprisBool || prisInt > 5000001 || prisInt < 0)
             {
-                MessageBox.Show("Prisen kan maksimalt være 5000000kr.");
+                MessageBox.Show("Prisen kan maksimalt være 5000000kr.", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtPris.Text = bolig.Udbudspris.ToString();
             }
             else if (!størrelseBool || størrelseInt > 300 || størrelseInt < 0)
             {
-                MessageBox.Show("Størrelsen kan maksimalt være 300 kvadratmeter!");
+                MessageBox.Show("Størrelsen kan maksimalt være 300 kvadratmeter!", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtStørrelse.Text = bolig.Størrelse.ToString();
             }
             else if (!bolig_Kunde_IdBool)
             {
-                MessageBox.Show("Du må kun indtaste tal!");
+                MessageBox.Show("Du må kun indtaste tal!", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtSælgerId.Text = bolig.Bolig_Kunde_Id.ToString();
             }
             else if (boligsælger.Kunde_Id == 0)
             {
-                MessageBox.Show("Sælgeren skal være oprettet som kunde før du kan tilføje personens id her!");
+                MessageBox.Show("Sælgeren skal være oprettet som kunde før du kan tilføje personens id her!", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtSælgerId.Text = bolig.Bolig_Kunde_Id.ToString();
             }
             else if (!bolig_Ejendomsmægler_IdBool)
             {
-                MessageBox.Show("Du må kun indtaste tal!");
+                MessageBox.Show("Du må kun indtaste tal!", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtSælgerId.Text = bolig.Bolig_Ejendomsmægler_Id.ToString();
             }
             else if (ejendomsmægler.Id == 0)
             {
-                MessageBox.Show("Ejendomsmægleren skal være oprettet som ejendomsmægler før du kan tilføjet personens id her!");
+                MessageBox.Show("Ejendomsmægleren skal være oprettet som ejendomsmægler før du kan tilføjet personens id her!", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtBoligEjendomsmæglerId.Text = bolig.Bolig_Ejendomsmægler_Id.ToString();
             }
             else if (!bolig_Kunde_Id_KøberBool)
             {
-                MessageBox.Show("Du må kun indtaste tal!");
+                MessageBox.Show("Du må kun indtaste tal!", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtBoligEjendomsmæglerId.Text = bolig.Bolig_Kunde_Id_Køber.ToString();
             }
             else if (!boligKøberValid)
             {
-                MessageBox.Show("Køberen skal være oprettet som kunde før du kan tilføje personens id her!");
+                MessageBox.Show("Køberen skal være oprettet som kunde før du kan tilføje personens id her!", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtKøberId.Text = bolig.Bolig_Kunde_Id_Køber.ToString();
             }
             else if (comboBoxAfdelingBoligDetails.Text.Length == 0)
             {
-                MessageBox.Show("Boligen skal være tilsluttet en afdeling!");
+                MessageBox.Show("Boligen skal være tilsluttet en afdeling!", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 comboBoxAfdelingBoligDetails.Text = bolig.Bolig_Afdelings_Navn;
             }
             else if (comboboxType.Text.Length == 0)
             {
-                MessageBox.Show("Boligen skal gives en type!");
+                MessageBox.Show("Boligen skal gives en type!", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 comboboxType.Text = bolig.Type;
             }
             else if (comboboxSalgsstatus.Text.Length == 0)
             {
-                MessageBox.Show("Boligen skal have en salgsstatus!");
+                MessageBox.Show("Boligen skal have en salgsstatus!", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 comboboxSalgsstatus.Text = bolig.Salgsstatus;
             }
-            else if (MessageBox.Show($"Er du sikker på at du vil gemme ændringerne?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            else if (MessageBox.Show($"Er du sikker på at du vil gemme ændringerne?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 int boligid = bolig.Bolig_Id;
                 string adresse = txtAdresse.Text;
@@ -223,11 +223,11 @@ namespace _1.SemesterProjekt
                 bool opdateret = db.Update(opdateretBolig);
                 if (opdateret)
                 {
-                    MessageBox.Show("Opdateringerne blev gemt");
+                    MessageBox.Show("Opdateringerne blev gemt", "Opdatering gemt", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Opdateringerne blev ikke gemt");
+                    MessageBox.Show("Opdateringerne blev ikke gemt", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 BoligForms boligforms = new BoligForms();
                 boligforms.Show();
@@ -250,21 +250,21 @@ namespace _1.SemesterProjekt
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show($"Er du sikker på at du vil slette Bolig ID: {bolig.Bolig_Id} Adresse: {bolig.Adresse}?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show($"Er du sikker på at du vil slette Bolig ID: {bolig.Bolig_Id} Adresse: {bolig.Adresse}?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 bool slettet = db.Delete(bolig.Bolig_Id);
                 if (slettet)
                 {
-                    MessageBox.Show("Boligen blev slettet");
+                    MessageBox.Show("Boligen blev slettet", "Bolig slettet", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Boligen blev ikke slettet");
+                    MessageBox.Show("Boligen blev ikke slettet", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Noget gik galt. Boligen blev ikke slettet");
+                MessageBox.Show("Noget gik galt. Boligen blev ikke slettet", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             BoligForms boligforms = new BoligForms();
