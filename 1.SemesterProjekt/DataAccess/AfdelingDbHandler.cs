@@ -77,7 +77,6 @@ namespace _1.SemesterProjekt.DataAccess
             Bolig bolig = new Bolig();
 
             string command = "SELECT * FROM Afdeling, " + join + " WHERE Bolig_Afdelings_Navn = Afdelings_Navn AND Afdelings_Navn = '" + navn + "' ";
-
             SqlConnection conn = new SqlConnection(connStrings);
             try
             {
@@ -152,13 +151,14 @@ namespace _1.SemesterProjekt.DataAccess
         {
             List<Afdeling> al = new List<Afdeling>();
             Afdeling afdeling = new Afdeling();
-            string command = "SELECT * FROM Afdeling WHERE Afdelings_Nr LIKE '%" + nr + "%' AND Afdelings_Navn LIKE '%" + _navn + "%'";
+            string command = "SELECT * FROM Afdeling WHERE Afdelings_Nr LIKE @stringNr AND Afdelings_Navn LIKE @stringNavn";
             SqlConnection conn = new SqlConnection(connStrings);
+            SqlCommand cmd = new SqlCommand(command, conn);
+            cmd.Parameters.AddWithValue("@stringNr", "%" + nr + "%");
+            cmd.Parameters.AddWithValue("@stringNavn", "%" + _navn + "%");
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand(command, conn);
-
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
@@ -184,14 +184,14 @@ namespace _1.SemesterProjekt.DataAccess
             List<BoligJoinKunde> bl = new List<BoligJoinKunde>();
             BoligJoinKunde bolig = new BoligJoinKunde();
 
-            string command = "SELECT Bolig_Id, Adresse, Postnummer, Type, Udbudspris as 'Pris', Størrelse, Bolig_Ejendomsmægler_Id as 'Tilknyttet ejendomsmægler', Bolig_Afdelings_Navn as 'Afdeling', Kunde_Id, Navn, Email, Telefon_Nr FROM Bolig, Kunde WHERE Kunde_Id = Bolig_Kunde_Id AND Bolig_Afdelings_Navn = '" + navn + "' ";
+            string command = "SELECT Bolig_Id, Adresse, Postnummer, Type, Udbudspris as 'Pris', Størrelse, Bolig_Ejendomsmægler_Id as 'Tilknyttet ejendomsmægler', Bolig_Afdelings_Navn as 'Afdeling', Kunde_Id, Navn, Email, Telefon_Nr FROM Bolig, Kunde WHERE Kunde_Id = Bolig_Kunde_Id AND Bolig_Afdelings_Navn = @stringNavn ";
 
             SqlConnection conn = new SqlConnection(connStrings);
+            SqlCommand cmd = new SqlCommand(command, conn);
+            cmd.Parameters.AddWithValue("@stringNavn", navn);
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand(command, conn);
-
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {

@@ -47,13 +47,17 @@ namespace _1.SemesterProjekt.DataAccess
         {
             List<Kunde> kl = new List<Kunde>();
             Kunde kunde = new Kunde();
-            string command = "SELECT * FROM Kunde WHERE Kunde_Id LIKE '%" + id + "%' AND Navn LIKE '%" + _navn + "%' AND Email LIKE '%" + _email + "%' AND Telefon_Nr LIKE '%" + _telefon_nr + "%' AND Kunde_Type LIKE '%" + _kunde_type + "%'";
+            string command = "SELECT * FROM Kunde WHERE Kunde_Id LIKE @stringId AND Navn LIKE @stringNavn AND Email LIKE @stringEmail AND Telefon_Nr LIKE @stringTelefonnummer AND Kunde_Type LIKE @stringKundeType";
             SqlConnection conn = new SqlConnection(connStrings);
+            SqlCommand cmd = new SqlCommand(command, conn);
+            cmd.Parameters.AddWithValue("@stringId", "%" +  id + "%");
+            cmd.Parameters.AddWithValue("@stringNavn", "%" + _navn + "%");
+            cmd.Parameters.AddWithValue("@stringEmail", "%" + _email + "%");
+            cmd.Parameters.AddWithValue("@stringTelefonnummer", "%" + _telefon_nr + "%");
+            cmd.Parameters.AddWithValue("@stringKundeType", "%" + _kunde_type + "%");
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand(command, conn);
-
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
@@ -113,14 +117,14 @@ namespace _1.SemesterProjekt.DataAccess
         }
         internal bool Create(Kunde kunde)
         {
-            string command = "INSERT INTO Kunde (Navn, Email, Telefon_Nr, Kunde_Type) VALUES (@navn, @email, @telfNr, @kType)";
+            string command = "INSERT INTO Kunde (Navn, Email, Telefon_Nr, Kunde_Type) VALUES (@navn, @email, @telefonNr, @kType)";
             SqlConnection conn = new SqlConnection(connStrings);
             SqlCommand cmd = new SqlCommand(command, conn);
 
             cmd.Parameters.AddWithValue("@kId", kunde.Kunde_Id);
             cmd.Parameters.AddWithValue("@navn", kunde.Navn);
             cmd.Parameters.AddWithValue("@email", kunde.Email);
-            cmd.Parameters.AddWithValue("@telfNr", kunde.Telefon_Nr);
+            cmd.Parameters.AddWithValue("@telefonNr", kunde.Telefon_Nr);
             cmd.Parameters.AddWithValue("@kType", kunde.Kunde_Type);
             int rows = 0;
             try
@@ -144,14 +148,13 @@ namespace _1.SemesterProjekt.DataAccess
         }
         internal bool Update(Kunde kunde)
         {
-            string command = "UPDATE Kunde SET Navn = @navn, Email = @email, Telefon_Nr = @telfNr, Kunde_Type = @kType WHERE Kunde_Id = @kId";
+            string command = "UPDATE Kunde SET Navn = @navn, Email = @email, Telefon_Nr = @telefonNr, Kunde_Type = @kType WHERE Kunde_Id = @kId";
             SqlConnection conn = new SqlConnection(connStrings);
             SqlCommand cmd = new SqlCommand(command, conn);
-
             cmd.Parameters.AddWithValue("@kId", kunde.Kunde_Id);
             cmd.Parameters.AddWithValue("@navn", kunde.Navn);
             cmd.Parameters.AddWithValue("@email", kunde.Email);
-            cmd.Parameters.AddWithValue("@telfNr", kunde.Telefon_Nr);
+            cmd.Parameters.AddWithValue("@telefonNr", kunde.Telefon_Nr);
             cmd.Parameters.AddWithValue("@kType", kunde.Kunde_Type);
             int rows = 0;
             try
