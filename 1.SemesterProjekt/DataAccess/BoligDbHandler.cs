@@ -27,12 +27,22 @@ namespace _1.SemesterProjekt.DataAccess
             }
             List<Bolig> bl = new List<Bolig>();
             Bolig bolig = new Bolig();
-            string command = "SELECT * FROM Bolig WHERE Adresse LIKE '%" + adresse + "%' AND Postnummer LIKE '%" + postnummer + "%' AND Type LIKE '" + type + "%' AND Bolig_Afdelings_Navn LIKE '%" + afdeling + "%' AND Salgsstatus LIKE '%" + salgsstatus + "%' AND Udbudspris BETWEEN " + prismin + " AND " + prismax + " AND Størrelse BETWEEN " + m2min + " AND " + m2max + "";
+            string command = "SELECT * FROM Bolig WHERE Adresse LIKE @adresse AND Postnummer LIKE @postnummer AND Type LIKE @type AND Bolig_Afdelings_Navn LIKE @afdeling AND Salgsstatus LIKE @salgsstatus AND Udbudspris BETWEEN @prismin AND @prismax AND Størrelse BETWEEN @m2min AND @m2max"; ;
             SqlConnection conn = new SqlConnection(connStrings);
-            try
+			SqlCommand cmd = new SqlCommand(command, conn);
+			cmd.Parameters.AddWithValue("@adresse", "%" + adresse + "%");
+			cmd.Parameters.AddWithValue("@postnummer", "%" + postnummer + "%");
+			cmd.Parameters.AddWithValue("@type", type + "%");
+			cmd.Parameters.AddWithValue("@afdeling", "%" + afdeling + "%");
+			cmd.Parameters.AddWithValue("@salgsstatus", "%" + salgsstatus + "%");
+			cmd.Parameters.AddWithValue("@prismin", prismin);
+			cmd.Parameters.AddWithValue("@prismax", prismax);
+			cmd.Parameters.AddWithValue("@m2min", m2min);
+			cmd.Parameters.AddWithValue("@m2max", m2max);
+			try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand(command, conn);
+               
 
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
