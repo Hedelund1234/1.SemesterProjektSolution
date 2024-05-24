@@ -223,9 +223,9 @@
             label4.Location = new Point(268, 510);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(32, 20);
+            label4.Size = new Size(72, 20);
             label4.TabIndex = 6;
-            label4.Text = "Pris";
+            label4.Text = "Salgs pris";
             // 
             // label6
             // 
@@ -316,9 +316,9 @@
             label7.Location = new Point(268, 598);
             label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
-            label7.Size = new Size(72, 20);
+            label7.Size = new Size(68, 20);
             label7.TabIndex = 60;
-            label7.Text = "Sælger id";
+            label7.Text = "Kunde id";
             // 
             // label8
             // 

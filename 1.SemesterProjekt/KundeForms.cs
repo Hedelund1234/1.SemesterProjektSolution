@@ -123,10 +123,6 @@ namespace _1.SemesterProjekt
             {
                 dgvBolig.DataSource = kl;
             }
-            txtBoxKundeId.Text = null;
-            txtBoxKundeNavn.Text = null;
-            txtBoxKundeEmail.Text = null;
-            txtBoxKundeTelefonnummer.Text = null;
         }
 
         private void KundeForms_Load(object sender, EventArgs e)

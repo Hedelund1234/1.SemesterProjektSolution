@@ -15,6 +15,7 @@ namespace _1.SemesterProjekt
     public partial class BoligDetails : Form
     {
         int id;
+        DateTime dato;
         BoligDbHandler db = new BoligDbHandler();
         KundeDbHandler kdb = new KundeDbHandler();
         EjendomsmæglerDbHandler edb = new EjendomsmæglerDbHandler();
@@ -232,7 +233,7 @@ namespace _1.SemesterProjekt
                 BoligForms boligforms = new BoligForms();
                 boligforms.Show();
                 this.Hide();
-            
+
             }
         }
 
@@ -329,6 +330,15 @@ namespace _1.SemesterProjekt
                 return true;
             }
 
+        }
+
+        private void dtpBoligDetails_ValueChanged(object sender, EventArgs e)
+        {
+            dato = dtpBoligDetails.Value;
+            if (dato < DateTime.Now)
+            {
+                MessageBox.Show("Bemærk valgte dato er før dags dato", "OBS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

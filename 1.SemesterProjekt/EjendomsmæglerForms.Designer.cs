@@ -101,7 +101,7 @@
             button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(194, 73);
-            button1.TabIndex = 30;
+            button1.TabIndex = 9;
             button1.Text = "Bolig      ";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
@@ -115,7 +115,7 @@
             button2.Margin = new Padding(2);
             button2.Name = "button2";
             button2.Size = new Size(194, 73);
-            button2.TabIndex = 28;
+            button2.TabIndex = 11;
             button2.Text = "               Ejendomsmægler";
             button2.UseVisualStyleBackColor = false;
             // 
@@ -128,7 +128,7 @@
             button3.Margin = new Padding(2);
             button3.Name = "button3";
             button3.Size = new Size(194, 73);
-            button3.TabIndex = 27;
+            button3.TabIndex = 12;
             button3.Text = "Afdeling";
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
@@ -142,7 +142,7 @@
             button4.Margin = new Padding(2);
             button4.Name = "button4";
             button4.Size = new Size(194, 73);
-            button4.TabIndex = 29;
+            button4.TabIndex = 10;
             button4.Text = "Kunde   ";
             button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
@@ -153,7 +153,7 @@
             btnOpret.Margin = new Padding(2);
             btnOpret.Name = "btnOpret";
             btnOpret.Size = new Size(102, 30);
-            btnOpret.TabIndex = 25;
+            btnOpret.TabIndex = 7;
             btnOpret.Text = "Gå til opret";
             btnOpret.UseVisualStyleBackColor = true;
             btnOpret.Click += btnOpret_Click;
@@ -167,7 +167,7 @@
             comboBoxAfdeling.Margin = new Padding(2);
             comboBoxAfdeling.Name = "comboBoxAfdeling";
             comboBoxAfdeling.Size = new Size(214, 28);
-            comboBoxAfdeling.TabIndex = 52;
+            comboBoxAfdeling.TabIndex = 5;
             // 
             // btnSøg
             // 
@@ -175,7 +175,7 @@
             btnSøg.Margin = new Padding(2);
             btnSøg.Name = "btnSøg";
             btnSøg.Size = new Size(102, 30);
-            btnSøg.TabIndex = 26;
+            btnSøg.TabIndex = 6;
             btnSøg.Text = "Søg";
             btnSøg.UseVisualStyleBackColor = true;
             btnSøg.Click += btnSøg_Click;
@@ -206,7 +206,7 @@
             txtEmail.Margin = new Padding(2);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(214, 27);
-            txtEmail.TabIndex = 47;
+            txtEmail.TabIndex = 4;
             // 
             // label4
             // 
@@ -215,7 +215,7 @@
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
             label4.Size = new Size(107, 20);
-            label4.TabIndex = 44;
+            label4.TabIndex = 0;
             label4.Text = "Afdelings navn";
             // 
             // txtEjendomsmæglerId
@@ -224,7 +224,7 @@
             txtEjendomsmæglerId.Margin = new Padding(2);
             txtEjendomsmæglerId.Name = "txtEjendomsmæglerId";
             txtEjendomsmæglerId.Size = new Size(214, 27);
-            txtEjendomsmæglerId.TabIndex = 48;
+            txtEjendomsmæglerId.TabIndex = 1;
             // 
             // txtNavn
             // 
@@ -232,7 +232,7 @@
             txtNavn.Margin = new Padding(2);
             txtNavn.Name = "txtNavn";
             txtNavn.Size = new Size(214, 27);
-            txtNavn.TabIndex = 49;
+            txtNavn.TabIndex = 2;
             // 
             // label5
             // 
@@ -260,7 +260,7 @@
             txtTelefonnummer.Margin = new Padding(2);
             txtTelefonnummer.Name = "txtTelefonnummer";
             txtTelefonnummer.Size = new Size(214, 27);
-            txtTelefonnummer.TabIndex = 50;
+            txtTelefonnummer.TabIndex = 3;
             // 
             // btnLogo
             // 
@@ -275,7 +275,7 @@
             btnLogo.Margin = new Padding(2);
             btnLogo.Name = "btnLogo";
             btnLogo.Size = new Size(96, 96);
-            btnLogo.TabIndex = 20;
+            btnLogo.TabIndex = 8;
             btnLogo.UseVisualStyleBackColor = false;
             btnLogo.Click += btnLogo_Click;
             // 
@@ -289,7 +289,8 @@
             dgvEjendomsmægler.ReadOnly = true;
             dgvEjendomsmægler.RowHeadersWidth = 62;
             dgvEjendomsmægler.Size = new Size(902, 826);
-            dgvEjendomsmægler.TabIndex = 58;
+            dgvEjendomsmægler.TabIndex = 0;
+            dgvEjendomsmægler.TabStop = false;
             dgvEjendomsmægler.CellDoubleClick += dgvEjendomsmægler_CellDoubleClick;
             dgvEjendomsmægler.ColumnHeaderMouseClick += dgvEjendomsmægler_ColumnHeaderMouseClick;
             // 

@@ -476,6 +476,7 @@
             dtpBoligDetails.Size = new Size(199, 27);
             dtpBoligDetails.TabIndex = 29;
             dtpBoligDetails.Visible = false;
+            dtpBoligDetails.ValueChanged += dtpBoligDetails_ValueChanged;
             // 
             // cbHandelsdato
             // 
