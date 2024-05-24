@@ -36,7 +36,26 @@ namespace _1.SemesterProjekt
             txtNavn.Text = ejendomsmægler.Navn;
             txtTelefonNr.Text = ejendomsmægler.Telefon_Nr.ToString();
             txtEmail.Text = ejendomsmægler.Email;
-            ComboBoxAfdeling.Text = ejendomsmægler.Ejendomsmægler_Afdeling_Nr.ToString();
+            if (ejendomsmægler.Ejendomsmægler_Afdeling_Nr == 1)
+            {
+                ComboBoxAfdeling.Text = "Nordjylland";
+            }
+            else if (ejendomsmægler.Ejendomsmægler_Afdeling_Nr == 2)
+            {
+                ComboBoxAfdeling.Text = "Midtjylland";
+            }
+            else if (ejendomsmægler.Ejendomsmægler_Afdeling_Nr == 3)
+            {
+                ComboBoxAfdeling.Text = "Syddanmark";
+            }
+            else if (ejendomsmægler.Ejendomsmægler_Afdeling_Nr == 4)
+            {
+                ComboBoxAfdeling.Text = "Sjælland";
+            }
+            else if (ejendomsmægler.Ejendomsmægler_Afdeling_Nr == 5)
+            {
+                ComboBoxAfdeling.Text = "Hovedstaden";
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -134,16 +153,39 @@ namespace _1.SemesterProjekt
             }
             if (navnSuccessBool && emailSuccessBool && telefonnummerSuccessBool && Ejendomsmægler_Afdeling_NrSucces)
             {
-                bool b = db.Update(new Ejendomsmægler { Id = id, Navn = txtNavn.Text, Telefon_Nr = Convert.ToInt32(txtTelefonNr.Text), Email = txtEmail.Text, Ejendomsmægler_Afdeling_Nr = Convert.ToInt32(ComboBoxAfdeling.Text) });
+                if (ComboBoxAfdeling.Text == "Nordjylland")
+                {
+                    ejendomsmægler.Ejendomsmægler_Afdeling_Nr = 1;
+                }
+                else if (ComboBoxAfdeling.Text == "Midtjylland")
+                {
+                    ejendomsmægler.Ejendomsmægler_Afdeling_Nr = 2;
+                }
+                else if (ComboBoxAfdeling.Text == "Syddanmark")
+                {
+                    ejendomsmægler.Ejendomsmægler_Afdeling_Nr = 3;
+                }
+                else if (ComboBoxAfdeling.Text == "Sjælland")
+                {
+                    ejendomsmægler.Ejendomsmægler_Afdeling_Nr = 4;
+                }
+                else if (ComboBoxAfdeling.Text == "Hovedstaden")
+                {
+                    ejendomsmægler.Ejendomsmægler_Afdeling_Nr = 5;
+                }
+                bool b = db.Update(new Ejendomsmægler { Id = id, Navn = txtNavn.Text, Telefon_Nr = Convert.ToInt32(txtTelefonNr.Text), Email = txtEmail.Text, Ejendomsmægler_Afdeling_Nr = ejendomsmægler.Ejendomsmægler_Afdeling_Nr });
 
 
                 if (b)
                 {
-                    MessageBox.Show("Ny Ejendomsmægler opdateret", "Ejendomsmægler opdateret", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    EjendomsmæglerForms ejendomsmæglerForms = new EjendomsmæglerForms();
+                    MessageBox.Show("Ejendomsmægler opdateret", "Ejendomsmægler opdateret", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtNavn.Text = null;
                     txtTelefonNr.Text = null;
                     txtEmail.Text = null;
                     ComboBoxAfdeling.Text = null;
+                    ejendomsmæglerForms.Show();
+                    this.Hide();
                 }
                 else
                 {
@@ -158,7 +200,6 @@ namespace _1.SemesterProjekt
             forside.Show();
             this.Hide();
         }
-
 
         private void button1_Click(object sender, EventArgs e)
         {

@@ -257,9 +257,9 @@
             label5.Location = new Point(270, 434);
             label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(131, 20);
+            label5.Size = new Size(107, 20);
             label5.TabIndex = 32;
-            label5.Text = "Afdelings nummer";
+            label5.Text = "Afdelings navn";
             // 
             // label1
             // 
@@ -276,7 +276,7 @@
             // 
             ComboBoxAfdeling.DropDownStyle = ComboBoxStyle.DropDownList;
             ComboBoxAfdeling.FormattingEnabled = true;
-            ComboBoxAfdeling.Items.AddRange(new object[] { "", "1", "2", "3", "4", "5" });
+            ComboBoxAfdeling.Items.AddRange(new object[] { "", "Nordjylland", "Midtjylland", "Syddanmark", "Sjælland", "Hovedstaden" });
             ComboBoxAfdeling.Location = new Point(270, 457);
             ComboBoxAfdeling.Margin = new Padding(2);
             ComboBoxAfdeling.Name = "ComboBoxAfdeling";

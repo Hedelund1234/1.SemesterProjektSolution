@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using _1.SemesterProjekt;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace _1.SemesterProjekt
 {
@@ -107,6 +108,26 @@ namespace _1.SemesterProjekt
                 }
                 else
                 {
+                    if (comboBoxAfdeling.Text == "Nordjylland")
+                    {
+                        AfdelingId = "1";
+                    }
+                    else if (comboBoxAfdeling.Text == "Midtjylland")
+                    {
+                        AfdelingId = "2";
+                    }
+                    else if (comboBoxAfdeling.Text == "Syddanmark")
+                    {
+                        AfdelingId = "3";
+                    }
+                    else if (comboBoxAfdeling.Text == "Sjælland")
+                    {
+                        AfdelingId = "4";
+                    }
+                    else if (comboBoxAfdeling.Text == "Hovedstaden")
+                    {
+                        AfdelingId = "5";
+                    }
                     el = db.Get(id, navn, telefonnummer, email, AfdelingId);
                 }
             }

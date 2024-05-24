@@ -162,7 +162,7 @@
             // 
             comboBoxAfdeling.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxAfdeling.FormattingEnabled = true;
-            comboBoxAfdeling.Items.AddRange(new object[] { "", "1", "2", "3", "4", "5" });
+            comboBoxAfdeling.Items.AddRange(new object[] { "", "Nordjylland", "Midtjylland", "Syddanmark", "Sjælland", "Hovedstaden" });
             comboBoxAfdeling.Location = new Point(268, 554);
             comboBoxAfdeling.Margin = new Padding(2);
             comboBoxAfdeling.Name = "comboBoxAfdeling";
@@ -214,9 +214,9 @@
             label4.Location = new Point(268, 532);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(66, 20);
+            label4.Size = new Size(107, 20);
             label4.TabIndex = 44;
-            label4.Text = "Afdeling";
+            label4.Text = "Afdelings navn";
             // 
             // txtEjendomsmæglerId
             // 

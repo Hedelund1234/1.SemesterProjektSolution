@@ -16,6 +16,7 @@ namespace _1.SemesterProjekt
     public partial class OpretEjendomsmæglerForms : Form
     {
         EjendomsmæglerDbHandler db = new EjendomsmæglerDbHandler();
+        Ejendomsmægler ejendomsmægler = new Ejendomsmægler();
         public OpretEjendomsmæglerForms()
         {
             InitializeComponent();
@@ -105,7 +106,27 @@ namespace _1.SemesterProjekt
             }
             if (navnSuccessBool && emailSuccessBool && telefonnummerSuccessBool && Ejendomsmægler_Afdeling_NrSucces)
             {
-                bool b = db.Create(new Ejendomsmægler { Navn = txtNavn.Text, Telefon_Nr = Convert.ToInt32(txtTelefonNr.Text), Email = txtEmail.Text, Ejendomsmægler_Afdeling_Nr = Convert.ToInt32(ComboBox1.Text) });
+                if (ComboBox1.Text == "Nordjylland")
+                {
+                    ejendomsmægler.Ejendomsmægler_Afdeling_Nr = 1;
+                }
+                else if (ComboBox1.Text == "Midtjylland")
+                {
+                    ejendomsmægler.Ejendomsmægler_Afdeling_Nr = 2;
+                }
+                else if (ComboBox1.Text == "Syddanmark")
+                {
+                    ejendomsmægler.Ejendomsmægler_Afdeling_Nr = 3;
+                }
+                else if (ComboBox1.Text == "Sjælland")
+                {
+                    ejendomsmægler.Ejendomsmægler_Afdeling_Nr = 4;
+                }
+                else if (ComboBox1.Text == "Hovedstaden")
+                {
+                    ejendomsmægler.Ejendomsmægler_Afdeling_Nr = 5;
+                }
+                bool b = db.Create(new Ejendomsmægler { Navn = txtNavn.Text, Telefon_Nr = Convert.ToInt32(txtTelefonNr.Text), Email = txtEmail.Text, Ejendomsmægler_Afdeling_Nr = ejendomsmægler.Ejendomsmægler_Afdeling_Nr });
 
                 if (b)
                 {
