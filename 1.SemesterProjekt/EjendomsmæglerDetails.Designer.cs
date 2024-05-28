@@ -72,7 +72,7 @@
             btnExit.Margin = new Padding(2);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(38, 27);
-            btnExit.TabIndex = 3;
+            btnExit.TabIndex = 13;
             btnExit.Text = "X";
             btnExit.UseVisualStyleBackColor = false;
             btnExit.Click += btnExit_Click;
@@ -100,7 +100,7 @@
             button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(194, 73);
-            button1.TabIndex = 18;
+            button1.TabIndex = 9;
             button1.Text = "Bolig      ";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
@@ -114,7 +114,7 @@
             button2.Margin = new Padding(2);
             button2.Name = "button2";
             button2.Size = new Size(194, 73);
-            button2.TabIndex = 16;
+            button2.TabIndex = 11;
             button2.Text = "               Ejendomsmægler";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
@@ -128,7 +128,7 @@
             button3.Margin = new Padding(2);
             button3.Name = "button3";
             button3.Size = new Size(194, 73);
-            button3.TabIndex = 15;
+            button3.TabIndex = 12;
             button3.Text = "Afdeling";
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
@@ -142,7 +142,7 @@
             button4.Margin = new Padding(2);
             button4.Name = "button4";
             button4.Size = new Size(194, 73);
-            button4.TabIndex = 17;
+            button4.TabIndex = 10;
             button4.Text = "Kunde   ";
             button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
@@ -160,7 +160,7 @@
             btnLogo.Margin = new Padding(2);
             btnLogo.Name = "btnLogo";
             btnLogo.Size = new Size(96, 96);
-            btnLogo.TabIndex = 14;
+            btnLogo.TabIndex = 8;
             btnLogo.UseVisualStyleBackColor = false;
             btnLogo.Click += btnLogo_Click;
             // 
@@ -170,7 +170,7 @@
             btnSlet.Margin = new Padding(2);
             btnSlet.Name = "btnSlet";
             btnSlet.Size = new Size(90, 27);
-            btnSlet.TabIndex = 29;
+            btnSlet.TabIndex = 7;
             btnSlet.Text = "Slet";
             btnSlet.UseVisualStyleBackColor = true;
             btnSlet.Click += btnSlet_Click;
@@ -181,7 +181,7 @@
             btnUpdate.Margin = new Padding(2);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(90, 27);
-            btnUpdate.TabIndex = 30;
+            btnUpdate.TabIndex = 6;
             btnUpdate.Text = "Opdater";
             btnUpdate.UseVisualStyleBackColor = true;
             btnUpdate.Click += btnUpdate_Click;
@@ -192,7 +192,7 @@
             btnTilbage.Margin = new Padding(2);
             btnTilbage.Name = "btnTilbage";
             btnTilbage.Size = new Size(90, 27);
-            btnTilbage.TabIndex = 31;
+            btnTilbage.TabIndex = 5;
             btnTilbage.Text = "Tilbage";
             btnTilbage.UseVisualStyleBackColor = true;
             btnTilbage.Click += button5_Click;
@@ -213,7 +213,7 @@
             txtNavn.Margin = new Padding(2);
             txtNavn.Name = "txtNavn";
             txtNavn.Size = new Size(185, 27);
-            txtNavn.TabIndex = 33;
+            txtNavn.TabIndex = 1;
             // 
             // label3
             // 
@@ -231,7 +231,7 @@
             txtTelefonNr.Margin = new Padding(2);
             txtTelefonNr.Name = "txtTelefonNr";
             txtTelefonNr.Size = new Size(186, 27);
-            txtTelefonNr.TabIndex = 33;
+            txtTelefonNr.TabIndex = 2;
             // 
             // label4
             // 
@@ -249,7 +249,7 @@
             txtEmail.Margin = new Padding(2);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(186, 27);
-            txtEmail.TabIndex = 33;
+            txtEmail.TabIndex = 3;
             // 
             // label5
             // 
@@ -281,7 +281,7 @@
             ComboBoxAfdeling.Margin = new Padding(2);
             ComboBoxAfdeling.Name = "ComboBoxAfdeling";
             ComboBoxAfdeling.Size = new Size(187, 28);
-            ComboBoxAfdeling.TabIndex = 53;
+            ComboBoxAfdeling.TabIndex = 4;
             // 
             // EjendomsmæglerDetails
             // 

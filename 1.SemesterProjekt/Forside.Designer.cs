@@ -60,7 +60,7 @@
             btnExit.Margin = new Padding(2);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(38, 27);
-            btnExit.TabIndex = 3;
+            btnExit.TabIndex = 6;
             btnExit.Text = "X";
             btnExit.UseVisualStyleBackColor = false;
             btnExit.Click += btnExit_Click;
@@ -88,7 +88,7 @@
             btnBolig.Margin = new Padding(2);
             btnBolig.Name = "btnBolig";
             btnBolig.Size = new Size(194, 73);
-            btnBolig.TabIndex = 18;
+            btnBolig.TabIndex = 2;
             btnBolig.Text = "Bolig      ";
             btnBolig.UseVisualStyleBackColor = false;
             btnBolig.Click += btnBolig_Click;
@@ -102,7 +102,7 @@
             btnEjendomsmægler.Margin = new Padding(2);
             btnEjendomsmægler.Name = "btnEjendomsmægler";
             btnEjendomsmægler.Size = new Size(194, 73);
-            btnEjendomsmægler.TabIndex = 16;
+            btnEjendomsmægler.TabIndex = 4;
             btnEjendomsmægler.Text = "               Ejendomsmægler";
             btnEjendomsmægler.UseVisualStyleBackColor = false;
             btnEjendomsmægler.Click += btnEjendomsmægler_Click;
@@ -116,7 +116,7 @@
             btnAfdeling.Margin = new Padding(2);
             btnAfdeling.Name = "btnAfdeling";
             btnAfdeling.Size = new Size(194, 73);
-            btnAfdeling.TabIndex = 15;
+            btnAfdeling.TabIndex = 5;
             btnAfdeling.Text = "Afdeling";
             btnAfdeling.UseVisualStyleBackColor = false;
             btnAfdeling.Click += btnAfdeling_Click;
@@ -130,7 +130,7 @@
             btnKunde.Margin = new Padding(2);
             btnKunde.Name = "btnKunde";
             btnKunde.Size = new Size(194, 73);
-            btnKunde.TabIndex = 17;
+            btnKunde.TabIndex = 3;
             btnKunde.Text = "Kunde   ";
             btnKunde.UseVisualStyleBackColor = false;
             btnKunde.Click += btnKunde_Click;
@@ -148,7 +148,7 @@
             btnLogo.Margin = new Padding(2);
             btnLogo.Name = "btnLogo";
             btnLogo.Size = new Size(96, 96);
-            btnLogo.TabIndex = 14;
+            btnLogo.TabIndex = 1;
             btnLogo.UseVisualStyleBackColor = false;
             // 
             // Forside

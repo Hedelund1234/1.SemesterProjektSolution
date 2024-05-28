@@ -74,7 +74,7 @@
             btnExit.Margin = new Padding(2);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(38, 27);
-            btnExit.TabIndex = 3;
+            btnExit.TabIndex = 14;
             btnExit.Text = "X";
             btnExit.UseVisualStyleBackColor = false;
             btnExit.Click += btnExit_Click;
@@ -102,7 +102,7 @@
             button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(194, 73);
-            button1.TabIndex = 18;
+            button1.TabIndex = 10;
             button1.Text = "Bolig      ";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
@@ -116,7 +116,7 @@
             button2.Margin = new Padding(2);
             button2.Name = "button2";
             button2.Size = new Size(194, 73);
-            button2.TabIndex = 16;
+            button2.TabIndex = 12;
             button2.Text = "               Ejendomsmægler";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
@@ -129,7 +129,7 @@
             button3.Margin = new Padding(2);
             button3.Name = "button3";
             button3.Size = new Size(194, 73);
-            button3.TabIndex = 15;
+            button3.TabIndex = 13;
             button3.Text = "Afdeling";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
@@ -143,7 +143,7 @@
             btnKundeDetails.Margin = new Padding(2);
             btnKundeDetails.Name = "btnKundeDetails";
             btnKundeDetails.Size = new Size(194, 73);
-            btnKundeDetails.TabIndex = 17;
+            btnKundeDetails.TabIndex = 11;
             btnKundeDetails.Text = "Kunde   ";
             btnKundeDetails.UseVisualStyleBackColor = false;
             btnKundeDetails.Click += btnKundeDetails_Click;
@@ -161,7 +161,7 @@
             btnLogo.Margin = new Padding(2);
             btnLogo.Name = "btnLogo";
             btnLogo.Size = new Size(96, 96);
-            btnLogo.TabIndex = 14;
+            btnLogo.TabIndex = 9;
             btnLogo.UseVisualStyleBackColor = false;
             btnLogo.Click += btnLogo_Click;
             // 
@@ -181,7 +181,7 @@
             btnSletKunde.Location = new Point(484, 862);
             btnSletKunde.Name = "btnSletKunde";
             btnSletKunde.Size = new Size(102, 30);
-            btnSletKunde.TabIndex = 29;
+            btnSletKunde.TabIndex = 8;
             btnSletKunde.Text = "Slet";
             btnSletKunde.UseVisualStyleBackColor = true;
             btnSletKunde.Click += btnSletKunde_Click;
@@ -192,7 +192,7 @@
             button6.Margin = new Padding(2);
             button6.Name = "button6";
             button6.Size = new Size(102, 30);
-            button6.TabIndex = 30;
+            button6.TabIndex = 7;
             button6.Text = "Opdater";
             button6.UseVisualStyleBackColor = true;
             button6.Click += button6_Click;
@@ -203,7 +203,7 @@
             button5.Margin = new Padding(2);
             button5.Name = "button5";
             button5.Size = new Size(102, 30);
-            button5.TabIndex = 31;
+            button5.TabIndex = 6;
             button5.Text = "Tilbage";
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
@@ -224,7 +224,7 @@
             txtBoxKundeId.Location = new Point(271, 165);
             txtBoxKundeId.Name = "txtBoxKundeId";
             txtBoxKundeId.Size = new Size(230, 27);
-            txtBoxKundeId.TabIndex = 33;
+            txtBoxKundeId.TabIndex = 1;
             // 
             // label3
             // 
@@ -241,7 +241,7 @@
             txtBoxKundeNavn.Location = new Point(271, 244);
             txtBoxKundeNavn.Name = "txtBoxKundeNavn";
             txtBoxKundeNavn.Size = new Size(230, 27);
-            txtBoxKundeNavn.TabIndex = 33;
+            txtBoxKundeNavn.TabIndex = 2;
             // 
             // label4
             // 
@@ -258,7 +258,7 @@
             txtBoxKundeEmail.Location = new Point(270, 330);
             txtBoxKundeEmail.Name = "txtBoxKundeEmail";
             txtBoxKundeEmail.Size = new Size(230, 27);
-            txtBoxKundeEmail.TabIndex = 33;
+            txtBoxKundeEmail.TabIndex = 3;
             // 
             // label5
             // 
@@ -275,7 +275,7 @@
             txtBoxKundeTelefonnummer.Location = new Point(271, 407);
             txtBoxKundeTelefonnummer.Name = "txtBoxKundeTelefonnummer";
             txtBoxKundeTelefonnummer.Size = new Size(230, 27);
-            txtBoxKundeTelefonnummer.TabIndex = 33;
+            txtBoxKundeTelefonnummer.TabIndex = 4;
             // 
             // label6
             // 
@@ -296,7 +296,7 @@
             comboBoxKundeType.MaxDropDownItems = 3;
             comboBoxKundeType.Name = "comboBoxKundeType";
             comboBoxKundeType.Size = new Size(231, 28);
-            comboBoxKundeType.TabIndex = 35;
+            comboBoxKundeType.TabIndex = 5;
             // 
             // KundeDetails
             // 

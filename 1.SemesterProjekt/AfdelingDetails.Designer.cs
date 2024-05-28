@@ -71,7 +71,7 @@
             btnExit.Margin = new Padding(2);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(38, 27);
-            btnExit.TabIndex = 3;
+            btnExit.TabIndex = 9;
             btnExit.Text = "X";
             btnExit.UseVisualStyleBackColor = false;
             btnExit.Click += btnExit_Click;
@@ -99,7 +99,7 @@
             button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(194, 73);
-            button1.TabIndex = 18;
+            button1.TabIndex = 5;
             button1.Text = "Bolig      ";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
@@ -113,7 +113,7 @@
             button2.Margin = new Padding(2);
             button2.Name = "button2";
             button2.Size = new Size(194, 73);
-            button2.TabIndex = 16;
+            button2.TabIndex = 7;
             button2.Text = "               Ejendomsmægler";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
@@ -127,7 +127,7 @@
             AfdelingFormsDetails.Margin = new Padding(2);
             AfdelingFormsDetails.Name = "AfdelingFormsDetails";
             AfdelingFormsDetails.Size = new Size(194, 73);
-            AfdelingFormsDetails.TabIndex = 15;
+            AfdelingFormsDetails.TabIndex = 8;
             AfdelingFormsDetails.Text = "Afdeling";
             AfdelingFormsDetails.UseVisualStyleBackColor = false;
             AfdelingFormsDetails.Click += AfdelingFormsDetails_Click;
@@ -140,7 +140,7 @@
             button4.Margin = new Padding(2);
             button4.Name = "button4";
             button4.Size = new Size(194, 73);
-            button4.TabIndex = 17;
+            button4.TabIndex = 6;
             button4.Text = "Kunde   ";
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
@@ -158,7 +158,7 @@
             btnLogo.Margin = new Padding(2);
             btnLogo.Name = "btnLogo";
             btnLogo.Size = new Size(96, 96);
-            btnLogo.TabIndex = 14;
+            btnLogo.TabIndex = 4;
             btnLogo.UseVisualStyleBackColor = false;
             btnLogo.Click += btnLogo_Click;
             // 
@@ -168,7 +168,7 @@
             button5.Margin = new Padding(2);
             button5.Name = "button5";
             button5.Size = new Size(102, 30);
-            button5.TabIndex = 32;
+            button5.TabIndex = 3;
             button5.Text = "Tilbage";
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
@@ -176,6 +176,7 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.Enabled = false;
             label1.Font = new Font("Segoe UI", 18F);
             label1.Location = new Point(775, 38);
             label1.Margin = new Padding(2, 0, 2, 0);
@@ -193,7 +194,7 @@
             comboBoxAfdelingsDetailsSøg.Margin = new Padding(2);
             comboBoxAfdelingsDetailsSøg.Name = "comboBoxAfdelingsDetailsSøg";
             comboBoxAfdelingsDetailsSøg.Size = new Size(211, 28);
-            comboBoxAfdelingsDetailsSøg.TabIndex = 57;
+            comboBoxAfdelingsDetailsSøg.TabIndex = 1;
             comboBoxAfdelingsDetailsSøg.DropDownClosed += comboBoxAfdelingsDetailsSøg_DropDownClosed;
             // 
             // label2
@@ -213,7 +214,8 @@
             txtBoxAfdelingNrDetails.Margin = new Padding(2);
             txtBoxAfdelingNrDetails.Name = "txtBoxAfdelingNrDetails";
             txtBoxAfdelingNrDetails.Size = new Size(211, 27);
-            txtBoxAfdelingNrDetails.TabIndex = 59;
+            txtBoxAfdelingNrDetails.TabIndex = 2;
+            txtBoxAfdelingNrDetails.TabStop = false;
             // 
             // txtBoxAfdelingsNavnDetails
             // 
@@ -222,7 +224,8 @@
             txtBoxAfdelingsNavnDetails.Margin = new Padding(2);
             txtBoxAfdelingsNavnDetails.Name = "txtBoxAfdelingsNavnDetails";
             txtBoxAfdelingsNavnDetails.Size = new Size(211, 27);
-            txtBoxAfdelingsNavnDetails.TabIndex = 59;
+            txtBoxAfdelingsNavnDetails.TabIndex = 3;
+            txtBoxAfdelingsNavnDetails.TabStop = false;
             // 
             // label3
             // 
@@ -257,6 +260,7 @@
             dgvAfdelingsDetails.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
             dgvAfdelingsDetails.Size = new Size(898, 810);
             dgvAfdelingsDetails.TabIndex = 22;
+            dgvAfdelingsDetails.TabStop = false;
             dgvAfdelingsDetails.CellDoubleClick += dgvAfdelingsDetails_CellDoubleClick;
             dgvAfdelingsDetails.ColumnHeaderMouseClick += dgvAfdelingsDetails_ColumnHeaderMouseClick;
             // 
@@ -266,7 +270,7 @@
             btnCsvUdprint.Margin = new Padding(2);
             btnCsvUdprint.Name = "btnCsvUdprint";
             btnCsvUdprint.Size = new Size(211, 30);
-            btnCsvUdprint.TabIndex = 60;
+            btnCsvUdprint.TabIndex = 2;
             btnCsvUdprint.Text = "Udprint .csv";
             btnCsvUdprint.UseVisualStyleBackColor = true;
             btnCsvUdprint.Click += btnCsvUdprint_Click;

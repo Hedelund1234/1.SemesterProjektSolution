@@ -69,7 +69,7 @@
             btnLogo.Margin = new Padding(2);
             btnLogo.Name = "btnLogo";
             btnLogo.Size = new Size(96, 96);
-            btnLogo.TabIndex = 20;
+            btnLogo.TabIndex = 9;
             btnLogo.UseVisualStyleBackColor = false;
             btnLogo.Click += btnLogo_Click;
             // 
@@ -79,7 +79,7 @@
             btnSøg.Margin = new Padding(2);
             btnSøg.Name = "btnSøg";
             btnSøg.Size = new Size(102, 30);
-            btnSøg.TabIndex = 24;
+            btnSøg.TabIndex = 7;
             btnSøg.Text = "Søg";
             btnSøg.UseVisualStyleBackColor = true;
             btnSøg.Click += btnSøg_Click;
@@ -90,7 +90,7 @@
             btnOpret.Margin = new Padding(2);
             btnOpret.Name = "btnOpret";
             btnOpret.Size = new Size(102, 30);
-            btnOpret.TabIndex = 22;
+            btnOpret.TabIndex = 8;
             btnOpret.Text = "Gå til opret";
             btnOpret.UseVisualStyleBackColor = true;
             btnOpret.Click += btnOpret_Click;
@@ -117,7 +117,7 @@
             button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(194, 73);
-            button1.TabIndex = 29;
+            button1.TabIndex = 10;
             button1.Text = "Bolig      ";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
@@ -130,7 +130,7 @@
             button2.Margin = new Padding(2);
             button2.Name = "button2";
             button2.Size = new Size(194, 73);
-            button2.TabIndex = 27;
+            button2.TabIndex = 12;
             button2.Text = "               Ejendomsmægler";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
@@ -143,7 +143,7 @@
             button3.Margin = new Padding(2);
             button3.Name = "button3";
             button3.Size = new Size(194, 73);
-            button3.TabIndex = 26;
+            button3.TabIndex = 13;
             button3.Text = "Afdeling";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
@@ -157,7 +157,7 @@
             button4.Margin = new Padding(2);
             button4.Name = "button4";
             button4.Size = new Size(194, 73);
-            button4.TabIndex = 28;
+            button4.TabIndex = 11;
             button4.Text = "Kunde   ";
             button4.UseVisualStyleBackColor = false;
             // 
@@ -170,7 +170,7 @@
             btnExit.Margin = new Padding(2);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(38, 27);
-            btnExit.TabIndex = 3;
+            btnExit.TabIndex = 14;
             btnExit.Text = "X";
             btnExit.UseVisualStyleBackColor = false;
             btnExit.Click += btnExit_Click;
@@ -201,7 +201,7 @@
             cBoxKundeKøber.Location = new Point(271, 555);
             cBoxKundeKøber.Name = "cBoxKundeKøber";
             cBoxKundeKøber.Size = new Size(71, 24);
-            cBoxKundeKøber.TabIndex = 34;
+            cBoxKundeKøber.TabIndex = 5;
             cBoxKundeKøber.Text = "Køber";
             cBoxKundeKøber.UseVisualStyleBackColor = true;
             cBoxKundeKøber.CheckedChanged += cBoxKundeKøber_CheckedChanged;
@@ -212,7 +212,7 @@
             cBoxKundeSælger.Location = new Point(357, 555);
             cBoxKundeSælger.Name = "cBoxKundeSælger";
             cBoxKundeSælger.Size = new Size(77, 24);
-            cBoxKundeSælger.TabIndex = 33;
+            cBoxKundeSælger.TabIndex = 6;
             cBoxKundeSælger.Text = "Sælger";
             cBoxKundeSælger.UseVisualStyleBackColor = true;
             cBoxKundeSælger.CheckedChanged += cBoxKundeSælger_CheckedChanged;
@@ -242,7 +242,7 @@
             txtBoxKundeEmail.Location = new Point(268, 358);
             txtBoxKundeEmail.Name = "txtBoxKundeEmail";
             txtBoxKundeEmail.Size = new Size(211, 27);
-            txtBoxKundeEmail.TabIndex = 37;
+            txtBoxKundeEmail.TabIndex = 3;
             // 
             // label5
             // 
@@ -259,21 +259,21 @@
             txtBoxKundeNavn.Location = new Point(268, 262);
             txtBoxKundeNavn.Name = "txtBoxKundeNavn";
             txtBoxKundeNavn.Size = new Size(211, 27);
-            txtBoxKundeNavn.TabIndex = 37;
+            txtBoxKundeNavn.TabIndex = 2;
             // 
             // txtBoxKundeId
             // 
             txtBoxKundeId.Location = new Point(268, 164);
             txtBoxKundeId.Name = "txtBoxKundeId";
             txtBoxKundeId.Size = new Size(211, 27);
-            txtBoxKundeId.TabIndex = 37;
+            txtBoxKundeId.TabIndex = 1;
             // 
             // txtBoxKundeTelefonnummer
             // 
             txtBoxKundeTelefonnummer.Location = new Point(268, 457);
             txtBoxKundeTelefonnummer.Name = "txtBoxKundeTelefonnummer";
             txtBoxKundeTelefonnummer.Size = new Size(211, 27);
-            txtBoxKundeTelefonnummer.TabIndex = 37;
+            txtBoxKundeTelefonnummer.TabIndex = 4;
             // 
             // label3
             // 
@@ -295,6 +295,7 @@
             dgvBolig.RowHeadersWidth = 62;
             dgvBolig.Size = new Size(898, 810);
             dgvBolig.TabIndex = 58;
+            dgvBolig.TabStop = false;
             dgvBolig.CellDoubleClick += dgvBolig_CellDoubleClick;
             dgvBolig.ColumnHeaderMouseClick += dgvBolig_ColumnHeaderMouseClick;
             // 

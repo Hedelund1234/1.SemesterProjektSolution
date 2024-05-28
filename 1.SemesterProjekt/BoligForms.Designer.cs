@@ -103,7 +103,7 @@
             btnBolig.Margin = new Padding(2);
             btnBolig.Name = "btnBolig";
             btnBolig.Size = new Size(194, 73);
-            btnBolig.TabIndex = 17;
+            btnBolig.TabIndex = 15;
             btnBolig.Text = "Bolig      ";
             btnBolig.UseVisualStyleBackColor = false;
             // 
@@ -115,7 +115,7 @@
             btnEjendomsmægler.Margin = new Padding(2);
             btnEjendomsmægler.Name = "btnEjendomsmægler";
             btnEjendomsmægler.Size = new Size(194, 73);
-            btnEjendomsmægler.TabIndex = 15;
+            btnEjendomsmægler.TabIndex = 17;
             btnEjendomsmægler.Text = "               Ejendomsmægler";
             btnEjendomsmægler.UseVisualStyleBackColor = true;
             btnEjendomsmægler.Click += btnEjendomsmægler_Click;
@@ -128,7 +128,7 @@
             btnAfdeling.Margin = new Padding(2);
             btnAfdeling.Name = "btnAfdeling";
             btnAfdeling.Size = new Size(194, 73);
-            btnAfdeling.TabIndex = 14;
+            btnAfdeling.TabIndex = 18;
             btnAfdeling.Text = "Afdeling";
             btnAfdeling.UseVisualStyleBackColor = true;
             btnAfdeling.Click += btnAfdeling_Click;
@@ -159,7 +159,7 @@
             btnLogo.Margin = new Padding(2);
             btnLogo.Name = "btnLogo";
             btnLogo.Size = new Size(96, 96);
-            btnLogo.TabIndex = 13;
+            btnLogo.TabIndex = 14;
             btnLogo.UseVisualStyleBackColor = false;
             btnLogo.Click += btnLogo_Click;
             // 
@@ -172,7 +172,7 @@
             btnExit.Margin = new Padding(2);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(38, 27);
-            btnExit.TabIndex = 3;
+            btnExit.TabIndex = 19;
             btnExit.Text = "X";
             btnExit.UseVisualStyleBackColor = false;
             btnExit.Click += btnExit_Click;
@@ -196,7 +196,7 @@
             comboBoxType.Margin = new Padding(2);
             comboBoxType.Name = "comboBoxType";
             comboBoxType.Size = new Size(207, 28);
-            comboBoxType.TabIndex = 56;
+            comboBoxType.TabIndex = 2;
             // 
             // label3
             // 
@@ -211,7 +211,7 @@
             // txtKvmPris
             // 
             txtKvmPris.Enabled = false;
-            txtKvmPris.Location = new Point(270, 632);
+            txtKvmPris.Location = new Point(270, 706);
             txtKvmPris.Margin = new Padding(2);
             txtKvmPris.Name = "txtKvmPris";
             txtKvmPris.Size = new Size(210, 27);
@@ -223,7 +223,7 @@
             txtAdresse.Margin = new Padding(2);
             txtAdresse.Name = "txtAdresse";
             txtAdresse.Size = new Size(209, 27);
-            txtAdresse.TabIndex = 53;
+            txtAdresse.TabIndex = 10;
             // 
             // txtPostnummer
             // 
@@ -231,7 +231,7 @@
             txtPostnummer.Margin = new Padding(2);
             txtPostnummer.Name = "txtPostnummer";
             txtPostnummer.Size = new Size(207, 27);
-            txtPostnummer.TabIndex = 52;
+            txtPostnummer.TabIndex = 3;
             // 
             // tbMinPris
             // 
@@ -242,7 +242,7 @@
             tbMinPris.Name = "tbMinPris";
             tbMinPris.RightToLeft = RightToLeft.No;
             tbMinPris.Size = new Size(164, 56);
-            tbMinPris.TabIndex = 50;
+            tbMinPris.TabIndex = 4;
             tbMinPris.MouseMove += tbMinPris_MouseMove;
             // 
             // cbTilSalg
@@ -252,7 +252,7 @@
             cbTilSalg.Margin = new Padding(2);
             cbTilSalg.Name = "cbTilSalg";
             cbTilSalg.Size = new Size(78, 24);
-            cbTilSalg.TabIndex = 48;
+            cbTilSalg.TabIndex = 8;
             cbTilSalg.Text = "Til salg";
             cbTilSalg.UseVisualStyleBackColor = true;
             cbTilSalg.CheckedChanged += cbTilSalg_CheckedChanged;
@@ -264,7 +264,7 @@
             cbSolgt.Margin = new Padding(2);
             cbSolgt.Name = "cbSolgt";
             cbSolgt.Size = new Size(66, 24);
-            cbSolgt.TabIndex = 49;
+            cbSolgt.TabIndex = 9;
             cbSolgt.Text = "Solgt";
             cbSolgt.UseVisualStyleBackColor = true;
             cbSolgt.CheckedChanged += cbSolgt_CheckedChanged;
@@ -292,7 +292,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(270, 610);
+            label8.Location = new Point(270, 684);
             label8.Margin = new Padding(2, 0, 2, 0);
             label8.Name = "label8";
             label8.Size = new Size(126, 20);
@@ -328,7 +328,7 @@
             comboBoxAfdeling.Margin = new Padding(2);
             comboBoxAfdeling.Name = "comboBoxAfdeling";
             comboBoxAfdeling.Size = new Size(207, 28);
-            comboBoxAfdeling.TabIndex = 47;
+            comboBoxAfdeling.TabIndex = 1;
             // 
             // label1
             // 
@@ -346,7 +346,7 @@
             btnCSV.Margin = new Padding(2);
             btnCSV.Name = "btnCSV";
             btnCSV.Size = new Size(209, 30);
-            btnCSV.TabIndex = 38;
+            btnCSV.TabIndex = 11;
             btnCSV.Text = "Gem .CSV fil";
             btnCSV.UseVisualStyleBackColor = true;
             btnCSV.Click += btnCSV_Click;
@@ -357,7 +357,7 @@
             btnSøg.Margin = new Padding(2);
             btnSøg.Name = "btnSøg";
             btnSøg.Size = new Size(102, 30);
-            btnSøg.TabIndex = 39;
+            btnSøg.TabIndex = 12;
             btnSøg.Text = "Søg";
             btnSøg.UseVisualStyleBackColor = true;
             btnSøg.Click += btnSøg_Click;
@@ -368,7 +368,7 @@
             btnOpret.Margin = new Padding(2);
             btnOpret.Name = "btnOpret";
             btnOpret.Size = new Size(102, 30);
-            btnOpret.TabIndex = 37;
+            btnOpret.TabIndex = 13;
             btnOpret.Text = "Gå til opret";
             btnOpret.UseVisualStyleBackColor = true;
             btnOpret.Click += btnOpret_Click;
@@ -382,7 +382,7 @@
             tbMaxPris.Name = "tbMaxPris";
             tbMaxPris.RightToLeft = RightToLeft.No;
             tbMaxPris.Size = new Size(164, 56);
-            tbMaxPris.TabIndex = 50;
+            tbMaxPris.TabIndex = 5;
             tbMaxPris.Value = 20;
             tbMaxPris.MouseMove += tbMaxPris_MouseMove;
             // 
@@ -415,7 +415,7 @@
             tbMaxM2.Name = "tbMaxM2";
             tbMaxM2.RightToLeft = RightToLeft.No;
             tbMaxM2.Size = new Size(164, 56);
-            tbMaxM2.TabIndex = 59;
+            tbMaxM2.TabIndex = 7;
             tbMaxM2.Value = 20;
             tbMaxM2.MouseMove += tbMaxM2_MouseMove;
             // 
@@ -438,7 +438,7 @@
             tbMinM2.Name = "tbMinM2";
             tbMinM2.RightToLeft = RightToLeft.No;
             tbMinM2.Size = new Size(164, 56);
-            tbMinM2.TabIndex = 60;
+            tbMinM2.TabIndex = 6;
             tbMinM2.MouseMove += tbMinM2_MouseMove;
             // 
             // dgvBolig
@@ -459,6 +459,7 @@
             dgvBolig.RowHeadersWidth = 62;
             dgvBolig.Size = new Size(905, 839);
             dgvBolig.TabIndex = 61;
+            dgvBolig.TabStop = false;
             dgvBolig.CellDoubleClick += dgvBolig_CellDoubleClick;
             dgvBolig.ColumnHeaderMouseClick += dgvBolig_ColumnHeaderMouseClick;
             // 

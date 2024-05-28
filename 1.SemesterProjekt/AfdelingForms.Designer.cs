@@ -67,7 +67,7 @@
             btnExit.Margin = new Padding(2);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(38, 27);
-            btnExit.TabIndex = 3;
+            btnExit.TabIndex = 9;
             btnExit.Text = "X";
             btnExit.UseVisualStyleBackColor = false;
             btnExit.Click += btnExit_Click;
@@ -95,7 +95,7 @@
             btnLogo.Margin = new Padding(2);
             btnLogo.Name = "btnLogo";
             btnLogo.Size = new Size(96, 96);
-            btnLogo.TabIndex = 14;
+            btnLogo.TabIndex = 4;
             btnLogo.UseVisualStyleBackColor = false;
             btnLogo.Click += btnLogo_Click;
             // 
@@ -105,7 +105,7 @@
             btnSøg.Margin = new Padding(2);
             btnSøg.Name = "btnSøg";
             btnSøg.Size = new Size(102, 30);
-            btnSøg.TabIndex = 27;
+            btnSøg.TabIndex = 3;
             btnSøg.Text = "Vis alle afdelinger";
             btnSøg.UseVisualStyleBackColor = true;
             btnSøg.Click += btnSøg_Click;
@@ -119,7 +119,7 @@
             comboBoxAfdelingsNavn.Margin = new Padding(2);
             comboBoxAfdelingsNavn.Name = "comboBoxAfdelingsNavn";
             comboBoxAfdelingsNavn.Size = new Size(211, 28);
-            comboBoxAfdelingsNavn.TabIndex = 56;
+            comboBoxAfdelingsNavn.TabIndex = 2;
             comboBoxAfdelingsNavn.DropDownClosed += comboBoxAfdelingsNavn_DropDownClosed;
             // 
             // comboBoxAfdelingsNr
@@ -131,7 +131,7 @@
             comboBoxAfdelingsNr.Margin = new Padding(2);
             comboBoxAfdelingsNr.Name = "comboBoxAfdelingsNr";
             comboBoxAfdelingsNr.Size = new Size(211, 28);
-            comboBoxAfdelingsNr.TabIndex = 56;
+            comboBoxAfdelingsNr.TabIndex = 1;
             comboBoxAfdelingsNr.DropDownClosed += comboBoxAfdelingsNr_DropDownClosed;
             // 
             // label3
@@ -163,7 +163,7 @@
             button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(194, 73);
-            button1.TabIndex = 62;
+            button1.TabIndex = 5;
             button1.Text = "Bolig      ";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
@@ -176,7 +176,7 @@
             button2.Margin = new Padding(2);
             button2.Name = "button2";
             button2.Size = new Size(194, 73);
-            button2.TabIndex = 60;
+            button2.TabIndex = 7;
             button2.Text = "               Ejendomsmægler";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
@@ -190,7 +190,7 @@
             button3.Margin = new Padding(2);
             button3.Name = "button3";
             button3.Size = new Size(194, 73);
-            button3.TabIndex = 59;
+            button3.TabIndex = 8;
             button3.Text = "Afdeling";
             button3.UseVisualStyleBackColor = false;
             // 
@@ -203,7 +203,7 @@
             button4.Margin = new Padding(2);
             button4.Name = "button4";
             button4.Size = new Size(194, 73);
-            button4.TabIndex = 61;
+            button4.TabIndex = 6;
             button4.Text = "Kunde   ";
             button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
@@ -222,6 +222,7 @@
             dgvBolig.RowHeadersWidth = 62;
             dgvBolig.Size = new Size(902, 810);
             dgvBolig.TabIndex = 63;
+            dgvBolig.TabStop = false;
             dgvBolig.CellDoubleClick += dgvBolig_CellDoubleClick;
             dgvBolig.ColumnHeaderMouseClick += dgvBolig_ColumnHeaderMouseClick;
             // 

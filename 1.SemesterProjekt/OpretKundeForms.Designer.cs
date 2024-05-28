@@ -68,7 +68,7 @@
             btnOpret.Margin = new Padding(2);
             btnOpret.Name = "btnOpret";
             btnOpret.Size = new Size(214, 30);
-            btnOpret.TabIndex = 22;
+            btnOpret.TabIndex = 6;
             btnOpret.Text = "Opret Kunde";
             btnOpret.UseVisualStyleBackColor = true;
             btnOpret.Click += btnOpret_Click;
@@ -79,7 +79,7 @@
             btnTilbage.Margin = new Padding(2);
             btnTilbage.Name = "btnTilbage";
             btnTilbage.Size = new Size(102, 30);
-            btnTilbage.TabIndex = 24;
+            btnTilbage.TabIndex = 7;
             btnTilbage.Text = "Tilbage";
             btnTilbage.UseVisualStyleBackColor = true;
             btnTilbage.Click += btnTilbage_Click;
@@ -89,21 +89,21 @@
             txtBoxTelefonnummerOpretKunde.Location = new Point(269, 358);
             txtBoxTelefonnummerOpretKunde.Name = "txtBoxTelefonnummerOpretKunde";
             txtBoxTelefonnummerOpretKunde.Size = new Size(267, 27);
-            txtBoxTelefonnummerOpretKunde.TabIndex = 37;
+            txtBoxTelefonnummerOpretKunde.TabIndex = 3;
             // 
             // txtBoxNavnOpretKunde
             // 
             txtBoxNavnOpretKunde.Location = new Point(269, 164);
             txtBoxNavnOpretKunde.Name = "txtBoxNavnOpretKunde";
             txtBoxNavnOpretKunde.Size = new Size(267, 27);
-            txtBoxNavnOpretKunde.TabIndex = 37;
+            txtBoxNavnOpretKunde.TabIndex = 1;
             // 
             // txtBoxEmailOpretKunde
             // 
             txtBoxEmailOpretKunde.Location = new Point(269, 262);
             txtBoxEmailOpretKunde.Name = "txtBoxEmailOpretKunde";
             txtBoxEmailOpretKunde.Size = new Size(267, 27);
-            txtBoxEmailOpretKunde.TabIndex = 37;
+            txtBoxEmailOpretKunde.TabIndex = 2;
             // 
             // label5
             // 
@@ -138,7 +138,7 @@
             button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(194, 73);
-            button1.TabIndex = 42;
+            button1.TabIndex = 9;
             button1.Text = "Bolig      ";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
@@ -152,7 +152,7 @@
             button2.Margin = new Padding(2);
             button2.Name = "button2";
             button2.Size = new Size(194, 73);
-            button2.TabIndex = 40;
+            button2.TabIndex = 11;
             button2.Text = "               Ejendomsmægler";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
@@ -165,7 +165,7 @@
             button3.Margin = new Padding(2);
             button3.Name = "button3";
             button3.Size = new Size(194, 73);
-            button3.TabIndex = 39;
+            button3.TabIndex = 12;
             button3.Text = "Afdeling";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
@@ -179,7 +179,7 @@
             button4.Margin = new Padding(2);
             button4.Name = "button4";
             button4.Size = new Size(194, 73);
-            button4.TabIndex = 41;
+            button4.TabIndex = 10;
             button4.Text = "Kunde   ";
             button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
@@ -197,7 +197,7 @@
             btnLogo.Margin = new Padding(2);
             btnLogo.Name = "btnLogo";
             btnLogo.Size = new Size(96, 96);
-            btnLogo.TabIndex = 30;
+            btnLogo.TabIndex = 8;
             btnLogo.UseVisualStyleBackColor = false;
             btnLogo.Click += btnLogo_Click;
             // 
@@ -217,7 +217,7 @@
             checkBoxSælgerOpretKunde.Location = new Point(359, 457);
             checkBoxSælgerOpretKunde.Name = "checkBoxSælgerOpretKunde";
             checkBoxSælgerOpretKunde.Size = new Size(77, 24);
-            checkBoxSælgerOpretKunde.TabIndex = 33;
+            checkBoxSælgerOpretKunde.TabIndex = 5;
             checkBoxSælgerOpretKunde.Text = "Sælger";
             checkBoxSælgerOpretKunde.UseVisualStyleBackColor = true;
             checkBoxSælgerOpretKunde.CheckedChanged += checkBoxSælgerOpretKunde_CheckedChanged;
@@ -228,7 +228,7 @@
             checkBoxKøberOpretKunde.Location = new Point(273, 457);
             checkBoxKøberOpretKunde.Name = "checkBoxKøberOpretKunde";
             checkBoxKøberOpretKunde.Size = new Size(71, 24);
-            checkBoxKøberOpretKunde.TabIndex = 34;
+            checkBoxKøberOpretKunde.TabIndex = 4;
             checkBoxKøberOpretKunde.Text = "Køber";
             checkBoxKøberOpretKunde.UseVisualStyleBackColor = true;
             checkBoxKøberOpretKunde.CheckedChanged += checkBoxKøberOpretKunde_CheckedChanged;
@@ -262,7 +262,7 @@
             btnExit.Margin = new Padding(2);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(38, 27);
-            btnExit.TabIndex = 3;
+            btnExit.TabIndex = 13;
             btnExit.Text = "X";
             btnExit.UseVisualStyleBackColor = false;
             btnExit.Click += btnExit_Click;

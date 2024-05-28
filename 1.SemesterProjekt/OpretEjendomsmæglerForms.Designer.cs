@@ -58,7 +58,7 @@
             btnOpret.Margin = new Padding(2);
             btnOpret.Name = "btnOpret";
             btnOpret.Size = new Size(214, 30);
-            btnOpret.TabIndex = 25;
+            btnOpret.TabIndex = 5;
             btnOpret.Text = "Opret Ejendomsmægler";
             btnOpret.UseVisualStyleBackColor = true;
             btnOpret.Click += btnOpret_Click;
@@ -72,7 +72,7 @@
             ComboBox1.Margin = new Padding(2);
             ComboBox1.Name = "ComboBox1";
             ComboBox1.Size = new Size(214, 28);
-            ComboBox1.TabIndex = 52;
+            ComboBox1.TabIndex = 4;
             // 
             // btnTilbage
             // 
@@ -80,7 +80,7 @@
             btnTilbage.Margin = new Padding(2);
             btnTilbage.Name = "btnTilbage";
             btnTilbage.Size = new Size(102, 30);
-            btnTilbage.TabIndex = 26;
+            btnTilbage.TabIndex = 6;
             btnTilbage.Text = "Tilbage";
             btnTilbage.UseVisualStyleBackColor = true;
             btnTilbage.Click += btnTilbage_Click;
@@ -108,7 +108,7 @@
             btnLogo.Margin = new Padding(2);
             btnLogo.Name = "btnLogo";
             btnLogo.Size = new Size(96, 96);
-            btnLogo.TabIndex = 28;
+            btnLogo.TabIndex = 7;
             btnLogo.UseVisualStyleBackColor = false;
             btnLogo.Click += btnLogo_Click;
             // 
@@ -118,7 +118,7 @@
             txtEmail.Margin = new Padding(2);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(214, 27);
-            txtEmail.TabIndex = 47;
+            txtEmail.TabIndex = 3;
             // 
             // txtNavn
             // 
@@ -126,7 +126,7 @@
             txtNavn.Margin = new Padding(2);
             txtNavn.Name = "txtNavn";
             txtNavn.Size = new Size(214, 27);
-            txtNavn.TabIndex = 49;
+            txtNavn.TabIndex = 1;
             // 
             // label5
             // 
@@ -144,7 +144,7 @@
             txtTelefonNr.Margin = new Padding(2);
             txtTelefonNr.Name = "txtTelefonNr";
             txtTelefonNr.Size = new Size(214, 27);
-            txtTelefonNr.TabIndex = 50;
+            txtTelefonNr.TabIndex = 2;
             // 
             // label4
             // 
@@ -175,7 +175,7 @@
             btnExit.Margin = new Padding(2);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(38, 27);
-            btnExit.TabIndex = 3;
+            btnExit.TabIndex = 12;
             btnExit.Text = "X";
             btnExit.UseVisualStyleBackColor = false;
             btnExit.Click += btnExit_Click;
@@ -212,7 +212,7 @@
             button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(194, 73);
-            button1.TabIndex = 38;
+            button1.TabIndex = 8;
             button1.Text = "Bolig      ";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
@@ -226,7 +226,7 @@
             button2.Margin = new Padding(2);
             button2.Name = "button2";
             button2.Size = new Size(194, 73);
-            button2.TabIndex = 36;
+            button2.TabIndex = 10;
             button2.Text = "               Ejendomsmægler";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
@@ -240,7 +240,7 @@
             button3.Margin = new Padding(2);
             button3.Name = "button3";
             button3.Size = new Size(194, 73);
-            button3.TabIndex = 35;
+            button3.TabIndex = 11;
             button3.Text = "Afdeling";
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
@@ -254,7 +254,7 @@
             button4.Margin = new Padding(2);
             button4.Name = "button4";
             button4.Size = new Size(194, 73);
-            button4.TabIndex = 37;
+            button4.TabIndex = 9;
             button4.Text = "Kunde   ";
             button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
