@@ -17,12 +17,16 @@ namespace TestProject1
 		public void Test2()
 		{
 			//Arrange
-			string navn = "Nordjylland";
-			AfdelingDbHandler db = new AfdelingDbHandler();
-            Afdelinga = db.Get(navn);
+			string AfdelingsNavn = "Nordjylland";
+			string expectedAfdelingsNr = "1";
+            AfdelingDbHandler db = new AfdelingDbHandler();
 
-			//Act & Assert
-			Assert.That(a.Afdelings_Nr.GetAmount(), Is.EqualTo("1"));
+            //Act
+            AfdelingsNr = db.Get(AfdelingsNavn);
+            string actualAfdelingsNr = AfdelingsNr.Afdelings_Nr;
+
+			//Assert
+			Assert.That(expectedAfdelingsNr, actualAfdelingsNr);
 		}
 	}
 }
