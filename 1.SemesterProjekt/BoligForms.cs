@@ -216,32 +216,162 @@ namespace _1.SemesterProjekt
 
         private void dgvBolig_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            List<Bolig> boligliste = dgvBolig.DataSource as List<Bolig>;
+            List<Bolig> boligListe = dgvBolig.DataSource as List<Bolig>;
 
-            if (e.ColumnIndex == 4)
+            if (e.ColumnIndex == 0)
             {
-                if (sort)
+                if (sort == false)
                 {
-                    dgvBolig.DataSource = boligliste.OrderBy(b => b.Udbudspris).ToList();
-                    sort = false;
+                    dgvBolig.DataSource = boligListe.OrderByDescending(b => b.Bolig_Id).ToList();
+                    sort = true;
                 }
                 else
                 {
-                    dgvBolig.DataSource = boligliste.OrderByDescending(b => b.Udbudspris).ToList();
+                    dgvBolig.DataSource = boligListe.OrderBy(b => b.Bolig_Id).ToList();
+                    sort = false;
+                }
+            }
+            else if (e.ColumnIndex == 1)
+            {
+                if (sort == false)
+                {
+                    dgvBolig.DataSource = boligListe.OrderByDescending(b => b.Adresse).ToList();
                     sort = true;
+                }
+                else
+                {
+                    dgvBolig.DataSource = boligListe.OrderBy(b => b.Adresse).ToList();
+                    sort = false;
+                }
+            }
+            else if (e.ColumnIndex == 2)
+            {
+                if (sort == false)
+                {
+                    dgvBolig.DataSource = boligListe.OrderByDescending(b => b.Postnummer).ToList();
+                    sort = true;
+                }
+                else
+                {
+                    dgvBolig.DataSource = boligListe.OrderBy(b => b.Postnummer).ToList();
+                    sort = false;
+                }
+            }
+            else if (e.ColumnIndex == 3)
+            {
+                if (sort == false)
+                {
+                    dgvBolig.DataSource = boligListe.OrderByDescending(b => b.Type).ToList();
+                    sort = true;
+                }
+                else
+                {
+                    dgvBolig.DataSource = boligListe.OrderBy(b => b.Type).ToList();
+                    sort = false;
+                }
+            }
+            else if (e.ColumnIndex == 4)
+            {
+                if (sort == false)
+                {
+                    dgvBolig.DataSource = boligListe.OrderByDescending(b => b.Udbudspris).ToList();
+                    sort = true;
+                }
+                else
+                {
+                    dgvBolig.DataSource = boligListe.OrderBy(b => b.Udbudspris).ToList();
+                    sort = false;
                 }
             }
             else if (e.ColumnIndex == 5)
             {
-                if (sort)
+                if (sort == false)
                 {
-                    dgvBolig.DataSource = boligliste.OrderBy(b => b.Størrelse).ToList();
-                    sort = false;
+                    dgvBolig.DataSource = boligListe.OrderByDescending(b => b.Størrelse).ToList();
+                    sort = true;
                 }
                 else
                 {
-                    dgvBolig.DataSource = boligliste.OrderByDescending(b => b.Størrelse).ToList();
+                    dgvBolig.DataSource = boligListe.OrderBy(b => b.Størrelse).ToList();
+                    sort = false;
+                }
+            }
+            else if (e.ColumnIndex == 6)
+            {
+                if (sort == false)
+                {
+                    dgvBolig.DataSource = boligListe.OrderByDescending(b => b.Bolig_Kunde_Id).ToList();
                     sort = true;
+                }
+                else
+                {
+                    dgvBolig.DataSource = boligListe.OrderBy(b => b.Bolig_Kunde_Id).ToList();
+                    sort = false;
+                }
+            }
+            else if (e.ColumnIndex == 7)
+            {
+                if (sort == false)
+                {
+                    dgvBolig.DataSource = boligListe.OrderByDescending(b => b.Bolig_Ejendomsmægler_Id).ToList();
+                    sort = true;
+                }
+                else
+                {
+                    dgvBolig.DataSource = boligListe.OrderBy(b => b.Bolig_Ejendomsmægler_Id).ToList();
+                    sort = false;
+                }
+            }
+            else if (e.ColumnIndex == 8)
+            {
+                if (sort == false)
+                {
+                    dgvBolig.DataSource = boligListe.OrderByDescending(b => b.Bolig_Afdelings_Navn).ToList();
+                    sort = true;
+                }
+                else
+                {
+                    dgvBolig.DataSource = boligListe.OrderBy(b => b.Bolig_Afdelings_Navn).ToList();
+                    sort = false;
+                }
+            }
+            else if (e.ColumnIndex == 9)
+            {
+                if (sort == false)
+                {
+                    dgvBolig.DataSource = boligListe.OrderByDescending(b => b.Salgsstatus).ToList();
+                    sort = true;
+                }
+                else
+                {
+                    dgvBolig.DataSource = boligListe.OrderBy(b => b.Salgsstatus).ToList();
+                    sort = false;
+                }
+            }
+            else if (e.ColumnIndex == 10)
+            {
+                if (sort == false)
+                {
+                    dgvBolig.DataSource = boligListe.OrderByDescending(b => b.Bolig_Kunde_Id_Køber).ToList();
+                    sort = true;
+                }
+                else
+                {
+                    dgvBolig.DataSource = boligListe.OrderBy(b => b.Bolig_Kunde_Id_Køber).ToList();
+                    sort = false;
+                }
+            }
+            else if (e.ColumnIndex == 11)
+            {
+                if (sort == false)
+                {
+                    dgvBolig.DataSource = boligListe.OrderByDescending(b => b.Handels_Dato).ToList();
+                    sort = true;
+                }
+                else
+                {
+                    dgvBolig.DataSource = boligListe.OrderBy(b => b.Handels_Dato).ToList();
+                    sort = false;
                 }
             }
 

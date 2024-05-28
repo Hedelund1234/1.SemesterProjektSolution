@@ -369,6 +369,7 @@
             dgvKunder.RowHeadersWidth = 62;
             dgvKunder.Size = new Size(707, 725);
             dgvKunder.TabIndex = 26;
+            dgvKunder.ColumnHeaderMouseClick += dgvKunder_ColumnHeaderMouseClick;
             // 
             // comboboxSalgsstatus
             // 

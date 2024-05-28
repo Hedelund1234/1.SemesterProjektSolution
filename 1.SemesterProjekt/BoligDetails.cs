@@ -25,6 +25,7 @@ namespace _1.SemesterProjekt
         Kunde boligkøber = new Kunde();
         Kunde kunde = new Kunde();
         List<Kunde> kl = new List<Kunde>();
+        bool sort = false;
         public BoligDetails(int id)
         {
             InitializeComponent();
@@ -338,6 +339,77 @@ namespace _1.SemesterProjekt
             if (dato < DateTime.Now)
             {
                 MessageBox.Show("Bemærk valgte dato er før dags dato", "OBS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void dgvKunder_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            List<Kunde> kundeListe = dgvKunder.DataSource as List<Kunde>;
+
+            if (e.ColumnIndex == 0)
+            {
+                if (sort == false)
+                {
+                    dgvKunder.DataSource = kundeListe.OrderByDescending(b => b.Kunde_Id).ToList();
+                    sort = true;
+                }
+                else
+                {
+                    dgvKunder.DataSource = kundeListe.OrderBy(b => b.Kunde_Id).ToList();
+                    sort = false;
+                }
+            }
+            else if (e.ColumnIndex == 1)
+            {
+                if (sort == false)
+                {
+                    dgvKunder.DataSource = kundeListe.OrderByDescending(b => b.Navn).ToList();
+                    sort = true;
+                }
+                else
+                {
+                    dgvKunder.DataSource = kundeListe.OrderBy(b => b.Navn).ToList();
+                    sort = false;
+                }
+            }
+            else if (e.ColumnIndex == 2)
+            {
+                if (sort == false)
+                {
+                    dgvKunder.DataSource = kundeListe.OrderByDescending(b => b.Email).ToList();
+                    sort = true;
+                }
+                else
+                {
+                    dgvKunder.DataSource = kundeListe.OrderBy(b => b.Email).ToList();
+                    sort = false;
+                }
+            }
+            else if (e.ColumnIndex == 3)
+            {
+                if (sort == false)
+                {
+                    dgvKunder.DataSource = kundeListe.OrderByDescending(b => b.Telefon_Nr).ToList();
+                    sort = true;
+                }
+                else
+                {
+                    dgvKunder.DataSource = kundeListe.OrderBy(b => b.Telefon_Nr).ToList();
+                    sort = false;
+                }
+            }
+            else if (e.ColumnIndex == 4)
+            {
+                if (sort == false)
+                {
+                    dgvKunder.DataSource = kundeListe.OrderByDescending(b => b.Kunde_Type).ToList();
+                    sort = true;
+                }
+                else
+                {
+                    dgvKunder.DataSource = kundeListe.OrderBy(b => b.Kunde_Type).ToList();
+                    sort = false;
+                }
             }
         }
     }

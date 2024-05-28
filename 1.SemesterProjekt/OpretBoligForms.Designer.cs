@@ -301,6 +301,7 @@
             dgvKunde.RowHeadersWidth = 62;
             dgvKunde.Size = new Size(902, 777);
             dgvKunde.TabIndex = 59;
+            dgvKunde.ColumnHeaderMouseClick += dgvKunde_ColumnHeaderMouseClick;
             // 
             // txtSælgerId
             // 

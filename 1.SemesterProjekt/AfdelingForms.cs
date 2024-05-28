@@ -16,8 +16,7 @@ namespace _1.SemesterProjekt
     {
         AfdelingDbHandler db = new AfdelingDbHandler();
         List<Afdeling> al = new List<Afdeling>();
-        bool afdelingNrDescAsc = false;
-        bool afdelingNavnDescAsc = false;
+        bool sort = false;
         public AfdelingForms()
         {
             InitializeComponent();
@@ -186,28 +185,28 @@ namespace _1.SemesterProjekt
             List<Afdeling> afdelingListe = dgvBolig.DataSource as List<Afdeling>;
             if (e.ColumnIndex == 0)
             {
-                if (afdelingNrDescAsc == false)
+                if (sort == false)
                 {
                     dgvBolig.DataSource = afdelingListe.OrderByDescending(b => b.Afdelings_Nr).ToList();
-                    afdelingNrDescAsc = true;
+                    sort = true;
                 }
                 else
                 {
                     dgvBolig.DataSource = afdelingListe.OrderBy(b => b.Afdelings_Nr).ToList();
-                    afdelingNrDescAsc = false;
+                    sort = false;
                 }
             }
             else if (e.ColumnIndex == 1)
             {
-                if (afdelingNavnDescAsc == false)
+                if (sort == false)
                 {
                     dgvBolig.DataSource = afdelingListe.OrderByDescending(b => b.Afdelings_Navn).ToList();
-                    afdelingNavnDescAsc = true;
+                    sort = true;
                 }
                 else
                 {
                     dgvBolig.DataSource = afdelingListe.OrderBy(b => b.Afdelings_Navn).ToList();
-                    afdelingNavnDescAsc = false;
+                    sort = false;
                 }
             }
         }

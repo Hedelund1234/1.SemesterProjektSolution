@@ -11,8 +11,7 @@ namespace _1.SemesterProjekt
         List<Afdeling> al = new List<Afdeling>();
         EjendomsmæglerDbHandler ejendomsmæglerDb;
         Export csv = new Export();
-        bool afdelingNrDescAsc = false;
-        bool afdelingNavnDescAsc = false;
+        bool sort = false;
         public AfdelingDetails(int nr)
         {
             InitializeComponent();
@@ -155,158 +154,226 @@ namespace _1.SemesterProjekt
             {
                 if (e.ColumnIndex == 0)
                 {
-                    if (afdelingNrDescAsc == false)
+                    if (sort == false)
                     {
                         dgvAfdelingsDetails.DataSource = boligListe.OrderByDescending(b => b.Bolig_Id).ToList();
-                        afdelingNrDescAsc = true;
+                        sort = true;
                     }
                     else
                     {
                         dgvAfdelingsDetails.DataSource = boligListe.OrderBy(b => b.Bolig_Id).ToList();
-                        afdelingNrDescAsc = false;
+                        sort = false;
                     }
                 }
                 else if (e.ColumnIndex == 1)
                 {
-                    if (afdelingNavnDescAsc == false)
+                    if (sort == false)
                     {
                         dgvAfdelingsDetails.DataSource = boligListe.OrderByDescending(b => b.Adresse).ToList();
-                        afdelingNavnDescAsc = true;
+                        sort = true;
                     }
                     else
                     {
                         dgvAfdelingsDetails.DataSource = boligListe.OrderBy(b => b.Adresse).ToList();
-                        afdelingNavnDescAsc = false;
+                        sort = false;
                     }
                 }
                 else if (e.ColumnIndex == 2)
                 {
-                    if (afdelingNavnDescAsc == false)
+                    if (sort == false)
                     {
                         dgvAfdelingsDetails.DataSource = boligListe.OrderByDescending(b => b.Postnummer).ToList();
-                        afdelingNavnDescAsc = true;
+                        sort = true;
                     }
                     else
                     {
                         dgvAfdelingsDetails.DataSource = boligListe.OrderBy(b => b.Postnummer).ToList();
-                        afdelingNavnDescAsc = false;
+                        sort = false;
                     }
                 }
                 else if (e.ColumnIndex == 3)
                 {
-                    if (afdelingNavnDescAsc == false)
+                    if (sort == false)
                     {
                         dgvAfdelingsDetails.DataSource = boligListe.OrderByDescending(b => b.Type).ToList();
-                        afdelingNavnDescAsc = true;
+                        sort = true;
                     }
                     else
                     {
                         dgvAfdelingsDetails.DataSource = boligListe.OrderBy(b => b.Type).ToList();
-                        afdelingNavnDescAsc = false;
+                        sort = false;
                     }
                 }
                 else if (e.ColumnIndex == 4)
                 {
-                    if (afdelingNavnDescAsc == false)
+                    if (sort == false)
                     {
                         dgvAfdelingsDetails.DataSource = boligListe.OrderByDescending(b => b.Udbudspris).ToList();
-                        afdelingNavnDescAsc = true;
+                        sort = true;
                     }
                     else
                     {
                         dgvAfdelingsDetails.DataSource = boligListe.OrderBy(b => b.Udbudspris).ToList();
-                        afdelingNavnDescAsc = false;
+                        sort = false;
                     }
                 }
                 else if (e.ColumnIndex == 5)
                 {
-                    if (afdelingNavnDescAsc == false)
+                    if (sort == false)
                     {
                         dgvAfdelingsDetails.DataSource = boligListe.OrderByDescending(b => b.Størrelse).ToList();
-                        afdelingNavnDescAsc = true;
+                        sort = true;
                     }
                     else
                     {
                         dgvAfdelingsDetails.DataSource = boligListe.OrderBy(b => b.Størrelse).ToList();
-                        afdelingNavnDescAsc = false;
+                        sort = false;
                     }
                 }
                 else if (e.ColumnIndex == 6)
                 {
-                    if (afdelingNavnDescAsc == false)
+                    if (sort == false)
                     {
                         dgvAfdelingsDetails.DataSource = boligListe.OrderByDescending(b => b.Bolig_Kunde_Id).ToList();
-                        afdelingNavnDescAsc = true;
+                        sort = true;
                     }
                     else
                     {
                         dgvAfdelingsDetails.DataSource = boligListe.OrderBy(b => b.Bolig_Kunde_Id).ToList();
-                        afdelingNavnDescAsc = false;
+                        sort = false;
                     }
                 }
                 else if (e.ColumnIndex == 7)
                 {
-                    if (afdelingNavnDescAsc == false)
+                    if (sort == false)
                     {
                         dgvAfdelingsDetails.DataSource = boligListe.OrderByDescending(b => b.Bolig_Ejendomsmægler_Id).ToList();
-                        afdelingNavnDescAsc = true;
+                        sort = true;
                     }
                     else
                     {
                         dgvAfdelingsDetails.DataSource = boligListe.OrderBy(b => b.Bolig_Ejendomsmægler_Id).ToList();
-                        afdelingNavnDescAsc = false;
+                        sort = false;
                     }
                 }
                 else if (e.ColumnIndex == 8)
                 {
-                    if (afdelingNavnDescAsc == false)
+                    if (sort == false)
                     {
                         dgvAfdelingsDetails.DataSource = boligListe.OrderByDescending(b => b.Bolig_Afdelings_Navn).ToList();
-                        afdelingNavnDescAsc = true;
+                        sort = true;
                     }
                     else
                     {
                         dgvAfdelingsDetails.DataSource = boligListe.OrderBy(b => b.Bolig_Afdelings_Navn).ToList();
-                        afdelingNavnDescAsc = false;
+                        sort = false;
                     }
                 }
                 else if (e.ColumnIndex == 9)
                 {
-                    if (afdelingNavnDescAsc == false)
+                    if (sort == false)
                     {
                         dgvAfdelingsDetails.DataSource = boligListe.OrderByDescending(b => b.Salgsstatus).ToList();
-                        afdelingNavnDescAsc = true;
+                        sort = true;
                     }
                     else
                     {
                         dgvAfdelingsDetails.DataSource = boligListe.OrderBy(b => b.Salgsstatus).ToList();
-                        afdelingNavnDescAsc = false;
+                        sort = false;
                     }
                 }
                 else if (e.ColumnIndex == 10)
                 {
-                    if (afdelingNavnDescAsc == false)
+                    if (sort == false)
                     {
                         dgvAfdelingsDetails.DataSource = boligListe.OrderByDescending(b => b.Bolig_Kunde_Id_Køber).ToList();
-                        afdelingNavnDescAsc = true;
+                        sort = true;
                     }
                     else
                     {
                         dgvAfdelingsDetails.DataSource = boligListe.OrderBy(b => b.Bolig_Kunde_Id_Køber).ToList();
-                        afdelingNavnDescAsc = false;
+                        sort = false;
                     }
                 }
                 else if (e.ColumnIndex == 11)
                 {
-                    if (afdelingNavnDescAsc == false)
+                    if (sort == false)
                     {
                         dgvAfdelingsDetails.DataSource = boligListe.OrderByDescending(b => b.Handels_Dato).ToList();
-                        afdelingNavnDescAsc = true;
+                        sort = true;
                     }
                     else
                     {
                         dgvAfdelingsDetails.DataSource = boligListe.OrderBy(b => b.Handels_Dato).ToList();
-                        afdelingNavnDescAsc = false;
+                        sort = false;
+                    }
+                }
+            }
+            else if (comboBoxAfdelingsDetailsSøg.Text == "Ejendomsmægler")
+            {
+                if (e.ColumnIndex == 0)
+                {
+                    if (sort == false)
+                    {
+                        dgvAfdelingsDetails.DataSource = ejendomsmæglerListe.OrderByDescending(x => x.Id).ToList();
+                        sort = true;
+                    }
+                    else
+                    {
+                        dgvAfdelingsDetails.DataSource = ejendomsmæglerListe.OrderBy(x => x.Id).ToList();
+                        sort = false;
+                    }
+                }
+                else if (e.ColumnIndex == 1)
+                {
+                    if (sort == false)
+                    {
+                        dgvAfdelingsDetails.DataSource = ejendomsmæglerListe.OrderByDescending(x => x.Navn).ToList();
+                        sort = true;
+                    }
+                    else
+                    {
+                        dgvAfdelingsDetails.DataSource = ejendomsmæglerListe.OrderBy(x => x.Navn).ToList();
+                        sort = false;
+                    }
+                }
+                else if (e.ColumnIndex == 2)
+                {
+                    if (sort == false)
+                    {
+                        dgvAfdelingsDetails.DataSource = ejendomsmæglerListe.OrderByDescending(x => x.Telefon_Nr).ToList();
+                        sort = true;
+                    }
+                    else
+                    {
+                        dgvAfdelingsDetails.DataSource = ejendomsmæglerListe.OrderBy(x => x.Telefon_Nr).ToList();
+                        sort = false;
+                    }
+                }
+                else if (e.ColumnIndex == 3)
+                {
+                    if (sort == false)
+                    {
+                        dgvAfdelingsDetails.DataSource = ejendomsmæglerListe.OrderByDescending(x => x.Email).ToList();
+                        sort = true;
+                    }
+                    else
+                    {
+                        dgvAfdelingsDetails.DataSource = ejendomsmæglerListe.OrderBy(x => x.Email).ToList();
+                        sort = false;
+                    }
+                }
+                else if (e.ColumnIndex == 4)
+                {
+                    if (sort == false)
+                    {
+                        dgvAfdelingsDetails.DataSource = ejendomsmæglerListe.OrderByDescending(x => x.Ejendomsmægler_Afdeling_Nr).ToList();
+                        sort = true;
+                    }
+                    else
+                    {
+                        dgvAfdelingsDetails.DataSource = ejendomsmæglerListe.OrderBy(x => x.Ejendomsmægler_Afdeling_Nr).ToList();
+                        sort = false;
                     }
                 }
             }
