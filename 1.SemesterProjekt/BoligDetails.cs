@@ -332,7 +332,7 @@ namespace _1.SemesterProjekt
 
         }
 
-        private void dtpBoligDetails_ValueChanged(object sender, EventArgs e)
+        private void dtpBoligDetails_CloseUp(object sender, EventArgs e)
         {
             dato = dtpBoligDetails.Value;
             if (dato < DateTime.Now)
