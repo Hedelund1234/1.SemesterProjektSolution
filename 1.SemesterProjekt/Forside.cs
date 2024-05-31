@@ -9,9 +9,9 @@ namespace _1.SemesterProjekt
 
         private void btnBolig_Click(object sender, EventArgs e)
         {
-            this.Hide();
             BoligForms boligForms = new BoligForms();
             boligForms.Show();
+            this.Hide();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
