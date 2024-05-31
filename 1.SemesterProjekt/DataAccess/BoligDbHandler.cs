@@ -27,7 +27,7 @@ namespace _1.SemesterProjekt.DataAccess
             }
             List<Bolig> bl = new List<Bolig>();
             Bolig bolig = new Bolig();
-            string command = "SELECT * FROM Bolig WHERE Adresse LIKE @adresse AND Postnummer LIKE @postnummer AND Type LIKE @type AND Bolig_Afdelings_Navn LIKE @afdeling AND Salgsstatus LIKE @salgsstatus AND Udbudspris BETWEEN @prismin AND @prismax AND Størrelse BETWEEN @m2min AND @m2max"; ;
+            string command = "SELECT * FROM Bolig WHERE Adresse LIKE @adresse AND Postnummer LIKE @postnummer AND Type LIKE @type AND Bolig_Afdelings_Navn LIKE @afdeling AND Salgsstatus LIKE @salgsstatus AND Udbudspris BETWEEN @prismin AND @prismax AND Størrelse BETWEEN @m2min AND @m2max"; 
             SqlConnection conn = new SqlConnection(connStrings);
 			SqlCommand cmd = new SqlCommand(command, conn);
 			cmd.Parameters.AddWithValue("@adresse", "%" + adresse + "%");

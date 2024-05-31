@@ -1,5 +1,6 @@
 using _1.SemesterProjekt;
-using _AfdelingDbHandler;
+using _1.SemesterProjekt.DataAccess;
+using _1.SemesterProjekt.Models;
 namespace TestProject1
 {
 	public class Tests
@@ -16,17 +17,20 @@ namespace TestProject1
 		[Test]
 		public void Test2()
 		{
-			//Arrange
-			string AfdelingsNavn = "Nordjylland";
-			string expectedAfdelingsNr = "1";
+            //Arrange
             AfdelingDbHandler db = new AfdelingDbHandler();
+            Afdeling afdeling = new Afdeling();
+
+            string actualNavn;
+			string expectedNavn = "Nordjylland";
+
 
             //Act
-            AfdelingsNr = db.Get(AfdelingsNavn);
-            string actualAfdelingsNr = AfdelingsNr.Afdelings_Nr;
+            afdeling = db.Get(1);
+			actualNavn = afdeling.Afdelings_Navn;
 
-			//Assert
-			Assert.That(expectedAfdelingsNr, actualAfdelingsNr);
-		}
+            //Assert
+            Assert.AreSame(expectedNavn, actualNavn);
+        }
 	}
 }

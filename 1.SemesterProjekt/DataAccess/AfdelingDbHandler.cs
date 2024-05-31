@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace _1.SemesterProjekt.DataAccess
 {
-    internal class AfdelingDbHandler
+    public class AfdelingDbHandler
     {
         string connStrings;
         public AfdelingDbHandler()
@@ -13,7 +13,7 @@ namespace _1.SemesterProjekt.DataAccess
             ConnectionHandler connectionHandler = new ConnectionHandler();
             connStrings = connectionHandler.GetConnectionString();
         }
-        internal Afdeling Get(int id)
+        public Afdeling Get(int id)
         {
             Afdeling afdeling = new Afdeling();
             string command = "SELECT * FROM Afdeling WHERE Afdelings_Nr = @afdelingsNr";
